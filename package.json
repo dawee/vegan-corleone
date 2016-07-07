@@ -1,0 +1,30 @@
+{
+  "name": "vegan-corleone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watcher": "watch-exec -c make --watch lib"
+  },
+  "author": "David Corticchiato",
+  "license": "MIT",
+  "aliasify": {
+    "aliases": {
+      "dispersive": "dispersive/es5"
+    }
+  },
+  "dependencies": {
+    "dispersive": "0.2.0",
+    "material-ui": "0.15.1",
+    "react": "15.2.0",
+    "react-dom": "15.0.0",
+    "react-tap-event-plugin": "1.0.0"
+  },
+  "devDependencies": {
+    "aliasify": "2.0.0",
+    "babel-preset-es2015": "6.9.0",
+    "babel-preset-react": "6.11.1",
+    "browserify": "13.0.1",
+    "watch-exec": "1.2.2"
+  }
+}
