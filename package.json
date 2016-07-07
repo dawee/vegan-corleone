@@ -18,6 +18,9 @@
     "material-ui": "0.15.1",
     "react": "15.2.0",
     "react-dom": "15.0.0",
+    "react-geosuggest": "1.24.1",
+    "react-google-maps": "4.11.0",
+    "react-map-gl": "1.0.0",
     "react-tap-event-plugin": "1.0.0"
   },
   "devDependencies": {
