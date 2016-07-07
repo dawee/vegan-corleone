@@ -12,6 +12,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = require('react');
 var ReactDom = require('react-dom');
 var Corleone = require('../corleone');
+var AppBar = require('material-ui/AppBar').default;
+var MuiThemeProvider = require('material-ui/styles/MuiThemeProvider').default;
+var darkBaseTheme = require('material-ui/styles/baseThemes/darkBaseTheme').default;
+var getMuiTheme = require('material-ui/styles/getMuiTheme').default;
+var injectTapEventPlugin = require('react-tap-event-plugin');
+
+var mafia = require('../mafia');
 
 var App = function (_Corleone$Component) {
   _inherits(App, _Corleone$Component);
@@ -26,9 +33,9 @@ var App = function (_Corleone$Component) {
     key: 'render',
     value: function render() {
       return React.createElement(
-        'div',
-        null,
-        'App bootstraped !'
+        MuiThemeProvider,
+        { muiTheme: getMuiTheme(darkBaseTheme) },
+        React.createElement(AppBar, { title: 'Vegan Corleone' })
       );
     }
   }]);
@@ -36,10 +43,11 @@ var App = function (_Corleone$Component) {
   return App;
 }(Corleone.Component);
 
+injectTapEventPlugin();
 ReactDom.render(React.createElement(App, null), document.getElementById('content'));
 
 
-},{"../corleone":2,"react":171,"react-dom":5}],2:[function(require,module,exports){
+},{"../corleone":2,"../mafia":3,"material-ui/AppBar":153,"material-ui/styles/MuiThemeProvider":169,"material-ui/styles/baseThemes/darkBaseTheme":170,"material-ui/styles/getMuiTheme":173,"react":367,"react-dom":192,"react-tap-event-plugin":198}],2:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -89,7 +97,9445 @@ var Component = function (_React$Component) {
 exports.Component = Component;
 
 
-},{"react":171}],3:[function(require,module,exports){
+},{"react":367}],3:[function(require,module,exports){
+"use strict";module.exports=[{position:[48.8748746,2.3159736000000066],icon:"http://www.vegan-mafia.com/wp-content/themes/businessfinder/design/img/default-post-image.jpg",name:"D'jawa",address:"54 rue de Miromesnil 75008 Paris"},{position:[43.9037325,-1.2918567000000394],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/La-CaraVegan-879f1a89be180349cd828e22dc0a99c3.jpg",name:"La CaraVegan",address:"Camping le gaoucher, 87 route de monlon, 40560 Vielle Saint Girons"},{position:[48.5812359,7.744909000000007],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Capture-d’écran-2016-04-25-à-23.44.12-dc77114c18f905dee96b560dcbc0b7b7.png",name:"Pur Etc. — Strasbourg",address:"122, Grand Rue 67000 Strasbourg"},{position:[-8.691289399999999,115.16816530000006],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Capture-d’écran-2016-04-25-à-23.39.41-1769076ceefd25335c4c36c253c1f764.png",name:"Down To Earth Bali",address:"Jl. Lesmana\/Oberoi No. 99 Seminyak - Bali 80361 Indonesia"},{position:[-8.5129542,115.26416960000006],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Paradiso-Ubud-8a25103bc7a28aff7536dea1348bef69.jpg",name:"Paradiso Ubud",address:"Jalan Gautama Seletan (Off Jalan Hanoman) Ubud - Bali Indonesia"},{position:[39.463861,-0.36895079999999325],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Loving-Hut-Valencia-87d2d2dd2bdb807f83c09e055e53ce3d.jpg",name:"Loving Hut — Valencia",address:"Calle del Conde de Altea 44, bajo izquierda, Valencia, Spain 46005"},{position:[39.4615048,-0.3343807999999626],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Nehuen-Tasca-Vegana-52c01666194b282bcfc72e560d2e782a.jpg",name:"Nehuen Tasca Vegana",address:"Calle Cristo del Grao, 14 Valencia, Spain"},{position:[39.4610838,-0.3691135999999915],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Respetarte-Ecotienda-2254686c4f9682e1e65f4f9aee8a53fe.jpg",name:"Respetarte Ecotienda",address:"Calle Matías Perelló nº 9 en el barrio de Russafa, Valencia, Espagne"},{position:[45.4440368,9.156797600000004],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Universo-Vegano-3bbf9ab500c039ebdbfeaf29ea2185e8.jpg",name:"Universo Vegano — Milano Porta Ticinese",address:"Ripa di Porta Ticinese, 49 (zona Navigli) – 20143 Milano"},{position:[45.6602652,8.792762100000004],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Universo-Vegano-3bbf9ab500c039ebdbfeaf29ea2185e8.jpg",name:"Universo Vegano — Gallarate",address:"Via Giuseppe Verdi, 3, 21013 Gallarate VA, Italie"},{position:[45.4796256,9.188670000000002],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Universo-Vegano-3bbf9ab500c039ebdbfeaf29ea2185e8.jpg",name:"Universo Vegano — Milano Solferino",address:"Via Solferino, 41, 20124 Milano"},{position:[45.45357,9.180349999999976],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Primus-5461954b410b44dd6f208741c82eef74.jpg",name:"Primus Pancafe",address:"Corso di Porta Ticinese, 100, 20123 Milano"},{position:[48.8295345,2.356938899999932],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Comme-au-Vietnam-04debbffb03277ddbf57281dc78b1edf.png",name:"Comme au Vietnam",address:"195, avenue de Choisy 75013 Paris"},{position:[45.7474997,4.838835399999994],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Against-the-grain-143130ee917021ef3f66a302b57cca31.jpg",name:"Against the grain",address:"135 rue Sébastien Gryphe, 69007 Lyon"},{position:[43.2974122,-0.36536739999996826],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Rocky-Road-Burgers-4ddf7663049d104fb5e2b2c8632c2d75.jpg",name:"Rocky Road Burgers",address:"11-13 Cours Bosquet, 64000 Pau"},{position:[47.23557599999999,6.03092879999997],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Toyodoo-f0959903edc981b6e39063ae9bb077db.jpg",name:"Toyodoo",address:"16 Rue de Pontarlier 25000 Besançon"},{position:[48.8712052,2.360188600000015],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/IVLO-b043a09ca657d2cbe3f4f8efb0ae6489.jpg",name:"IVLO",address:"10 rue Lucien Sampaix 75010 Paris 10ème\t"},{position:[43.7417413,7.429692499999987],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Eqvita-bd64f31219a882b6ff356a51014becaa.jpg",name:"Eqvita",address:"7, rue du Portier, Monte-Carlo, Monaco"},{position:[48.8731811,2.345241900000019],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Supernature-3ad5b10f68de01609da1945f2fc5f0c2.png",name:"Supernature",address:"15,12 &, 8 Rue de Trévise, 75009 Paris"},{position:[-12.1140815,-77.0324736],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Raw-Café-cd3236768d76cc5878d1ba7e32af8d1f.jpg",name:"Raw Café",address:"Calle Independencia 587, Miraflores, LIMA, PERÚ"},{position:[48.8769204,2.3069132000000536],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Hotel-du-Collectionneur-0e23ca462d04dd2f697af68542df9e72.jpg",name:"L'Hôtel du Collectionneur",address:"51 – 57 rue de Courcelles 75008 Paris"},{position:[49.1204183,6.168910099999948],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Cigkoftem-1254350d83df2932ee285bb5da749130.jpeg",name:"Cigkoftem — Metz",address:"34 Rue Du Pont Des Morts 57000 Metz"},{position:[48.8722189,2.332816399999956],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/04/Opéra-Restaurant-e609473cf0f01f03ae0702c4ece9ab27.jpg",name:"L'Opéra restaurant",address:"Palais Garnier, 1 Place Jacques Rouché, 75009 Paris"},{position:[44.8516869,-0.5747883000000229],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/03/Gourmandyz-2bf307108cc9a05bb93a824d30c74f58.jpg",name:"Gourmandy'z Biscuits",address:"1 Rue de la Course, 33000 Bordeaux"},{position:[-45.8753785,170.50200270000005],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/03/Dog-with-two-tails-d980b2aed22f406511e7a175e6f167e2.jpg",name:"Dog with two tails",address:"25 Moray Pl, Dunedin, 9016, Nouvelle-Zélande<br />\n"},{position:[43.5990325,1.4428256999999576],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/03/Invita-Fresh-Food-294580abd794e2f46c856f3213b262ff.png",name:"Invita Fresh Food",address:"24 Rue des Paradoux, 31000 Toulouse"},{position:[48.8750127,2.351589800000056],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/03/Biocoop-Dada-15090e2b67ab1bb5b63fcca29b0eccef.jpg",name:"Biocoop Dada",address:"29 Rue de Paradis, 75010 Paris"},{position:[50.8207448,4.361062700000048],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/03/La-Grainerie-d80b06cb4beb871da47484f04f88fca4.png",name:"La Grainerie",address:"Rue de Tenbosch 112, 1050 Bruxelles, Belgique"},{position:[48.8925189,2.31855070000006],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/03/Super-Vegan-710297034e89b69c39a762ea6efd9a0d.jpg",name:"Super Vegan",address:"12 Rue Berzélius, 75017 Paris"},{position:[44.850787,-0.571808400000009],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/03/Le-Ptit-Chez-Moi-9b65f8c908273c315b2010a6c2a9ee6f.jpg",name:"Le P'tit Chez Moi",address:"46 rue Notre Dame, 33000 Bordeaux"},{position:[48.8818549,2.3479412000000366],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/03/Ara-Chocolat-0d734bcb292727af576b49fbab3a36bd.jpg",name:"Ara Chocolat",address:"54 Rue de Dunkerque, 75009 Paris"},{position:[48.8533654,2.4030017000000043],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/03/Namobio-a3b3d407ae37557b59e25d8a4235ad73.png",name:"Namobio",address:"15 Rue de la Réunion, 75020 Paris"},{position:[48.87395950000001,2.38773029999993],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/03/Lotus-Vietnam-2026da896d53c655660ff5d315a5bdc8.png",name:"Lotus Vietnam",address:"348 rue des Pyrénées, 75020 Paris"},{position:[48.85188660000001,2.3432582000000366],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/03/Holy-Planet-b11c2cc6b56b8459ebe6312a9a726cb1.jpg",name:"Holy Planet",address:"6 rue Serpente, 75006 Paris"},{position:[48.8685579,2.390697300000056],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/03/Mezze-du-chef-27ab6e5fdb844673c2117bc1234d9fe1.jpg",name:"Le Mezzé du Chef",address:"80 rue de Ménilmontant, 75020 Paris"},{position:[45.76676880000001,4.836716499999966],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/03/Jardin-de-Berthe-6f6cfcaa42970e610db9920bb7a66f6c.jpg",name:"Jardin de Berthe",address:"21 rue de l'arbre sec, 69001 Lyon"},{position:[38.7147599,-9.149149399999942],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/03/Restaurante-Terra-cdaa97c1edb0b3db6df621e01dc38080.jpg",name:"Restaurante Terra",address:"R. da Palmeira 15, 1200-311 Lisboa, Portugal"},{position:[48.5843171,7.748378399999979],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/03/Vert-Carotte-a02340c7f5cf4b1b26f80690de44ee16.jpg",name:"Vert Carotte",address:"26 passage de la mesange 67000 Strasbourg"},{position:[48.9045783,2.329395599999998],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/03/Leonie-c768e55b436a08d16aea30cade112f53.jpg",name:"Léonie",address:"16 rue Raspail, 93400 Saint-Ouen"},{position:[45.7528665,4.854293699999971],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/03/Elfie-505291fc336acf359b788a0a52c725de.jpg",name:"Elfie",address:"66, avenue Felix Faure 69003 Lyon"},{position:[47.8991593,1.906665299999986],icon:"http://www.vegan-mafia.com/wp-content/themes/businessfinder/design/img/default-post-image.jpg",name:"Au bon marché",address:"12 Place du châtelet, 45000 Orléans"},{position:[43.6117398,3.878945799999997],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/02/Capture-d’écran-2016-02-06-à-22.38.36-e2e2618035545a1348986437b6405312.png",name:"La Mezzanine",address:"39 Rue de l'Aiguillerie 34000 Montpellier"},{position:[48.8628544,2.3495186000000103],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/02/Capture-d’écran-2016-02-06-à-22.34.48-1a453f6e75e4d6cc73e83d50ef3ecdff.png",name:"Ravioli Nord Est",address:"115 Rue Saint-Denis 75001 Paris"},{position:[43.5981845,1.4442781999999852],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/02/Capture-d’écran-2016-02-06-à-22.32.32-45277fded74540e55d3ec6ab4db729a2.png",name:"Batbat",address:"8 Rue des Filatiers, 31000 Toulouse"},{position:[43.2996407,5.384010799999942],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/02/Capture-d’écran-2016-02-06-à-22.20.49-4a614b09de428a458f08562d455bc0d6.png",name:"Les Ondines",address:"19 rue St-Bazile 13001 Marseille"},{position:[51.03530259999999,2.379811199999949],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/02/Capture-d’écran-2016-02-06-à-22.14.35-e4963f18f3401ab355a416b3232dc02e.png",name:"Green is better",address:"35 Rue du Président Poincaré, 59140 Dunkerque"},{position:[49.182863,-0.37067899999999554],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/02/Capture-d’écran-2016-02-06-à-22.11.34-bb2b3b2bd4bb98d5ac9b8835ea4460dc.png",name:"Un sourire dans l'assiette",address:"Caen<br \/>\n"},{position:[50.6202627,3.0520354000000225],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/02/Capture-d’écran-2016-02-06-à-22.06.03-c1d924046831bef4df9066be28bfc4e6.png",name:"Cantine vegan du Centre Culturel Libertaire",address:"4 rue de Colmar 59000 LILLE"},{position:[45.8238121,4.7920345],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/02/Capture-d’écran-2016-02-06-à-21.55.39-22669c551ef80e5e6c9bc6ff6ec32c37.png",name:"Cigkoftem — Lyon",address:"17 avenue Jean Jaurès, 69003 Lyon"},{position:[48.8432286,2.3853430000000344],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/02/Capture-d’écran-2016-02-06-à-21.49.34-f9dd90d4a0f2ac2562c2a9ad7924f10c.png",name:"PIGUT Stages gourmands de cuisine bio végétale",address:"Rue de Charenton 75012 Paris"},{position:[47.3234548,5.036514500000067],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/01/Capture-d’écran-2016-01-31-à-20.13.12-88a56bac54577417c6080e59ebd96ddc.png",name:"Lulu Graine d'un Monde",address:"12 Rue de la Poste, 21000 Dijon"},{position:[50.6379514,3.0694588000000067],icon:"http://www.vegan-mafia.com/wp-content/uploads//2016/01/Houe-1dce986b17a90dc3a89db440fe5bc6dc.jpg",name:"Houé",address:"15 Rue du Vieux Faubourg 59000 Lille"},{position:[49.1220943,6.177954799999952],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-22-à-20.29.18-5c85268477d85dd2ffeb50f8fb4c05a9.png",name:"Les petits zozios",address:"35 rue des Jardins, 57000 Metz"},{position:[48.827477,2.3256708539454],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-22-à-20.24.12-1e23908151b2e28d102b35fa09981e72.png",name:"Caprice café",address:"12 avenue Jean Moulin, 75014 Paris"},{position:[42.6983003,2.8962433000000374],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-22-à-20.16.15-28d475d457287e4b72143f57d7b82e43.png",name:"La révolution verte",address:"5 Rue du Théâtre, 66000 Perpignan"},{position:[43.61173360000001,3.8781593999999586],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-22-à-20.10.02-ded74c3cf836cdd0d09d814cee3e4db7.png",name:"Les demoiselles de Montpellier",address:"2, rue de la Carbonnerie, 34000 Montpellier"},{position:[44.620909,4.389862999999991],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-22-à-20.04.04-56224e69a6fac4a9776f08b2a1e224b8.png",name:"La pause verte",address:"Aubenas"},{position:[47.0842523,2.398937599999954],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-22-à-19.52.09-f56bf62f7b345bb3f01036aa62552d2e.png",name:"Les trois cuillères",address:"38 rue Bourbonnoux 18000 Bourges"},{position:[47.7468644,7.3336289999999735],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-22-à-19.43.42-d8a3c4919e5012fe3efd1f6b7cb9a619.png",name:"BIOfresh",address:"36 rue de l'arsenal 68100 Mulhouse"},{position:[48.8811256,2.312641900000017],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-22-à-19.40.39-0e30119dbf6139f1d8d38fd174c6201c.png",name:"Rimal",address:"94 bd Malesherbes, 75017 Paris"},{position:[43.7039464,7.265218600000026],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-22-à-19.36.14-af0bb689b92bf405acae954098efe456.png",name:"Alounak",address:"3, rue Alsace Lorraine, 06000 Nice"},{position:[48.8283773,2.3261454999999387],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-22-à-19.30.19-8944bd51300b3a5c461a0c19fe8dac8e.png",name:"L'éphémère",address:"228 Avenue du Maine, 75014 Paris"},{position:[50.624249,3.0644181999999773],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-22-à-19.23.51-7fd2dcf0746f2115f85cff2278323d20.png",name:"Liquium",address:"71 Rue Jeanne d'Arc, 59000 Lille"},{position:[48.8629889,2.3640720999999303],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-22-à-19.07.39-b4e6ec1038b5164c3151392ab1f9cdbe.png",name:"Ob-La-Di Café",address:"54 rue de Saintonge, 75003 Paris"},{position:[47.394694,0.6829205000000229],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-22-à-18.59.47-18f2624ff4542469e4468b0825229af9.png",name:"Habibi 2.0",address:"100 rue du commerce 37000 Tours"},{position:[49.4978279,0.11168050000003404],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-22-à-18.51.07-efd3c494d964f9696b0b5ec6705ec6fb.png",name:"Casse-Noisette",address:"92 rue Docteur Vigne 76600 Le Havre"},{position:[47.8985272,1.9074282999999923],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-07-à-23.35.30-59ed0942d4dc03eafaf06a3b20528f12.png",name:"Oh Terroir (version Fast Good)",address:"3 rue des Halles 45000 Orléans"},{position:[49.107342,6.179083499999933],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-07-à-23.30.55-2d400606a5bec9b71034060589f98cdb.png",name:"Le GREEN se met au Vert",address:"24, avenue Francois Mitterrand 57000 Metz"},{position:[48.88816809999999,2.3624482999999827],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-07-à-23.18.14-ecb6a658d4bcf22317c170dda54b9581.png",name:"Les Petites Gouttes",address:"12 esplanade Nathalie Sarraute, 75018 PARIS"},{position:[48.8653337,2.350294500000018],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-07-à-21.08.49-726a8671e584791a74fecbc8b6482d8c.png",name:"Twinkie",address:"167 Rue Saint-Denis, 75002 Paris"},{position:[50.4366525,30.52031110000007],icon:"http://www.vegan-mafia.com/wp-content/themes/businessfinder/design/img/default-post-image.jpg",name:"I Live Coffee",address:"Esplanadna St, 32, Kiev, Ukraine"},{position:[49.2572048,4.031408599999963],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-07-à-20.50.37-625d6160f255be04f017e19f9feea86f.png",name:"Chez Lou",address:"4 rue de Pouilly, 51100 Reims"},{position:[45.9040336,6.1303067000000055],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-07-à-20.35.15-dfbbba6c350be00ddf88d438475de0e1.png",name:"Granny Smith",address:"4, Rue Louis Revon, 74000 Annecy"},{position:[50.62750570000001,3.0621737999999823],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-07-à-20.20.43-367aa9c26781b27db94d8ab6edd0c386.png",name:"Wally's coffee",address:"19 place Philippe Lebon, 59000 Lille"},{position:[45.591055,4.0725932000000284],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-07-à-20.06.07-d240f5c08c569edebedce7f64692c9e1.png",name:"Aux idées reçues",address:"15 rue de st antheme 42600 moingt (Monbrison)"},{position:[43.96010709999999,4.723457999999937],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-07-à-19.48.37-ef313a33aca7e1f9de57c4c913adc38c.png",name:"Ooh la la Obanyaki",address:"Vaucluse, Gard, Hérault"},{position:[48.8487257,2.3402840999999626],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-07-à-14.38.31-aa669745595b4b5368b85ca9e8dfc926.png",name:"Furahaa Candy",address:"44, rue Monsieur le Prince 75006 Paris"},{position:[48.8790612,2.3447297000000162],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/11/Capture-d’écran-2015-11-07-à-14.28.46-19c54f874f25742b5625230112f44a00.png",name:"Le Potager de Charlotte",address:"12 Rue de la Tour d'Auvergne, 75009 Paris"},{position:[48.8671055,2.3325439000000188],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/10/Capture-d’écran-2015-10-28-à-23.18.17-e177722ba6e863adf2d87d895143dff2.png",name:"Terra Culinaria Gastronomie Végétale",address:"36 Place du Marché Saint Honoré 75001 Paris"},{position:[50.630458,3.050794699999983],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/10/Capture-d’écran-2015-10-28-à-22.57.57-8958080130cb01c1d54bae472eb6d333.png",name:"Pizza Jazz",address:"56 rue des Stations, 59000 Lille"},{position:[50.645516,5.577735100000041],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/10/Capture-d’écran-2015-10-28-à-22.49.21-09ad0bc8755e426f429a70ebe19cbb12.png",name:"Bo Bun",address:"19-21 rue de la Boucherie Liège, Belgique"},{position:[48.8509611,2.3325241000000005],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/10/Capture-d’écran-2015-10-28-à-22.27.59-30bb0f406382c85c5574b510773c9cdc.png",name:"Yoom — Maison de la Chine",address:"76 rue Bonaparte 75006 Paris"},{position:[48.8736475,2.332238299999972],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/10/Capture-d’écran-2015-10-28-à-22.27.59-30bb0f406382c85c5574b510773c9cdc.png",name:"Yoom — Galeries Lafayette",address:"40 boulevard Haussmann 75009 Paris"},{position:[48.8779067,2.339644099999987],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/10/Capture-d’écran-2015-10-28-à-22.27.59-30bb0f406382c85c5574b510773c9cdc.png",name:"Yoom — Rue des Martyrs",address:"20 rue des Martyrs 75009 Paris"},{position:[48.88377329999999,2.321624799999995],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/10/Capture-d’écran-2015-10-28-à-22.27.59-30bb0f406382c85c5574b510773c9cdc.png",name:"Yoom — Batignolles",address:"59 rue des Dames 75017 Paris"},{position:[48.8534332,2.3379712999999356],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/10/Capture-d’écran-2015-10-28-à-22.27.59-30bb0f406382c85c5574b510773c9cdc.png",name:"Yoom — St Germain des Prés",address:"5 rue Grégoire de Tours 75006 Paris"},{position:[46.5138205,6.617969600000038],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/10/Capture-d’écran-2015-10-28-à-22.13.53-4aee8cfd609f2c2c82f7709e6c2e84cd.png",name:"Veganopolis Café",address:"Avenue des Bains 4C, 1007 Lausanne, Suisse"},{position:[48.8643649,2.341499399999975],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/10/Capture-d’écran-2015-10-28-à-21.53.46-2bb7b7b33f2f52edc4b5f6d5a8aa05ca.png",name:"La guinguette d'Angèle",address:"34 rue Coquillière 75001 Paris"},{position:[48.8521295,2.340991499999973],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/10/Capture-d’écran-2015-10-28-à-21.46.07-ca6e75eb924f4ccf39b9d62b1e7258e8.png",name:"La vie en fruits",address:"116 Boulevard Saint-Germain, 75006 Paris"},{position:[48.8554002,2.381553800000006],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/10/BR-5aad06f5f02379fa6e01cd68f61a868a.jpg",name:"Bears & Raccoons",address:"21 Rue Richard Lenoir, 75011 Paris"},{position:[-17.5516251,-149.5584758],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/Jam-b9a0948982369a8604555273c8ca7d1b.jpg",name:"Le J'Âm",address:"10, rue Charles Vienot - BP 42430, Papeete"},{position:[48.5826194,7.7390764916568],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/FiorDiPizza-5545f6173be0b60b75fca6c33102e8c5.jpg",name:"Fior di pizza",address:"2 Grand Rue, 67000 Strasbourg"},{position:[48.8733032,2.3647123000000647],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/CarmenRagosta-a4934d4a1b190a5efd5e82aea2eaff30.jpg",name:"Carmen Ragosta",address:"8 rue de la grange aux belles 75010 Paris"},{position:[45.7521535,4.840260899999976],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/FahimaTandoori-3892dbaae759c0cc14664d3a41241341.jpg",name:"Fahima Tandoori",address:"36 Rue de Marseille, 69007 Lyon"},{position:[35.6633635,139.71274979999998],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/PureCafe-921097f9e8e5472dc5e4389ed040195a.png",name:"Pure Cafe",address:"5 Chome-5-２１ Minamiaoyama, Minato, Tokyo 107-0062, Japon"},{position:[48.82747699999999,2.3255344000000377],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/CapriceCafé-6cd4d42cc343d7cf4441fdf7249d01a5.png",name:"Caprice Café",address:"12 Avenue Jean Moulin, 75014 Paris"},{position:[48.8484638,2.3781980999999632],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/BoucherieVégétarienne-ebda19b4f57c6168d3d8928f355900cc.jpg",name:"La boucherie végétarienne",address:"10 place d'aligre, 75012 Paris"},{position:[48.86782909999999,2.343478399999981],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/LeSo-8881f7f334b060f9aa84c2d2b451f57e.jpg",name:"Le So",address:"93 Rue Montmartre, 75002 Paris"},{position:[16.1302222,-61.593810899999994],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/PasseMic-a39191e83373484d6ac98a480369fc29.jpg",name:"Passe le mic",address:"Chemin des Mineurs, Goyave, Guadeloupe"},{position:[43.6128233,3.876791899999944],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/LaCoutinelle-eba49ae4d130b6c3fa9a2fb7a26c5c1e.png",name:"La Coutinelle",address:"25 rue de l'universit&eacute; 34070 Montpellier"},{position:[16.265,-61.55099999999999],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/SmoothSea-d82f930eed63d2d8f113fcb7468513fb.png",name:"Smooth'Sea",address:"Rue Beno&icirc;t Cassin, Les Saintes (commune de Terre-de-Haut), Guadeloupe"},{position:[16.265,-61.55099999999999],icon:"http://www.vegan-mafia.com/wp-content/themes/businessfinder/design/img/default-post-image.jpg",name:"Snack",address:"Rue Th&eacute;odore Samson, Les Saintes (commune de Terre-de-Haut), Guadeloupe"},{position:[16.265,-61.55099999999999],icon:"http://www.vegan-mafia.com/wp-content/themes/businessfinder/design/img/default-post-image.jpg",name:"Escale Créole",address:"419 Route du Bois-Joli, Les Saintes (commune de Terre-de-Haut), Guadeloupe"},{position:[48.0741097,7.356944500000054],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/100%-bar-à-jus-e0399102d2f6e22b5fc03d4f9cc5179d.jpg",name:"100% le bar à jus",address:"2 rue Saint Jean 68000 Colmar"},{position:[44.08851,-1.3131465000000162],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/Psychedelice-1f83d4edbd8bbfeb725ad79c5251a3b6.jpg",name:"Psychédélice",address:"1003 avenue de l'oc&eacute;ean, 40170 Contis Plage"},{position:[48.8750843,2.3484588999999687],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/Eatme1-a15a6e5aa86b5b1b506cc0aacc9d0ab7.jpg",name:"Eatme — Poissonnière",address:"58 Rue du Faubourg Poissonni&egrave;re, 75010 Paris, France"},{position:[48.8739998,2.3037233000000015],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/Eatme1-a15a6e5aa86b5b1b506cc0aacc9d0ab7.jpg",name:"Eatme — Washington",address:"35 Rue de Washington, 75008 Paris, France"},{position:[48.8715061,2.3215324000000237],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/Eatme1-a15a6e5aa86b5b1b506cc0aacc9d0ab7.jpg",name:"Eatme — Anjou",address:"29 Rue d'Anjou, Paris, France"},{position:[48.8667452,2.3444887000000563],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/Eatme-118368d2815d805806690ea4db09a599.jpg",name:"Eatme — Montorgueil",address:"38 Rue L&eacute;opold Bellan, 75002 Paris, France"},{position:[48.87369839999999,2.3480606000000535],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/FéeNature10-6da0c9df4315dd12dc771a42c7cf2ac2.png",name:"Fée Nature — Paris 10",address:"40 bis, rue du faubourg Poissonni&egrave;re 75010 Paris"},{position:[48.866398,2.343939999999975],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/FéeNature2-545ee6552f711df2c7b9b253e657fd74.png",name:"Fée Nature — Paris 2",address:"69 rue d'Argout 75002 Paris"},{position:[46.121399,3.42154000000005],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/KeksCafé-1a5c2ea0d07724e0202add53fe2b45bf.png",name:"Keck's Café",address:"16 Rue d'Allier, 03200 Vichy"},{position:[48.8649903,2.375336500000003],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/Slize-0f7f480ca1522ac7b07a71f8046071b4.jpg",name:"Slize",address:"52 avenue de la R&eacute;publique, 75011 Paris"},{position:[48.85221010000001,2.3714182999999593],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/VegeSaveurs-2fe5b113ab39a166a8333c64b0deb4e8.jpg",name:"Végé saveurs",address:"29 rue de Charenton 75012 Paris"},{position:[43.5290148,5.447942900000044],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Bread-hero-d830bdcd77a26d63bb0a38aae11c881a.jpg",name:"Le Pain Quotidien — Aix en Provence",address:"5 place Richelme, 13100 Aix en Provence"},{position:[-23.5581675,-46.67939799999999],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/BaraoNatural-26caf4cbc7274175ad0858d3699ff831.png",name:"Barão Natural",address:"Rua Jo&atilde;o Moura, 861. Pinheiros. S&atilde;o Paulo - SP. Brasil"},{position:[48.5835936,7.742047299999967],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/cigkoftem-f86ba21a5f02368cef23e6519bf050c1.jpg",name:"Cigkoftem — Strasbourg",address:"3 Place du Vieux March&eacute; aux Vins, 67000 Strasbourg"},{position:[48.5826194,7.738940700000057],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/Lacocina-533d1ce21780d2505784e9fbf0b5e119.jpg",name:"Lacocina",address:"2 Grand Rue, 67000 Strasbourg"},{position:[47.0187693,-2.2970560999999634],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/IleenIle-0b314e043de77f6c1156a7ee239d476c.jpeg",name:"D'île en île",address:"104 avenue Mourain, l'Herbaudi&egrave;re, Noirmoutier"},{position:[43.2920007,5.383589499999971],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/LaBaieDragon-1874cceaf63bcb65388f9119b0f249f0.jpg",name:"La baie du dragon",address:"8 Place Notre Dame du Mont, 13006 Marseille"},{position:[42.2685623,2.960196300000007],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/Integral-22d6a0f6cd505af477a0c7a58ee9ad83.jpg",name:"Integral",address:"c\/La Jonquera, 30 Figueres, Espagne"},{position:[41.9750089,2.822330700000066],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/veggana-f1db08e4c5d32f6d672254561ef24f1a.jpg",name:"Veggana",address:"c\/ Rutlla, 108 Girona, Espagne"},{position:[41.9832309,2.8245881999999938],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/B12-c2a3442cba045bdcd400f4ba977e09dc.jpg",name:"B12",address:"Pla&ccedil;a del vi, 11 Girona, Espagne"},{position:[41.9840818,2.8217054000000417],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/bionectar-0f3bc03344d21bfd57cab3795b118ea2.jpg",name:"Bionectar",address:"Carrer Eiximenis, 8 Girona, Espagne"},{position:[48.88938230000001,2.3467008999999734],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/SuperNaturelle-bfc2bf52468b65c3e363e4472bf3a5fc.jpg",name:"Super Naturelle",address:"34 Rue Ramey, 75018 Paris"},{position:[52.5062708,13.46531129999994],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/Laauma-f653ebccd70489bac0b09a38605c5be1.jpg",name:"Laauma",address:"Sonntagstra&szlig;e 26, 10245 Berlin, Allemagne"},{position:[52.5078805,13.45003029999998],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/TheBowl-b1df9d706aa92f773e598912bf728dc4.jpg",name:"The Bowl",address:"Warschauer Str. 33, 10243 Berlin, Allemagne"},{position:[48.8669756,2.3372008999999707],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/Kapunka-c5e3ee898e2b699c3a96060367730ab1.png",name:"Kapunka",address:"59 Rue de Richelieu, 75002 Paris"},{position:[48.8518726,2.3487846000000445],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/AuxArts-4c21a5de21bb5badfe23021ffbe2cd10.jpg",name:"Aux Arts etc",address:"15 Quai de Montebello, 75005 Paris, France"},{position:[48.87338889999999,2.342957100000035],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/NicksPizza-3114ba609075944000a1cf58897dae5d.jpg",name:"Nick's Pizza",address:"24 Rue du Faubourg Montmartre, 75009 Paris"},{position:[48.860764,1.4544869999999719],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/AnethCiboulette-918f4d3262b3cf2cc110f38b70d652c1.jpg",name:"Aneth et Ciboulette",address:"2 boulevard des 4 Arpents ZA le D&eacute;bucher 28260 Anet"},{position:[48.83968850000001,2.35583280000003],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/CrepeJoie-18d086d7853ec588313889c4a6f787f1.jpg",name:"Crêpe de la joie",address:"4 rue du Fer à Moulin 75005 Paris"},{position:[47.2059528,-1.5565034999999625],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/Capture-d’écran-2015-09-10-à-01.29.22-c431c85cc6a18b146b8ceb1f47325fc6.png",name:"Terroirs Bio",address:"9 Rue Alain Barbe Torte, 44000 Nantes"},{position:[48.8570739,2.3659651000000395],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/CaféChinois-af15ef50ee54c8a5bdf9c65aa3391d77.jpg",name:"Le café chinois",address:"7 Rue de B&eacute;arn, 75003 Paris"},{position:[52.5090912,13.46599029999993],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/AlmodóvarHotel-dd8682d23979b6dd286b7bfe39e7d095.png",name:"Almodóvar Hotel",address:"Boxhagener Str. 83, 10245 Berlin, Allemagne"},{position:[48.853568,2.340033500000004],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/CreperieStGermain-c7473bf29ac6b8922fe6c786fb04a383.jpg",name:"Crêperie Saint Germain",address:"33 rue St Andr&eacute; des Arts 75006 Paris"},{position:[48.8641804,2.3362478999999894],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/AntiCaféLouvre-f544defd2a760e9e05123eecc46be40f.jpg",name:"AntiCafé — Louvre",address:"10 rue de Richelieu 75001 Paris"},{position:[48.8254416,2.3665593000000626],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/AntiCaféInnov-be7ced77d8f79d9ebb5f0177a4202243.jpg",name:"Anticafé — Olympiades",address:"59 Rue Nationale 75013 PARIS"},{position:[45.77952519999999,4.834411100000011],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/09/ColorVegan-f488071db890e7cf333170f29b024787.jpg",name:"Color Vegan",address:"23 rue pailleron 69004 Lyon"},{position:[50.64660259999999,5.576818099999969],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/11054377_794781867272637_9130063834626598592_o-212df7289fa84c958d74a5dcf1a718be.jpg",name:"Goveg vegan shop",address:"Rue Hors-Ch&acirc;teau 14, 4000 Li&egrave;ge, Belgique"},{position:[47.2164303,-1.5560659000000214],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/TresorsPartagés-625b61b55426af732f8e06a189405928.jpg",name:"Trésors Partagés",address:"10 Rue des 3 Croissants, 44000 Nantes, France"},{position:[43.923248,4.5269570000000385],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/clhrc-banierenew2-f3916d2c9f3edb8b002fdd2e4629e98c.jpg",name:"Les Pierrafeu",address:"Chemin de Ledenon, 30210 Saint-Bonnet-du-Gard, France"},{position:[48.8795607,2.39215020000006],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/cropped-logo-test-1-41-ec01ba7f8be96223fb64bf68c7dfbdf7.png",name:"Paint It Green Vegan",address:"78 rue Compans, Paris XIX"},{position:[43.59167500000001,1.433854999999994],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/CriCarotte-c388c0cc85d19c7338ab7413fc790a95.jpg",name:"Le cri de la carotte",address:"304 Avenue de Muret, 31300 Toulouse, France"},{position:[48.86785,2.3567849999999453],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/un_monde_vegan_magasin_paris31-e5d3d67f813f85056fc42b91c91fb6e2.jpg",name:"Un Monde Vegan",address:"64 Rue Notre Dame de Nazareth, 75003 Paris, France"},{position:[48.904802,2.3220039999999926],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/cojean-079899c30cc5b5b19a4950524c5fb5bc.jpg",name:"Cojean — Saint Ouen",address:"150 Boulevard Victor Hugo, 93400 Saint-Ouen, France"},{position:[48.5822782,7.743225100000018],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Whatthecake-aed6f3c7676b76ff08d441f3f395ffb8.jpg",name:"What the cake ?",address:"51 Rue du Foss&eacute; des Tanneurs, 67000 Strasbourg"},{position:[48.867677,2.3244770000000017],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Toraya-92dde7c2f00df99576d9b6aca992847d.jpg",name:"Toraya Paris",address:"10 Rue Saint-Florentin, 75001 Paris, France"},{position:[48.863751,2.346375999999964],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/charle10-251a1a25427900911264d0ced02c3975.jpg",name:"Charles Chocolatier",address:"15 Rue Montorgueil, 75001 Paris, France"},{position:[48.8614105,2.380804399999988],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/18214_436132103221324_1685411360335225638_n-21339fc767d357aa62410a0e48195265.jpg",name:"In the Garden",address:"39 Rue Saint-Maur, 75011 Paris, France"},{position:[48.447988,1.4870769999999993],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Restaurant_Chartres_Le-Cloitre-Gourmand_1-283d00f24f7ee5752c9719cd26e1c8e0.jpg",name:"Le Cloitre Gourmand",address:"21 Clo&icirc;tre Notre Dame, 28000 Chartres, France"},{position:[46.579457,0.3393019999999751],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/mc-le-bonheur-est-dans-le-the-e3476d5e9d02afb2594f0d1c58465066.jpg",name:"Le Bonheur est dans le Thé",address:"7 Rue Sadi Carnot, 86000 Poitiers, France"},{position:[48.869021,2.304100999999946],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/RE_13983_4db2ec9a041ca_big-feb26058b9080f82e292bf32dc4de826.jpg",name:"Charbon Rouge",address:"25 Rue Marbeuf, 75008 Paris, France"},{position:[48.860754,2.3670190000000275],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/bd443040-6624-11de-9ddc-9418ad0c9a9a-afc9fce45a74225a92814731065b870c.jpg",name:"Cantine Merci",address:"111 Boulevard Beaumarchais, 75003 Paris, France"},{position:[49.05039800000001,2.0970519999999624],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/CeriseGourmande-7178c57527e5db06839e7164a82c81eb.jpg",name:"La Cerise Gourmande",address:"49 Rue de l'H&ocirc;tel de ville, 95300 Pontoise, France"},{position:[48.898255,2.2821460000000116],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/SoupJuice-5fd94ee439bbbf9569b93ec68cccf28c.jpg",name:"Soup & Juice — Levallois",address:"34 Avenue de l'Europe, 92300 Levallois-Perret, France"},{position:[48.880351000000005,2.326948000000016],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/SoupJuice-5fd94ee439bbbf9569b93ec68cccf28c.jpg",name:"Soup & Juice - Rue d'Amsterdam",address:"55 Rue d'Amsterdam, 75009 Paris, France"},{position:[48.872935,2.2974169999999963],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/SoupJuice-5fd94ee439bbbf9569b93ec68cccf28c.jpg",name:"Soup & Juice — Champs Elysées",address:"133 Avenue des Champs-&Eacute;lys&eacute;es, 75008 Paris, France"},{position:[48.876786,2.330410000000029],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/SoupJuice-5fd94ee439bbbf9569b93ec68cccf28c.jpg",name:"Soup & Juice — Rue de Londres",address:"4 Rue de Londres, 75009 Paris, France"},{position:[48.868764,2.2910620000000113],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/SoupJuice-5fd94ee439bbbf9569b93ec68cccf28c.jpg",name:"Soup & Juice — Kléber",address:"54 Avenue Kl&eacute;ber, 75116 Paris, France"},{position:[48.874342,2.3331080000000384],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/cojean-079899c30cc5b5b19a4950524c5fb5bc.jpg",name:"Cojean — Provence",address:"66 Rue de Provence, 75009 Paris, France"},{position:[48.868288,2.3420079999999643],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/cojean-079899c30cc5b5b19a4950524c5fb5bc.jpg",name:"Cojean — Bourse",address:"121 Rue R&eacute;aumur, 75002 Paris, France"},{position:[48.872631,2.3346990000000005],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/cojean-079899c30cc5b5b19a4950524c5fb5bc.jpg",name:"Cojean — Haussmann",address:"17 Boulevard Haussmann, 75009 Paris, France"},{position:[48.859381000000006,2.3402429999999868],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/cojean-079899c30cc5b5b19a4950524c5fb5bc.jpg",name:"Cojean — Louvre",address:"3 Place du Louvre, 75001 Paris, France"},{position:[48.870432,2.3273360000000594],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/cojean-079899c30cc5b5b19a4950524c5fb5bc.jpg",name:"Cojean — Madeleine",address:"6 Rue de S&egrave;ze, 75009 Paris, France"},{position:[48.853386,2.375917999999956],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/arton1-f7501-068088d67a9e174baddd7c5003225005.png",name:"Le Bar à Soupes",address:"33 Rue de Charonne, 75011 Paris, France"},{position:[48.866689,2.3854730000000473],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/lestrois8-d2f98ebf3a6c74f4bce4b9f845671096.jpg",name:"Les Trois 8",address:"11 Rue Victor Letalle, 75020 Paris, France"},{position:[50.634746,3.060854000000063],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/02-907cb87864078de37e74294e9c25f3b9.jpg",name:"Be Yourself !",address:"2 Square Morisson, 59800 Lille, France"},{position:[53.54571800000001,9.951833999999963],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Konzeptbanner_neu-e25f3503e447f325fdf48efc5fe58168.jpg",name:"Liberty Eiscafé & Bistro",address:"Fischmarkt 11, 22767 Hamburg, Allemagne"},{position:[48.85805,2.3687850000000026],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/IMG_0004-e1408480802923-54cb2f82c248840be675e22abdd91ea0.jpg",name:"Maison Bastille",address:"34 Rue Amelot, 75011 Paris, France"},{position:[48.875761000000004,2.3477699999999686],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/MFK-d68f79b4519fad7da8c8d692421e8346.jpg",name:"My free kitchen",address:"1bis Rue Bleue, 75010 Paris, France"},{position:[48.865338,2.3620819999999867],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/lily-76bc6c9bde73b96c3d0e4f565df7d218.jpg",name:"Lily of the Valley",address:"12 Rue Dupetit-Thouars, 75003 Paris, France"},{position:[48.87351,2.3706520000000637],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/header-366aff3def84c4357e2b25b52d8b32e0.jpg",name:"Lula Lifestyle Shop",address:"216 Rue Saint-Maur, 75010 Paris, France"},{position:[48.869809,2.344701500000042],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Logo-We-Are-Juice-300x300-75fb1dac938d2b929769f039f8bd2d01.png",name:"We Are Juice",address:"34 Rue des Jeuneurs, 75002 Paris"},{position:[43.7742839,11.250562100000025],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/ShakeCafé1-4e3b145558ded1e7476b572a97f85257.jpg",name:"Shake Café",address:"Via degli Avelli, 2, 50123 Firenze, Italie"},{position:[52.51044000000001,13.460843000000068],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/001-45396e9d575ba472d9399de09f451002.jpg",name:"Der Eisbärliner",address:"G&auml;rtnerstra&szlig;e 11, 10245 Berlin, Allemagne"},{position:[52.501052,13.431106999999997],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Eissalon-5116d5e278e255a68ff38390d86bd21c.jpg",name:"Eissalon Tanne B",address:"Eisenbahnstra&szlig;e 48, 10997 Berlin, Allemagne"},{position:[52.541281,13.415170999999987],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Bildschirmfoto-2015-04-02-um-09.01.50-fc555b9ac4c1565d6811960b682eabe9.png",name:"Chaostheorie",address:"Lychener Stra&szlig;e 4, 10437 Berlin, Allemagne"},{position:[50.94072999999999,6.879979999999932],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/o-b347bd26f806ab7613f43214b91a4915.jpg",name:"Pennycakes",address:"Alter Milit&auml;rring 68, 50933 K&ouml;ln, Allemagne"},{position:[51.461741,-0.1132999999999811],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Ms-Cupcake4-11c23a4ac35c799d08824c37a1050d35.jpg",name:"Ms. Cupcake",address:"408 Coldharbour Lane, London SW9 8LF, Royaume-Uni"},{position:[47.214536,-1.5542540000000145],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/BienAimés-6da89e0186517adf9b4a3ccf8c637f1e.jpg",name:"Les bien-aimés",address:"2 Rue de la Paix, 44000 Nantes, France"},{position:[47.2347488,6.031991999999946],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/6362-3bb004b9e6cf1d3a52073b4a32bab786.jpg",name:"Ze Music All",address:"18 Rue Rivotte, 25000 Besan&ccedil;on, France"},{position:[43.293256,5.381930000000011],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo_delicesdeplume-f3e16373456792e0ef7636bf8aeb65ba.jpg",name:"Les Délices de Plume",address:"1 Rue Fongate, 13001 Marseille, France"},{position:[50.633412,3.0681260000000066],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/coffee-makers-lescachotteries-ff93defef433a5e2aeb39d821bc2e96f.jpg",name:"Coffee Makers",address:"151 Rue de Paris, 59800 Lille, France"},{position:[43.614967,3.8769479999999703],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/cafe-noisette-10151a03d73a17de90d75d10127ac8c1.jpg",name:"Café Noisette",address:"21 Boulevard Pasteur, 34090 Montpellier, France"},{position:[45.890158,-72.54517499999997],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Rose_cafe_logo_header9_05-5ab7825437542b4be3f0543aafd02e3d.png",name:"Rose Café",address:"210 Boulevard Lemire Ouest, Drummondville, QC J2B 8A9, Canada"},{position:[49.1842329,-0.36439930000005916],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Pancake-45493cefb79be712a8f7ea20e258d633.jpg",name:"Pancake Night Fever",address:"23 Rue Gemare, 14000 Caen, France"},{position:[48.8532748,2.337111400000026],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Grom-Paris-by-Expat-Edna-d3701f1b801a6d3ddf0aa8695a51e7f6.jpg",name:"Grom",address:"81 Rue de Seine, 75006 Paris, France"},{position:[48.5815328,7.752961599999935],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/BistroChocolat-b9f761644761c52cc7582182c30b8731.png",name:"Bistrot et Chocolat",address:"8 Rue de la R&acirc;pe, 67000 Strasbourg"},{position:[48.869494,2.3286889999999403],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/NakedFood-17a24efad6e381d89c9ddd1ca8fadb21.jpg",name:"Naked Food",address:"22 Rue des Capucines, 75001 Paris, France"},{position:[48.843323,2.349545],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Vegan-Folies-0afe65bb669b800bd994cb0b8eabb4e7.jpg",name:"Vegan Folie's",address:"53-55 Rue Mouffetard, 75005 Paris, France"},{position:[48.110533,-1.678538],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/167690_180745528632904_1281300_n-5159b499e7b2cff5a215605316a55481.jpg",name:"Le Haricot Rouge",address:"10 Rue Baudrairie, 35000 Rennes, France"},{position:[47.6568428,-2.7574101000000155],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/1452042_647522105270973_1081025537_n-206d1ae9e298976896fca93375e16a15.png",name:"L'Entrechoc",address:"15 Place Valencia, 56000 Vannes, France"},{position:[48.835125,2.326726000000008],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Capture-d’écran-2015-09-09-à-00.48.22-91d55eee73ba622dff0aa3e4d2d7a3a4.png",name:"Chocolatitudes",address:"57 Rue Daguerre, 75014 Paris, France"},{position:[48.8619467,2.3799421999999595],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/BobsColdPress-machine-631a2a1c46652522d35e07372d09b840.jpg",name:"Bob's Cold Press",address:"10 Passage Rochebrune, 75011 Paris, France"},{position:[47.215567,-1.558334000000059],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/SugarBlueCafé-81243b38687a44c8cd9bf64b0ed762a7.jpeg",name:"Sugar Blue Café",address:"4 Rue de l'Arche S&egrave;che, 44000 Nantes, France"},{position:[45.1916549,5.730968100000041],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10622830_672032869555208_6986285643267687693_n-972914161c7788d4dab40ee5e4ad5c4d.jpg",name:"La Causerie Pause Bio",address:"3 Rue Jean-Fran&ccedil;ois Hach&eacute;, 38000 Grenoble, France"},{position:[48.582908,7.753349000000071],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/devanture1-4e02f1da36ee4189dc431cb82b91884b.jpg",name:"Gagao",address:"20 Rue des Fr&egrave;res, 67000 Strasbourg"},{position:[48.865666000000004,2.3401830000000245],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo-illustrator-à-jour-pdf-300x212-da69e499190f01a1408998d50162889f.jpg",name:"Juice it",address:"8 Rue de la Vrilli&egrave;re, 75001 Paris, France"},{position:[47.319947,5.0400789999999915],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/303177_286257318067037_1395841673_n-2a4685c33770e9be77e1c7f5ea7b3be6.jpg",name:"La Causerie des Mondes",address:"16 Rue Vauban, 21000 Dijon"},{position:[45.6496192,0.15618449999999484],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/887330_268050080060940_7449643096098760907_o-d0f0104c09aec1e1de679aed3758976b.jpg",name:"Phenix",address:"24 Rue de la Cloche Verte, 16000 Angoul&ecirc;me, France"},{position:[51.54045500000001,-0.14375300000006064],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/cookiesandscream_1374656450-770d79bed3676be6f7875969ea6f4b75.jpg",name:"Cookies and Scream",address:"The Market Hall, Camden Lock Place, London NW1 8AF, Royaume-Uni"},{position:[43.6072981,1.4396692000000257],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/1382278_876182312400115_4708329485357510745_n-90d0d7daebf3039247bd1ee6f25c0335.jpg",name:"The Coffee Pot",address:"41 Rue des Lois, 31000 Toulouse, France"},{position:[48.866107,2.344116999999983],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/L1123264-925de593af88e3d957522fc5b15eb656.jpg",name:"Matamata Coffee Bar",address:"58 Rue d'Argout, 75002 Paris, France"},{position:[43.6022056,1.4507665999999517],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/CaféDen-8be13a8842f672b4bddb11e9a9035ee9.jpg",name:"Café Den Coffeeshop",address:"Centre Commercial Saint Georges, 51 bis, rue du Rempart St Etienne, 31000 Toulouse"},{position:[43.6063534,1.4424552000000403],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/product_5496586b-05d6c89256407689074318e3aead764b.jpg",name:"Colombus Café",address:"10 Rue du Taur, 31000 Toulouse, France"},{position:[47.214483,-1.5555709999999863],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/925CoffeeShop-664a4cf0d4a98227a431ec49bd93210b.jpg",name:"92,5° Coffee Shop",address:"Cours des 50 Otages, 44000 Nantes, France"},{position:[48.833924,2.243644],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Panasia-2719ae09b630d28fc3e20fffb24376ee.jpg",name:"Panasia",address:"130 Avenue Victor Hugo, 92100 Boulogne-Billancourt, France"},{position:[48.875407,2.327146999999968],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo_zumo-d1e3bb053676f3cdeb08fdd2fc80ec53.png",name:"Zumo — Passage du Havre",address:"10 Passage du Havre, 75009 Paris, France"},{position:[48.828526,2.3555939999999964],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo_zumo-d1e3bb053676f3cdeb08fdd2fc80ec53.png",name:"Zumo — Italie",address:"30 Avenue d'Italie, 75013 Paris, France"},{position:[48.872034,2.3605669999999463],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/bobsjuicebarcropped-1ed09c115155967fe9055a3cb98735ba.jpg",name:"Bob's Juice Bar",address:"15 Rue Lucien Sampaix, 75010 Paris, France"},{position:[48.862592,2.3512000000000626],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/anticafe-234be6a6a4400b258751b0d876626817.jpg",name:"AntiCafé — Beaubourg",address:"79 Rue Quincampoix, 75003 Paris, France"},{position:[48.8621494,2.351975799999991],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/IMG_0605-c69113078b9fae5326683f9e99206e74.jpg",name:"Bubble Tea Cup",address:"164 Rue Saint-Martin, 75003 Paris, France"},{position:[48.859837,2.3498260000000073],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Bubbolitas-0b8e559615a954a9b54ac532edf46806.jpg",name:"Bubbolitas",address:"17 Rue Quincampoix, 75004 Paris, France"},{position:[49.253786,4.027135000000044],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/i105405994._msw270h202_szw270h202_-36c15d7ab0271a5a3f51c184b74d08ab.jpg",name:"Le Maharajah",address:"13 Rue de Thillois, 51100 Reims, France"},{position:[48.8828589,2.338175699999965],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/540924_115589718597521_295896944_n-b03a0fc3973c58e98c750068864badb8.jpg",name:"Ayutthaya",address:"5 Rue Houdon, 75018 Paris, France"},{position:[43.298504,5.382814999999937],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo-RVB2-bab58d3a8406f9e470050b2e3c532a4e.png",name:"Green Bear Coffee",address:"17 Rue Glandeves, 13001 Marseille"},{position:[48.582102,7.743210999999975],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/made-in-france-aa612fb5734878dcd23fcf88a0c6fcaf.png",name:"Made In France",address:"26 Rue des Drapiers, 67000 Strasbourg, France"},{position:[48.872728,2.3095479999999498],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo3-ebabe9ffb7bf2bfecc12b6c77afb6590.png",name:"Mitsou",address:"3 Rue du Commandant Rivi&egrave;re, 75008 Paris, France"},{position:[48.825602,2.3614499999999907],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Lao-Lane-Xang-04-26ff78f6a3fd1b0874a1678918505f2c.jpg",name:"Lao Lane Xang",address:"102 Avenue d'Ivry, 75013 Paris, France"},{position:[48.881724,2.364372000000003],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/fond-e70084514a2efb16d8cff1dfec25c773.jpg",name:"le 42",address:"42 Rue Louis Blanc, 75010 Paris"},{position:[43.602995,1.4538009999999986],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo2-8152f53aba87bcce521fc7ecfc689482.png",name:"La Belle Verte",address:"50 Rue d'Aubuisson, 31000 Toulouse, France"},{position:[50.642755,5.573701000000028],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo1-2fa075f54fc6d12cef9823fc590c5dcb.png",name:"Terre Mère",address:"Rue de la R&eacute;gence 21, 4000 Li&egrave;ge, Belgique"},{position:[48.583819,7.742787000000022],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/quinoa-ac3cfc0d02c40423d8e6a15bdee8ada7.png",name:"La Pause Quinoa",address:"33 Rue du Jeu des Enfants, 67000 Strasbourg"},{position:[43.701656,7.269195999999966],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/3458-4270f76f9545b671ede35b1c1a82ff90.jpg",name:"Speakeasy",address:"7 Rue Lamartine, 06000 Nice"},{position:[51.037004,3.7121160000000373],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo-c6edf83b78d9bdd3ed887762ccc09418.png",name:"Lekker Gec",address:"Kon. Maria Hendrikaplein 6, 9000 Gent, Belgique"},{position:[51.053256,3.7303739999999834],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logoh-930d778bd680bc727bb0fa9fc56a1e96.png",name:"Komkommertijd",address:"Reep 14, 9000 Gent, Belgique"},{position:[47.23697689999999,6.028618800000004],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/92267331_o-ef9bc74e7370bee873b2faeb26e05b28.jpg",name:"Basilic Instant",address:"93 Rue des Granges, 25000 Besan&ccedil;on"},{position:[42.696600000000004,2.8835730000000694],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/2005_centre_gerona_ws29395894-2cd1a089fc0227183eaedce40209b65e.jpg",name:"Saveurs Nature",address:"7 Rue Paul Massot, 66000 Perpignan"},{position:[45.7714076,4.83532660000003],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/hiver-230c269a834d1b0b2803d5cc23e01544.jpg",name:"Toutes Les Couleurs",address:"26 Rue Imbert Colomes, 69001 Lyon"},{position:[48.876062000000005,2.348478],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo11-defc5c80a14f19441d337a7c5c52e66c.png",name:"Can Tin(e)",address:"66 Rue du Faubourg Poissonni&egrave;re, 75010 Paris, France"},{position:[48.90524759999992,2.34424742883607],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/898-62ef5f2d7e362625edadf472547b584b.jpg",name:"Red Gold and Green",address:"43 Rue Paul Bert, 93400 Saint-Ouen"},{position:[48.510208999999946,-1.2526921711639716],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/F3QC-mPkdcSFU4aMU3joRt_raaY-9a8515b5328143e9b6475c27a6138071.png",name:"Millefeuilles",address:"Leteurrie, 35420 Saint-Georges-de-Reintembault"},{position:[48.87518699999983,2.3329227288360244],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/menu4-e9b2e39b7f727ccfb8ee34a827a40c5a.jpg",name:"My Bo Bun",address:"73 Rue de la Victoire, 75009 Paris, France"},{position:[44.82898269999984,-0.5743156711639585],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/rise-up-n-shine-94330fb4f40f639613ae99a81ca67cc2.jpg",name:"Rise Up 'N' Shine",address:"49 Cours de l'Argonne, 33000 Bordeaux, France"},{position:[46.188995599999934,6.157282728836095],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/534872-1892560b1cd425c3248d60fcad4205ec.png",name:"Helveg Café",address:"Avenue de Miremont 31, 1206 Gen&egrave;ve, Suisse"},{position:[45.768510399999904,4.831995328836001],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo4-9269836b9266b7defa080b1b07d9d717.png",name:"Le Roi Falafel",address:"30 Rue Palais Grillet, 69002 Lyon"},{position:[48.86640599999985,2.3381447288360278],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/bibliotequeejardinpr-14db514af677fc060fa47bec8f492cac.jpg",name:"Macéo",address:"15 Rue des Petits Champs, 75002 Paris"},{position:[45.75697799999996,4.850896728836005],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo_soline-d8324e8ac1ecc826df8b2448a3be9de7.gif",name:"Soline",address:"89 Rue Paul Bert, 69003 Lyon"},{position:[48.1108079999999,-1.6769652711639083],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/9970_crop_368-207_-6271e4582e14a0c3aa44ca4ee4418cde.jpg",name:"Saint-Germain des Champs",address:"12 Rue du Vau Saint-Germain, 35000 Rennes"},{position:[47.31766399999986,5.034876728836025],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/img5486-702bb6dc74f4456d6cae5bcec662a2b7.jpg",name:"Le Shanti",address:"69 Rue Berbisey, 21000 Dijon"},{position:[48.867543999999846,2.340889728836032],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/liza_1-8f88dbb0a2ba2b3833dd00996288e002.jpg",name:"Liza",address:"14 Rue de la Banque, 75002 Paris"},{position:[48.86304999999991,2.351859728836075],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10304698_10152515658464205_6544880090172222045_n-3663b33f451c4680eb1517685c6b1bc8.png",name:"Vert Midi - Quincampoix",address:"9 Rue aux Ours, 75003 Paris"},{position:[48.87019999999984,2.3421667288359913],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10304698_10152515658464205_6544880090172222045_n-3663b33f451c4680eb1517685c6b1bc8.png",name:"Vert Midi - St Marc",address:"1 Rue Saint-Marc, 75002 Paris"},{position:[48.868745999999874,2.3536737288360428],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/ancombig-df884362aad751ec51a49ab8944e6ba0.jpg",name:"An Com",address:"14 Rue Blondel, 75002 Paris"},{position:[48.86579699999988,2.34709672883605],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/01-9088e0e76b4340e5654b3aedf537b1af.jpg",name:"Monthaï",address:"84 Rue Montorgueil, 75002 Paris"},{position:[48.877408999999794,2.351376728836044],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/165032_103385519836871_60105827_n-e91159397d048729f002277e8dfc624e.jpg",name:"Mussubï",address:"89 Rue d'Hauteville, 75010 Paris"},{position:[48.8661719999999,2.3722157288360677],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/kawaii-cafe1-c0f01b978796871c850a68c2d7193d9d.jpg",name:"Kawaii Café",address:"20 Rue de Nemours, 75011 Paris"},{position:[48.87304399999984,2.3002017288361003],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/kok-ping-panoramique-34168f86e1dd9b8716cb202466ececb1.jpg",name:"Kok Ping",address:"4 Rue Balzac, 75008 Paris"},{position:[48.88976899999991,2.247600728836005],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/348s-6150159245491b03913c69d503f22f57.jpg",name:"Pause",address:"34 Place des Reflets, 92400 Courbevoie"},{position:[48.8374349999999,2.3522937288360026],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/ase_theodros_paris_1247499817-1df1ea2782eeecb1bb7f97e567555654.jpg",name:"Ase Theodros",address:"7 Rue de la Coll&eacute;giale, 75005 Paris"},{position:[48.83323799999987,2.3156177288360595],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/aquarius-paris-53b906c3d017cedabb1a0fdc3c1726c7.jpg",name:"Aquarius",address:"40 Rue de Gergovie, 75014 Paris, France"},{position:[48.84178899999995,2.328055728836034],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/dietetic-shop-c8be667a95c6e51ca7ca18e281e4785e.jpg",name:"Dietetic shop",address:"11 Rue Delambre, 75014 Paris"},{position:[49.182462999999835,-0.3648502711639594],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/restaurant-vegetarien-vegan-normandie-greedy-guts-205-5fec416d17f390456c8e32ff18ca8440.jpg",name:"Greedy Guts",address:"15 Rue de Bras, 14000 Caen"},{position:[48.875246999999796,2.31908872883605],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/1009447_605104562863673_893713315_o-e0a027a7825a4c2009496b19a774e6da.jpg",name:"Graine",address:"7 Place Saint-Augustin, 75008 Paris"},{position:[50.64257999999995,3.0667367288360765],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/carte-2sdt-web-5fbe7e694a2c1cfcf360a4c4765f4dc5.jpg",name:"2 sous de table",address:"56 Rue de Gand, 59000 Lille"},{position:[45.94287299999993,-0.5217412711639327],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/image_028-1d72a9f6493eb359408459c790f887fd.jpg",name:"Carottes et Gingembre",address:"36 Rue des Bancs, 17400 Saint-Jean-d'Ang&eacute;ly"},{position:[51.057739999999924,3.7209580674591503],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/static1.squarespace-191f20e5d569957d999c351a833d193d.jpg",name:"Avalon",address:"Geldmunt 32, 9000 Gent, Belgique"},{position:[50.877116999999735,4.705118067459125],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/temp-LH-homepage_fx_r1_c1-9a75e32c7bea35d9a0906dd9598159e2.jpg",name:"Loving Hut - Leuven",address:"Tiensestraat 65, 3000 Leuven, Belgique"},{position:[48.87034399999977,2.3103210674590855],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/b0078a95e2bc0e827c0b4d0e5d7d84e0986b9f4e_slide1-026244b52f16df4febd7fe09b2906118.jpg",name:"Saï Bobun",address:"9 Rue de Ponthieu, 75008 Paris"},{position:[45.76752099999974,4.831455609786985],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/554469_392683817489298_842999368_n-ec81a280240145b991341106b7658112.jpg",name:"Yaafa",address:"17 Rue d'Alg&eacute;rie, 69001 Lyon"},{position:[49.25717989999998,4.039198409786991],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/193601_458586650853271_1079621512_o-b78e5b669c2ef35e2efa1576a4935ca0.jpg",name:"Le Vert en Couleur",address:"8, place Aristide Briand, Reims"},{position:[48.890659399999834,2.3543215097870416],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/93302994_o-b20a8ba20313f7ff9b2f6784bcebf00c.jpg",name:"Toutofu",address:"25 Rue Ordener, 75018 Paris"},{position:[49.25629279999999,4.025790709786976],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/FoodAvenue20140620_MKB_2769-76337c4d9d866bb7ad7abcb60bf67103.jpg",name:"Food Avenue",address:"77 Place Drouet d'Erlon, 51100 Reims"},{position:[48.89024909999985,2.3418518097869314],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/in-bocca-al-lupo-c21efc4a5dcc84e8b966cf42dde6da0e.gif",name:"In bocca al lupo",address:"14 Rue Francoeur, 75018 Paris"},{position:[48.85614599999997,2.358976609786964],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/2013-09-14-a18a57b564b1cd61fe9c25f6698764f2.jpg",name:"L'Escale du Liban",address:"1 Rue Ferdinand Duval, 75004 Paris"},{position:[48.867837399999694,2.3543099097869344],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo-mano2-en-png11-d73d339930d4b08aceb988cc90f1055f.png",name:"Elgi — St Martin",address:"327 Rue Saint-Martin, 75003 Paris, France"},{position:[48.8623743,2.3781413000000384],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo-mano2-en-png11-d73d339930d4b08aceb988cc90f1055f.png",name:"Elgi — St Ambroise",address:"18 Rue Saint-Ambroise, 75011 Paris, France"},{position:[48.87509599999963,2.3067276097870035],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo-mano2-en-png11-d73d339930d4b08aceb988cc90f1055f.png",name:"Elgi — Haussmann",address:"182 Boulevard Haussmann, 75008 Paris, France"},{position:[48.86913199999964,2.3632546097869636],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo-mano2-en-png11-d73d339930d4b08aceb988cc90f1055f.png",name:"Elgi — République",address:"4 Rue Beaurepaire, 75010 Paris, France"},{position:[48.86567199999974,2.3446376097870143],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo-mano2-en-png11-d73d339930d4b08aceb988cc90f1055f.png",name:"Elgi — Montorgueil",address:"64 Rue Montmartre, 75002 Paris, France"},{position:[48.87409299999963,2.3373066097869923],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo-mano2-en-png11-d73d339930d4b08aceb988cc90f1055f.png",name:"Elgi — La Fayette",address:"26 Rue la Fayette, 75009 Paris, France"},{position:[48.8704851,2.3414877999999817],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo-mano2-en-png11-d73d339930d4b08aceb988cc90f1055f.png",name:"Elgi — Bourse",address:"10 rue saint-marc, 75002 Paris, France"},{position:[48.848684,2.3534576097870286],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/51a898a53b6960.60772043.clandscape_hd-c93538550604f39e7d6bd23571ecb725.jpg",name:"Le Puits de Légumes",address:"18 Rue du Cardinal Lemoine, 75005 Paris, France"},{position:[48.84697800000002,2.351788609787036],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/comptoir-mediterranee-934625ec7c381803ddd533aea85f1e07.jpg",name:"Comptoir Méditerranée",address:"42 Rue du Cardinal Lemoine, 75005 Paris, France"},{position:[48.857205999999906,2.359256609787053],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/img_1364-1e3df3b950af4520d29474b29d654a85.jpg",name:"King Falafel Palace",address:"26 Rue des Rosiers, 75004 Paris"},{position:[50.63086999999968,3.0555716097869663],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/pica-tapas-5a36970c104267a20f2123b90c5df112.jpg",name:"Pica Tapas",address:"117 Rue Solf&eacute;rino, 59000 Lille"},{position:[47.20646399999996,-1.5547213902129897],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Le_Bistrot_de_l_le_2012_V3_blog_Sept_2014-d3a0b69eef9cb206a690277d26326aba.jpg",name:"Le bistrot de l'île",address:"17 Rue la Tour d'Auvergne, 44200 Nantes, France"},{position:[50.636409999999806,3.0589636097870425],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/74980_372324786197841_487460672_n-f0496afccca49664fb9b322ad81bfb34.jpg",name:"Pulp Kitchen",address:"106 Rue de l'H&ocirc;pital Militaire, 59000 Lille"},{position:[48.88448199999969,2.3233096097869748],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/joy-in-food-paris-29486da6020a35e94511c8ea771ea97a.jpg",name:"Joy In Food",address:"2 Rue Truffaut, 75017 Paris, France"},{position:[48.88987299999984,2.339883609786966],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/bannierehomeok1-3web-dd5b7f5fbb7f290eb4b56a78d76cb71d.jpg",name:"Hope café",address:"64 Rue Lamarck, 75018 Paris, France"},{position:[48.87109199999962,2.358278609787021],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo21-3fb9cfada079577dd0ae02781a7f8bc4.png",name:"Allen's Market",address:"33 Rue du Ch&acirc;teau d'Eau, 75010 Paris, France"},{position:[48.863618999999794,2.3488576097870464],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/shapeimage_5-08ccbe7dc1a6880295f9a7c27ffb139a.png",name:"Joe Allen",address:"30 Rue Pierre Lescot, 75001 Paris"},{position:[48.84884800000001,2.3254146097870034],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/tugalik_4602_north_607x-fdfb4569f0398e8008f1778cddd52a44.jpg",name:"Tugalik",address:"29 Rue Saint-Placide, 75006 Paris"},{position:[48.85017800000001,2.377919609787],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/unegazz-ed7a540716e851886d934141a35be18a.png",name:"La Gazzetta",address:"29 Rue de Cotte, 75012 Paris, France"},{position:[48.87992299999961,2.3573526097869717],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/saravanaa-bhavan-183361f42283f2c03faef04f99a3dc76.jpg",name:"Saravanaa Bhavan",address:"170 Rue du Faubourg Saint-Denis, 75010 Paris, France"},{position:[48.85400800000001,2.3357006097869544],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/guen-mai-paris-1335359324-1221c183b5555d03a12d86dce213ba41.jpg",name:"Guen Mai",address:"6 Rue Cardinale, 75006 Paris"},{position:[48.851907000000026,2.348309609786952],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/8050232128_74eef96679-6cf545d74f251a8062d6c1b0cde5c084.jpg",name:"Le Grenier de Notre-Dame",address:"18 Rue de la B&ucirc;cherie, 75005 Paris, France"},{position:[48.844019,2.317425609787051],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo-mgm2-67c37fdb9e46a4e240c35ecab07fb32c.png",name:"Ma grand-mère m'a dit",address:"1 Rue Falgui&egrave;re, 75015 Paris"},{position:[48.86784399999971,2.335283609786984],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/bioburger1-21a99844fb6f4085a62c23219d47f219.jpg",name:"Bioburger",address:"46 Passage Choiseul, 75002 Paris"},{position:[48.8607699999999,2.3454346097869347],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/1005501_388101801317176_387651666_n-9a0f1b0eacebe9b6915e3aa00040c110.jpg",name:"Le Bio d'Adam et Ève",address:"41 Rue Saint Honor&eacute;, 75001 Paris"},{position:[48.860530999999874,2.345315609787008],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/homehaut-25a07f3372a6a9acc4fd3e8e54c4c702.jpg",name:"Saveurs Végét'Halles",address:"41 Rue des Bourdonnais, 75001 Paris"},{position:[48.87712799999962,2.338510609787022],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/1404744261-9c65bfb3ec5ba27717aeff72862e8d95.png",name:"Pousse-Pousse",address:"5 Rue Notre Dame de Lorette, 75009 Paris"},{position:[48.872114999999596,2.365079609787017],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/plan-fr-6e09011c0ebe5f4b6e521926cfb4029d.png",name:"Le Comptoir Général",address:"80 Quai de Jemmapes, 75010 Paris"},{position:[48.86643999999973,2.331540609786998],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Bread-hero-d830bdcd77a26d63bb0a38aae11c881a.jpg",name:"Le Pain Quotidien — Paris St Honoré",address:"18 Place du March&eacute; Saint-Honor&eacute;, 75001 Paris"},{position:[48.86646799999971,2.3470536097870536],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Bread-hero-d830bdcd77a26d63bb0a38aae11c881a.jpg",name:"Le Pain Quotidien — Paris Montorgueil",address:"2 Rue des Petits Carreaux, 75002 Paris"},{position:[48.85378200000001,2.3241876097870318],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Bread-hero-d830bdcd77a26d63bb0a38aae11c881a.jpg",name:"Le Pain Quotidien — Paris Varenne",address:"25 Rue de Varenne, 75007 Paris"},{position:[48.87761679999955,2.3487292097870522],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/icon1b-b4dc81ce54bc45b25b8e99a7b80dd2c2.png",name:"42 Degrés",address:"109 Rue du Faubourg Poissonni&egrave;re, 75009 Paris"},{position:[48.8750249999996,2.3480376097869566],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/landing-pinson_2-ca4834c1f50cb7fbf836bb26421022c5.jpg",name:"Café Pinson — Poissonière",address:"58 Rue du Faubourg Poissonni&egrave;re, 75010 Paris"},{position:[48.86094899999985,2.3542486097869646],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/droppedImage-cd5b1a7f9d603fa047f71f52b9e9a2cd.png",name:"Le Potager du Marais",address:"24 Rue Rambuteau, 75004 Paris, France"},{position:[48.87305599999968,2.362993609787054],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/photo-sol-semilla-0aba5886aecac1e61406b9c9ab32481b.jpg",name:"Sol Semilla",address:"23 Rue des Vinaigriers, 75010 Paris, France"},{position:[48.868088999999685,2.369967609786954],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/1654685_1471331939752609_1359635904_o-5c0acf701f54fe0880f20d288fccac6e.jpg",name:"Soya",address:"20 Rue de la Pierre Lev&eacute;e, 75011 Paris"},{position:[48.8886441,2.320416399999999],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/shapeimage_3-909a8aef01c97e0ce4bc4688feca875c.png",name:"My Kitch'n",address:"82 rue Lemercier, 75017, Paris"},{position:[48.852929,2.3671846097870457],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Cafe-Ginger1s-9a9e6783268da4a527657fc31cc6ba9c.jpg",name:"Café Ginger",address:"9 Rue Jacques C&oelig;ur, 75004 Paris, France"},{position:[48.85984299999988,2.3674696097870083],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/temp-LH-homepage_fx_r1_c1-9a75e32c7bea35d9a0906dd9598159e2.jpg",name:"Loving Hut — Paris",address:"92 Boulevard Beaumarchais, 75011 Paris 11e arrondissement"},{position:[48.881193999999695,2.3136676097869895],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo6-948973a6b7df9ea5ae72d39d31b0f154.png",name:"Mum Dim Sum",address:"14 Boulevard de Courcelles, 75017 Paris"},{position:[48.872043999999626,2.3402246097870147],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/the_chipotle_burrito2x-ecefed1aa6daaae14332fbbf0c57d1b6.jpg",name:"Chipotle Mexican Grill — Montmartre",address:"18-20 Boulevard Montmartre, 75009 Paris"},{position:[48.86377399999972,2.3628876097869806],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/landing-pinson_2-ca4834c1f50cb7fbf836bb26421022c5.jpg",name:"Café Pinson — Forez",address:"6 Rue du Forez, 75003 Paris, France"},{position:[48.864468999999794,2.3543756097869846],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/1517_1-dafb0a9ace84efefd5978cc5e9b88106.jpg",name:"Bob's Kitchen",address:"74 Rue des Gravilliers, 75003 Paris"},{position:[48.84894500000004,2.3680916097870295],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo-gentle-195b68af8a2b8f642ca518226b37027a.jpg",name:"Gentle Gourmet Café",address:"24 Boulevard de la Bastille, 75012 Paris, France"},{position:[48.855493,2.374003609786996],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/blue-elephant-paris-ce430c0094e70739df97c6588aecaada.jpg",name:"Blue Elephant",address:"45 Rue de la Roquette, 75011 Paris, France"},{position:[48.85745099999998,2.358888609786959],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/such-an-atmosphere-4e381f9b247213b8f5ed83b88dd9704e.jpg",name:"L'as du Fallafel",address:"32-34 Rue des Rosiers, 75004 Paris, France"},{position:[48.876993999999655,2.3478516097869715],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10377255_647701425335756_2995519037255351960_n-52e992b3b9065075e99a6b06d329720a.jpg",name:"VG",address:"85 Rue la Fayette, 75009 Paris, France"},{position:[48.861315999999846,2.35804460978693],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo-big-4405f85a13284610b867885cbc91ae98.png",name:"Hank",address:"55 Rue des Archives, 75003 Paris"},{position:[48.853276000000044,2.3414246097870546],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/chez-le-libanais-facade-11c2924806a3dcb1f4ef450309c5fc0c.gif",name:"Chez Le Libanais",address:"35 Rue Saint-Andr&eacute; des Arts, 75006 Paris, France"},{position:[48.85795000000001,2.3461756097869966],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo-texte-central-b384fb58ee84f7b786f1035f2b404f08.jpg",name:"Dernier Bar avant la Fin du Monde",address:"19 Avenue Victoria, 75001 Paris, France"},{position:[48.86690399999968,2.346972609786917],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Restaurant-Bolly-Nan-5-314746aa982a9f3d42834a49aee3f1c6.jpg",name:"Bollynan",address:"13 Rue des Petits Carreaux, 75002 Paris, France"},{position:[48.873318999999675,2.344463609786999],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo18-496d1a4c69e3ad8eeebf45066f9f8e64.png",name:"Vegebowl",address:"3 Rue de la Boule Rouge, 75009 Paris, France"},{position:[48.85785699999996,2.3546596097869497],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Bread-hero-d830bdcd77a26d63bb0a38aae11c881a.jpg",name:"Le Pain Quotidien — Paris Archives",address:"18 Rue des Archives, 75004 Paris, France"},{position:[48.852953000000014,2.3453196097869977],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/maoz-vegetarian-5ee3150bfea82365b91fe28cd8f62cf1.jpg",name:"Maoz",address:"8 Rue Xavier Privas Paris"},{position:[48.85663,2.3581229999999778],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/1982142_679795628747268_1780607677_n-13b721170afdf30c55909640c9bfe3cc.jpg",name:"Don's",address:"5 Rue des Ecouffes, 75004 Paris, France"},{position:[49.497828,0.11167999999997846],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/696364-c6e86a90c4bf02c7014437c08bf5bc32.jpg",name:"Épices et tout",address:"92 Rue Docteur Vigne, 76600 Le Havre, France"},{position:[50.359201,3.5221950000000106],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/cache_37985921-4eeb90559b3f62635bfd5b3687cc16d9.jpg",name:"MANKOUFU",address:"5 Avenue Georges Clemenceau, 59300 Valenciennes, France"},{position:[48.85815,2.365366999999992],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo_maithai_fushia-7ee33c0e6c9147224d6f934611889f62.png",name:"Mai Thai",address:"24B Rue Saint-Gilles, 75003 Paris, France"},{position:[47.217724,-1.5557410000000118],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/546038_599609616783563_1441722359_n-6d55741d6316950892156769771bcb12.png",name:"La Cantine de Livresse",address:"9 Rue de l'H&ocirc;tel de ville, 44000 Nantes, France"},{position:[48.897628,2.3440729999999803],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Photo-Les-Valeurs-©-Simon-Guillemin-c4229f2c99ab4f52f45064e6613f79df.jpg",name:"La REcyclerie",address:"83 Boulevard Ornano, 75018 Paris, France"},{position:[48.866,2.378559999999993],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/static1.squarespace1-f23ffc4779d7a1a23d9ab2f284aa1bbc.png",name:"L'Esprit Tchaï",address:"115 Rue Oberkampf, 75011 Paris, France"},{position:[48.109253,-1.6829290000000583],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10325588_10152976842568203_6415660504929217659_n-7d95239ef19952476f1b8efba8f84408.jpg",name:"Apple Pie",address:"31 Rue de la Chalotais, 35000 Rennes, France"},{position:[44.8322064,-0.5668818000000329],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10428282_615567381888855_8564876921706634450_o-4dba6fd171cdca1ff7a160e761691175.jpg",name:"La Soupe au Caillou",address:"6 Place du Maucaillou, 33800 Bordeaux, France"},{position:[50.639954,5.581915999999978],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/header11-206afe36c72f3f298e1c2a21a64aee04.jpg",name:"Le Mékong",address:"Rue Surlet 43, 4020 Li&egrave;ge, Belgique"},{position:[48.844283,2.3304450000000543],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/bandeau_accueil-e92933330b0499d1f87f8088de49a305.jpg",name:"Le Lucernaire",address:"53 Rue Notre Dame des Champs, 75006 Paris, France"},{position:[47.9013499,1.9052822999999537],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10446252_785990381461220_412327024388825451_o-1a758f3cfe91f28eda20c899f9b346a7.jpg",name:"Un piano dans la théière",address:"31 Rue Sainte-Catherine, 45000 Orl&eacute;ans, France"},{position:[43.088433,1.875006999999982],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/cardamone-600x364-1944492944a12c66f94b92d5ed4e514d.jpg",name:"La Cardamone",address:"38 Place Mar&eacute;chal Leclerc, 09500 Mirepoix, France"},{position:[49.62794,6.129930999999942],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/gourmandises-permises-f57f077fe4f00ebcd1470f4410cfbb65.jpg",name:"Gourmandises Permises",address:"15 Place Fran&ccedil;ois-Joseph Dargent, 1413 Luxembourg, Luxembourg"},{position:[48.870195,2.3688589999999294],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10345568_1561606707403588_3193238833414229015_n-ca018d2e15e56cebd259bf6d4214272b.jpg",name:"Le Bichat",address:"11 Rue Bichat, 75010 Paris, France"},{position:[46.5484965,2.9805690000000595],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/ChâteauYgrande-81081747601556cf4ed84bec3c47d082.jpg",name:"Château d'Ygrande",address:"Le Mont, 03160 Ygrande"},{position:[43.714883,-1.0569120000000112],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10952407_221729117997550_5096105699622348839_n-28580d39c0997240a14e80f4c033e398.jpg",name:"Panier Amande",address:"25 Avenue du Sablar, 40100 Dax, France"},{position:[48.581268,7.757109000000013],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/1656072_696336127055843_1056226453_n-13c777347a6dfa317a599c25dbe21d4f.jpg",name:"Le Tarbouche",address:"22 rue de la Krutenau Strasbourg"},{position:[48.87917800000001,2.3432339999999385],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/fond-d-ecran-maintenance-cdb5cf7bba855a1fa6dd673a2f7ff99f.jpg",name:"Wally Le Saharien",address:"36 Rue Rodier, 75009 Paris, France"},{position:[53.548499,9.96219700000006],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/1240099_560687250634562_1134432366_n-c7d8613ea6bb2b76b9e2719024d94006.jpg",name:"Veganimbiss Befried",address:"Friedrichstra&szlig;e 3, 20359 Hamburg, Allemagne"},{position:[46.8125145,1.6910550000000057],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/01d8c2_879e62f0935045f79035f4cce0bd33d8_srb_p_409_262_75_22_0.50_1.20_0-bb83b73b90ea727aba27318f4785bf5c.png",name:"Nok Noy",address:"5 Place Robert Monestier, 36000 Ch&acirc;teauroux, France"},{position:[44.857322,-0.560483999999974],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/8264d6a9e032e7d825680308573d94b1.page_slider_8-bedab19883fcc529c7e6227fd7033f92.jpg",name:"Rest'O",address:"16 Quai de Bacalan, 33300 Bordeaux, France"},{position:[50.65225849999999,2.986229099999946],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo16-259bcefd897ddd905e9cfb677393180d.png",name:"Salad & Co — Lille",address:"14 ter rue du Ch&acirc;teau d'Isenghien 59160 Lomme"},{position:[50.615451,3.1251970000000715],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo16-259bcefd897ddd905e9cfb677393180d.png",name:"Salad & Co — Villeneuve-d'Ascq",address:"Salad&amp;Co - Restaurant Villeneuve d'Ascq Centre commercial Heron Parc Avenue de l'Avenir 59650 Villeneuve d'Ascq"},{position:[48.583839000000005,7.745721000000003],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logovertici-ed3840d452c897c4076a3cbfbd1a5356.png",name:"Vert Ici",address:"31 Place Kl&eacute;ber, 67000 Strasbourg"},{position:[52.356275,4.910001999999963],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/foto+1-b4202a71cb6e67fdb847bfe008e935d2.jpg",name:"Restaurant Beter & Leuk",address:"1e Oosterparkstraat 73\/91 1091 GW Amsterdam"},{position:[48.867786,2.336279999999988],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/vietnam-in-paris-9a4027a67652d0c69ee7da1f031bb228.jpg",name:"Vietnam in Paris",address:"52 Rue Sainte-Anne, 75002 Paris, France"},{position:[48.114108,-1.6795439999999644],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/alssaj-947f8ffb82639cf3de01203626421b72.jpg",name:"Al-saj",address:"5 Rue Motte Fablet, 35000 Rennes, France"},{position:[45.749158300000005,4.838920499999973],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10153819_297904110364525_2612927923486503334_n-c69fa0d6201fcd507f8c7149fc764f8a.jpg",name:"BAP",address:"33 Rue Chevreul, 69007 Lyon, France"},{position:[48.5835562,7.754569599999968],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10805703_1014893001871078_6731759840773517586_n-64aad15b3ed092ead81b58fe0e44db11.jpg",name:"Hot Doggy Dog",address:"3 Rue de l'Arc en Ciel, 67000 Strasbourg, France"},{position:[50.6296016,3.061799800000017],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/BIS2FLY-65175db17160acc813f1982bf4f0e910.jpg",name:"Bis 2 Fly",address:"19 Rue Nicolas Leblanc, 59000 Lille, France"},{position:[45.766515,4.854869000000008],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Theme-aee7143b7d67d3635ddafa822f1c044b.jpg",name:"Messob",address:"85 Rue Mass&eacute;na, 69006 Lyon, France"},{position:[43.7907595,7.611582900000031],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/58663_557250510971608_623763127_n-d8c12ed02290e8882319fb4dc5db8a8e.jpg",name:"I Sapori Della Tavola",address:"Via Camillo Benso Cavour, 58, 18039 Ventimiglia IM, Italie"},{position:[48.857165,2.358965000000012],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/1381599_465390056910493_692251032_n-a272411f6f0fbcce88ad5b18620023af.jpg",name:"Miznon",address:"22 Rue des Ecouffes, 75004 Paris, France"},{position:[43.773658,11.25848700000006],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/79534042108a77a-f791fd37bcf493fe537d17a947fc2107.jpg",name:"Panino Vegano",address:"Via Maurizio Bufalini, 19, 50122 Firenze, Italie"},{position:[49.263575,-123.100747],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/11379899_706359112826223_1741424418_n-eb9c9b00c1e333eaff7f0d2cf5b3f2ea.jpg",name:"The Wallflower Modern Diner",address:"2420 Main Street, Vancouver, BC V5T 3H9, Canada"},{position:[49.2644662,-123.10101810000003],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Foundation-5f4033c5ddf4efc0e42476ec9d30e4d9.jpg",name:"Foundation Eatery",address:"2301 Main Street, Vancouver, BC V5T 1M6, Canada"},{position:[48.1153,-1.6789099999999735],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/1243769_196336270546627_472009572_o-6b39712d786af2bf57edd0eb7167370a.jpg",name:"Le Coucou Rennais",address:"20 Rue d'Antrain, 35000 Rennes, France"},{position:[48.11200849999999,-1.675451199999998],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/restaurant_india_rennes-ec341b49e5dde672e1af3a7563d7788e.jpg",name:"India",address:"41 Rue Saint-Georges, 35000 Rennes, France"},{position:[52.528729,13.397016000000008],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/img-2037287ee38b3e3c65756fba4311c2e1.jpg",name:"Kopps",address:"Linienstra&szlig;e 94, 10115 Berlin, Allemagne"},{position:[52.507663,13.45446400000003],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/new-Emma-010-e1429902726223-a125b8b5e379412513836ad1e5483bbf.jpg",name:"Emma Pea",address:"Revaler Stra&szlig;e 99, 10245 Berlin, Allemagne"},{position:[52.534608,13.399108999999953],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/6969561-9c1176beb395dcb40a46a278c9a83e3e.jpg",name:"The Jivamukti Canteen",address:"Brunnenstra&szlig;e 29, 10119 Berlin, Allemagne"},{position:[52.53048,13.402479999999969],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/unsereprodukte-944839ba2e3a8fbc15dda8c276d16599.jpg",name:"Daluma",address:"Weinbergsweg 3, 10119 Berlin, Allemagne"},{position:[52.506726,13.46877100000006],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/1920322_685953261463216_318824133_n-0797070d1efa1ddb022020f1e0914ad0.jpg",name:"Vöner",address:"Boxhagener Stra&szlig;e 56, 10245 Berlin, Allemagne"},{position:[46.58078700000001,0.34106499999995776],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/wasabi-restaurant-06182124722eaffa77a77de3c80c4fae.jpg",name:"Wasabi",address:"11 Rue du Chaudron d'Or, 86000 Poitiers, France"},{position:[48.861741,2.351496999999995],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/photo_huge_lieu_p753_1-e13cf0b486e5d598c0713e25091d2b34.jpg",name:"Oh' Bio",address:"58 Rue Rambuteau, 75004 Paris, France"},{position:[43.7818456,11.260254300000042],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/slider-d23ac7d32c8f73bda234d17d0fb4549b.jpg",name:"Dolce Vita Vegan",address:"Via San Gallo, 92, 50129 Firenze, Italie"},{position:[44.8388019,-0.5790173999999979],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Bread-hero-d830bdcd77a26d63bb0a38aae11c881a.jpg",name:"Le Pain Quotidien — Bordeaux",address:"64 Rue des Remparts, 33000 Bordeaux, France"},{position:[48.852892,2.375100599999996],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Bread-hero-d830bdcd77a26d63bb0a38aae11c881a.jpg",name:"Le Pain Quotidien — Paris Charonne",address:"24 Rue de Charonne, 75011 Paris, France"},{position:[45.186912,5.71836200000007],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10371177_809443085753097_223913853746177468_o-900be63c724e0c7948676f669bfa4877.jpg",name:"Bombay",address:"60 Cours Jean Jaur&egrave;s, 38000 Grenoble"},{position:[49.602932,6.134702000000061],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/180724_4cd08f127310447a3b13bcc056dbfe94_srb_p_390_260_75_22_0.50_1.20_0-ae445b242d9829628083cf5c1c27794b.jpg",name:"Chez Julie",address:"17 Rue de Bonnevoie, 1260 Luxembourg, Luxembourg"},{position:[44.752849,5.371149999999943],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Bandeauaccueil1-cbbbe06377ce1705e388e960fae64770.jpg",name:"Tchai Walla",address:"8 Rue Joseph Reynaud, 26150 Die, France"},{position:[48.861835,2.380388000000039],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Capture-ef92e1c3c909b4c07aae506ee7e1f417.jpg",name:"Balls",address:"47 Rue Saint-Maur, 75011 Paris, France"},{position:[43.926654,2.1468170000000555],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/restaurant-le-tournesol-albi-1350068852-6ad8bcc61ecf1ca24c2c25f0c0433571.jpg",name:"Le Tournesol",address:"11 Rue de l'Ort en Salvy, 81000 Albi, France"},{position:[47.214882,-1.537924999999973],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Little-Wokyo-Nantes-1a78a6802bb5c3d520723cb8b427bec2.jpeg",name:"Little Wokyo",address:"1 Rue Marcel Paul, 44000 Nantes, France"},{position:[45.188046,5.716985000000023],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/phenicien_1-12edf67dc564185095f9391f3a5103a1.jpg",name:"Le Phenicien",address:"51 Cours Berriat, 38000 Grenoble, France"},{position:[45.757649,4.840943000000038],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo19-d88c24c0750106585d15bf962408dcfc.png",name:"Mendo",address:"26 Quai Victor Augagneur, 69003 Lyon, France"},{position:[46.58642649999999,0.3381428999999798],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/11312611_997613250248880_6448836091668613066_o-fd35c688e1588aad7e22d1d8f2ba8722.jpg",name:"La nouvelle cantine du plan B",address:"32 Boulevard du Grand Cerf, 86000 Poitiers, France"},{position:[45.7652276,4.895665600000029],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/header_1-1180x570-b5263845e430966cce78c1106ea31841.png",name:"Caravanserail Café",address:"150 Rue du 4 Ao&ucirc;t 1789, 69100 Villeurbanne"},{position:[42.697473,2.893295999999964],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/569d6f_9faf3df0e91910a4b3dad37349a2aef3_srb_p_253_245_75_22_0.50_1.20_0-cb0981b70ac206ab1d85c6eec5eb76f3.jpg",name:"Bio Deux Anges",address:"Rue des Augustins, 66000 Perpignan"},{position:[47.687313,-1.7355340000000299],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/1911212_862951313771079_2926170415302800381_o-780b8a8cfcf8d09521a212b0a98c59e4.jpg",name:"Veg Mama",address:"1 Place de la Mairie, 44290 Pierric, France"},{position:[51.541344,-0.14456799999993564],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/inSpiralLogoHeader878-491fc76761df8c2434aeb257d411a7cb.gif",name:"InSpiral Lounge",address:"250 Camden High Street, London NW1 8QS, Royaume-Uni"},{position:[51.51687,-0.20033699999999044],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Lasagna-3f9826801641d34455cc5be434130930.jpg",name:"Nama",address:"110 Talbot Road, London W11 1JR, Royaume-Uni"},{position:[51.52629,-0.10815700000000561],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/xnew_logo.gif.pagespeed.ic_.RJ_8nAjnai-8b30d699d8353033bb00f4f8f64b56f2.png",name:"Hummus Bros — Exmouth Market",address:"62 Exmouth Market, London EC1R 4QE, Royaume-Uni"},{position:[51.514315,-0.09514500000000226],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/xnew_logo.gif.pagespeed.ic_.RJ_8nAjnai-8b30d699d8353033bb00f4f8f64b56f2.png",name:"Hummus Bros — Cheapside",address:"128 Cheapside, London EC2V 6BT, Royaume-Uni"},{position:[51.519228000000005,-0.12158399999998437],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/xnew_logo.gif.pagespeed.ic_.RJ_8nAjnai-8b30d699d8353033bb00f4f8f64b56f2.png",name:"Hummus Bros — Southampton",address:"37 Southampton Row, London WC1A 2QP, Royaume-Uni"},{position:[51.513245,-0.13374599999997372],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/xnew_logo.gif.pagespeed.ic_.RJ_8nAjnai-8b30d699d8353033bb00f4f8f64b56f2.png",name:"Hummus Bros — Soho",address:"88 Wardour Street, Soho, London W1F, Royaume-Uni"},{position:[51.440104,-0.10579299999994873],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/greenz-logo2-2d7b3717c13419f0efec1db6f974628a.png",name:"Greenz",address:"5 Station Rise, West Norwood, London SE27 9BW, Royaume-Uni"},{position:[51.529717,-0.116092999999978],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/65c9dc_610eca00bc494d3b8262454bcc1c5757_srz_p_590_119_75_22_0.50_1.20_0-c93b327e1f87d2b38ad035e10d815339.jpg",name:"Itadaki Zen",address:"139 King's Cross Road, Kings Cross, London WC1X 9BJ, Royaume-Uni"},{position:[51.615167,-0.27548699999999826],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/temp-LH-homepage_fx_r1_c1-9a75e32c7bea35d9a0906dd9598159e2.jpg",name:"Loving Hut — Edgware",address:"236 Station Road, Edgware, Greater London HA8 7AU, Royaume-Uni"},{position:[51.536151,-0.13915299999996478],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/temp-LH-homepage_fx_r1_c1-9a75e32c7bea35d9a0906dd9598159e2.jpg",name:"Loving Hut — Plender Street",address:"3 Plender Street, London NW1 0JT, Royaume-Uni"},{position:[51.564966,-0.13330199999995784],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/temp-LH-homepage_fx_r1_c1-9a75e32c7bea35d9a0906dd9598159e2.jpg",name:"Loving Hut — Holloway Road",address:"669 Holloway Road, London N19 5SE, Royaume-Uni"},{position:[51.514161,-0.12559299999998075],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/fft-shop-74632e874e3a913b22fd61e43f8c750c.png",name:"Food For Thought",address:"31 Neal Street, London WC2H 9PR, Royaume-Uni"},{position:[51.484641,-0.12017200000002504],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Bonningtons_08-e7e92238691e6fde9d9b1fbbbb3673ef.jpg",name:"Bonnington Cafe",address:"11 Vauxhall Grove, London SW8, Royaume-Uni"},{position:[51.5130496,-0.13633470000002035],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/8c237f_04ab0d8101d56e42a0cf81035b717661_srb_p_600_438_75_22_0.50_1.20_0-ddd3b5356835ceaedf5e994853203686.jpg",name:"Mildreds",address:"45 Lexington St, London W1F 9AN, Royaume-Uni"},{position:[51.486043,-0.20304399999997713],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/2-4c6191a8f17593bc4f9b54b2ae1cc2ef.jpg",name:"222 Veggie Vegan",address:"222 North End Road, London W14 9NU, Royaume-Uni"},{position:[48.8593148,2.3488503999999466],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/512252f44c4445.00041512.page_slider_8-8bd4c0e531e5db97fe5f73addc3db838.jpg",name:"Siam",address:"12 boulevard s&eacute;bastopol, 75004 Paris, France"},{position:[47.318782,5.035757999999987],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/treize-lucioles-1a9fecf16440ccd42c086863057bc3c9.jpg",name:"Les treize lucioles",address:"13 Place Emile Zola, 21000 Dijon"},{position:[50.2877239,2.7797696000000087],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/cropped-bandeau-mezzaluna-160d8c42e01e59705d2a897f450c4d4a.png",name:"Mezzaluna",address:"10 Rue Gambetta, 62000 Arras, France"},{position:[45.5015541,-73.57075409999999],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo_vego-78ed1b9af22b4568e7221bd76c3e01e5.jpg",name:"Végo — McGill",address:"1204 Avenue McGill College, Montr&eacute;al, QC H3B 4J8, Canada"},{position:[45.515529,-73.564684],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo_vego-78ed1b9af22b4568e7221bd76c3e01e5.jpg",name:"Végo — St-Denis",address:"1720 Rue Saint-Denis, Montr&eacute;al, QC H2X 3K4, Canada"},{position:[45.521636,-73.58509400000003],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/food_items-6032c61307ca32f6160f969fc8ed2b3a.jpg",name:"La Panthère Verte / The Green Panther",address:"2153 Rue Mackay, Montr&eacute;al, QC H3G 2J2, Canada"},{position:[43.657861,7.188125000000014],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/static1.squarespace1-d316f94bf2882b84049d4da5c8dda188.jpg",name:"Dame Nature",address:"167 Promenade des Flots Bleus, 06700 Saint-Laurent-du-Var, France"},{position:[47.39402339999999,0.6806344999999965],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/1405949037-r2estaurant-1225-630-626726629950a67fd5d75d1a534392f5.jpg",name:"Goûter chez Sam",address:"6 Place du Grand March&eacute;, 37000 Tours, France"},{position:[47.39482,0.6834800000000314],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/65851_158496324298359_206614561_n-3d5c6678763757e9f291c3daaa5f8eec.jpg",name:"Chez Habibi",address:"83 Rue du Commerce, 37000 Tours, France"},{position:[48.85482900000001,2.375872999999956],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/E70N7Jkx-e1a364117546e633a2e86cebba22a014.jpeg",name:"DUNE",address:"20 Rue Keller, 75011 Paris, France"},{position:[47.745519,7.33594400000004],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/resto-mlh-fr-aa91fb6fd40179def655b17da59cab20.jpg",name:"Pum",address:"7 Rue du Mittelbach, 68100 Mulhouse, France"},{position:[48.688581,6.184872000000041],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/988706_358925307571387_1822692573_n-34e4dcb3a65e5a61cce1ade93ad6bb5e.png",name:"La Table du petit Chaouen",address:"27 Rue des S&oelig;urs Macarons, 54000 Nancy, France"},{position:[48.84924000000001,2.2825760000000628],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/the_chipotle_burrito2x-ecefed1aa6daaae14332fbbf0c57d1b6.jpg",name:"Chipotle Mexican Grill — Beaugrenelle",address:"1 Rue Linois, Paris"},{position:[44.8360024,-0.578233100000034],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/o1-368a639a67753492d8446d1763ac220c.jpg",name:"Greedy",address:"62-64 avenue du H&acirc; 33000 Bordeaux"},{position:[44.8407178,-0.5817206000000397],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10689697_955336084481232_3849555309305728918_n-88eb9820757bbfea87e856857cfa498d.png",name:"Smart Green Corner",address:"20 Rue Castelnau d'Auros, 33000 Bordeaux, France"},{position:[49.2541254,4.02714960000003],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/ef45e122aba3a909bdb696e90bbfd41b-ee089a39235a95d18b878ee23e4f390a.jpg",name:"Un indien dans la ville",address:"7 Place Drouet d'Erlon, 51100 Reims, France"},{position:[47.74439,7.334149000000026],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/tetedechou_logo_dark_1-962b34ff9b4d890704b45e2303422464.png",name:"La Tête de Chou",address:"14 Rue des Trois Rois, 68100 Mulhouse"},{position:[48.890961,2.2368099999999913],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/the_chipotle_burrito2x-ecefed1aa6daaae14332fbbf0c57d1b6.jpg",name:"Chipotle Mexican Grill — La Défense",address:"Centre Commercial Les 4 Temps, Les 4 Temps, 15 Parvis de la D&eacute;fense, 92800 Puteaux"},{position:[43.603666,1.4350239999999985],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10003278_765438326807786_7968115238146714508_n-2ffdb9a04259db99d58713aa3f73e500.png",name:"Le bonheur est dans le pot",address:"17 Place Saint-Pierre, 31000 Toulouse, France"},{position:[47.473429,-0.5509140000000343],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/1530520_594127967325096_199689914_n-311b72aadd891eb8273cb4d39bee7e22.jpg",name:"Au murmure des carottes",address:"60 Rue du Mail, 49100 Angers, France"},{position:[48.851807,2.3178269999999657],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/o-soleil-de-naples-bienvenue-o-soleil-de-naples-paris-7eme-1d7aa-2ec9206f3e5110ece2c2f05c13239c5b.jpg",name:"Ô Soleil De Naples",address:"56 Rue de Babylone, 75007 Paris, France"},{position:[45.775967,4.834988000000067],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/crbst_logo-net-aca32145fbc5d0d9f101feeb7ee04ee2.gif",name:"Le jardin intérieur",address:"2 Rue Belfort, 69004 Lyon"},{position:[48.9053123,2.344394599999987],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/522408_601335453244949_1164292786_n-ef10af1975cecbdb611b35ace12e9120.jpg",name:"HighTall Vital",address:"101 Avenue Michelet, 93400 Saint-Ouen, France"},{position:[48.849172,2.3395550000000185],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/52eb6b4db6ee42.11765059.page_slider_8-317714265ebf02a7db20c8dc7e56ce89.jpg",name:"Indonesia",address:"3 Rue de Vaugirard, 75006 Paris, France"},{position:[43.292963,5.377682999999934],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/11-58d78a603c80efec8340d2d0f56ef24f.jpg",name:"Country Life Marseille",address:"14 Rue Venture, 13001 Marseille, France"},{position:[43.551947,7.017914000000019],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/P766334D580553G_px_640_-bd4741ffbd6be4eee8636b39cf23ea20.jpg",name:"Citronelle",address:"16 Rue Bivouac Napol&eacute;on, 06400 Cannes, France"},{position:[48.840808,2.3881830000000264],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/cropped-bandeau-5f38ff1a3f7a4ec69d029dcf89dab70b.jpg",name:"Oulala Traiteur",address:"189 Rue de Charenton, 75012 Paris, France"},{position:[46.813198,-71.22759200000002],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/cropped-logo101-3131ae651c4d925e7e668d0e6555e125.jpg",name:"Om Prana",address:"241 Rue Saint-Joseph E, Qu&eacute;bec, QC G1K 3E8, Canada"},{position:[43.439236,-1.590061999999989],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/cropped-TNB-Header-pic-47d456fa614617319460e47e8c8377a3.jpg",name:"The Nourishing Box",address:"Bidart, France"},{position:[41.380379,2.1773210000000063],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/556189_10150803712326093_36485102_n-933042d4420320d7cd72ac0ac5477795.jpg",name:"Gopal",address:"Carrer dels Escudellers, 42, 08002 Barcelona, Barcelona, Espagne"},{position:[41.380213,2.1691170000000284],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/1947949_799222263441100_369119763_n-f5ae621b570d1a841772226097c5c947.jpg",name:"Juicy Jones",address:"Carrer del Cardenal Casa&ntilde;as, 7, 08002 Barcelona, Espagne"},{position:[41.382234,2.1680200000000696],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/img_2422-5da3a6a24410f241d7ae8a46fb83bfb4.jpg",name:"Veggie Garden",address:"Carrer dels &Agrave;ngels, 3, 08001 Barcelona, Espagne"},{position:[52.512776,13.462259000000017],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/o2-58e59c92376e4aad74d75eebc46a48eb.jpg",name:"Ohlala",address:"Mainzer Stra&szlig;e 18, 10247 Berlin, Allemagne"},{position:[49.252355,4.0254019999999855],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/entete-maison-de-mademoiselle-Thi-680db605259029e88be91bf5f88ecf80.png",name:"La Maison de Mademoiselle Thi",address:"130 Rue de Vesle, 51100 Reims, France"},{position:[48.84264,2.5024009999999635],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/DelicesGigi-029e7367d0fa9b99ea2dcc17da87df56.jpg",name:"Les Délices de Gigi",address:"67 Avenue Ledru Rollin Le Perreux-sur-Marne"},{position:[45.779413,3.08442500000001],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo.noir_-a26fc303e383b8a3d3bff75e4d5db855.jpg",name:"La BerGaMoThée",address:"1 Place du Mazet, 63000 Clermont-Ferrand"},{position:[48.859407,2.364111600000001],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10360951_415409371948395_6529008888295610692_n-e7f0d15d9313d873138c779eced34e0a.jpg",name:"Jay & Joy",address:"3 Rue Sainte-Anastase, 75003 Paris, France"},{position:[50.8785463,4.7033040999999685],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10628597_739657662784499_9186919250738815396_n-7311a63954be343a13a284590a58cd1f.png",name:"Vegaverso",address:"Tiensestraat 20, 3000 Leuven, Belgique"},{position:[51.5419196,-0.1576341999999613],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Manna-exterior-9c8ef2bc0327f738ee408ff5229b39b1.jpg",name:"Manna",address:"4 Erskine Rd, London NW3 3AJ, Royaume-Uni"},{position:[37.174185,-3.595033999999942],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/header1-2e334adb66473ce783549bee4c27a6e7.jpg",name:"Hicuri Art Vegan",address:"Plaza de los Giron&eacute;s, 4, 18009 Granada, Granada, Espagne"},{position:[50.6418979,2.9952964000000293],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/banniere4-6541f0fb058a093d25a67c18084d1b52.jpg",name:"Celebrazioni",address:"121 Rue Anne Delavaux, 59160 Lille, France"},{position:[50.8279017,4.370428500000003],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Ami-48aa9317680a80762db9b8c328b1ae7b.jpg",name:"Ami",address:"Rue Lesbroussart 13, 1050 Ixelles, Belgique"},{position:[50.84552799999999,4.348694399999999],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/static1.squarespace-4fda9b5627945e09296b3bf9f78ff123.png",name:"Kokob",address:"Rue des Grands Carmes 10-12, 1000 Bruxelles, Belgique"},{position:[48.584386,7.751441],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Logo41-94961b8d32a43d780644a0b37edd5f26.png",name:"Une fleur des champs",address:"4 Rue des Charpentiers, 67000 Strasbourg, France"},{position:[48.865864,2.3368379999999433],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo13-f22e0d92930affb070d85dbe08670422.png",name:"Damouri",address:"41 Rue de Richelieu, 75001 Paris, France"},{position:[48.866854,2.307657000000063],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/restaurant_siamin_75008_6-1377eb103ac34ce96691404e4855df3c.jpg",name:"Siamin",address:"19 Rue Bayard, 75008 Paris, France"},{position:[48.832281,2.3460700000000543],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/van-long-0319ab8a03756503c31f4e6116a7f806.jpg",name:"Van Long",address:"9 Rue du Champ de l'Alouette, 75013 Paris, France"},{position:[49.184474,-0.35975699999994504],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10370373_823272381026727_1878184517141099671_n-024b5af27fa7168e1e3f3216efc8f129.jpg",name:"Dolly's",address:"16 Avenue de la Lib&eacute;ration, 14000 Caen, France"},{position:[48.815483,2.3205070000000205],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/50e2a8f7-96ec-4ed2-b2b4-533f80a69669-4930467df672f4de1229e34a06b36c6d.jpg",name:"Le Titi Touareg",address:"92 Avenue Henri Ginoux, 92120 Montrouge"},{position:[46.5215074,6.63999519999993],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/06_photo_restomtl-80a1f1352e2472cc4cb4991150bda9b3.jpg",name:"Le Nil Bleu",address:"Place de l'Ours 1, 1005 Lausanne, Suisse"},{position:[52.376602,4.894639999999981],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/terrazen-centre-0df452919b621eb33152bb1d38e765c8.jpg",name:"TerraZen Centre",address:"Sint Jacobsstraat 19 HS, 1012 NC Amsterdam, Pays-Bas"},{position:[46.946945,7.442001000000005],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/site-header-logo-2e1cdc93848ff3ddb37aac3ad8c94b8e.png",name:"Tibits — Bern",address:"Gurtengasse 3, 3011 Bern, Suisse"},{position:[46.985813,6.837598999999955],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/resized_650x365_origimage_583651-f70016c7b22de84a168011ed8c696c9a.jpg",name:"L'Aubier Eco-Hôtel Montezillon",address:"Les Murailles 5, 2037 Mont&eacute;zillon, Suisse"},{position:[46.990594,6.929993999999965],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/header_flyer-3a55eff19c070af0b24e3a83740f1869.jpg",name:"L'Ami Ami",address:"Rue du Bassin 8, 2000 Neuch&acirc;tel, Suisse"},{position:[49.253018,4.02842499999997],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/c8419ae9e64ff30dfeb160a3efa42fea.clandscape_hd-196b3665e62a489aa1df24807c4b914c.jpg",name:"Le Cèdre du Liban",address:"5, avenue du Maine 75015 Paris"},{position:[43.614082,3.877318999999943],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/delecto2-1024x682-b7a8883e4340b9d0eb6ebfcd3a09c0c2.jpg",name:"L'oignon givré",address:"46 Rue de l'Universit&eacute;, 34000 Montpellier, France"},{position:[11.2520958,-85.87030199999998],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/hqdefault-1afa4205b8890dcb96325446c2e95e41.jpg",name:"Buddha's Garden",address:"Avenida la Bolsa, San Juan Del Sur, Nicaragua"},{position:[48.882816,2.373328000000015],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/marmites-volantes-de00d40c5548bf1c02387af2c68a3e15.png",name:"Les Marmites Volantes",address:"69 Rue Armand Carrel, 75019 Paris, France"},{position:[48.871558,2.3505420000000186],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo-petite-chaufferie-97309fd16e8663dcdc91e5a405582594.png",name:"La Petite Chaufferie",address:"32 Rue de l'&Eacute;chiquier, 75010 Paris, France"},{position:[48.86125,2.3605969999999843],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logoyuman1-787090a5ef6b2c077e78334c76aaca96.png",name:"Yuman",address:"70 Rue du Chevaleret, 75013 Paris"},{position:[48.880667,2.3440650000000005],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo-pdl-pit-445x159-74ddd9365970daf48bd7c4f020424c0d.png",name:"Pizza di Loretta",address:"62 Rue Rodier, 75009 Paris, France"},{position:[50.635617,3.063382000000047],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Bread-hero-d830bdcd77a26d63bb0a38aae11c881a.jpg",name:"Le Pain Quotidien — Lille Rihour",address:"35 Place Rihour, 59800 Lille, France"},{position:[48.866968,2.2787049999999454],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Bread-hero-d830bdcd77a26d63bb0a38aae11c881a.jpg",name:"Le Pain Quotidien — Paris Victor Hugo",address:"150 Avenue Victor Hugo, 75116 Paris"},{position:[37.39024700000001,-6.001637999999957],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/centro-ecologico-gaia-03866442a1ea290806715d4ad9f3de55.jpg",name:"Gaia",address:"Calle Luis de Vargas, 4, 41001 Sevilla, Sevilla, Espagne"},{position:[43.610145,3.87935200000004],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logofinalWeb-971988bf04fbd61668e2b68b7d1922b5.jpg",name:"Tripti Kulai",address:"20 Rue Jacques C&oelig;ur, 34000 Montpellier"},{position:[48.21558000000001,16.379714000000035],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/HarvestCafé-ff1539565c5daff566eb81adab8afd1b.jpg",name:"Harvest Café",address:"Karmeliterplatz 1, 1020 Wien, Autriche"},{position:[43.5910499,1.4447410999999875],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/download-0ef04922a7e014e1497539536f42bae6.png",name:"Manger autrement chez Prasad",address:"155 Grande Rue Saint-Michel, 31400 Toulouse, France"},{position:[47.90023,1.9092439999999442],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Angkor-f27a1682ba22dc2d78d5a139ee64c061.jpg",name:"Angkor",address:"228 Rue de Bourgogne, 45000 Orl&eacute;ans"},{position:[43.6044432,1.4525187],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/bandeau-yeti-1593d538d9b5d7df59a477dc2fbafc17.jpg",name:"Le Yéti",address:"21 Rue de la Colombette, 31000 Toulouse"},{position:[50.362408,3.51729],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/pic04_18297-f49eae62eea30d124e76d73db6d87302.jpg",name:"Sushi Val",address:"41 Avenue du S&eacute;nateur Girard, 59300 Valenciennes, France"},{position:[48.102353,-1.71337],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/interieur_restau_Cleunay-8b3902fe53e72b017a7f63e76aa356b6.jpg",name:"Pique-Prune — Cleuney",address:"132 Rue Eug&egrave;ne Pottier, 35000 Rennes, France"},{position:[48.637804,-2.019055],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/menu-b7aec08cee9bbbaf08c370ce27e14237.jpg",name:"Café Crêperie de la Plage",address:"Rue des Bas Sablons Saint-Malo"},{position:[48.778591,2.29121],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/vue-exterieure-54c4de6c1ae52bf69d48851c449a7235.jpg",name:"Crêperie Garnier",address:"4 Place du G&eacute;n&eacute;ral de Gaulle, 92330 Sceaux"},{position:[43.299375,5.377497],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/backgrounddessin-108575b6a8822518d123bb6e6f8364cf.jpg",name:"Grain de Sable",address:"34 Rue du Baignoir, 13001 Marseille, France"},{position:[48.8662633,2.3359812999999576],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/4-nest-resto-paris-creditphoto-fannyb-parisbouge-1561065261-76bb33a91a9aefcbb971445690f265eb.jpg",name:"Nest ",address:"9 Rue Villedo, 75001 Paris, France"},{position:[48.879205,2.366604999999936],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/7518f7fb24f99dcf4a3063523afc79bb-b3c64fe446fa16b130be2aa1a81bb176.jpg",name:"Kheak & Vero",address:"1 Rue Alexandre Parodi, 75010 Paris"},{position:[48.11528400000001,-1.6787890000000516],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/accueil-11-e934f9dc2fb8d29cdec5d661338ca7c9.jpg",name:"Black Temple Food",address:"4 Passage des Carm&eacute;lites, 35000 Rennes, France"},{position:[48.8410204,2.361677900000018],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Bibimbap-b908ac63dec065096b887f462066c54f.jpg",name:"Bibimbap",address:"32 Boulevard de l'H&ocirc;pital, 75005 Paris, France"},{position:[48.910865,2.333677999999964],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/bonappetit-logo-69abbade9673fef7d6fdaba11fa0b194.jpg",name:"Bon Appétit",address:"9 Avenue Gabriel P&eacute;ri, 93400 Saint-Ouen, France"},{position:[48.853872,2.4205560000000332],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/CasaPoblano-96b11752cd480979f027d2ec34a0821a.jpg",name:"Casa Poblano",address:"15 Rue Lavoisier, 93100 Montreuil, France"},{position:[47.39440099999999,0.6806940000000168],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/shelter-abdb26815c5b59e01525e7069205f9ab.jpg",name:"Shelter",address:"19 Rue du Grand March&eacute;, 37000 Tours, France"},{position:[43.2894616,5.387346999999977],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10933906_363420170503631_7897082641592255282_n-4b02dfdbffab0430340f5f346d783ab3.png",name:"Londonewyork",address:"77 Rue de Lodi, 13006 Marseille, France"},{position:[50.68932,3.170688000000041],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Baraka-520d249eca24842a8d09a5f8d7e047e1.jpg",name:"Cooperative Baraka",address:"20 Rue de S&eacute;bastopol, 59100 Roubaix, France"},{position:[48.846793,2.2938890000000356],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Lola-e27b3fee445fb79b04d40b8fc9f5e138.jpg",name:"Brasserie Lola",address:"99 rue du Th&eacute;&acirc;tre Paris"},{position:[48.87481529999999,2.3255444000000125],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/p1150669-aee854f4fddc0118f1dd3721c142b4db.jpg",name:"La pause libanaise",address:"08 Rue de l'Isly, 75008 Paris, France"},{position:[46.34842889999999,6.3564331999999695],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo-sans-ovale-8a394486c947f2177918a6946677ebde.png",name:"Ed's kitchen",address:"Route du Lac, 74140 Excenevex, France"},{position:[48.877809,2.3488139999999476],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo15-37185b57245f97717341d24658cb4b61.png",name:"La Presqu'Ile",address:"113 Rue du Faubourg Poissonni&egrave;re, 75009 Paris, France"},{position:[45.192513,5.730308000000037],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Interior2-e79ea80615bcba65cc08abf0bc7bf099.jpg",name:"Wokbar",address:"14 Rue Barnave, 38000 Grenoble, France"},{position:[45.1652784,5.697064899999987],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/1077779_416532381797847_1769164081_o-fcd40537a050b3690e21c69173b77c64.jpg",name:"Sapori Antichi",address:"69 Rue de la Libert&eacute;, 38180 Seyssins, France"},{position:[48.867757,2.3353889999999637],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/487326_217356938398277_648105134_n-0e2776abfcdf88f26f1897c4ac9e6c8a.png",name:"Végitaï",address:"39\/41 Passage Choiseul, 75002 Paris"},{position:[48.863434,2.3631319999999505],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo-nanashi4-74a1c11c1085662a57197fb9cd38784f.png",name:"Nanashi",address:"57 Rue Charlot, 75003 Paris, France"},{position:[48.825504,2.3537360000000263],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/slider3-c532eb39a1138e4da102241c74aa55f9.jpg",name:"La bonne heure",address:"72 Rue du Moulin des Pr&eacute;s, 75013 Paris, France"},{position:[16.2417301,-61.565840200000025],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/63211_571512976197379_1869202323_n-74544ae482db99fde37fe511b5f16ab3.jpg",name:"Vapor é Vous",address:"Immeuble Tsahal, 51 rue Becquerel, Jarry, Guadeloupe"},{position:[45.88187,-1.251585],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/image-index-5821d259ac7e10e648d10fd9e6fa74a5.jpg",name:"Maha Prana",address:"20 Route du Large, 17550 Dolus-d'Ol&eacute;ron"},{position:[46.207108,6.145691],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Qibi-Logo-2015-site-web-639233471f092b48efa990ae94aeaede.png",name:"Qibi Urban Smart Food",address:"Rue Kl&eacute;berg 12, 1201 Gen&egrave;ve, Suisse"},{position:[48.885204,2.365449],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo_cantine_OK1-af4541a4cc84ccd0527db9dbbec6be07.png",name:"Cantine Vagabonde",address:"11 Rue d'Aubervilliers, 75019 Paris, France"},{position:[48.861174,2.344402],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/10691684_1539646306249322_1898781341_n-522e13bc2ea44d56aaabdd096dbf932b.jpg",name:"Beytouti",address:"44 Rue Saint Honor&eacute;, 75001 Paris, France"},{position:[48.851807,2.366342],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/resto-6e628c03c88c27fa4ec9b38b674316f1.jpg",name:"Grand Appétit",address:"9 Rue de la Cerisaie, 75004 Paris, France"},{position:[44.8355503,-0.5836331],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo14-89c119a1175f21299c9d1094a243d01a.png",name:"La cuisine de Johanna",address:"44 Cours Anatole France, 33000 Bordeaux, France"},{position:[48.114765,-1.676024],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/7496_crop_368-207_-b75470a14671a8e84404c32733632c56.jpg",name:"Dolma",address:"36 Rue Saint-Melaine, 35000 Rennes, France"},{position:[48.114367,-1.679732],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/ethnic-food-f426277199618e42f5da2864cb13f299.jpg",name:"Ethnic Food",address:"3 Place Sainte-Anne, 35000 Rennes, France"},{position:[48.867429,2.344029],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/salle-0b4e3db118700cc508e2d4959c6a5cd2.jpg",name:"Loumi's",address:"106 Rue Montmartre, 75002 Paris, France"},{position:[48.908821,0.26453],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/legumes-321d0137d744bf7c3d5811b46c230bab.jpg",name:"La Maison du Vert",address:"70 Le Bourg, 61120 Ticheville, France"},{position:[51.217365,4.403891],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/nieuw-menu-740x1024-daccae9380eda3a1f720a2deb1e47457.jpg",name:"Lombardia Natural Food",address:"Lombardenvest 78, 2000 Antwerpen, Belgique"},{position:[50.630081,3.057225],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo_header_sushiboutik-2-058af88b6eae726528c55a0f8136731d.png",name:"Sushi Boutik",address:"133 Rue Solf&eacute;rino, 59000 Lille, France"},{position:[48.1392776,-1.6910584],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/pastabol-5efb8a29cc3c543d512d5ff60dc663e8.gif",name:"Pique-Prune — St Grégoire",address:"8 All&eacute;e de la Cerisaie, 35760 Saint-Gr&eacute;goire, France"},{position:[48.1132017,-1.6069621000000003],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/vie_inte__rieure_restau_Cesson-06307533a800502fab07f15d112c0233.jpg",name:"Pique-Prune — Cesson",address:"8 Avenue des Peupliers, 35510 Cesson-S&eacute;vign&eacute;, France"},{position:[50.63257,3.065109],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/logo1-bdd08800595de8c6cb30e08e4f813f68.jpg",name:"La Source",address:"13 Rue du Plat, 59800 Lille, France"},{position:[50.6296873,3.061069599999996],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/Codo-Hue-Restaurant-Vietnamien-Lille1-b979676b44f636c2a36f5ff30c3a44ba.png",name:"Cô Dô Huê",address:"16 Rue Nicolas Leblanc, 59000 Lille, France"},{position:[43.609681,3.875809000000004],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/d273f4_06b1845b199fcefbaca2366eb59fd2ec_srz_p_140_142_75_22_0.50_1.20_0-15f43170c353f6b694a4ce4f91e9cac2.jpg",name:"Umiyaki",address:"9 Rue de la Friperie, 34000 Montpellier, France"},{position:[43.579882,7.125550999999973],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/DSC00027-fc521b730fb0522f396203b4e2b346ac.jpg",name:"Chez Helen",address:"35 Rue des Revennes, 06600 Antibes"},{position:[47.899667,1.909366999999975],icon:"http://www.vegan-mafia.com/wp-content/uploads//2015/04/32321_534363543243896_1564720098_n-9f0251ca9babe34d460d681e4a590009.jpg",name:"Hikari",address:"28 Rue de la Poterne, 45000 Orl&eacute;ans, France"}];
+
+
+},{}],4:[function(require,module,exports){
+/*!
+ * Bowser - a browser detector
+ * https://github.com/ded/bowser
+ * MIT License | (c) Dustin Diaz 2015
+ */
+
+!function (name, definition) {
+  if (typeof module != 'undefined' && module.exports) module.exports = definition()
+  else if (typeof define == 'function' && define.amd) define(definition)
+  else this[name] = definition()
+}('bowser', function () {
+  /**
+    * See useragents.js for examples of navigator.userAgent
+    */
+
+  var t = true
+
+  function detect(ua) {
+
+    function getFirstMatch(regex) {
+      var match = ua.match(regex);
+      return (match && match.length > 1 && match[1]) || '';
+    }
+
+    function getSecondMatch(regex) {
+      var match = ua.match(regex);
+      return (match && match.length > 1 && match[2]) || '';
+    }
+
+    var iosdevice = getFirstMatch(/(ipod|iphone|ipad)/i).toLowerCase()
+      , likeAndroid = /like android/i.test(ua)
+      , android = !likeAndroid && /android/i.test(ua)
+      , nexusMobile = /nexus\s*[0-6]\s*/i.test(ua)
+      , nexusTablet = !nexusMobile && /nexus\s*[0-9]+/i.test(ua)
+      , chromeos = /CrOS/.test(ua)
+      , silk = /silk/i.test(ua)
+      , sailfish = /sailfish/i.test(ua)
+      , tizen = /tizen/i.test(ua)
+      , webos = /(web|hpw)os/i.test(ua)
+      , windowsphone = /windows phone/i.test(ua)
+      , windows = !windowsphone && /windows/i.test(ua)
+      , mac = !iosdevice && !silk && /macintosh/i.test(ua)
+      , linux = !android && !sailfish && !tizen && !webos && /linux/i.test(ua)
+      , edgeVersion = getFirstMatch(/edge\/(\d+(\.\d+)?)/i)
+      , versionIdentifier = getFirstMatch(/version\/(\d+(\.\d+)?)/i)
+      , tablet = /tablet/i.test(ua)
+      , mobile = !tablet && /[^-]mobi/i.test(ua)
+      , xbox = /xbox/i.test(ua)
+      , result
+
+    if (/opera|opr|opios/i.test(ua)) {
+      result = {
+        name: 'Opera'
+      , opera: t
+      , version: versionIdentifier || getFirstMatch(/(?:opera|opr|opios)[\s\/](\d+(\.\d+)?)/i)
+      }
+    }
+    else if (/coast/i.test(ua)) {
+      result = {
+        name: 'Opera Coast'
+        , coast: t
+        , version: versionIdentifier || getFirstMatch(/(?:coast)[\s\/](\d+(\.\d+)?)/i)
+      }
+    }
+    else if (/yabrowser/i.test(ua)) {
+      result = {
+        name: 'Yandex Browser'
+      , yandexbrowser: t
+      , version: versionIdentifier || getFirstMatch(/(?:yabrowser)[\s\/](\d+(\.\d+)?)/i)
+      }
+    }
+    else if (/ucbrowser/i.test(ua)) {
+      result = {
+          name: 'UC Browser'
+        , ucbrowser: t
+        , version: getFirstMatch(/(?:ucbrowser)[\s\/](\d+(?:\.\d+)+)/i)
+      }
+    }
+    else if (/mxios/i.test(ua)) {
+      result = {
+        name: 'Maxthon'
+        , maxthon: t
+        , version: getFirstMatch(/(?:mxios)[\s\/](\d+(?:\.\d+)+)/i)
+      }
+    }
+    else if (/epiphany/i.test(ua)) {
+      result = {
+        name: 'Epiphany'
+        , epiphany: t
+        , version: getFirstMatch(/(?:epiphany)[\s\/](\d+(?:\.\d+)+)/i)
+      }
+    }
+    else if (/puffin/i.test(ua)) {
+      result = {
+        name: 'Puffin'
+        , puffin: t
+        , version: getFirstMatch(/(?:puffin)[\s\/](\d+(?:\.\d+)?)/i)
+      }
+    }
+    else if (/sleipnir/i.test(ua)) {
+      result = {
+        name: 'Sleipnir'
+        , sleipnir: t
+        , version: getFirstMatch(/(?:sleipnir)[\s\/](\d+(?:\.\d+)+)/i)
+      }
+    }
+    else if (/k-meleon/i.test(ua)) {
+      result = {
+        name: 'K-Meleon'
+        , kMeleon: t
+        , version: getFirstMatch(/(?:k-meleon)[\s\/](\d+(?:\.\d+)+)/i)
+      }
+    }
+    else if (windowsphone) {
+      result = {
+        name: 'Windows Phone'
+      , windowsphone: t
+      }
+      if (edgeVersion) {
+        result.msedge = t
+        result.version = edgeVersion
+      }
+      else {
+        result.msie = t
+        result.version = getFirstMatch(/iemobile\/(\d+(\.\d+)?)/i)
+      }
+    }
+    else if (/msie|trident/i.test(ua)) {
+      result = {
+        name: 'Internet Explorer'
+      , msie: t
+      , version: getFirstMatch(/(?:msie |rv:)(\d+(\.\d+)?)/i)
+      }
+    } else if (chromeos) {
+      result = {
+        name: 'Chrome'
+      , chromeos: t
+      , chromeBook: t
+      , chrome: t
+      , version: getFirstMatch(/(?:chrome|crios|crmo)\/(\d+(\.\d+)?)/i)
+      }
+    } else if (/chrome.+? edge/i.test(ua)) {
+      result = {
+        name: 'Microsoft Edge'
+      , msedge: t
+      , version: edgeVersion
+      }
+    }
+    else if (/vivaldi/i.test(ua)) {
+      result = {
+        name: 'Vivaldi'
+        , vivaldi: t
+        , version: getFirstMatch(/vivaldi\/(\d+(\.\d+)?)/i) || versionIdentifier
+      }
+    }
+    else if (sailfish) {
+      result = {
+        name: 'Sailfish'
+      , sailfish: t
+      , version: getFirstMatch(/sailfish\s?browser\/(\d+(\.\d+)?)/i)
+      }
+    }
+    else if (/seamonkey\//i.test(ua)) {
+      result = {
+        name: 'SeaMonkey'
+      , seamonkey: t
+      , version: getFirstMatch(/seamonkey\/(\d+(\.\d+)?)/i)
+      }
+    }
+    else if (/firefox|iceweasel|fxios/i.test(ua)) {
+      result = {
+        name: 'Firefox'
+      , firefox: t
+      , version: getFirstMatch(/(?:firefox|iceweasel|fxios)[ \/](\d+(\.\d+)?)/i)
+      }
+      if (/\((mobile|tablet);[^\)]*rv:[\d\.]+\)/i.test(ua)) {
+        result.firefoxos = t
+      }
+    }
+    else if (silk) {
+      result =  {
+        name: 'Amazon Silk'
+      , silk: t
+      , version : getFirstMatch(/silk\/(\d+(\.\d+)?)/i)
+      }
+    }
+    else if (/phantom/i.test(ua)) {
+      result = {
+        name: 'PhantomJS'
+      , phantom: t
+      , version: getFirstMatch(/phantomjs\/(\d+(\.\d+)?)/i)
+      }
+    }
+    else if (/slimerjs/i.test(ua)) {
+      result = {
+        name: 'SlimerJS'
+        , slimer: t
+        , version: getFirstMatch(/slimerjs\/(\d+(\.\d+)?)/i)
+      }
+    }
+    else if (/blackberry|\bbb\d+/i.test(ua) || /rim\stablet/i.test(ua)) {
+      result = {
+        name: 'BlackBerry'
+      , blackberry: t
+      , version: versionIdentifier || getFirstMatch(/blackberry[\d]+\/(\d+(\.\d+)?)/i)
+      }
+    }
+    else if (webos) {
+      result = {
+        name: 'WebOS'
+      , webos: t
+      , version: versionIdentifier || getFirstMatch(/w(?:eb)?osbrowser\/(\d+(\.\d+)?)/i)
+      };
+      /touchpad\//i.test(ua) && (result.touchpad = t)
+    }
+    else if (/bada/i.test(ua)) {
+      result = {
+        name: 'Bada'
+      , bada: t
+      , version: getFirstMatch(/dolfin\/(\d+(\.\d+)?)/i)
+      };
+    }
+    else if (tizen) {
+      result = {
+        name: 'Tizen'
+      , tizen: t
+      , version: getFirstMatch(/(?:tizen\s?)?browser\/(\d+(\.\d+)?)/i) || versionIdentifier
+      };
+    }
+    else if (/qupzilla/i.test(ua)) {
+      result = {
+        name: 'QupZilla'
+        , qupzilla: t
+        , version: getFirstMatch(/(?:qupzilla)[\s\/](\d+(?:\.\d+)+)/i) || versionIdentifier
+      }
+    }
+    else if (/chromium/i.test(ua)) {
+      result = {
+        name: 'Chromium'
+        , chromium: t
+        , version: getFirstMatch(/(?:chromium)[\s\/](\d+(?:\.\d+)?)/i) || versionIdentifier
+      }
+    }
+    else if (/chrome|crios|crmo/i.test(ua)) {
+      result = {
+        name: 'Chrome'
+        , chrome: t
+        , version: getFirstMatch(/(?:chrome|crios|crmo)\/(\d+(\.\d+)?)/i)
+      }
+    }
+    else if (android) {
+      result = {
+        name: 'Android'
+        , version: versionIdentifier
+      }
+    }
+    else if (/safari|applewebkit/i.test(ua)) {
+      result = {
+        name: 'Safari'
+      , safari: t
+      }
+      if (versionIdentifier) {
+        result.version = versionIdentifier
+      }
+    }
+    else if (iosdevice) {
+      result = {
+        name : iosdevice == 'iphone' ? 'iPhone' : iosdevice == 'ipad' ? 'iPad' : 'iPod'
+      }
+      // WTF: version is not part of user agent in web apps
+      if (versionIdentifier) {
+        result.version = versionIdentifier
+      }
+    }
+    else if(/googlebot/i.test(ua)) {
+      result = {
+        name: 'Googlebot'
+      , googlebot: t
+      , version: getFirstMatch(/googlebot\/(\d+(\.\d+))/i) || versionIdentifier
+      }
+    }
+    else {
+      result = {
+        name: getFirstMatch(/^(.*)\/(.*) /),
+        version: getSecondMatch(/^(.*)\/(.*) /)
+     };
+   }
+
+    // set webkit or gecko flag for browsers based on these engines
+    if (!result.msedge && /(apple)?webkit/i.test(ua)) {
+      if (/(apple)?webkit\/537\.36/i.test(ua)) {
+        result.name = result.name || "Blink"
+        result.blink = t
+      } else {
+        result.name = result.name || "Webkit"
+        result.webkit = t
+      }
+      if (!result.version && versionIdentifier) {
+        result.version = versionIdentifier
+      }
+    } else if (!result.opera && /gecko\//i.test(ua)) {
+      result.name = result.name || "Gecko"
+      result.gecko = t
+      result.version = result.version || getFirstMatch(/gecko\/(\d+(\.\d+)?)/i)
+    }
+
+    // set OS flags for platforms that have multiple browsers
+    if (!result.msedge && (android || result.silk)) {
+      result.android = t
+    } else if (iosdevice) {
+      result[iosdevice] = t
+      result.ios = t
+    } else if (mac) {
+      result.mac = t
+    } else if (xbox) {
+      result.xbox = t
+    } else if (windows) {
+      result.windows = t
+    } else if (linux) {
+      result.linux = t
+    }
+
+    // OS version extraction
+    var osVersion = '';
+    if (result.windowsphone) {
+      osVersion = getFirstMatch(/windows phone (?:os)?\s?(\d+(\.\d+)*)/i);
+    } else if (iosdevice) {
+      osVersion = getFirstMatch(/os (\d+([_\s]\d+)*) like mac os x/i);
+      osVersion = osVersion.replace(/[_\s]/g, '.');
+    } else if (android) {
+      osVersion = getFirstMatch(/android[ \/-](\d+(\.\d+)*)/i);
+    } else if (result.webos) {
+      osVersion = getFirstMatch(/(?:web|hpw)os\/(\d+(\.\d+)*)/i);
+    } else if (result.blackberry) {
+      osVersion = getFirstMatch(/rim\stablet\sos\s(\d+(\.\d+)*)/i);
+    } else if (result.bada) {
+      osVersion = getFirstMatch(/bada\/(\d+(\.\d+)*)/i);
+    } else if (result.tizen) {
+      osVersion = getFirstMatch(/tizen[\/\s](\d+(\.\d+)*)/i);
+    }
+    if (osVersion) {
+      result.osversion = osVersion;
+    }
+
+    // device type extraction
+    var osMajorVersion = osVersion.split('.')[0];
+    if (
+         tablet
+      || nexusTablet
+      || iosdevice == 'ipad'
+      || (android && (osMajorVersion == 3 || (osMajorVersion >= 4 && !mobile)))
+      || result.silk
+    ) {
+      result.tablet = t
+    } else if (
+         mobile
+      || iosdevice == 'iphone'
+      || iosdevice == 'ipod'
+      || android
+      || nexusMobile
+      || result.blackberry
+      || result.webos
+      || result.bada
+    ) {
+      result.mobile = t
+    }
+
+    // Graded Browser Support
+    // http://developer.yahoo.com/yui/articles/gbs
+    if (result.msedge ||
+        (result.msie && result.version >= 10) ||
+        (result.yandexbrowser && result.version >= 15) ||
+		    (result.vivaldi && result.version >= 1.0) ||
+        (result.chrome && result.version >= 20) ||
+        (result.firefox && result.version >= 20.0) ||
+        (result.safari && result.version >= 6) ||
+        (result.opera && result.version >= 10.0) ||
+        (result.ios && result.osversion && result.osversion.split(".")[0] >= 6) ||
+        (result.blackberry && result.version >= 10.1)
+        || (result.chromium && result.version >= 20)
+        ) {
+      result.a = t;
+    }
+    else if ((result.msie && result.version < 10) ||
+        (result.chrome && result.version < 20) ||
+        (result.firefox && result.version < 20.0) ||
+        (result.safari && result.version < 6) ||
+        (result.opera && result.version < 10.0) ||
+        (result.ios && result.osversion && result.osversion.split(".")[0] < 6)
+        || (result.chromium && result.version < 20)
+        ) {
+      result.c = t
+    } else result.x = t
+
+    return result
+  }
+
+  var bowser = detect(typeof navigator !== 'undefined' ? navigator.userAgent : '')
+
+  bowser.test = function (browserList) {
+    for (var i = 0; i < browserList.length; ++i) {
+      var browserItem = browserList[i];
+      if (typeof browserItem=== 'string') {
+        if (browserItem in bowser) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  /**
+   * Get version precisions count
+   *
+   * @example
+   *   getVersionPrecision("1.10.3") // 3
+   *
+   * @param  {string} version
+   * @return {number}
+   */
+  function getVersionPrecision(version) {
+      return version.split(".").length;
+  }
+
+  /**
+   * Array::map polyfill
+   *
+   * @param  {Array} arr
+   * @param  {Function} iterator
+   * @return {Array}
+   */
+  function map(arr, iterator) {
+    var result = [], i;
+    if (Array.prototype.map) {
+      return Array.prototype.map.call(arr, iterator);
+    }
+    for (i = 0; i < arr.length; i++) {
+      result = iterator(arr[i]);
+    }
+    return result;
+  }
+
+  /**
+   * Calculate browser version weight
+   *
+   * @example
+   *   compareVersions(['1.10.2.1',  '1.8.2.1.90'])    // 1
+   *   compareVersions(['1.010.2.1', '1.09.2.1.90']);  // 1
+   *   compareVersions(['1.10.2.1',  '1.10.2.1']);     // 0
+   *   compareVersions(['1.10.2.1',  '1.0800.2']);     // -1
+   *
+   * @param  {Array<String>} versions versions to compare
+   * @return {Number} comparison result
+   */
+  function compareVersions(versions) {
+      // 1) get common precision for both versions, for example for "10.0" and "9" it should be 2
+      var precision = Math.max(getVersionPrecision(versions[0]), getVersionPrecision(versions[1]));
+      var chunks = map(versions, function (version) {
+        var delta = precision - getVersionPrecision(version);
+
+        // 2) "9" -> "9.0" (for precision = 2)
+        version = version + new Array(delta + 1).join(".0");
+
+        // 3) "9.0" -> ["000000000"", "000000009"]
+        return map(version.split("."), function (chunk) {
+          return new Array(20 - chunk.length).join("0") + chunk;
+        }).reverse();
+      });
+
+      // iterate in reverse order by reversed chunks array
+      while (--precision >= 0) {
+          // 4) compare: "000000009" > "000000010" = false (but "9" > "10" = true)
+          if (chunks[0][precision] > chunks[1][precision]) {
+              return 1;
+          }
+          else if (chunks[0][precision] === chunks[1][precision]) {
+              if (precision === 0) {
+                  // all version chunks are same
+                  return 0;
+              }
+          }
+          else {
+              return -1;
+          }
+      }
+  }
+
+  /**
+   * Check if browser is unsupported
+   *
+   * @example
+   *   bowser.isUnsupportedBrowser({
+   *     msie: "10",
+   *     firefox: "23",
+   *     chrome: "29",
+   *     safari: "5.1",
+   *     opera: "16",
+   *     phantom: "534"
+   *   });
+   *
+   * @param  {Object}  minVersions map of minimal version to browser
+   * @param  {Boolean} [strictMode = false] flag to return false if browser wasn't found in map
+   * @param  {String}  [ua] user agent string
+   * @return {Boolean}
+   */
+  function isUnsupportedBrowser(minVersions, strictMode, ua) {
+      var _bowser = bowser;
+
+      // make strictMode param optional with ua param usage
+      if (typeof strictMode === 'string') {
+        ua = strictMode;
+        strictMode = void(0);
+      }
+
+      if (strictMode === void(0)) {
+        strictMode = false;
+      }
+      if (ua) {
+        _bowser = detect(ua);
+      }
+
+      var version = "" + _bowser.version;
+      for (var browser in minVersions) {
+          if (minVersions.hasOwnProperty(browser)) {
+              if (_bowser[browser]) {
+                  // browser version and min supported version.
+                  if (compareVersions([version, minVersions[browser]]) < 0) {
+                      return true; // unsupported
+                  }
+              }
+          }
+      }
+      return strictMode; // not found
+  }
+
+  /**
+   * Check if browser is supported
+   *
+   * @param  {Object} minVersions map of minimal version to browser
+   * @param  {Boolean} [strictMode = false] flag to return false if browser wasn't found in map
+   * @return {Boolean}
+   */
+  function check(minVersions, strictMode) {
+    return !isUnsupportedBrowser(minVersions, strictMode);
+  }
+
+  bowser.isUnsupportedBrowser = isUnsupportedBrowser;
+  bowser.compareVersions = compareVersions;
+  bowser.check = check;
+
+  /*
+   * Set our detect method to the main bowser object so we can
+   * reuse it to test other user agents.
+   * This is needed to implement future tests.
+   */
+  bowser._detect = detect;
+
+  return bowser
+});
+
+},{}],5:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = calc;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _utilsJoinPrefixedRules = require('../utils/joinPrefixedRules');
+
+var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
+
+var _utilsIsPrefixedValue = require('../utils/isPrefixedValue');
+
+var _utilsIsPrefixedValue2 = _interopRequireDefault(_utilsIsPrefixedValue);
+
+function calc(property, value) {
+  if (typeof value === 'string' && value.indexOf('calc(') > -1) {
+    if ((0, _utilsIsPrefixedValue2['default'])(value)) return;
+
+    return (0, _utilsJoinPrefixedRules2['default'])(property, value, function (prefix, value) {
+      return value.replace(/calc\(/g, prefix + 'calc(');
+    });
+  }
+}
+
+module.exports = exports['default'];
+},{"../utils/isPrefixedValue":18,"../utils/joinPrefixedRules":19}],6:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = cursor;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _utilsJoinPrefixedRules = require('../utils/joinPrefixedRules');
+
+var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
+
+var values = {
+  'zoom-in': true,
+  'zoom-out': true,
+  'grab': true,
+  'grabbing': true
+};
+
+function cursor(property, value) {
+  if (property === 'cursor' && values[value]) {
+    return (0, _utilsJoinPrefixedRules2['default'])(property, value);
+  }
+}
+
+module.exports = exports['default'];
+},{"../utils/joinPrefixedRules":19}],7:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = flex;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _utilsCamelToDashCase = require('../utils/camelToDashCase');
+
+var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
+
+var values = { flex: true, 'inline-flex': true };
+
+function flex(property, value) {
+  if (property === 'display' && values[value]) {
+    return {
+      display: ['-webkit-box', '-moz-box', '-ms-' + value + 'box', '-webkit-' + value, value]
+    };
+  }
+}
+
+module.exports = exports['default'];
+},{"../utils/camelToDashCase":16}],8:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = flexboxIE;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var alternativeValues = {
+  'space-around': 'distribute',
+  'space-between': 'justify',
+  'flex-start': 'start',
+  'flex-end': 'end'
+};
+var alternativeProps = {
+  alignContent: 'msFlexLinePack',
+  alignSelf: 'msFlexItemAlign',
+  alignItems: 'msFlexAlign',
+  justifyContent: 'msFlexPack',
+  order: 'msFlexOrder',
+  flexGrow: 'msFlexPositive',
+  flexShrink: 'msFlexNegative',
+  flexBasis: 'msPreferredSize'
+};
+
+function flexboxIE(property, value) {
+  if (alternativeProps[property]) {
+    return _defineProperty({}, alternativeProps[property], alternativeValues[value] || value);
+  }
+}
+
+module.exports = exports['default'];
+},{}],9:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = flexboxOld;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var _utilsCamelToDashCase = require('../utils/camelToDashCase');
+
+var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
+
+var alternativeValues = {
+  'space-around': 'justify',
+  'space-between': 'justify',
+  'flex-start': 'start',
+  'flex-end': 'end',
+  'wrap-reverse': 'multiple',
+  wrap: 'multiple'
+};
+
+var alternativeProps = {
+  alignItems: 'WebkitBoxAlign',
+  justifyContent: 'WebkitBoxPack',
+  flexWrap: 'WebkitBoxLines'
+};
+
+function flexboxOld(property, value) {
+  if (property === 'flexDirection') {
+    return {
+      WebkitBoxOrient: value.indexOf('column') > -1 ? 'vertical' : 'horizontal',
+      WebkitBoxDirection: value.indexOf('reverse') > -1 ? 'reverse' : 'normal'
+    };
+  }
+  if (alternativeProps[property]) {
+    return _defineProperty({}, alternativeProps[property], alternativeValues[value] || value);
+  }
+}
+
+module.exports = exports['default'];
+},{"../utils/camelToDashCase":16}],10:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = gradient;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _utilsJoinPrefixedRules = require('../utils/joinPrefixedRules');
+
+var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
+
+var _utilsIsPrefixedValue = require('../utils/isPrefixedValue');
+
+var _utilsIsPrefixedValue2 = _interopRequireDefault(_utilsIsPrefixedValue);
+
+var values = /linear-gradient|radial-gradient|repeating-linear-gradient|repeating-radial-gradient/;
+
+function gradient(property, value) {
+  if (typeof value === 'string' && value.match(values) !== null) {
+    if ((0, _utilsIsPrefixedValue2['default'])(value)) return;
+
+    return (0, _utilsJoinPrefixedRules2['default'])(property, value);
+  }
+}
+
+module.exports = exports['default'];
+},{"../utils/isPrefixedValue":18,"../utils/joinPrefixedRules":19}],11:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = sizing;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _utilsJoinPrefixedRules = require('../utils/joinPrefixedRules');
+
+var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
+
+var properties = {
+  maxHeight: true,
+  maxWidth: true,
+  width: true,
+  height: true,
+  columnWidth: true,
+  minWidth: true,
+  minHeight: true
+};
+var values = {
+  'min-content': true,
+  'max-content': true,
+  'fill-available': true,
+  'fit-content': true,
+  'contain-floats': true
+};
+
+function sizing(property, value) {
+  if (properties[property] && values[value]) {
+    return (0, _utilsJoinPrefixedRules2['default'])(property, value);
+  }
+}
+
+module.exports = exports['default'];
+},{"../utils/joinPrefixedRules":19}],12:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = transition;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var _utilsCamelToDashCase = require('../utils/camelToDashCase');
+
+var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
+
+var _utilsCapitalizeString = require('../utils/capitalizeString');
+
+var _utilsCapitalizeString2 = _interopRequireDefault(_utilsCapitalizeString);
+
+var _utilsIsPrefixedValue = require('../utils/isPrefixedValue');
+
+var _utilsIsPrefixedValue2 = _interopRequireDefault(_utilsIsPrefixedValue);
+
+var _prefixProps = require('../prefixProps');
+
+var _prefixProps2 = _interopRequireDefault(_prefixProps);
+
+var properties = {
+  transition: true,
+  transitionProperty: true,
+  WebkitTransition: true,
+  WebkitTransitionProperty: true
+};
+
+function transition(property, value) {
+  // also check for already prefixed transitions
+  if (typeof value === 'string' && properties[property]) {
+    var _ref2;
+
+    var outputValue = prefixValue(value);
+    var webkitOutput = outputValue.split(',').filter(function (value) {
+      return value.match(/-moz-|-ms-/) === null;
+    }).join(',');
+
+    // if the property is already prefixed
+    if (property.indexOf('Webkit') > -1) {
+      return _defineProperty({}, property, webkitOutput);
+    }
+
+    return _ref2 = {}, _defineProperty(_ref2, 'Webkit' + (0, _utilsCapitalizeString2['default'])(property), webkitOutput), _defineProperty(_ref2, property, outputValue), _ref2;
+  }
+}
+
+function prefixValue(value) {
+  if ((0, _utilsIsPrefixedValue2['default'])(value)) {
+    return value;
+  }
+
+  // only split multi values, not cubic beziers
+  var multipleValues = value.split(/,(?![^()]*(?:\([^()]*\))?\))/g);
+
+  // iterate each single value and check for transitioned properties
+  // that need to be prefixed as well
+  multipleValues.forEach(function (val, index) {
+    multipleValues[index] = Object.keys(_prefixProps2['default']).reduce(function (out, prefix) {
+      var dashCasePrefix = '-' + prefix.toLowerCase() + '-';
+
+      Object.keys(_prefixProps2['default'][prefix]).forEach(function (prop) {
+        var dashCaseProperty = (0, _utilsCamelToDashCase2['default'])(prop);
+
+        if (val.indexOf(dashCaseProperty) > -1) {
+          // join all prefixes and create a new value
+          out = val.replace(dashCaseProperty, dashCasePrefix + dashCaseProperty) + ',' + out;
+        }
+      });
+      return out;
+    }, val);
+  });
+
+  return multipleValues.join(',');
+}
+module.exports = exports['default'];
+},{"../prefixProps":14,"../utils/camelToDashCase":16,"../utils/capitalizeString":17,"../utils/isPrefixedValue":18}],13:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = prefixAll;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _prefixProps = require('./prefixProps');
+
+var _prefixProps2 = _interopRequireDefault(_prefixProps);
+
+var _utilsCapitalizeString = require('./utils/capitalizeString');
+
+var _utilsCapitalizeString2 = _interopRequireDefault(_utilsCapitalizeString);
+
+var _utilsAssign = require('./utils/assign');
+
+var _utilsAssign2 = _interopRequireDefault(_utilsAssign);
+
+var _pluginsCalc = require('./plugins/calc');
+
+var _pluginsCalc2 = _interopRequireDefault(_pluginsCalc);
+
+var _pluginsCursor = require('./plugins/cursor');
+
+var _pluginsCursor2 = _interopRequireDefault(_pluginsCursor);
+
+var _pluginsFlex = require('./plugins/flex');
+
+var _pluginsFlex2 = _interopRequireDefault(_pluginsFlex);
+
+var _pluginsSizing = require('./plugins/sizing');
+
+var _pluginsSizing2 = _interopRequireDefault(_pluginsSizing);
+
+var _pluginsGradient = require('./plugins/gradient');
+
+var _pluginsGradient2 = _interopRequireDefault(_pluginsGradient);
+
+var _pluginsTransition = require('./plugins/transition');
+
+var _pluginsTransition2 = _interopRequireDefault(_pluginsTransition);
+
+// special flexbox specifications
+
+var _pluginsFlexboxIE = require('./plugins/flexboxIE');
+
+var _pluginsFlexboxIE2 = _interopRequireDefault(_pluginsFlexboxIE);
+
+var _pluginsFlexboxOld = require('./plugins/flexboxOld');
+
+var _pluginsFlexboxOld2 = _interopRequireDefault(_pluginsFlexboxOld);
+
+var plugins = [_pluginsCalc2['default'], _pluginsCursor2['default'], _pluginsSizing2['default'], _pluginsGradient2['default'], _pluginsTransition2['default'], _pluginsFlexboxIE2['default'], _pluginsFlexboxOld2['default'], _pluginsFlex2['default']];
+
+/**
+ * Returns a prefixed version of the style object using all vendor prefixes
+ * @param {Object} styles - Style object that gets prefixed properties added
+ * @returns {Object} - Style object with prefixed properties and values
+ */
+
+function prefixAll(styles) {
+  return Object.keys(styles).reduce(function (prefixedStyles, property) {
+    var value = styles[property];
+    if (value instanceof Object && !Array.isArray(value)) {
+      // recurse through nested style objects
+      prefixedStyles[property] = prefixAll(value);
+    } else {
+      Object.keys(_prefixProps2['default']).forEach(function (prefix) {
+        var properties = _prefixProps2['default'][prefix];
+        // add prefixes if needed
+        if (properties[property]) {
+          prefixedStyles[prefix + (0, _utilsCapitalizeString2['default'])(property)] = value;
+        }
+      });
+
+      // resolve every special plugins
+      plugins.forEach(function (plugin) {
+        return (0, _utilsAssign2['default'])(prefixedStyles, plugin(property, value));
+      });
+    }
+
+    return prefixedStyles;
+  }, styles);
+}
+
+module.exports = exports['default'];
+},{"./plugins/calc":5,"./plugins/cursor":6,"./plugins/flex":7,"./plugins/flexboxIE":8,"./plugins/flexboxOld":9,"./plugins/gradient":10,"./plugins/sizing":11,"./plugins/transition":12,"./prefixProps":14,"./utils/assign":15,"./utils/capitalizeString":17}],14:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = { "Webkit": { "transform": true, "transformOrigin": true, "transformOriginX": true, "transformOriginY": true, "backfaceVisibility": true, "perspective": true, "perspectiveOrigin": true, "transformStyle": true, "transformOriginZ": true, "animation": true, "animationDelay": true, "animationDirection": true, "animationFillMode": true, "animationDuration": true, "animationIterationCount": true, "animationName": true, "animationPlayState": true, "animationTimingFunction": true, "appearance": true, "userSelect": true, "fontKerning": true, "textEmphasisPosition": true, "textEmphasis": true, "textEmphasisStyle": true, "textEmphasisColor": true, "boxDecorationBreak": true, "clipPath": true, "maskImage": true, "maskMode": true, "maskRepeat": true, "maskPosition": true, "maskClip": true, "maskOrigin": true, "maskSize": true, "maskComposite": true, "mask": true, "maskBorderSource": true, "maskBorderMode": true, "maskBorderSlice": true, "maskBorderWidth": true, "maskBorderOutset": true, "maskBorderRepeat": true, "maskBorder": true, "maskType": true, "textDecorationStyle": true, "textDecorationSkip": true, "textDecorationLine": true, "textDecorationColor": true, "filter": true, "fontFeatureSettings": true, "breakAfter": true, "breakBefore": true, "breakInside": true, "columnCount": true, "columnFill": true, "columnGap": true, "columnRule": true, "columnRuleColor": true, "columnRuleStyle": true, "columnRuleWidth": true, "columns": true, "columnSpan": true, "columnWidth": true, "flex": true, "flexBasis": true, "flexDirection": true, "flexGrow": true, "flexFlow": true, "flexShrink": true, "flexWrap": true, "alignContent": true, "alignItems": true, "alignSelf": true, "justifyContent": true, "order": true, "transition": true, "transitionDelay": true, "transitionDuration": true, "transitionProperty": true, "transitionTimingFunction": true, "backdropFilter": true, "scrollSnapType": true, "scrollSnapPointsX": true, "scrollSnapPointsY": true, "scrollSnapDestination": true, "scrollSnapCoordinate": true, "shapeImageThreshold": true, "shapeImageMargin": true, "shapeImageOutside": true, "hyphens": true, "flowInto": true, "flowFrom": true, "regionFragment": true, "textSizeAdjust": true, "borderImage": true, "borderImageOutset": true, "borderImageRepeat": true, "borderImageSlice": true, "borderImageSource": true, "borderImageWidth": true, "tabSize": true, "objectFit": true, "objectPosition": true }, "Moz": { "appearance": true, "userSelect": true, "boxSizing": true, "textAlignLast": true, "textDecorationStyle": true, "textDecorationSkip": true, "textDecorationLine": true, "textDecorationColor": true, "tabSize": true, "hyphens": true, "fontFeatureSettings": true, "breakAfter": true, "breakBefore": true, "breakInside": true, "columnCount": true, "columnFill": true, "columnGap": true, "columnRule": true, "columnRuleColor": true, "columnRuleStyle": true, "columnRuleWidth": true, "columns": true, "columnSpan": true, "columnWidth": true }, "ms": { "flex": true, "flexBasis": false, "flexDirection": true, "flexGrow": false, "flexFlow": true, "flexShrink": false, "flexWrap": true, "alignContent": false, "alignItems": false, "alignSelf": false, "justifyContent": false, "order": false, "transform": true, "transformOrigin": true, "transformOriginX": true, "transformOriginY": true, "userSelect": true, "wrapFlow": true, "wrapThrough": true, "wrapMargin": true, "scrollSnapType": true, "scrollSnapPointsX": true, "scrollSnapPointsY": true, "scrollSnapDestination": true, "scrollSnapCoordinate": true, "touchAction": true, "hyphens": true, "flowInto": true, "flowFrom": true, "breakBefore": true, "breakAfter": true, "breakInside": true, "regionFragment": true, "gridTemplateColumns": true, "gridTemplateRows": true, "gridTemplateAreas": true, "gridTemplate": true, "gridAutoColumns": true, "gridAutoRows": true, "gridAutoFlow": true, "grid": true, "gridRowStart": true, "gridColumnStart": true, "gridRowEnd": true, "gridRow": true, "gridColumn": true, "gridColumnEnd": true, "gridColumnGap": true, "gridRowGap": true, "gridArea": true, "gridGap": true, "textSizeAdjust": true } };
+module.exports = exports["default"];
+},{}],15:[function(require,module,exports){
+// leight polyfill for Object.assign
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports["default"] = function (base) {
+  var extend = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+  return Object.keys(extend).reduce(function (out, key) {
+    base[key] = extend[key];
+    return out;
+  }, {});
+};
+
+module.exports = exports["default"];
+},{}],16:[function(require,module,exports){
+/**
+ * Converts a camel-case string to a dash-case string
+ * @param {string} str - str that gets converted to dash-case
+ */
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+exports['default'] = function (str) {
+  return str.replace(/([a-z]|^)([A-Z])/g, function (match, p1, p2) {
+    return p1 + '-' + p2.toLowerCase();
+  }).replace('ms-', '-ms-');
+};
+
+module.exports = exports['default'];
+},{}],17:[function(require,module,exports){
+// helper to capitalize strings
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports["default"] = function (str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
+module.exports = exports["default"];
+},{}],18:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+exports['default'] = function (value) {
+  if (Array.isArray(value)) value = value.join(',');
+
+  return value.match(/-webkit-|-moz-|-ms-/) !== null;
+};
+
+module.exports = exports['default'];
+},{}],19:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var _camelToDashCase = require('./camelToDashCase');
+
+var _camelToDashCase2 = _interopRequireDefault(_camelToDashCase);
+
+// returns a style object with a single concated prefixed value string
+
+exports['default'] = function (property, value) {
+  var replacer = arguments.length <= 2 || arguments[2] === undefined ? function (prefix, value) {
+    return prefix + value;
+  } : arguments[2];
+  return (function () {
+    return _defineProperty({}, property, ['-webkit-', '-moz-', ''].map(function (prefix) {
+      return replacer(prefix, value);
+    }));
+  })();
+};
+
+module.exports = exports['default'];
+},{"./camelToDashCase":16}],20:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var _inlineStylePrefixAll = require('inline-style-prefix-all');
+
+var _inlineStylePrefixAll2 = _interopRequireDefault(_inlineStylePrefixAll);
+
+var _utilsGetBrowserInformation = require('./utils/getBrowserInformation');
+
+var _utilsGetBrowserInformation2 = _interopRequireDefault(_utilsGetBrowserInformation);
+
+var _utilsGetPrefixedKeyframes = require('./utils/getPrefixedKeyframes');
+
+var _utilsGetPrefixedKeyframes2 = _interopRequireDefault(_utilsGetPrefixedKeyframes);
+
+var _utilsCapitalizeString = require('./utils/capitalizeString');
+
+var _utilsCapitalizeString2 = _interopRequireDefault(_utilsCapitalizeString);
+
+var _utilsAssign = require('./utils/assign');
+
+var _utilsAssign2 = _interopRequireDefault(_utilsAssign);
+
+var _prefixProps = require('./prefixProps');
+
+var _prefixProps2 = _interopRequireDefault(_prefixProps);
+
+var _pluginsCalc = require('./plugins/calc');
+
+var _pluginsCalc2 = _interopRequireDefault(_pluginsCalc);
+
+var _pluginsCursor = require('./plugins/cursor');
+
+var _pluginsCursor2 = _interopRequireDefault(_pluginsCursor);
+
+var _pluginsFlex = require('./plugins/flex');
+
+var _pluginsFlex2 = _interopRequireDefault(_pluginsFlex);
+
+var _pluginsSizing = require('./plugins/sizing');
+
+var _pluginsSizing2 = _interopRequireDefault(_pluginsSizing);
+
+var _pluginsGradient = require('./plugins/gradient');
+
+var _pluginsGradient2 = _interopRequireDefault(_pluginsGradient);
+
+var _pluginsTransition = require('./plugins/transition');
+
+var _pluginsTransition2 = _interopRequireDefault(_pluginsTransition);
+
+// special flexbox specifications
+
+var _pluginsFlexboxIE = require('./plugins/flexboxIE');
+
+var _pluginsFlexboxIE2 = _interopRequireDefault(_pluginsFlexboxIE);
+
+var _pluginsFlexboxOld = require('./plugins/flexboxOld');
+
+var _pluginsFlexboxOld2 = _interopRequireDefault(_pluginsFlexboxOld);
+
+var plugins = [_pluginsCalc2['default'], _pluginsCursor2['default'], _pluginsSizing2['default'], _pluginsGradient2['default'], _pluginsTransition2['default'], _pluginsFlexboxIE2['default'], _pluginsFlexboxOld2['default'],
+// this must be run AFTER the flexbox specs
+_pluginsFlex2['default']];
+
+var Prefixer = (function () {
+  /**
+   * Instantiante a new prefixer
+   * @param {string} userAgent - userAgent to gather prefix information according to caniuse.com
+   * @param {string} keepUnprefixed - keeps unprefixed properties and values
+   */
+
+  function Prefixer() {
+    var _this = this;
+
+    var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+    _classCallCheck(this, Prefixer);
+
+    var defaultUserAgent = typeof navigator !== 'undefined' ? navigator.userAgent : undefined;
+
+    this._userAgent = options.userAgent || defaultUserAgent;
+    this._keepUnprefixed = options.keepUnprefixed || false;
+
+    this._browserInfo = (0, _utilsGetBrowserInformation2['default'])(this._userAgent);
+
+    // Checks if the userAgent was resolved correctly
+    if (this._browserInfo && this._browserInfo.prefix) {
+      // set additional prefix information
+      this.cssPrefix = this._browserInfo.prefix.css;
+      this.jsPrefix = this._browserInfo.prefix.inline;
+      this.prefixedKeyframes = (0, _utilsGetPrefixedKeyframes2['default'])(this._browserInfo);
+    } else {
+      this._usePrefixAllFallback = true;
+      return false;
+    }
+
+    var data = this._browserInfo.browser && _prefixProps2['default'][this._browserInfo.browser];
+    if (data) {
+      this._requiresPrefix = Object.keys(data).filter(function (key) {
+        return data[key] >= _this._browserInfo.version;
+      }).reduce(function (result, name) {
+        result[name] = true;
+        return result;
+      }, {});
+      this._hasPropsRequiringPrefix = Object.keys(this._requiresPrefix).length > 0;
+    } else {
+      this._usePrefixAllFallback = true;
+    }
+  }
+
+  /**
+   * Returns a prefixed version of the style object
+   * @param {Object} styles - Style object that gets prefixed properties added
+   * @returns {Object} - Style object with prefixed properties and values
+   */
+
+  _createClass(Prefixer, [{
+    key: 'prefix',
+    value: function prefix(styles) {
+      var _this2 = this;
+
+      // use prefixAll as fallback if userAgent can not be resolved
+      if (this._usePrefixAllFallback) {
+        return (0, _inlineStylePrefixAll2['default'])(styles);
+      }
+
+      // only add prefixes if needed
+      if (!this._hasPropsRequiringPrefix) {
+        return styles;
+      }
+
+      styles = (0, _utilsAssign2['default'])({}, styles);
+
+      Object.keys(styles).forEach(function (property) {
+        var value = styles[property];
+        if (value instanceof Object) {
+          // recurse through nested style objects
+          styles[property] = _this2.prefix(value);
+        } else {
+          // add prefixes if needed
+          if (_this2._requiresPrefix[property]) {
+            styles[_this2.jsPrefix + (0, _utilsCapitalizeString2['default'])(property)] = value;
+            if (!_this2._keepUnprefixed) {
+              delete styles[property];
+            }
+          }
+
+          // resolve plugins
+          plugins.forEach(function (plugin) {
+            // generates a new plugin interface with current data
+            var resolvedStyles = plugin({
+              property: property,
+              value: value,
+              styles: styles,
+              browserInfo: _this2._browserInfo,
+              prefix: {
+                js: _this2.jsPrefix,
+                css: _this2.cssPrefix,
+                keyframes: _this2.prefixedKeyframes
+              },
+              keepUnprefixed: _this2._keepUnprefixed,
+              requiresPrefix: _this2._requiresPrefix
+            });
+            (0, _utilsAssign2['default'])(styles, resolvedStyles);
+          });
+        }
+      });
+
+      return styles;
+    }
+
+    /**
+     * Returns a prefixed version of the style object using all vendor prefixes
+     * @param {Object} styles - Style object that gets prefixed properties added
+     * @returns {Object} - Style object with prefixed properties and values
+     */
+  }], [{
+    key: 'prefixAll',
+    value: function prefixAll(styles) {
+      return (0, _inlineStylePrefixAll2['default'])(styles);
+    }
+  }]);
+
+  return Prefixer;
+})();
+
+exports['default'] = Prefixer;
+module.exports = exports['default'];
+},{"./plugins/calc":21,"./plugins/cursor":22,"./plugins/flex":23,"./plugins/flexboxIE":24,"./plugins/flexboxOld":25,"./plugins/gradient":26,"./plugins/sizing":27,"./plugins/transition":28,"./prefixProps":29,"./utils/assign":30,"./utils/capitalizeString":32,"./utils/getBrowserInformation":33,"./utils/getPrefixedKeyframes":34,"inline-style-prefix-all":13}],21:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = calc;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var _utilsCamelToDashCase = require('../utils/camelToDashCase');
+
+var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
+
+function calc(_ref2) {
+  var property = _ref2.property;
+  var value = _ref2.value;
+  var _ref2$browserInfo = _ref2.browserInfo;
+  var browser = _ref2$browserInfo.browser;
+  var version = _ref2$browserInfo.version;
+  var css = _ref2.prefix.css;
+  var keepUnprefixed = _ref2.keepUnprefixed;
+
+  if (typeof value === 'string' && value.indexOf('calc(') > -1 && (browser === 'firefox' && version < 15 || browser === 'chrome' && version < 25 || browser === 'safari' && version < 6.1 || browser === 'ios_saf' && version < 7)) {
+    return _defineProperty({}, property, value.replace(/calc\(/g, css + 'calc(') + (keepUnprefixed ? ';' + (0, _utilsCamelToDashCase2['default'])(property) + ':' + value : ''));
+  }
+}
+
+module.exports = exports['default'];
+},{"../utils/camelToDashCase":31}],22:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = cursor;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _utilsCamelToDashCase = require('../utils/camelToDashCase');
+
+var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
+
+var values = {
+  'zoom-in': true,
+  'zoom-out': true,
+  'grab': true,
+  'grabbing': true
+};
+
+function cursor(_ref) {
+  var property = _ref.property;
+  var value = _ref.value;
+  var _ref$browserInfo = _ref.browserInfo;
+  var browser = _ref$browserInfo.browser;
+  var version = _ref$browserInfo.version;
+  var css = _ref.prefix.css;
+  var keepUnprefixed = _ref.keepUnprefixed;
+
+  if (property === 'cursor' && values[value] && (browser === 'firefox' && version < 24 || browser === 'chrome' && version < 37 || browser === 'safari' && version < 9 || browser === 'opera' && version < 24)) {
+    return {
+      cursor: css + value + (keepUnprefixed ? ';' + (0, _utilsCamelToDashCase2['default'])(property) + ':' + value : '')
+    };
+  }
+}
+
+module.exports = exports['default'];
+},{"../utils/camelToDashCase":31}],23:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = flex;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _utilsCamelToDashCase = require('../utils/camelToDashCase');
+
+var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
+
+var values = {
+  'flex': true,
+  'inline-flex': true
+};
+
+function flex(_ref) {
+  var property = _ref.property;
+  var value = _ref.value;
+  var _ref$browserInfo = _ref.browserInfo;
+  var browser = _ref$browserInfo.browser;
+  var version = _ref$browserInfo.version;
+  var css = _ref.prefix.css;
+  var keepUnprefixed = _ref.keepUnprefixed;
+
+  if (property === 'display' && values[value] && (browser === 'chrome' && version < 29 && version > 20 || (browser === 'safari' || browser === 'ios_saf') && version < 9 && version > 6 || browser === 'opera' && (version == 15 || version == 16))) {
+    return {
+      display: css + value + (keepUnprefixed ? ';' + (0, _utilsCamelToDashCase2['default'])(property) + ':' + value : '')
+    };
+  }
+}
+
+module.exports = exports['default'];
+},{"../utils/camelToDashCase":31}],24:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = flexboxIE;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var _utilsCamelToDashCase = require('../utils/camelToDashCase');
+
+var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
+
+var alternativeValues = {
+  'space-around': 'distribute',
+  'space-between': 'justify',
+  'flex-start': 'start',
+  'flex-end': 'end',
+  flex: 'flexbox',
+  'inline-flex': 'inline-flexbox'
+};
+var alternativeProps = {
+  alignContent: 'msFlexLinePack',
+  alignSelf: 'msFlexItemAlign',
+  alignItems: 'msFlexAlign',
+  justifyContent: 'msFlexPack',
+  order: 'msFlexOrder',
+  flexGrow: 'msFlexPositive',
+  flexShrink: 'msFlexNegative',
+  flexBasis: 'msPreferredSize'
+};
+
+var properties = Object.keys(alternativeProps).reduce(function (result, prop) {
+  result[prop] = true;
+  return result;
+}, {});
+
+function flexboxIE(_ref2) {
+  var property = _ref2.property;
+  var value = _ref2.value;
+  var styles = _ref2.styles;
+  var _ref2$browserInfo = _ref2.browserInfo;
+  var browser = _ref2$browserInfo.browser;
+  var version = _ref2$browserInfo.version;
+  var css = _ref2.prefix.css;
+  var keepUnprefixed = _ref2.keepUnprefixed;
+
+  if ((properties[property] || property === 'display' && typeof value === 'string' && value.indexOf('flex') > -1) && (browser === 'ie_mob' || browser === 'ie') && version == 10) {
+    if (!keepUnprefixed) {
+      delete styles[property];
+    }
+    if (property === 'display' && alternativeValues[value]) {
+      return {
+        display: css + alternativeValues[value] + (keepUnprefixed ? ';' + (0, _utilsCamelToDashCase2['default'])(property) + ':' + value : '')
+      };
+    }
+    if (alternativeProps[property]) {
+      return _defineProperty({}, alternativeProps[property], alternativeValues[value] || value);
+    }
+  }
+}
+
+module.exports = exports['default'];
+},{"../utils/camelToDashCase":31}],25:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = flexboxOld;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var _utilsCamelToDashCase = require('../utils/camelToDashCase');
+
+var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
+
+var alternativeValues = {
+  'space-around': 'justify',
+  'space-between': 'justify',
+  'flex-start': 'start',
+  'flex-end': 'end',
+  'wrap-reverse': 'multiple',
+  wrap: 'multiple',
+  flex: 'box',
+  'inline-flex': 'inline-box'
+};
+
+var alternativeProps = {
+  alignItems: 'WebkitBoxAlign',
+  justifyContent: 'WebkitBoxPack',
+  flexWrap: 'WebkitBoxLines'
+};
+
+var otherProps = ['alignContent', 'alignSelf', 'order', 'flexGrow', 'flexShrink', 'flexBasis', 'flexDirection'];
+
+var properties = Object.keys(alternativeProps).concat(otherProps).reduce(function (result, prop) {
+  result[prop] = true;
+  return result;
+}, {});
+
+function flexboxOld(_ref2) {
+  var property = _ref2.property;
+  var value = _ref2.value;
+  var styles = _ref2.styles;
+  var _ref2$browserInfo = _ref2.browserInfo;
+  var browser = _ref2$browserInfo.browser;
+  var version = _ref2$browserInfo.version;
+  var css = _ref2.prefix.css;
+  var keepUnprefixed = _ref2.keepUnprefixed;
+
+  if ((properties[property] || property === 'display' && typeof value === 'string' && value.indexOf('flex') > -1) && (browser === 'firefox' && version < 22 || browser === 'chrome' && version < 21 || (browser === 'safari' || browser === 'ios_saf') && version <= 6.1 || browser === 'android' && version < 4.4 || browser === 'and_uc')) {
+    if (!keepUnprefixed) {
+      delete styles[property];
+    }
+    if (property === 'flexDirection') {
+      return {
+        WebkitBoxOrient: value.indexOf('column') > -1 ? 'vertical' : 'horizontal',
+        WebkitBoxDirection: value.indexOf('reverse') > -1 ? 'reverse' : 'normal'
+      };
+    }
+    if (property === 'display' && alternativeValues[value]) {
+      return {
+        display: css + alternativeValues[value] + (keepUnprefixed ? ';' + (0, _utilsCamelToDashCase2['default'])(property) + ':' + value : '')
+      };
+    }
+    if (alternativeProps[property]) {
+      return _defineProperty({}, alternativeProps[property], alternativeValues[value] || value);
+    }
+  }
+}
+
+module.exports = exports['default'];
+},{"../utils/camelToDashCase":31}],26:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = gradient;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var _utilsCamelToDashCase = require('../utils/camelToDashCase');
+
+var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
+
+var values = /linear-gradient|radial-gradient|repeating-linear-gradient|repeating-radial-gradient/;
+
+function gradient(_ref2) {
+  var property = _ref2.property;
+  var value = _ref2.value;
+  var _ref2$browserInfo = _ref2.browserInfo;
+  var browser = _ref2$browserInfo.browser;
+  var version = _ref2$browserInfo.version;
+  var css = _ref2.prefix.css;
+  var keepUnprefixed = _ref2.keepUnprefixed;
+
+  if (typeof value === 'string' && value.match(values) !== null && (browser === 'firefox' && version < 16 || browser === 'chrome' && version < 26 || (browser === 'safari' || browser === 'ios_saf') && version < 7 || (browser === 'opera' || browser === 'op_mini') && version < 12.1 || browser === 'android' && version < 4.4 || browser === 'and_uc')) {
+    return _defineProperty({}, property, css + value + (keepUnprefixed ? ';' + (0, _utilsCamelToDashCase2['default'])(property) + ':' + value : ''));
+  }
+}
+
+module.exports = exports['default'];
+},{"../utils/camelToDashCase":31}],27:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = sizing;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var _utilsCamelToDashCase = require('../utils/camelToDashCase');
+
+var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
+
+var properties = {
+  maxHeight: true,
+  maxWidth: true,
+  width: true,
+  height: true,
+  columnWidth: true,
+  minWidth: true,
+  minHeight: true
+};
+var values = {
+  'min-content': true,
+  'max-content': true,
+  'fill-available': true,
+  'fit-content': true,
+  'contain-floats': true
+};
+
+function sizing(_ref2) {
+  var property = _ref2.property;
+  var value = _ref2.value;
+  var css = _ref2.prefix.css;
+  var keepUnprefixed = _ref2.keepUnprefixed;
+
+  // This might change in the future
+  // Keep an eye on it
+  if (properties[property] && values[value]) {
+    return _defineProperty({}, property, css + value + (keepUnprefixed ? ';' + (0, _utilsCamelToDashCase2['default'])(property) + ':' + value : ''));
+  }
+}
+
+module.exports = exports['default'];
+},{"../utils/camelToDashCase":31}],28:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = transition;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var _utilsCamelToDashCase = require('../utils/camelToDashCase');
+
+var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
+
+var _utilsCapitalizeString = require('../utils/capitalizeString');
+
+var _utilsCapitalizeString2 = _interopRequireDefault(_utilsCapitalizeString);
+
+var _utilsUnprefixProperty = require('../utils/unprefixProperty');
+
+var _utilsUnprefixProperty2 = _interopRequireDefault(_utilsUnprefixProperty);
+
+var properties = { transition: true, transitionProperty: true };
+
+function transition(_ref2) {
+  var property = _ref2.property;
+  var value = _ref2.value;
+  var css = _ref2.prefix.css;
+  var requiresPrefix = _ref2.requiresPrefix;
+  var keepUnprefixed = _ref2.keepUnprefixed;
+
+  // also check for already prefixed transitions
+  var unprefixedProperty = (0, _utilsUnprefixProperty2['default'])(property);
+  if (typeof value === 'string' && properties[unprefixedProperty]) {
+    var _ret = (function () {
+      var requiresPrefixDashCased = Object.keys(requiresPrefix).map(function (prop) {
+        return (0, _utilsCamelToDashCase2['default'])(prop);
+      });
+
+      // only split multi values, not cubic beziers
+      var multipleValues = value.split(/,(?![^()]*(?:\([^()]*\))?\))/g);
+
+      requiresPrefixDashCased.forEach(function (property) {
+        multipleValues.forEach(function (val, index) {
+          if (val.indexOf(property) > -1) {
+            multipleValues[index] = val.replace(property, css + property) + (keepUnprefixed ? ',' + val : '');
+          }
+        });
+      });
+
+      return {
+        v: _defineProperty({}, property, multipleValues.join(','))
+      };
+    })();
+
+    if (typeof _ret === 'object') return _ret.v;
+  }
+}
+
+module.exports = exports['default'];
+},{"../utils/camelToDashCase":31,"../utils/capitalizeString":32,"../utils/unprefixProperty":35}],29:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = { "chrome": { "transform": 35, "transformOrigin": 35, "transformOriginX": 35, "transformOriginY": 35, "backfaceVisibility": 35, "perspective": 35, "perspectiveOrigin": 35, "transformStyle": 35, "transformOriginZ": 35, "animation": 42, "animationDelay": 42, "animationDirection": 42, "animationFillMode": 42, "animationDuration": 42, "animationIterationCount": 42, "animationName": 42, "animationPlayState": 42, "animationTimingFunction": 42, "appearance": 52, "userSelect": 52, "fontKerning": 32, "textEmphasisPosition": 52, "textEmphasis": 52, "textEmphasisStyle": 52, "textEmphasisColor": 52, "boxDecorationBreak": 52, "clipPath": 52, "maskImage": 52, "maskMode": 52, "maskRepeat": 52, "maskPosition": 52, "maskClip": 52, "maskOrigin": 52, "maskSize": 52, "maskComposite": 52, "mask": 52, "maskBorderSource": 52, "maskBorderMode": 52, "maskBorderSlice": 52, "maskBorderWidth": 52, "maskBorderOutset": 52, "maskBorderRepeat": 52, "maskBorder": 52, "maskType": 52, "textDecorationStyle": 52, "textDecorationSkip": 52, "textDecorationLine": 52, "textDecorationColor": 52, "filter": 52, "fontFeatureSettings": 47, "breakAfter": 52, "breakBefore": 52, "breakInside": 52, "columnCount": 52, "columnFill": 52, "columnGap": 52, "columnRule": 52, "columnRuleColor": 52, "columnRuleStyle": 52, "columnRuleWidth": 52, "columns": 52, "columnSpan": 52, "columnWidth": 52 }, "safari": { "flex": 8, "flexBasis": 8, "flexDirection": 8, "flexGrow": 8, "flexFlow": 8, "flexShrink": 8, "flexWrap": 8, "alignContent": 8, "alignItems": 8, "alignSelf": 8, "justifyContent": 8, "order": 8, "transition": 6, "transitionDelay": 6, "transitionDuration": 6, "transitionProperty": 6, "transitionTimingFunction": 6, "transform": 8, "transformOrigin": 8, "transformOriginX": 8, "transformOriginY": 8, "backfaceVisibility": 8, "perspective": 8, "perspectiveOrigin": 8, "transformStyle": 8, "transformOriginZ": 8, "animation": 8, "animationDelay": 8, "animationDirection": 8, "animationFillMode": 8, "animationDuration": 8, "animationIterationCount": 8, "animationName": 8, "animationPlayState": 8, "animationTimingFunction": 8, "appearance": 9.1, "userSelect": 9.1, "backdropFilter": 9.1, "fontKerning": 9.1, "scrollSnapType": 9.1, "scrollSnapPointsX": 9.1, "scrollSnapPointsY": 9.1, "scrollSnapDestination": 9.1, "scrollSnapCoordinate": 9.1, "textEmphasisPosition": 7, "textEmphasis": 7, "textEmphasisStyle": 7, "textEmphasisColor": 7, "boxDecorationBreak": 9.1, "clipPath": 9.1, "maskImage": 9.1, "maskMode": 9.1, "maskRepeat": 9.1, "maskPosition": 9.1, "maskClip": 9.1, "maskOrigin": 9.1, "maskSize": 9.1, "maskComposite": 9.1, "mask": 9.1, "maskBorderSource": 9.1, "maskBorderMode": 9.1, "maskBorderSlice": 9.1, "maskBorderWidth": 9.1, "maskBorderOutset": 9.1, "maskBorderRepeat": 9.1, "maskBorder": 9.1, "maskType": 9.1, "textDecorationStyle": 9.1, "textDecorationSkip": 9.1, "textDecorationLine": 9.1, "textDecorationColor": 9.1, "shapeImageThreshold": 9.1, "shapeImageMargin": 9.1, "shapeImageOutside": 9.1, "filter": 9, "hyphens": 9.1, "flowInto": 9.1, "flowFrom": 9.1, "breakBefore": 8, "breakAfter": 8, "breakInside": 8, "regionFragment": 9.1, "columnCount": 8, "columnFill": 8, "columnGap": 8, "columnRule": 8, "columnRuleColor": 8, "columnRuleStyle": 8, "columnRuleWidth": 8, "columns": 8, "columnSpan": 8, "columnWidth": 8 }, "firefox": { "appearance": 47, "userSelect": 47, "boxSizing": 28, "textAlignLast": 47, "textDecorationStyle": 35, "textDecorationSkip": 35, "textDecorationLine": 35, "textDecorationColor": 35, "tabSize": 47, "hyphens": 42, "fontFeatureSettings": 33, "breakAfter": 47, "breakBefore": 47, "breakInside": 47, "columnCount": 47, "columnFill": 47, "columnGap": 47, "columnRule": 47, "columnRuleColor": 47, "columnRuleStyle": 47, "columnRuleWidth": 47, "columns": 47, "columnSpan": 47, "columnWidth": 47 }, "opera": { "flex": 16, "flexBasis": 16, "flexDirection": 16, "flexGrow": 16, "flexFlow": 16, "flexShrink": 16, "flexWrap": 16, "alignContent": 16, "alignItems": 16, "alignSelf": 16, "justifyContent": 16, "order": 16, "transform": 22, "transformOrigin": 22, "transformOriginX": 22, "transformOriginY": 22, "backfaceVisibility": 22, "perspective": 22, "perspectiveOrigin": 22, "transformStyle": 22, "transformOriginZ": 22, "animation": 29, "animationDelay": 29, "animationDirection": 29, "animationFillMode": 29, "animationDuration": 29, "animationIterationCount": 29, "animationName": 29, "animationPlayState": 29, "animationTimingFunction": 29, "appearance": 37, "userSelect": 37, "fontKerning": 19, "textEmphasisPosition": 37, "textEmphasis": 37, "textEmphasisStyle": 37, "textEmphasisColor": 37, "boxDecorationBreak": 37, "clipPath": 37, "maskImage": 37, "maskMode": 37, "maskRepeat": 37, "maskPosition": 37, "maskClip": 37, "maskOrigin": 37, "maskSize": 37, "maskComposite": 37, "mask": 37, "maskBorderSource": 37, "maskBorderMode": 37, "maskBorderSlice": 37, "maskBorderWidth": 37, "maskBorderOutset": 37, "maskBorderRepeat": 37, "maskBorder": 37, "maskType": 37, "filter": 37, "fontFeatureSettings": 37, "breakAfter": 37, "breakBefore": 37, "breakInside": 37, "columnCount": 37, "columnFill": 37, "columnGap": 37, "columnRule": 37, "columnRuleColor": 37, "columnRuleStyle": 37, "columnRuleWidth": 37, "columns": 37, "columnSpan": 37, "columnWidth": 37 }, "ie": { "gridTemplateRows": 11, "breakInside": 11, "transformOriginY": 9, "gridRowStart": 11, "gridColumn": 11, "regionFragment": 11, "breakBefore": 11, "userSelect": 11, "gridColumnEnd": 11, "gridRowEnd": 11, "gridTemplateColumns": 11, "gridColumnStart": 11, "gridArea": 11, "flexDirection": 10, "gridRowGap": 11, "gridTemplateAreas": 11, "gridAutoRows": 11, "gridRow": 11, "scrollSnapDestination": 11, "scrollSnapPointsY": 11, "touchAction": 10, "gridGap": 11, "gridColumnGap": 11, "wrapFlow": 11, "scrollSnapPointsX": 11, "flowFrom": 11, "transform": 9, "breakAfter": 11, "wrapMargin": 11, "scrollSnapCoordinate": 11, "flexWrap": 10, "scrollSnapType": 11, "flex": 10, "wrapThrough": 11, "gridAutoColumns": 11, "flexFlow": 10, "gridTemplate": 11, "hyphens": 11, "grid": 11, "transformOriginX": 9, "flowInto": 11, "transformOrigin": 9, "gridAutoFlow": 11, "textSizeAdjust": 11 }, "edge": { "userSelect": 14, "wrapFlow": 14, "wrapThrough": 14, "wrapMargin": 14, "scrollSnapType": 14, "scrollSnapPointsX": 14, "scrollSnapPointsY": 14, "scrollSnapDestination": 14, "scrollSnapCoordinate": 14, "hyphens": 14, "flowInto": 14, "flowFrom": 14, "breakBefore": 14, "breakAfter": 14, "breakInside": 14, "regionFragment": 14, "gridTemplateColumns": 14, "gridTemplateRows": 14, "gridTemplateAreas": 14, "gridTemplate": 14, "gridAutoColumns": 14, "gridAutoRows": 14, "gridAutoFlow": 14, "grid": 14, "gridRowStart": 14, "gridColumnStart": 14, "gridRowEnd": 14, "gridRow": 14, "gridColumn": 14, "gridColumnEnd": 14, "gridColumnGap": 14, "gridRowGap": 14, "gridArea": 14, "gridGap": 14 }, "ios_saf": { "flex": 8.1, "flexBasis": 8.1, "flexDirection": 8.1, "flexGrow": 8.1, "flexFlow": 8.1, "flexShrink": 8.1, "flexWrap": 8.1, "alignContent": 8.1, "alignItems": 8.1, "alignSelf": 8.1, "justifyContent": 8.1, "order": 8.1, "transition": 6, "transitionDelay": 6, "transitionDuration": 6, "transitionProperty": 6, "transitionTimingFunction": 6, "transform": 8.1, "transformOrigin": 8.1, "transformOriginX": 8.1, "transformOriginY": 8.1, "backfaceVisibility": 8.1, "perspective": 8.1, "perspectiveOrigin": 8.1, "transformStyle": 8.1, "transformOriginZ": 8.1, "animation": 8.1, "animationDelay": 8.1, "animationDirection": 8.1, "animationFillMode": 8.1, "animationDuration": 8.1, "animationIterationCount": 8.1, "animationName": 8.1, "animationPlayState": 8.1, "animationTimingFunction": 8.1, "appearance": 9.3, "userSelect": 9.3, "backdropFilter": 9.3, "fontKerning": 9.3, "scrollSnapType": 9.3, "scrollSnapPointsX": 9.3, "scrollSnapPointsY": 9.3, "scrollSnapDestination": 9.3, "scrollSnapCoordinate": 9.3, "boxDecorationBreak": 9.3, "clipPath": 9.3, "maskImage": 9.3, "maskMode": 9.3, "maskRepeat": 9.3, "maskPosition": 9.3, "maskClip": 9.3, "maskOrigin": 9.3, "maskSize": 9.3, "maskComposite": 9.3, "mask": 9.3, "maskBorderSource": 9.3, "maskBorderMode": 9.3, "maskBorderSlice": 9.3, "maskBorderWidth": 9.3, "maskBorderOutset": 9.3, "maskBorderRepeat": 9.3, "maskBorder": 9.3, "maskType": 9.3, "textSizeAdjust": 9.3, "textDecorationStyle": 9.3, "textDecorationSkip": 9.3, "textDecorationLine": 9.3, "textDecorationColor": 9.3, "shapeImageThreshold": 9.3, "shapeImageMargin": 9.3, "shapeImageOutside": 9.3, "filter": 9, "hyphens": 9.3, "flowInto": 9.3, "flowFrom": 9.3, "breakBefore": 8.1, "breakAfter": 8.1, "breakInside": 8.1, "regionFragment": 9.3, "columnCount": 8.1, "columnFill": 8.1, "columnGap": 8.1, "columnRule": 8.1, "columnRuleColor": 8.1, "columnRuleStyle": 8.1, "columnRuleWidth": 8.1, "columns": 8.1, "columnSpan": 8.1, "columnWidth": 8.1 }, "android": { "borderImage": 4.2, "borderImageOutset": 4.2, "borderImageRepeat": 4.2, "borderImageSlice": 4.2, "borderImageSource": 4.2, "borderImageWidth": 4.2, "flex": 4.2, "flexBasis": 4.2, "flexDirection": 4.2, "flexGrow": 4.2, "flexFlow": 4.2, "flexShrink": 4.2, "flexWrap": 4.2, "alignContent": 4.2, "alignItems": 4.2, "alignSelf": 4.2, "justifyContent": 4.2, "order": 4.2, "transition": 4.2, "transitionDelay": 4.2, "transitionDuration": 4.2, "transitionProperty": 4.2, "transitionTimingFunction": 4.2, "transform": 4.4, "transformOrigin": 4.4, "transformOriginX": 4.4, "transformOriginY": 4.4, "backfaceVisibility": 4.4, "perspective": 4.4, "perspectiveOrigin": 4.4, "transformStyle": 4.4, "transformOriginZ": 4.4, "animation": 4.4, "animationDelay": 4.4, "animationDirection": 4.4, "animationFillMode": 4.4, "animationDuration": 4.4, "animationIterationCount": 4.4, "animationName": 4.4, "animationPlayState": 4.4, "animationTimingFunction": 4.4, "appearance": 47, "userSelect": 47, "fontKerning": 4.4, "textEmphasisPosition": 47, "textEmphasis": 47, "textEmphasisStyle": 47, "textEmphasisColor": 47, "boxDecorationBreak": 47, "clipPath": 47, "maskImage": 47, "maskMode": 47, "maskRepeat": 47, "maskPosition": 47, "maskClip": 47, "maskOrigin": 47, "maskSize": 47, "maskComposite": 47, "mask": 47, "maskBorderSource": 47, "maskBorderMode": 47, "maskBorderSlice": 47, "maskBorderWidth": 47, "maskBorderOutset": 47, "maskBorderRepeat": 47, "maskBorder": 47, "maskType": 47, "filter": 47, "fontFeatureSettings": 47, "breakAfter": 47, "breakBefore": 47, "breakInside": 47, "columnCount": 47, "columnFill": 47, "columnGap": 47, "columnRule": 47, "columnRuleColor": 47, "columnRuleStyle": 47, "columnRuleWidth": 47, "columns": 47, "columnSpan": 47, "columnWidth": 47 }, "and_chr": { "appearance": 47, "userSelect": 47, "textEmphasisPosition": 47, "textEmphasis": 47, "textEmphasisStyle": 47, "textEmphasisColor": 47, "boxDecorationBreak": 47, "clipPath": 47, "maskImage": 47, "maskMode": 47, "maskRepeat": 47, "maskPosition": 47, "maskClip": 47, "maskOrigin": 47, "maskSize": 47, "maskComposite": 47, "mask": 47, "maskBorderSource": 47, "maskBorderMode": 47, "maskBorderSlice": 47, "maskBorderWidth": 47, "maskBorderOutset": 47, "maskBorderRepeat": 47, "maskBorder": 47, "maskType": 47, "textDecorationStyle": 47, "textDecorationSkip": 47, "textDecorationLine": 47, "textDecorationColor": 47, "filter": 47, "fontFeatureSettings": 47, "breakAfter": 47, "breakBefore": 47, "breakInside": 47, "columnCount": 47, "columnFill": 47, "columnGap": 47, "columnRule": 47, "columnRuleColor": 47, "columnRuleStyle": 47, "columnRuleWidth": 47, "columns": 47, "columnSpan": 47, "columnWidth": 47 }, "and_uc": { "flex": 9.9, "flexBasis": 9.9, "flexDirection": 9.9, "flexGrow": 9.9, "flexFlow": 9.9, "flexShrink": 9.9, "flexWrap": 9.9, "alignContent": 9.9, "alignItems": 9.9, "alignSelf": 9.9, "justifyContent": 9.9, "order": 9.9, "transition": 9.9, "transitionDelay": 9.9, "transitionDuration": 9.9, "transitionProperty": 9.9, "transitionTimingFunction": 9.9, "transform": 9.9, "transformOrigin": 9.9, "transformOriginX": 9.9, "transformOriginY": 9.9, "backfaceVisibility": 9.9, "perspective": 9.9, "perspectiveOrigin": 9.9, "transformStyle": 9.9, "transformOriginZ": 9.9, "animation": 9.9, "animationDelay": 9.9, "animationDirection": 9.9, "animationFillMode": 9.9, "animationDuration": 9.9, "animationIterationCount": 9.9, "animationName": 9.9, "animationPlayState": 9.9, "animationTimingFunction": 9.9, "appearance": 9.9, "userSelect": 9.9, "fontKerning": 9.9, "textEmphasisPosition": 9.9, "textEmphasis": 9.9, "textEmphasisStyle": 9.9, "textEmphasisColor": 9.9, "maskImage": 9.9, "maskMode": 9.9, "maskRepeat": 9.9, "maskPosition": 9.9, "maskClip": 9.9, "maskOrigin": 9.9, "maskSize": 9.9, "maskComposite": 9.9, "mask": 9.9, "maskBorderSource": 9.9, "maskBorderMode": 9.9, "maskBorderSlice": 9.9, "maskBorderWidth": 9.9, "maskBorderOutset": 9.9, "maskBorderRepeat": 9.9, "maskBorder": 9.9, "maskType": 9.9, "textSizeAdjust": 9.9, "filter": 9.9, "hyphens": 9.9, "flowInto": 9.9, "flowFrom": 9.9, "breakBefore": 9.9, "breakAfter": 9.9, "breakInside": 9.9, "regionFragment": 9.9, "fontFeatureSettings": 9.9, "columnCount": 9.9, "columnFill": 9.9, "columnGap": 9.9, "columnRule": 9.9, "columnRuleColor": 9.9, "columnRuleStyle": 9.9, "columnRuleWidth": 9.9, "columns": 9.9, "columnSpan": 9.9, "columnWidth": 9.9 }, "op_mini": { "borderImage": 5, "borderImageOutset": 5, "borderImageRepeat": 5, "borderImageSlice": 5, "borderImageSource": 5, "borderImageWidth": 5, "tabSize": 5, "objectFit": 5, "objectPosition": 5 } };
+module.exports = exports["default"];
+},{}],30:[function(require,module,exports){
+// leight polyfill for Object.assign
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports["default"] = function (base) {
+  var extend = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+
+  Object.keys(extend).forEach(function (key) {
+    return base[key] = extend[key];
+  });
+  return base;
+};
+
+module.exports = exports["default"];
+},{}],31:[function(require,module,exports){
+arguments[4][16][0].apply(exports,arguments)
+},{"dup":16}],32:[function(require,module,exports){
+arguments[4][17][0].apply(exports,arguments)
+},{"dup":17}],33:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _bowser = require('bowser');
+
+var _bowser2 = _interopRequireDefault(_bowser);
+
+var vendorPrefixes = {
+  Webkit: ['chrome', 'safari', 'ios', 'android', 'phantom', 'opera', 'webos', 'blackberry', 'bada', 'tizen'],
+  Moz: ['firefox', 'seamonkey', 'sailfish'],
+  ms: ['msie', 'msedge']
+};
+
+var browsers = {
+  chrome: [['chrome']],
+  safari: [['safari']],
+  firefox: [['firefox']],
+  ie: [['msie']],
+  edge: [['msedge']],
+  opera: [['opera']],
+  ios_saf: [['ios', 'mobile'], ['ios', 'tablet']],
+  ie_mob: [['windowsphone', 'mobile', 'msie'], ['windowsphone', 'tablet', 'msie'], ['windowsphone', 'mobile', 'msedge'], ['windowsphone', 'tablet', 'msedge']],
+  op_mini: [['opera', 'mobile'], ['opera', 'tablet']],
+  and_uc: [['android', 'mobile'], ['android', 'tablet']],
+  android: [['android', 'mobile'], ['android', 'tablet']]
+};
+
+/**
+ * Uses bowser to get default browser information such as version and name
+ * Evaluates bowser info and adds vendorPrefix information
+ * @param {string} userAgent - userAgent that gets evaluated
+ */
+
+exports['default'] = function (userAgent) {
+  if (!userAgent) {
+    return false;
+  }
+
+  var info = _bowser2['default']._detect(userAgent);
+
+  Object.keys(vendorPrefixes).forEach(function (prefix) {
+    vendorPrefixes[prefix].forEach(function (browser) {
+      if (info[browser]) {
+        info.prefix = {
+          inline: prefix,
+          css: '-' + prefix.toLowerCase() + '-'
+        };
+      }
+    });
+  });
+
+  var name = '';
+  Object.keys(browsers).forEach(function (browser) {
+    browsers[browser].forEach(function (condition) {
+      var match = 0;
+      condition.forEach(function (single) {
+        if (info[single]) {
+          match += 1;
+        }
+      });
+      if (condition.length === match) {
+        name = browser;
+      }
+    });
+  });
+
+  info.browser = name;
+  // For cordova IOS 8 the version is missing, set truncated osversion to prevent NaN
+  info.version = info.version ? parseFloat(info.version) : parseInt(parseFloat(info.osversion), 10);
+
+  // seperate native android chrome
+  // https://github.com/rofrischmann/inline-style-prefixer/issues/45
+  if (info.browser === 'android' && info.chrome && info.version > 37) {
+    info.browser = 'and_chr';
+  }
+  info.version = parseFloat(info.version);
+  info.osversion = parseFloat(info.osversion);
+  // For android < 4.4 we want to check the osversion
+  // not the chrome version, see issue #26
+  // https://github.com/rofrischmann/inline-style-prefixer/issues/26
+  if (info.browser === 'android' && info.osversion < 5) {
+    info.version = info.osversion;
+  }
+
+  return info;
+};
+
+module.exports = exports['default'];
+},{"bowser":4}],34:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+exports['default'] = function (_ref) {
+  var browser = _ref.browser;
+  var version = _ref.version;
+  var prefix = _ref.prefix;
+
+  var prefixedKeyframes = 'keyframes';
+
+  if (browser === 'chrome' && version < 43 || (browser === 'safari' || browser === 'ios_saf') && version < 9 || browser === 'opera' && version < 30 || browser === 'android' && version <= 4.4 || browser === 'and_uc') {
+    prefixedKeyframes = prefix.css + prefixedKeyframes;
+  }
+  return prefixedKeyframes;
+};
+
+module.exports = exports['default'];
+},{}],35:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+exports['default'] = function (property) {
+  var unprefixed = property.replace(/^(ms|Webkit|Moz|O)/, '');
+  return unprefixed.charAt(0).toLowerCase() + unprefixed.slice(1);
+};
+
+module.exports = exports['default'];
+},{}],36:[function(require,module,exports){
+// Source: http://jsfiddle.net/vWx8V/
+// http://stackoverflow.com/questions/5603195/full-list-of-javascript-keycodes
+
+/**
+ * Conenience method returns corresponding value for given keyName or keyCode.
+ *
+ * @param {Mixed} keyCode {Number} or keyName {String}
+ * @return {Mixed}
+ * @api public
+ */
+
+exports = module.exports = function(searchInput) {
+  // Keyboard Events
+  if (searchInput && 'object' === typeof searchInput) {
+    var hasKeyCode = searchInput.which || searchInput.keyCode || searchInput.charCode
+    if (hasKeyCode) searchInput = hasKeyCode
+  }
+
+  // Numbers
+  if ('number' === typeof searchInput) return names[searchInput]
+
+  // Everything else (cast to string)
+  var search = String(searchInput)
+
+  // check codes
+  var foundNamedKey = codes[search.toLowerCase()]
+  if (foundNamedKey) return foundNamedKey
+
+  // check aliases
+  var foundNamedKey = aliases[search.toLowerCase()]
+  if (foundNamedKey) return foundNamedKey
+
+  // weird character?
+  if (search.length === 1) return search.charCodeAt(0)
+
+  return undefined
+}
+
+/**
+ * Get by name
+ *
+ *   exports.code['enter'] // => 13
+ */
+
+var codes = exports.code = exports.codes = {
+  'backspace': 8,
+  'tab': 9,
+  'enter': 13,
+  'shift': 16,
+  'ctrl': 17,
+  'alt': 18,
+  'pause/break': 19,
+  'caps lock': 20,
+  'esc': 27,
+  'space': 32,
+  'page up': 33,
+  'page down': 34,
+  'end': 35,
+  'home': 36,
+  'left': 37,
+  'up': 38,
+  'right': 39,
+  'down': 40,
+  'insert': 45,
+  'delete': 46,
+  'command': 91,
+  'left command': 91,
+  'right command': 93,
+  'numpad *': 106,
+  'numpad +': 107,
+  'numpad -': 109,
+  'numpad .': 110,
+  'numpad /': 111,
+  'num lock': 144,
+  'scroll lock': 145,
+  'my computer': 182,
+  'my calculator': 183,
+  ';': 186,
+  '=': 187,
+  ',': 188,
+  '-': 189,
+  '.': 190,
+  '/': 191,
+  '`': 192,
+  '[': 219,
+  '\\': 220,
+  ']': 221,
+  "'": 222
+}
+
+// Helper aliases
+
+var aliases = exports.aliases = {
+  'windows': 91,
+  '⇧': 16,
+  '⌥': 18,
+  '⌃': 17,
+  '⌘': 91,
+  'ctl': 17,
+  'control': 17,
+  'option': 18,
+  'pause': 19,
+  'break': 19,
+  'caps': 20,
+  'return': 13,
+  'escape': 27,
+  'spc': 32,
+  'pgup': 33,
+  'pgdn': 34,
+  'ins': 45,
+  'del': 46,
+  'cmd': 91
+}
+
+
+/*!
+ * Programatically add the following
+ */
+
+// lower case chars
+for (i = 97; i < 123; i++) codes[String.fromCharCode(i)] = i - 32
+
+// numbers
+for (var i = 48; i < 58; i++) codes[i - 48] = i
+
+// function keys
+for (i = 1; i < 13; i++) codes['f'+i] = i + 111
+
+// numpad keys
+for (i = 0; i < 10; i++) codes['numpad '+i] = i + 96
+
+/**
+ * Get by code
+ *
+ *   exports.name[13] // => 'Enter'
+ */
+
+var names = exports.names = exports.title = {} // title for backward compat
+
+// Create reverse mapping
+for (i in codes) names[codes[i]] = i
+
+// Add aliases
+for (var alias in aliases) {
+  codes[alias] = aliases[alias]
+}
+
+},{}],37:[function(require,module,exports){
+var getNative = require('./_getNative'),
+    root = require('./_root');
+
+/* Built-in method references that are verified to be native. */
+var DataView = getNative(root, 'DataView');
+
+module.exports = DataView;
+
+},{"./_getNative":87,"./_root":120}],38:[function(require,module,exports){
+var hashClear = require('./_hashClear'),
+    hashDelete = require('./_hashDelete'),
+    hashGet = require('./_hashGet'),
+    hashHas = require('./_hashHas'),
+    hashSet = require('./_hashSet');
+
+/**
+ * Creates a hash object.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function Hash(entries) {
+  var index = -1,
+      length = entries ? entries.length : 0;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+// Add methods to `Hash`.
+Hash.prototype.clear = hashClear;
+Hash.prototype['delete'] = hashDelete;
+Hash.prototype.get = hashGet;
+Hash.prototype.has = hashHas;
+Hash.prototype.set = hashSet;
+
+module.exports = Hash;
+
+},{"./_hashClear":92,"./_hashDelete":93,"./_hashGet":94,"./_hashHas":95,"./_hashSet":96}],39:[function(require,module,exports){
+var listCacheClear = require('./_listCacheClear'),
+    listCacheDelete = require('./_listCacheDelete'),
+    listCacheGet = require('./_listCacheGet'),
+    listCacheHas = require('./_listCacheHas'),
+    listCacheSet = require('./_listCacheSet');
+
+/**
+ * Creates an list cache object.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function ListCache(entries) {
+  var index = -1,
+      length = entries ? entries.length : 0;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+// Add methods to `ListCache`.
+ListCache.prototype.clear = listCacheClear;
+ListCache.prototype['delete'] = listCacheDelete;
+ListCache.prototype.get = listCacheGet;
+ListCache.prototype.has = listCacheHas;
+ListCache.prototype.set = listCacheSet;
+
+module.exports = ListCache;
+
+},{"./_listCacheClear":108,"./_listCacheDelete":109,"./_listCacheGet":110,"./_listCacheHas":111,"./_listCacheSet":112}],40:[function(require,module,exports){
+var getNative = require('./_getNative'),
+    root = require('./_root');
+
+/* Built-in method references that are verified to be native. */
+var Map = getNative(root, 'Map');
+
+module.exports = Map;
+
+},{"./_getNative":87,"./_root":120}],41:[function(require,module,exports){
+var mapCacheClear = require('./_mapCacheClear'),
+    mapCacheDelete = require('./_mapCacheDelete'),
+    mapCacheGet = require('./_mapCacheGet'),
+    mapCacheHas = require('./_mapCacheHas'),
+    mapCacheSet = require('./_mapCacheSet');
+
+/**
+ * Creates a map cache object to store key-value pairs.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function MapCache(entries) {
+  var index = -1,
+      length = entries ? entries.length : 0;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+// Add methods to `MapCache`.
+MapCache.prototype.clear = mapCacheClear;
+MapCache.prototype['delete'] = mapCacheDelete;
+MapCache.prototype.get = mapCacheGet;
+MapCache.prototype.has = mapCacheHas;
+MapCache.prototype.set = mapCacheSet;
+
+module.exports = MapCache;
+
+},{"./_mapCacheClear":113,"./_mapCacheDelete":114,"./_mapCacheGet":115,"./_mapCacheHas":116,"./_mapCacheSet":117}],42:[function(require,module,exports){
+var getNative = require('./_getNative'),
+    root = require('./_root');
+
+/* Built-in method references that are verified to be native. */
+var Promise = getNative(root, 'Promise');
+
+module.exports = Promise;
+
+},{"./_getNative":87,"./_root":120}],43:[function(require,module,exports){
+var root = require('./_root');
+
+/** Built-in value references. */
+var Reflect = root.Reflect;
+
+module.exports = Reflect;
+
+},{"./_root":120}],44:[function(require,module,exports){
+var getNative = require('./_getNative'),
+    root = require('./_root');
+
+/* Built-in method references that are verified to be native. */
+var Set = getNative(root, 'Set');
+
+module.exports = Set;
+
+},{"./_getNative":87,"./_root":120}],45:[function(require,module,exports){
+var ListCache = require('./_ListCache'),
+    stackClear = require('./_stackClear'),
+    stackDelete = require('./_stackDelete'),
+    stackGet = require('./_stackGet'),
+    stackHas = require('./_stackHas'),
+    stackSet = require('./_stackSet');
+
+/**
+ * Creates a stack cache object to store key-value pairs.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function Stack(entries) {
+  this.__data__ = new ListCache(entries);
+}
+
+// Add methods to `Stack`.
+Stack.prototype.clear = stackClear;
+Stack.prototype['delete'] = stackDelete;
+Stack.prototype.get = stackGet;
+Stack.prototype.has = stackHas;
+Stack.prototype.set = stackSet;
+
+module.exports = Stack;
+
+},{"./_ListCache":39,"./_stackClear":122,"./_stackDelete":123,"./_stackGet":124,"./_stackHas":125,"./_stackSet":126}],46:[function(require,module,exports){
+var root = require('./_root');
+
+/** Built-in value references. */
+var Symbol = root.Symbol;
+
+module.exports = Symbol;
+
+},{"./_root":120}],47:[function(require,module,exports){
+var root = require('./_root');
+
+/** Built-in value references. */
+var Uint8Array = root.Uint8Array;
+
+module.exports = Uint8Array;
+
+},{"./_root":120}],48:[function(require,module,exports){
+var getNative = require('./_getNative'),
+    root = require('./_root');
+
+/* Built-in method references that are verified to be native. */
+var WeakMap = getNative(root, 'WeakMap');
+
+module.exports = WeakMap;
+
+},{"./_getNative":87,"./_root":120}],49:[function(require,module,exports){
+/**
+ * Adds the key-value `pair` to `map`.
+ *
+ * @private
+ * @param {Object} map The map to modify.
+ * @param {Array} pair The key-value pair to add.
+ * @returns {Object} Returns `map`.
+ */
+function addMapEntry(map, pair) {
+  // Don't return `Map#set` because it doesn't return the map instance in IE 11.
+  map.set(pair[0], pair[1]);
+  return map;
+}
+
+module.exports = addMapEntry;
+
+},{}],50:[function(require,module,exports){
+/**
+ * Adds `value` to `set`.
+ *
+ * @private
+ * @param {Object} set The set to modify.
+ * @param {*} value The value to add.
+ * @returns {Object} Returns `set`.
+ */
+function addSetEntry(set, value) {
+  set.add(value);
+  return set;
+}
+
+module.exports = addSetEntry;
+
+},{}],51:[function(require,module,exports){
+/**
+ * A faster alternative to `Function#apply`, this function invokes `func`
+ * with the `this` binding of `thisArg` and the arguments of `args`.
+ *
+ * @private
+ * @param {Function} func The function to invoke.
+ * @param {*} thisArg The `this` binding of `func`.
+ * @param {Array} args The arguments to invoke `func` with.
+ * @returns {*} Returns the result of `func`.
+ */
+function apply(func, thisArg, args) {
+  var length = args.length;
+  switch (length) {
+    case 0: return func.call(thisArg);
+    case 1: return func.call(thisArg, args[0]);
+    case 2: return func.call(thisArg, args[0], args[1]);
+    case 3: return func.call(thisArg, args[0], args[1], args[2]);
+  }
+  return func.apply(thisArg, args);
+}
+
+module.exports = apply;
+
+},{}],52:[function(require,module,exports){
+/**
+ * A specialized version of `_.forEach` for arrays without support for
+ * iteratee shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns `array`.
+ */
+function arrayEach(array, iteratee) {
+  var index = -1,
+      length = array ? array.length : 0;
+
+  while (++index < length) {
+    if (iteratee(array[index], index, array) === false) {
+      break;
+    }
+  }
+  return array;
+}
+
+module.exports = arrayEach;
+
+},{}],53:[function(require,module,exports){
+/**
+ * Appends the elements of `values` to `array`.
+ *
+ * @private
+ * @param {Array} array The array to modify.
+ * @param {Array} values The values to append.
+ * @returns {Array} Returns `array`.
+ */
+function arrayPush(array, values) {
+  var index = -1,
+      length = values.length,
+      offset = array.length;
+
+  while (++index < length) {
+    array[offset + index] = values[index];
+  }
+  return array;
+}
+
+module.exports = arrayPush;
+
+},{}],54:[function(require,module,exports){
+/**
+ * A specialized version of `_.reduce` for arrays without support for
+ * iteratee shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @param {*} [accumulator] The initial value.
+ * @param {boolean} [initAccum] Specify using the first element of `array` as
+ *  the initial value.
+ * @returns {*} Returns the accumulated value.
+ */
+function arrayReduce(array, iteratee, accumulator, initAccum) {
+  var index = -1,
+      length = array ? array.length : 0;
+
+  if (initAccum && length) {
+    accumulator = array[++index];
+  }
+  while (++index < length) {
+    accumulator = iteratee(accumulator, array[index], index, array);
+  }
+  return accumulator;
+}
+
+module.exports = arrayReduce;
+
+},{}],55:[function(require,module,exports){
+var eq = require('./eq');
+
+/**
+ * This function is like `assignValue` except that it doesn't assign
+ * `undefined` values.
+ *
+ * @private
+ * @param {Object} object The object to modify.
+ * @param {string} key The key of the property to assign.
+ * @param {*} value The value to assign.
+ */
+function assignMergeValue(object, key, value) {
+  if ((value !== undefined && !eq(object[key], value)) ||
+      (typeof key == 'number' && value === undefined && !(key in object))) {
+    object[key] = value;
+  }
+}
+
+module.exports = assignMergeValue;
+
+},{"./eq":128}],56:[function(require,module,exports){
+var eq = require('./eq');
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Assigns `value` to `key` of `object` if the existing value is not equivalent
+ * using [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
+ * for equality comparisons.
+ *
+ * @private
+ * @param {Object} object The object to modify.
+ * @param {string} key The key of the property to assign.
+ * @param {*} value The value to assign.
+ */
+function assignValue(object, key, value) {
+  var objValue = object[key];
+  if (!(hasOwnProperty.call(object, key) && eq(objValue, value)) ||
+      (value === undefined && !(key in object))) {
+    object[key] = value;
+  }
+}
+
+module.exports = assignValue;
+
+},{"./eq":128}],57:[function(require,module,exports){
+var eq = require('./eq');
+
+/**
+ * Gets the index at which the `key` is found in `array` of key-value pairs.
+ *
+ * @private
+ * @param {Array} array The array to search.
+ * @param {*} key The key to search for.
+ * @returns {number} Returns the index of the matched value, else `-1`.
+ */
+function assocIndexOf(array, key) {
+  var length = array.length;
+  while (length--) {
+    if (eq(array[length][0], key)) {
+      return length;
+    }
+  }
+  return -1;
+}
+
+module.exports = assocIndexOf;
+
+},{"./eq":128}],58:[function(require,module,exports){
+var copyObject = require('./_copyObject'),
+    keys = require('./keys');
+
+/**
+ * The base implementation of `_.assign` without support for multiple sources
+ * or `customizer` functions.
+ *
+ * @private
+ * @param {Object} object The destination object.
+ * @param {Object} source The source object.
+ * @returns {Object} Returns `object`.
+ */
+function baseAssign(object, source) {
+  return object && copyObject(source, keys(source), object);
+}
+
+module.exports = baseAssign;
+
+},{"./_copyObject":80,"./keys":142}],59:[function(require,module,exports){
+var Stack = require('./_Stack'),
+    arrayEach = require('./_arrayEach'),
+    assignValue = require('./_assignValue'),
+    baseAssign = require('./_baseAssign'),
+    cloneBuffer = require('./_cloneBuffer'),
+    copyArray = require('./_copyArray'),
+    copySymbols = require('./_copySymbols'),
+    getAllKeys = require('./_getAllKeys'),
+    getTag = require('./_getTag'),
+    initCloneArray = require('./_initCloneArray'),
+    initCloneByTag = require('./_initCloneByTag'),
+    initCloneObject = require('./_initCloneObject'),
+    isArray = require('./isArray'),
+    isBuffer = require('./isBuffer'),
+    isHostObject = require('./_isHostObject'),
+    isObject = require('./isObject'),
+    keys = require('./keys');
+
+/** `Object#toString` result references. */
+var argsTag = '[object Arguments]',
+    arrayTag = '[object Array]',
+    boolTag = '[object Boolean]',
+    dateTag = '[object Date]',
+    errorTag = '[object Error]',
+    funcTag = '[object Function]',
+    genTag = '[object GeneratorFunction]',
+    mapTag = '[object Map]',
+    numberTag = '[object Number]',
+    objectTag = '[object Object]',
+    regexpTag = '[object RegExp]',
+    setTag = '[object Set]',
+    stringTag = '[object String]',
+    symbolTag = '[object Symbol]',
+    weakMapTag = '[object WeakMap]';
+
+var arrayBufferTag = '[object ArrayBuffer]',
+    dataViewTag = '[object DataView]',
+    float32Tag = '[object Float32Array]',
+    float64Tag = '[object Float64Array]',
+    int8Tag = '[object Int8Array]',
+    int16Tag = '[object Int16Array]',
+    int32Tag = '[object Int32Array]',
+    uint8Tag = '[object Uint8Array]',
+    uint8ClampedTag = '[object Uint8ClampedArray]',
+    uint16Tag = '[object Uint16Array]',
+    uint32Tag = '[object Uint32Array]';
+
+/** Used to identify `toStringTag` values supported by `_.clone`. */
+var cloneableTags = {};
+cloneableTags[argsTag] = cloneableTags[arrayTag] =
+cloneableTags[arrayBufferTag] = cloneableTags[dataViewTag] =
+cloneableTags[boolTag] = cloneableTags[dateTag] =
+cloneableTags[float32Tag] = cloneableTags[float64Tag] =
+cloneableTags[int8Tag] = cloneableTags[int16Tag] =
+cloneableTags[int32Tag] = cloneableTags[mapTag] =
+cloneableTags[numberTag] = cloneableTags[objectTag] =
+cloneableTags[regexpTag] = cloneableTags[setTag] =
+cloneableTags[stringTag] = cloneableTags[symbolTag] =
+cloneableTags[uint8Tag] = cloneableTags[uint8ClampedTag] =
+cloneableTags[uint16Tag] = cloneableTags[uint32Tag] = true;
+cloneableTags[errorTag] = cloneableTags[funcTag] =
+cloneableTags[weakMapTag] = false;
+
+/**
+ * The base implementation of `_.clone` and `_.cloneDeep` which tracks
+ * traversed objects.
+ *
+ * @private
+ * @param {*} value The value to clone.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @param {boolean} [isFull] Specify a clone including symbols.
+ * @param {Function} [customizer] The function to customize cloning.
+ * @param {string} [key] The key of `value`.
+ * @param {Object} [object] The parent object of `value`.
+ * @param {Object} [stack] Tracks traversed objects and their clone counterparts.
+ * @returns {*} Returns the cloned value.
+ */
+function baseClone(value, isDeep, isFull, customizer, key, object, stack) {
+  var result;
+  if (customizer) {
+    result = object ? customizer(value, key, object, stack) : customizer(value);
+  }
+  if (result !== undefined) {
+    return result;
+  }
+  if (!isObject(value)) {
+    return value;
+  }
+  var isArr = isArray(value);
+  if (isArr) {
+    result = initCloneArray(value);
+    if (!isDeep) {
+      return copyArray(value, result);
+    }
+  } else {
+    var tag = getTag(value),
+        isFunc = tag == funcTag || tag == genTag;
+
+    if (isBuffer(value)) {
+      return cloneBuffer(value, isDeep);
+    }
+    if (tag == objectTag || tag == argsTag || (isFunc && !object)) {
+      if (isHostObject(value)) {
+        return object ? value : {};
+      }
+      result = initCloneObject(isFunc ? {} : value);
+      if (!isDeep) {
+        return copySymbols(value, baseAssign(result, value));
+      }
+    } else {
+      if (!cloneableTags[tag]) {
+        return object ? value : {};
+      }
+      result = initCloneByTag(value, tag, baseClone, isDeep);
+    }
+  }
+  // Check for circular references and return its corresponding clone.
+  stack || (stack = new Stack);
+  var stacked = stack.get(value);
+  if (stacked) {
+    return stacked;
+  }
+  stack.set(value, result);
+
+  if (!isArr) {
+    var props = isFull ? getAllKeys(value) : keys(value);
+  }
+  // Recursively populate clone (susceptible to call stack limits).
+  arrayEach(props || value, function(subValue, key) {
+    if (props) {
+      key = subValue;
+      subValue = value[key];
+    }
+    assignValue(result, key, baseClone(subValue, isDeep, isFull, customizer, key, value, stack));
+  });
+  return result;
+}
+
+module.exports = baseClone;
+
+},{"./_Stack":45,"./_arrayEach":52,"./_assignValue":56,"./_baseAssign":58,"./_cloneBuffer":72,"./_copyArray":79,"./_copySymbols":81,"./_getAllKeys":84,"./_getTag":90,"./_initCloneArray":98,"./_initCloneByTag":99,"./_initCloneObject":100,"./_isHostObject":101,"./isArray":130,"./isBuffer":133,"./isObject":136,"./keys":142}],60:[function(require,module,exports){
+var isObject = require('./isObject');
+
+/** Built-in value references. */
+var objectCreate = Object.create;
+
+/**
+ * The base implementation of `_.create` without support for assigning
+ * properties to the created object.
+ *
+ * @private
+ * @param {Object} prototype The object to inherit from.
+ * @returns {Object} Returns the new object.
+ */
+function baseCreate(proto) {
+  return isObject(proto) ? objectCreate(proto) : {};
+}
+
+module.exports = baseCreate;
+
+},{"./isObject":136}],61:[function(require,module,exports){
+var arrayPush = require('./_arrayPush'),
+    isArray = require('./isArray');
+
+/**
+ * The base implementation of `getAllKeys` and `getAllKeysIn` which uses
+ * `keysFunc` and `symbolsFunc` to get the enumerable property names and
+ * symbols of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {Function} keysFunc The function to get the keys of `object`.
+ * @param {Function} symbolsFunc The function to get the symbols of `object`.
+ * @returns {Array} Returns the array of property names and symbols.
+ */
+function baseGetAllKeys(object, keysFunc, symbolsFunc) {
+  var result = keysFunc(object);
+  return isArray(object) ? result : arrayPush(result, symbolsFunc(object));
+}
+
+module.exports = baseGetAllKeys;
+
+},{"./_arrayPush":53,"./isArray":130}],62:[function(require,module,exports){
+var getPrototype = require('./_getPrototype');
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * The base implementation of `_.has` without support for deep paths.
+ *
+ * @private
+ * @param {Object} [object] The object to query.
+ * @param {Array|string} key The key to check.
+ * @returns {boolean} Returns `true` if `key` exists, else `false`.
+ */
+function baseHas(object, key) {
+  // Avoid a bug in IE 10-11 where objects with a [[Prototype]] of `null`,
+  // that are composed entirely of index properties, return `false` for
+  // `hasOwnProperty` checks of them.
+  return object != null &&
+    (hasOwnProperty.call(object, key) ||
+      (typeof object == 'object' && key in object && getPrototype(object) === null));
+}
+
+module.exports = baseHas;
+
+},{"./_getPrototype":88}],63:[function(require,module,exports){
+var isFunction = require('./isFunction'),
+    isHostObject = require('./_isHostObject'),
+    isMasked = require('./_isMasked'),
+    isObject = require('./isObject'),
+    toSource = require('./_toSource');
+
+/**
+ * Used to match `RegExp`
+ * [syntax characters](http://ecma-international.org/ecma-262/6.0/#sec-patterns).
+ */
+var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
+
+/** Used to detect host constructors (Safari). */
+var reIsHostCtor = /^\[object .+?Constructor\]$/;
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to resolve the decompiled source of functions. */
+var funcToString = Function.prototype.toString;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/** Used to detect if a method is native. */
+var reIsNative = RegExp('^' +
+  funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&')
+  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
+);
+
+/**
+ * The base implementation of `_.isNative` without bad shim checks.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a native function,
+ *  else `false`.
+ */
+function baseIsNative(value) {
+  if (!isObject(value) || isMasked(value)) {
+    return false;
+  }
+  var pattern = (isFunction(value) || isHostObject(value)) ? reIsNative : reIsHostCtor;
+  return pattern.test(toSource(value));
+}
+
+module.exports = baseIsNative;
+
+},{"./_isHostObject":101,"./_isMasked":105,"./_toSource":127,"./isFunction":134,"./isObject":136}],64:[function(require,module,exports){
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeKeys = Object.keys;
+
+/**
+ * The base implementation of `_.keys` which doesn't skip the constructor
+ * property of prototypes or treat sparse arrays as dense.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ */
+function baseKeys(object) {
+  return nativeKeys(Object(object));
+}
+
+module.exports = baseKeys;
+
+},{}],65:[function(require,module,exports){
+var Reflect = require('./_Reflect'),
+    iteratorToArray = require('./_iteratorToArray');
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Built-in value references. */
+var enumerate = Reflect ? Reflect.enumerate : undefined,
+    propertyIsEnumerable = objectProto.propertyIsEnumerable;
+
+/**
+ * The base implementation of `_.keysIn` which doesn't skip the constructor
+ * property of prototypes or treat sparse arrays as dense.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ */
+function baseKeysIn(object) {
+  object = object == null ? object : Object(object);
+
+  var result = [];
+  for (var key in object) {
+    result.push(key);
+  }
+  return result;
+}
+
+// Fallback for IE < 9 with es6-shim.
+if (enumerate && !propertyIsEnumerable.call({ 'valueOf': 1 }, 'valueOf')) {
+  baseKeysIn = function(object) {
+    return iteratorToArray(enumerate(object));
+  };
+}
+
+module.exports = baseKeysIn;
+
+},{"./_Reflect":43,"./_iteratorToArray":107}],66:[function(require,module,exports){
+var Stack = require('./_Stack'),
+    arrayEach = require('./_arrayEach'),
+    assignMergeValue = require('./_assignMergeValue'),
+    baseMergeDeep = require('./_baseMergeDeep'),
+    isArray = require('./isArray'),
+    isObject = require('./isObject'),
+    isTypedArray = require('./isTypedArray'),
+    keysIn = require('./keysIn');
+
+/**
+ * The base implementation of `_.merge` without support for multiple sources.
+ *
+ * @private
+ * @param {Object} object The destination object.
+ * @param {Object} source The source object.
+ * @param {number} srcIndex The index of `source`.
+ * @param {Function} [customizer] The function to customize merged values.
+ * @param {Object} [stack] Tracks traversed source values and their merged
+ *  counterparts.
+ */
+function baseMerge(object, source, srcIndex, customizer, stack) {
+  if (object === source) {
+    return;
+  }
+  if (!(isArray(source) || isTypedArray(source))) {
+    var props = keysIn(source);
+  }
+  arrayEach(props || source, function(srcValue, key) {
+    if (props) {
+      key = srcValue;
+      srcValue = source[key];
+    }
+    if (isObject(srcValue)) {
+      stack || (stack = new Stack);
+      baseMergeDeep(object, source, key, srcIndex, baseMerge, customizer, stack);
+    }
+    else {
+      var newValue = customizer
+        ? customizer(object[key], srcValue, (key + ''), object, source, stack)
+        : undefined;
+
+      if (newValue === undefined) {
+        newValue = srcValue;
+      }
+      assignMergeValue(object, key, newValue);
+    }
+  });
+}
+
+module.exports = baseMerge;
+
+},{"./_Stack":45,"./_arrayEach":52,"./_assignMergeValue":55,"./_baseMergeDeep":67,"./isArray":130,"./isObject":136,"./isTypedArray":141,"./keysIn":143}],67:[function(require,module,exports){
+var assignMergeValue = require('./_assignMergeValue'),
+    baseClone = require('./_baseClone'),
+    copyArray = require('./_copyArray'),
+    isArguments = require('./isArguments'),
+    isArray = require('./isArray'),
+    isArrayLikeObject = require('./isArrayLikeObject'),
+    isFunction = require('./isFunction'),
+    isObject = require('./isObject'),
+    isPlainObject = require('./isPlainObject'),
+    isTypedArray = require('./isTypedArray'),
+    toPlainObject = require('./toPlainObject');
+
+/**
+ * A specialized version of `baseMerge` for arrays and objects which performs
+ * deep merges and tracks traversed objects enabling objects with circular
+ * references to be merged.
+ *
+ * @private
+ * @param {Object} object The destination object.
+ * @param {Object} source The source object.
+ * @param {string} key The key of the value to merge.
+ * @param {number} srcIndex The index of `source`.
+ * @param {Function} mergeFunc The function to merge values.
+ * @param {Function} [customizer] The function to customize assigned values.
+ * @param {Object} [stack] Tracks traversed source values and their merged
+ *  counterparts.
+ */
+function baseMergeDeep(object, source, key, srcIndex, mergeFunc, customizer, stack) {
+  var objValue = object[key],
+      srcValue = source[key],
+      stacked = stack.get(srcValue);
+
+  if (stacked) {
+    assignMergeValue(object, key, stacked);
+    return;
+  }
+  var newValue = customizer
+    ? customizer(objValue, srcValue, (key + ''), object, source, stack)
+    : undefined;
+
+  var isCommon = newValue === undefined;
+
+  if (isCommon) {
+    newValue = srcValue;
+    if (isArray(srcValue) || isTypedArray(srcValue)) {
+      if (isArray(objValue)) {
+        newValue = objValue;
+      }
+      else if (isArrayLikeObject(objValue)) {
+        newValue = copyArray(objValue);
+      }
+      else {
+        isCommon = false;
+        newValue = baseClone(srcValue, true);
+      }
+    }
+    else if (isPlainObject(srcValue) || isArguments(srcValue)) {
+      if (isArguments(objValue)) {
+        newValue = toPlainObject(objValue);
+      }
+      else if (!isObject(objValue) || (srcIndex && isFunction(objValue))) {
+        isCommon = false;
+        newValue = baseClone(srcValue, true);
+      }
+      else {
+        newValue = objValue;
+      }
+    }
+    else {
+      isCommon = false;
+    }
+  }
+  stack.set(srcValue, newValue);
+
+  if (isCommon) {
+    // Recursively merge objects and arrays (susceptible to call stack limits).
+    mergeFunc(newValue, srcValue, srcIndex, customizer, stack);
+  }
+  stack['delete'](srcValue);
+  assignMergeValue(object, key, newValue);
+}
+
+module.exports = baseMergeDeep;
+
+},{"./_assignMergeValue":55,"./_baseClone":59,"./_copyArray":79,"./isArguments":129,"./isArray":130,"./isArrayLikeObject":132,"./isFunction":134,"./isObject":136,"./isPlainObject":138,"./isTypedArray":141,"./toPlainObject":151}],68:[function(require,module,exports){
+/**
+ * The base implementation of `_.property` without support for deep paths.
+ *
+ * @private
+ * @param {string} key The key of the property to get.
+ * @returns {Function} Returns the new accessor function.
+ */
+function baseProperty(key) {
+  return function(object) {
+    return object == null ? undefined : object[key];
+  };
+}
+
+module.exports = baseProperty;
+
+},{}],69:[function(require,module,exports){
+/**
+ * The base implementation of `_.times` without support for iteratee shorthands
+ * or max array length checks.
+ *
+ * @private
+ * @param {number} n The number of times to invoke `iteratee`.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the array of results.
+ */
+function baseTimes(n, iteratee) {
+  var index = -1,
+      result = Array(n);
+
+  while (++index < n) {
+    result[index] = iteratee(index);
+  }
+  return result;
+}
+
+module.exports = baseTimes;
+
+},{}],70:[function(require,module,exports){
+/**
+ * Checks if `value` is a global object.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {null|Object} Returns `value` if it's a global object, else `null`.
+ */
+function checkGlobal(value) {
+  return (value && value.Object === Object) ? value : null;
+}
+
+module.exports = checkGlobal;
+
+},{}],71:[function(require,module,exports){
+var Uint8Array = require('./_Uint8Array');
+
+/**
+ * Creates a clone of `arrayBuffer`.
+ *
+ * @private
+ * @param {ArrayBuffer} arrayBuffer The array buffer to clone.
+ * @returns {ArrayBuffer} Returns the cloned array buffer.
+ */
+function cloneArrayBuffer(arrayBuffer) {
+  var result = new arrayBuffer.constructor(arrayBuffer.byteLength);
+  new Uint8Array(result).set(new Uint8Array(arrayBuffer));
+  return result;
+}
+
+module.exports = cloneArrayBuffer;
+
+},{"./_Uint8Array":47}],72:[function(require,module,exports){
+/**
+ * Creates a clone of  `buffer`.
+ *
+ * @private
+ * @param {Buffer} buffer The buffer to clone.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @returns {Buffer} Returns the cloned buffer.
+ */
+function cloneBuffer(buffer, isDeep) {
+  if (isDeep) {
+    return buffer.slice();
+  }
+  var result = new buffer.constructor(buffer.length);
+  buffer.copy(result);
+  return result;
+}
+
+module.exports = cloneBuffer;
+
+},{}],73:[function(require,module,exports){
+var cloneArrayBuffer = require('./_cloneArrayBuffer');
+
+/**
+ * Creates a clone of `dataView`.
+ *
+ * @private
+ * @param {Object} dataView The data view to clone.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @returns {Object} Returns the cloned data view.
+ */
+function cloneDataView(dataView, isDeep) {
+  var buffer = isDeep ? cloneArrayBuffer(dataView.buffer) : dataView.buffer;
+  return new dataView.constructor(buffer, dataView.byteOffset, dataView.byteLength);
+}
+
+module.exports = cloneDataView;
+
+},{"./_cloneArrayBuffer":71}],74:[function(require,module,exports){
+var addMapEntry = require('./_addMapEntry'),
+    arrayReduce = require('./_arrayReduce'),
+    mapToArray = require('./_mapToArray');
+
+/**
+ * Creates a clone of `map`.
+ *
+ * @private
+ * @param {Object} map The map to clone.
+ * @param {Function} cloneFunc The function to clone values.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @returns {Object} Returns the cloned map.
+ */
+function cloneMap(map, isDeep, cloneFunc) {
+  var array = isDeep ? cloneFunc(mapToArray(map), true) : mapToArray(map);
+  return arrayReduce(array, addMapEntry, new map.constructor);
+}
+
+module.exports = cloneMap;
+
+},{"./_addMapEntry":49,"./_arrayReduce":54,"./_mapToArray":118}],75:[function(require,module,exports){
+/** Used to match `RegExp` flags from their coerced string values. */
+var reFlags = /\w*$/;
+
+/**
+ * Creates a clone of `regexp`.
+ *
+ * @private
+ * @param {Object} regexp The regexp to clone.
+ * @returns {Object} Returns the cloned regexp.
+ */
+function cloneRegExp(regexp) {
+  var result = new regexp.constructor(regexp.source, reFlags.exec(regexp));
+  result.lastIndex = regexp.lastIndex;
+  return result;
+}
+
+module.exports = cloneRegExp;
+
+},{}],76:[function(require,module,exports){
+var addSetEntry = require('./_addSetEntry'),
+    arrayReduce = require('./_arrayReduce'),
+    setToArray = require('./_setToArray');
+
+/**
+ * Creates a clone of `set`.
+ *
+ * @private
+ * @param {Object} set The set to clone.
+ * @param {Function} cloneFunc The function to clone values.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @returns {Object} Returns the cloned set.
+ */
+function cloneSet(set, isDeep, cloneFunc) {
+  var array = isDeep ? cloneFunc(setToArray(set), true) : setToArray(set);
+  return arrayReduce(array, addSetEntry, new set.constructor);
+}
+
+module.exports = cloneSet;
+
+},{"./_addSetEntry":50,"./_arrayReduce":54,"./_setToArray":121}],77:[function(require,module,exports){
+var Symbol = require('./_Symbol');
+
+/** Used to convert symbols to primitives and strings. */
+var symbolProto = Symbol ? Symbol.prototype : undefined,
+    symbolValueOf = symbolProto ? symbolProto.valueOf : undefined;
+
+/**
+ * Creates a clone of the `symbol` object.
+ *
+ * @private
+ * @param {Object} symbol The symbol object to clone.
+ * @returns {Object} Returns the cloned symbol object.
+ */
+function cloneSymbol(symbol) {
+  return symbolValueOf ? Object(symbolValueOf.call(symbol)) : {};
+}
+
+module.exports = cloneSymbol;
+
+},{"./_Symbol":46}],78:[function(require,module,exports){
+var cloneArrayBuffer = require('./_cloneArrayBuffer');
+
+/**
+ * Creates a clone of `typedArray`.
+ *
+ * @private
+ * @param {Object} typedArray The typed array to clone.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @returns {Object} Returns the cloned typed array.
+ */
+function cloneTypedArray(typedArray, isDeep) {
+  var buffer = isDeep ? cloneArrayBuffer(typedArray.buffer) : typedArray.buffer;
+  return new typedArray.constructor(buffer, typedArray.byteOffset, typedArray.length);
+}
+
+module.exports = cloneTypedArray;
+
+},{"./_cloneArrayBuffer":71}],79:[function(require,module,exports){
+/**
+ * Copies the values of `source` to `array`.
+ *
+ * @private
+ * @param {Array} source The array to copy values from.
+ * @param {Array} [array=[]] The array to copy values to.
+ * @returns {Array} Returns `array`.
+ */
+function copyArray(source, array) {
+  var index = -1,
+      length = source.length;
+
+  array || (array = Array(length));
+  while (++index < length) {
+    array[index] = source[index];
+  }
+  return array;
+}
+
+module.exports = copyArray;
+
+},{}],80:[function(require,module,exports){
+var assignValue = require('./_assignValue');
+
+/**
+ * Copies properties of `source` to `object`.
+ *
+ * @private
+ * @param {Object} source The object to copy properties from.
+ * @param {Array} props The property identifiers to copy.
+ * @param {Object} [object={}] The object to copy properties to.
+ * @param {Function} [customizer] The function to customize copied values.
+ * @returns {Object} Returns `object`.
+ */
+function copyObject(source, props, object, customizer) {
+  object || (object = {});
+
+  var index = -1,
+      length = props.length;
+
+  while (++index < length) {
+    var key = props[index];
+
+    var newValue = customizer
+      ? customizer(object[key], source[key], key, object, source)
+      : source[key];
+
+    assignValue(object, key, newValue);
+  }
+  return object;
+}
+
+module.exports = copyObject;
+
+},{"./_assignValue":56}],81:[function(require,module,exports){
+var copyObject = require('./_copyObject'),
+    getSymbols = require('./_getSymbols');
+
+/**
+ * Copies own symbol properties of `source` to `object`.
+ *
+ * @private
+ * @param {Object} source The object to copy symbols from.
+ * @param {Object} [object={}] The object to copy symbols to.
+ * @returns {Object} Returns `object`.
+ */
+function copySymbols(source, object) {
+  return copyObject(source, getSymbols(source), object);
+}
+
+module.exports = copySymbols;
+
+},{"./_copyObject":80,"./_getSymbols":89}],82:[function(require,module,exports){
+var root = require('./_root');
+
+/** Used to detect overreaching core-js shims. */
+var coreJsData = root['__core-js_shared__'];
+
+module.exports = coreJsData;
+
+},{"./_root":120}],83:[function(require,module,exports){
+var isIterateeCall = require('./_isIterateeCall'),
+    rest = require('./rest');
+
+/**
+ * Creates a function like `_.assign`.
+ *
+ * @private
+ * @param {Function} assigner The function to assign values.
+ * @returns {Function} Returns the new assigner function.
+ */
+function createAssigner(assigner) {
+  return rest(function(object, sources) {
+    var index = -1,
+        length = sources.length,
+        customizer = length > 1 ? sources[length - 1] : undefined,
+        guard = length > 2 ? sources[2] : undefined;
+
+    customizer = (assigner.length > 3 && typeof customizer == 'function')
+      ? (length--, customizer)
+      : undefined;
+
+    if (guard && isIterateeCall(sources[0], sources[1], guard)) {
+      customizer = length < 3 ? undefined : customizer;
+      length = 1;
+    }
+    object = Object(object);
+    while (++index < length) {
+      var source = sources[index];
+      if (source) {
+        assigner(object, source, index, customizer);
+      }
+    }
+    return object;
+  });
+}
+
+module.exports = createAssigner;
+
+},{"./_isIterateeCall":103,"./rest":145}],84:[function(require,module,exports){
+var baseGetAllKeys = require('./_baseGetAllKeys'),
+    getSymbols = require('./_getSymbols'),
+    keys = require('./keys');
+
+/**
+ * Creates an array of own enumerable property names and symbols of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names and symbols.
+ */
+function getAllKeys(object) {
+  return baseGetAllKeys(object, keys, getSymbols);
+}
+
+module.exports = getAllKeys;
+
+},{"./_baseGetAllKeys":61,"./_getSymbols":89,"./keys":142}],85:[function(require,module,exports){
+var baseProperty = require('./_baseProperty');
+
+/**
+ * Gets the "length" property value of `object`.
+ *
+ * **Note:** This function is used to avoid a
+ * [JIT bug](https://bugs.webkit.org/show_bug.cgi?id=142792) that affects
+ * Safari on at least iOS 8.1-8.3 ARM64.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {*} Returns the "length" value.
+ */
+var getLength = baseProperty('length');
+
+module.exports = getLength;
+
+},{"./_baseProperty":68}],86:[function(require,module,exports){
+var isKeyable = require('./_isKeyable');
+
+/**
+ * Gets the data for `map`.
+ *
+ * @private
+ * @param {Object} map The map to query.
+ * @param {string} key The reference key.
+ * @returns {*} Returns the map data.
+ */
+function getMapData(map, key) {
+  var data = map.__data__;
+  return isKeyable(key)
+    ? data[typeof key == 'string' ? 'string' : 'hash']
+    : data.map;
+}
+
+module.exports = getMapData;
+
+},{"./_isKeyable":104}],87:[function(require,module,exports){
+var baseIsNative = require('./_baseIsNative'),
+    getValue = require('./_getValue');
+
+/**
+ * Gets the native function at `key` of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {string} key The key of the method to get.
+ * @returns {*} Returns the function if it's native, else `undefined`.
+ */
+function getNative(object, key) {
+  var value = getValue(object, key);
+  return baseIsNative(value) ? value : undefined;
+}
+
+module.exports = getNative;
+
+},{"./_baseIsNative":63,"./_getValue":91}],88:[function(require,module,exports){
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeGetPrototype = Object.getPrototypeOf;
+
+/**
+ * Gets the `[[Prototype]]` of `value`.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {null|Object} Returns the `[[Prototype]]`.
+ */
+function getPrototype(value) {
+  return nativeGetPrototype(Object(value));
+}
+
+module.exports = getPrototype;
+
+},{}],89:[function(require,module,exports){
+var stubArray = require('./stubArray');
+
+/** Built-in value references. */
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+
+/**
+ * Creates an array of the own enumerable symbol properties of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of symbols.
+ */
+function getSymbols(object) {
+  // Coerce `object` to an object to avoid non-object errors in V8.
+  // See https://bugs.chromium.org/p/v8/issues/detail?id=3443 for more details.
+  return getOwnPropertySymbols(Object(object));
+}
+
+// Fallback for IE < 11.
+if (!getOwnPropertySymbols) {
+  getSymbols = stubArray;
+}
+
+module.exports = getSymbols;
+
+},{"./stubArray":146}],90:[function(require,module,exports){
+var DataView = require('./_DataView'),
+    Map = require('./_Map'),
+    Promise = require('./_Promise'),
+    Set = require('./_Set'),
+    WeakMap = require('./_WeakMap'),
+    toSource = require('./_toSource');
+
+/** `Object#toString` result references. */
+var mapTag = '[object Map]',
+    objectTag = '[object Object]',
+    promiseTag = '[object Promise]',
+    setTag = '[object Set]',
+    weakMapTag = '[object WeakMap]';
+
+var dataViewTag = '[object DataView]';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/** Used to detect maps, sets, and weakmaps. */
+var dataViewCtorString = toSource(DataView),
+    mapCtorString = toSource(Map),
+    promiseCtorString = toSource(Promise),
+    setCtorString = toSource(Set),
+    weakMapCtorString = toSource(WeakMap);
+
+/**
+ * Gets the `toStringTag` of `value`.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+function getTag(value) {
+  return objectToString.call(value);
+}
+
+// Fallback for data views, maps, sets, and weak maps in IE 11,
+// for data views in Edge, and promises in Node.js.
+if ((DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag) ||
+    (Map && getTag(new Map) != mapTag) ||
+    (Promise && getTag(Promise.resolve()) != promiseTag) ||
+    (Set && getTag(new Set) != setTag) ||
+    (WeakMap && getTag(new WeakMap) != weakMapTag)) {
+  getTag = function(value) {
+    var result = objectToString.call(value),
+        Ctor = result == objectTag ? value.constructor : undefined,
+        ctorString = Ctor ? toSource(Ctor) : undefined;
+
+    if (ctorString) {
+      switch (ctorString) {
+        case dataViewCtorString: return dataViewTag;
+        case mapCtorString: return mapTag;
+        case promiseCtorString: return promiseTag;
+        case setCtorString: return setTag;
+        case weakMapCtorString: return weakMapTag;
+      }
+    }
+    return result;
+  };
+}
+
+module.exports = getTag;
+
+},{"./_DataView":37,"./_Map":40,"./_Promise":42,"./_Set":44,"./_WeakMap":48,"./_toSource":127}],91:[function(require,module,exports){
+/**
+ * Gets the value at `key` of `object`.
+ *
+ * @private
+ * @param {Object} [object] The object to query.
+ * @param {string} key The key of the property to get.
+ * @returns {*} Returns the property value.
+ */
+function getValue(object, key) {
+  return object == null ? undefined : object[key];
+}
+
+module.exports = getValue;
+
+},{}],92:[function(require,module,exports){
+var nativeCreate = require('./_nativeCreate');
+
+/**
+ * Removes all key-value entries from the hash.
+ *
+ * @private
+ * @name clear
+ * @memberOf Hash
+ */
+function hashClear() {
+  this.__data__ = nativeCreate ? nativeCreate(null) : {};
+}
+
+module.exports = hashClear;
+
+},{"./_nativeCreate":119}],93:[function(require,module,exports){
+/**
+ * Removes `key` and its value from the hash.
+ *
+ * @private
+ * @name delete
+ * @memberOf Hash
+ * @param {Object} hash The hash to modify.
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function hashDelete(key) {
+  return this.has(key) && delete this.__data__[key];
+}
+
+module.exports = hashDelete;
+
+},{}],94:[function(require,module,exports){
+var nativeCreate = require('./_nativeCreate');
+
+/** Used to stand-in for `undefined` hash values. */
+var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Gets the hash value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf Hash
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function hashGet(key) {
+  var data = this.__data__;
+  if (nativeCreate) {
+    var result = data[key];
+    return result === HASH_UNDEFINED ? undefined : result;
+  }
+  return hasOwnProperty.call(data, key) ? data[key] : undefined;
+}
+
+module.exports = hashGet;
+
+},{"./_nativeCreate":119}],95:[function(require,module,exports){
+var nativeCreate = require('./_nativeCreate');
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Checks if a hash value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf Hash
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function hashHas(key) {
+  var data = this.__data__;
+  return nativeCreate ? data[key] !== undefined : hasOwnProperty.call(data, key);
+}
+
+module.exports = hashHas;
+
+},{"./_nativeCreate":119}],96:[function(require,module,exports){
+var nativeCreate = require('./_nativeCreate');
+
+/** Used to stand-in for `undefined` hash values. */
+var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+/**
+ * Sets the hash `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf Hash
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the hash instance.
+ */
+function hashSet(key, value) {
+  var data = this.__data__;
+  data[key] = (nativeCreate && value === undefined) ? HASH_UNDEFINED : value;
+  return this;
+}
+
+module.exports = hashSet;
+
+},{"./_nativeCreate":119}],97:[function(require,module,exports){
+var baseTimes = require('./_baseTimes'),
+    isArguments = require('./isArguments'),
+    isArray = require('./isArray'),
+    isLength = require('./isLength'),
+    isString = require('./isString');
+
+/**
+ * Creates an array of index keys for `object` values of arrays,
+ * `arguments` objects, and strings, otherwise `null` is returned.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array|null} Returns index keys, else `null`.
+ */
+function indexKeys(object) {
+  var length = object ? object.length : undefined;
+  if (isLength(length) &&
+      (isArray(object) || isString(object) || isArguments(object))) {
+    return baseTimes(length, String);
+  }
+  return null;
+}
+
+module.exports = indexKeys;
+
+},{"./_baseTimes":69,"./isArguments":129,"./isArray":130,"./isLength":135,"./isString":139}],98:[function(require,module,exports){
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Initializes an array clone.
+ *
+ * @private
+ * @param {Array} array The array to clone.
+ * @returns {Array} Returns the initialized clone.
+ */
+function initCloneArray(array) {
+  var length = array.length,
+      result = array.constructor(length);
+
+  // Add properties assigned by `RegExp#exec`.
+  if (length && typeof array[0] == 'string' && hasOwnProperty.call(array, 'index')) {
+    result.index = array.index;
+    result.input = array.input;
+  }
+  return result;
+}
+
+module.exports = initCloneArray;
+
+},{}],99:[function(require,module,exports){
+var cloneArrayBuffer = require('./_cloneArrayBuffer'),
+    cloneDataView = require('./_cloneDataView'),
+    cloneMap = require('./_cloneMap'),
+    cloneRegExp = require('./_cloneRegExp'),
+    cloneSet = require('./_cloneSet'),
+    cloneSymbol = require('./_cloneSymbol'),
+    cloneTypedArray = require('./_cloneTypedArray');
+
+/** `Object#toString` result references. */
+var boolTag = '[object Boolean]',
+    dateTag = '[object Date]',
+    mapTag = '[object Map]',
+    numberTag = '[object Number]',
+    regexpTag = '[object RegExp]',
+    setTag = '[object Set]',
+    stringTag = '[object String]',
+    symbolTag = '[object Symbol]';
+
+var arrayBufferTag = '[object ArrayBuffer]',
+    dataViewTag = '[object DataView]',
+    float32Tag = '[object Float32Array]',
+    float64Tag = '[object Float64Array]',
+    int8Tag = '[object Int8Array]',
+    int16Tag = '[object Int16Array]',
+    int32Tag = '[object Int32Array]',
+    uint8Tag = '[object Uint8Array]',
+    uint8ClampedTag = '[object Uint8ClampedArray]',
+    uint16Tag = '[object Uint16Array]',
+    uint32Tag = '[object Uint32Array]';
+
+/**
+ * Initializes an object clone based on its `toStringTag`.
+ *
+ * **Note:** This function only supports cloning values with tags of
+ * `Boolean`, `Date`, `Error`, `Number`, `RegExp`, or `String`.
+ *
+ * @private
+ * @param {Object} object The object to clone.
+ * @param {string} tag The `toStringTag` of the object to clone.
+ * @param {Function} cloneFunc The function to clone values.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @returns {Object} Returns the initialized clone.
+ */
+function initCloneByTag(object, tag, cloneFunc, isDeep) {
+  var Ctor = object.constructor;
+  switch (tag) {
+    case arrayBufferTag:
+      return cloneArrayBuffer(object);
+
+    case boolTag:
+    case dateTag:
+      return new Ctor(+object);
+
+    case dataViewTag:
+      return cloneDataView(object, isDeep);
+
+    case float32Tag: case float64Tag:
+    case int8Tag: case int16Tag: case int32Tag:
+    case uint8Tag: case uint8ClampedTag: case uint16Tag: case uint32Tag:
+      return cloneTypedArray(object, isDeep);
+
+    case mapTag:
+      return cloneMap(object, isDeep, cloneFunc);
+
+    case numberTag:
+    case stringTag:
+      return new Ctor(object);
+
+    case regexpTag:
+      return cloneRegExp(object);
+
+    case setTag:
+      return cloneSet(object, isDeep, cloneFunc);
+
+    case symbolTag:
+      return cloneSymbol(object);
+  }
+}
+
+module.exports = initCloneByTag;
+
+},{"./_cloneArrayBuffer":71,"./_cloneDataView":73,"./_cloneMap":74,"./_cloneRegExp":75,"./_cloneSet":76,"./_cloneSymbol":77,"./_cloneTypedArray":78}],100:[function(require,module,exports){
+var baseCreate = require('./_baseCreate'),
+    getPrototype = require('./_getPrototype'),
+    isPrototype = require('./_isPrototype');
+
+/**
+ * Initializes an object clone.
+ *
+ * @private
+ * @param {Object} object The object to clone.
+ * @returns {Object} Returns the initialized clone.
+ */
+function initCloneObject(object) {
+  return (typeof object.constructor == 'function' && !isPrototype(object))
+    ? baseCreate(getPrototype(object))
+    : {};
+}
+
+module.exports = initCloneObject;
+
+},{"./_baseCreate":60,"./_getPrototype":88,"./_isPrototype":106}],101:[function(require,module,exports){
+/**
+ * Checks if `value` is a host object in IE < 9.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a host object, else `false`.
+ */
+function isHostObject(value) {
+  // Many host objects are `Object` objects that can coerce to strings
+  // despite having improperly defined `toString` methods.
+  var result = false;
+  if (value != null && typeof value.toString != 'function') {
+    try {
+      result = !!(value + '');
+    } catch (e) {}
+  }
+  return result;
+}
+
+module.exports = isHostObject;
+
+},{}],102:[function(require,module,exports){
+/** Used as references for various `Number` constants. */
+var MAX_SAFE_INTEGER = 9007199254740991;
+
+/** Used to detect unsigned integer values. */
+var reIsUint = /^(?:0|[1-9]\d*)$/;
+
+/**
+ * Checks if `value` is a valid array-like index.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
+ * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+ */
+function isIndex(value, length) {
+  length = length == null ? MAX_SAFE_INTEGER : length;
+  return !!length &&
+    (typeof value == 'number' || reIsUint.test(value)) &&
+    (value > -1 && value % 1 == 0 && value < length);
+}
+
+module.exports = isIndex;
+
+},{}],103:[function(require,module,exports){
+var eq = require('./eq'),
+    isArrayLike = require('./isArrayLike'),
+    isIndex = require('./_isIndex'),
+    isObject = require('./isObject');
+
+/**
+ * Checks if the given arguments are from an iteratee call.
+ *
+ * @private
+ * @param {*} value The potential iteratee value argument.
+ * @param {*} index The potential iteratee index or key argument.
+ * @param {*} object The potential iteratee object argument.
+ * @returns {boolean} Returns `true` if the arguments are from an iteratee call,
+ *  else `false`.
+ */
+function isIterateeCall(value, index, object) {
+  if (!isObject(object)) {
+    return false;
+  }
+  var type = typeof index;
+  if (type == 'number'
+        ? (isArrayLike(object) && isIndex(index, object.length))
+        : (type == 'string' && index in object)
+      ) {
+    return eq(object[index], value);
+  }
+  return false;
+}
+
+module.exports = isIterateeCall;
+
+},{"./_isIndex":102,"./eq":128,"./isArrayLike":131,"./isObject":136}],104:[function(require,module,exports){
+/**
+ * Checks if `value` is suitable for use as unique object key.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is suitable, else `false`.
+ */
+function isKeyable(value) {
+  var type = typeof value;
+  return (type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean')
+    ? (value !== '__proto__')
+    : (value === null);
+}
+
+module.exports = isKeyable;
+
+},{}],105:[function(require,module,exports){
+var coreJsData = require('./_coreJsData');
+
+/** Used to detect methods masquerading as native. */
+var maskSrcKey = (function() {
+  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
+  return uid ? ('Symbol(src)_1.' + uid) : '';
+}());
+
+/**
+ * Checks if `func` has its source masked.
+ *
+ * @private
+ * @param {Function} func The function to check.
+ * @returns {boolean} Returns `true` if `func` is masked, else `false`.
+ */
+function isMasked(func) {
+  return !!maskSrcKey && (maskSrcKey in func);
+}
+
+module.exports = isMasked;
+
+},{"./_coreJsData":82}],106:[function(require,module,exports){
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Checks if `value` is likely a prototype object.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
+ */
+function isPrototype(value) {
+  var Ctor = value && value.constructor,
+      proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto;
+
+  return value === proto;
+}
+
+module.exports = isPrototype;
+
+},{}],107:[function(require,module,exports){
+/**
+ * Converts `iterator` to an array.
+ *
+ * @private
+ * @param {Object} iterator The iterator to convert.
+ * @returns {Array} Returns the converted array.
+ */
+function iteratorToArray(iterator) {
+  var data,
+      result = [];
+
+  while (!(data = iterator.next()).done) {
+    result.push(data.value);
+  }
+  return result;
+}
+
+module.exports = iteratorToArray;
+
+},{}],108:[function(require,module,exports){
+/**
+ * Removes all key-value entries from the list cache.
+ *
+ * @private
+ * @name clear
+ * @memberOf ListCache
+ */
+function listCacheClear() {
+  this.__data__ = [];
+}
+
+module.exports = listCacheClear;
+
+},{}],109:[function(require,module,exports){
+var assocIndexOf = require('./_assocIndexOf');
+
+/** Used for built-in method references. */
+var arrayProto = Array.prototype;
+
+/** Built-in value references. */
+var splice = arrayProto.splice;
+
+/**
+ * Removes `key` and its value from the list cache.
+ *
+ * @private
+ * @name delete
+ * @memberOf ListCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function listCacheDelete(key) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  if (index < 0) {
+    return false;
+  }
+  var lastIndex = data.length - 1;
+  if (index == lastIndex) {
+    data.pop();
+  } else {
+    splice.call(data, index, 1);
+  }
+  return true;
+}
+
+module.exports = listCacheDelete;
+
+},{"./_assocIndexOf":57}],110:[function(require,module,exports){
+var assocIndexOf = require('./_assocIndexOf');
+
+/**
+ * Gets the list cache value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf ListCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function listCacheGet(key) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  return index < 0 ? undefined : data[index][1];
+}
+
+module.exports = listCacheGet;
+
+},{"./_assocIndexOf":57}],111:[function(require,module,exports){
+var assocIndexOf = require('./_assocIndexOf');
+
+/**
+ * Checks if a list cache value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf ListCache
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function listCacheHas(key) {
+  return assocIndexOf(this.__data__, key) > -1;
+}
+
+module.exports = listCacheHas;
+
+},{"./_assocIndexOf":57}],112:[function(require,module,exports){
+var assocIndexOf = require('./_assocIndexOf');
+
+/**
+ * Sets the list cache `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf ListCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the list cache instance.
+ */
+function listCacheSet(key, value) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  if (index < 0) {
+    data.push([key, value]);
+  } else {
+    data[index][1] = value;
+  }
+  return this;
+}
+
+module.exports = listCacheSet;
+
+},{"./_assocIndexOf":57}],113:[function(require,module,exports){
+var Hash = require('./_Hash'),
+    ListCache = require('./_ListCache'),
+    Map = require('./_Map');
+
+/**
+ * Removes all key-value entries from the map.
+ *
+ * @private
+ * @name clear
+ * @memberOf MapCache
+ */
+function mapCacheClear() {
+  this.__data__ = {
+    'hash': new Hash,
+    'map': new (Map || ListCache),
+    'string': new Hash
+  };
+}
+
+module.exports = mapCacheClear;
+
+},{"./_Hash":38,"./_ListCache":39,"./_Map":40}],114:[function(require,module,exports){
+var getMapData = require('./_getMapData');
+
+/**
+ * Removes `key` and its value from the map.
+ *
+ * @private
+ * @name delete
+ * @memberOf MapCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function mapCacheDelete(key) {
+  return getMapData(this, key)['delete'](key);
+}
+
+module.exports = mapCacheDelete;
+
+},{"./_getMapData":86}],115:[function(require,module,exports){
+var getMapData = require('./_getMapData');
+
+/**
+ * Gets the map value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf MapCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function mapCacheGet(key) {
+  return getMapData(this, key).get(key);
+}
+
+module.exports = mapCacheGet;
+
+},{"./_getMapData":86}],116:[function(require,module,exports){
+var getMapData = require('./_getMapData');
+
+/**
+ * Checks if a map value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf MapCache
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function mapCacheHas(key) {
+  return getMapData(this, key).has(key);
+}
+
+module.exports = mapCacheHas;
+
+},{"./_getMapData":86}],117:[function(require,module,exports){
+var getMapData = require('./_getMapData');
+
+/**
+ * Sets the map `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf MapCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the map cache instance.
+ */
+function mapCacheSet(key, value) {
+  getMapData(this, key).set(key, value);
+  return this;
+}
+
+module.exports = mapCacheSet;
+
+},{"./_getMapData":86}],118:[function(require,module,exports){
+/**
+ * Converts `map` to its key-value pairs.
+ *
+ * @private
+ * @param {Object} map The map to convert.
+ * @returns {Array} Returns the key-value pairs.
+ */
+function mapToArray(map) {
+  var index = -1,
+      result = Array(map.size);
+
+  map.forEach(function(value, key) {
+    result[++index] = [key, value];
+  });
+  return result;
+}
+
+module.exports = mapToArray;
+
+},{}],119:[function(require,module,exports){
+var getNative = require('./_getNative');
+
+/* Built-in method references that are verified to be native. */
+var nativeCreate = getNative(Object, 'create');
+
+module.exports = nativeCreate;
+
+},{"./_getNative":87}],120:[function(require,module,exports){
+(function (global){
+var checkGlobal = require('./_checkGlobal');
+
+/** Detect free variable `global` from Node.js. */
+var freeGlobal = checkGlobal(typeof global == 'object' && global);
+
+/** Detect free variable `self`. */
+var freeSelf = checkGlobal(typeof self == 'object' && self);
+
+/** Detect `this` as the global object. */
+var thisGlobal = checkGlobal(typeof this == 'object' && this);
+
+/** Used as a reference to the global object. */
+var root = freeGlobal || freeSelf || thisGlobal || Function('return this')();
+
+module.exports = root;
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"./_checkGlobal":70}],121:[function(require,module,exports){
+/**
+ * Converts `set` to an array of its values.
+ *
+ * @private
+ * @param {Object} set The set to convert.
+ * @returns {Array} Returns the values.
+ */
+function setToArray(set) {
+  var index = -1,
+      result = Array(set.size);
+
+  set.forEach(function(value) {
+    result[++index] = value;
+  });
+  return result;
+}
+
+module.exports = setToArray;
+
+},{}],122:[function(require,module,exports){
+var ListCache = require('./_ListCache');
+
+/**
+ * Removes all key-value entries from the stack.
+ *
+ * @private
+ * @name clear
+ * @memberOf Stack
+ */
+function stackClear() {
+  this.__data__ = new ListCache;
+}
+
+module.exports = stackClear;
+
+},{"./_ListCache":39}],123:[function(require,module,exports){
+/**
+ * Removes `key` and its value from the stack.
+ *
+ * @private
+ * @name delete
+ * @memberOf Stack
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function stackDelete(key) {
+  return this.__data__['delete'](key);
+}
+
+module.exports = stackDelete;
+
+},{}],124:[function(require,module,exports){
+/**
+ * Gets the stack value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf Stack
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function stackGet(key) {
+  return this.__data__.get(key);
+}
+
+module.exports = stackGet;
+
+},{}],125:[function(require,module,exports){
+/**
+ * Checks if a stack value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf Stack
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function stackHas(key) {
+  return this.__data__.has(key);
+}
+
+module.exports = stackHas;
+
+},{}],126:[function(require,module,exports){
+var ListCache = require('./_ListCache'),
+    MapCache = require('./_MapCache');
+
+/** Used as the size to enable large array optimizations. */
+var LARGE_ARRAY_SIZE = 200;
+
+/**
+ * Sets the stack `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf Stack
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the stack cache instance.
+ */
+function stackSet(key, value) {
+  var cache = this.__data__;
+  if (cache instanceof ListCache && cache.__data__.length == LARGE_ARRAY_SIZE) {
+    cache = this.__data__ = new MapCache(cache.__data__);
+  }
+  cache.set(key, value);
+  return this;
+}
+
+module.exports = stackSet;
+
+},{"./_ListCache":39,"./_MapCache":41}],127:[function(require,module,exports){
+/** Used to resolve the decompiled source of functions. */
+var funcToString = Function.prototype.toString;
+
+/**
+ * Converts `func` to its source code.
+ *
+ * @private
+ * @param {Function} func The function to process.
+ * @returns {string} Returns the source code.
+ */
+function toSource(func) {
+  if (func != null) {
+    try {
+      return funcToString.call(func);
+    } catch (e) {}
+    try {
+      return (func + '');
+    } catch (e) {}
+  }
+  return '';
+}
+
+module.exports = toSource;
+
+},{}],128:[function(require,module,exports){
+/**
+ * Performs a
+ * [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
+ * comparison between two values to determine if they are equivalent.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to compare.
+ * @param {*} other The other value to compare.
+ * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+ * @example
+ *
+ * var object = { 'user': 'fred' };
+ * var other = { 'user': 'fred' };
+ *
+ * _.eq(object, object);
+ * // => true
+ *
+ * _.eq(object, other);
+ * // => false
+ *
+ * _.eq('a', 'a');
+ * // => true
+ *
+ * _.eq('a', Object('a'));
+ * // => false
+ *
+ * _.eq(NaN, NaN);
+ * // => true
+ */
+function eq(value, other) {
+  return value === other || (value !== value && other !== other);
+}
+
+module.exports = eq;
+
+},{}],129:[function(require,module,exports){
+var isArrayLikeObject = require('./isArrayLikeObject');
+
+/** `Object#toString` result references. */
+var argsTag = '[object Arguments]';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/** Built-in value references. */
+var propertyIsEnumerable = objectProto.propertyIsEnumerable;
+
+/**
+ * Checks if `value` is likely an `arguments` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is correctly classified,
+ *  else `false`.
+ * @example
+ *
+ * _.isArguments(function() { return arguments; }());
+ * // => true
+ *
+ * _.isArguments([1, 2, 3]);
+ * // => false
+ */
+function isArguments(value) {
+  // Safari 8.1 incorrectly makes `arguments.callee` enumerable in strict mode.
+  return isArrayLikeObject(value) && hasOwnProperty.call(value, 'callee') &&
+    (!propertyIsEnumerable.call(value, 'callee') || objectToString.call(value) == argsTag);
+}
+
+module.exports = isArguments;
+
+},{"./isArrayLikeObject":132}],130:[function(require,module,exports){
+/**
+ * Checks if `value` is classified as an `Array` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @type {Function}
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is correctly classified,
+ *  else `false`.
+ * @example
+ *
+ * _.isArray([1, 2, 3]);
+ * // => true
+ *
+ * _.isArray(document.body.children);
+ * // => false
+ *
+ * _.isArray('abc');
+ * // => false
+ *
+ * _.isArray(_.noop);
+ * // => false
+ */
+var isArray = Array.isArray;
+
+module.exports = isArray;
+
+},{}],131:[function(require,module,exports){
+var getLength = require('./_getLength'),
+    isFunction = require('./isFunction'),
+    isLength = require('./isLength');
+
+/**
+ * Checks if `value` is array-like. A value is considered array-like if it's
+ * not a function and has a `value.length` that's an integer greater than or
+ * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+ * @example
+ *
+ * _.isArrayLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isArrayLike(document.body.children);
+ * // => true
+ *
+ * _.isArrayLike('abc');
+ * // => true
+ *
+ * _.isArrayLike(_.noop);
+ * // => false
+ */
+function isArrayLike(value) {
+  return value != null && isLength(getLength(value)) && !isFunction(value);
+}
+
+module.exports = isArrayLike;
+
+},{"./_getLength":85,"./isFunction":134,"./isLength":135}],132:[function(require,module,exports){
+var isArrayLike = require('./isArrayLike'),
+    isObjectLike = require('./isObjectLike');
+
+/**
+ * This method is like `_.isArrayLike` except that it also checks if `value`
+ * is an object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an array-like object,
+ *  else `false`.
+ * @example
+ *
+ * _.isArrayLikeObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isArrayLikeObject(document.body.children);
+ * // => true
+ *
+ * _.isArrayLikeObject('abc');
+ * // => false
+ *
+ * _.isArrayLikeObject(_.noop);
+ * // => false
+ */
+function isArrayLikeObject(value) {
+  return isObjectLike(value) && isArrayLike(value);
+}
+
+module.exports = isArrayLikeObject;
+
+},{"./isArrayLike":131,"./isObjectLike":137}],133:[function(require,module,exports){
+var root = require('./_root'),
+    stubFalse = require('./stubFalse');
+
+/** Detect free variable `exports`. */
+var freeExports = typeof exports == 'object' && exports;
+
+/** Detect free variable `module`. */
+var freeModule = freeExports && typeof module == 'object' && module;
+
+/** Detect the popular CommonJS extension `module.exports`. */
+var moduleExports = freeModule && freeModule.exports === freeExports;
+
+/** Built-in value references. */
+var Buffer = moduleExports ? root.Buffer : undefined;
+
+/**
+ * Checks if `value` is a buffer.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.3.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a buffer, else `false`.
+ * @example
+ *
+ * _.isBuffer(new Buffer(2));
+ * // => true
+ *
+ * _.isBuffer(new Uint8Array(2));
+ * // => false
+ */
+var isBuffer = !Buffer ? stubFalse : function(value) {
+  return value instanceof Buffer;
+};
+
+module.exports = isBuffer;
+
+},{"./_root":120,"./stubFalse":147}],134:[function(require,module,exports){
+var isObject = require('./isObject');
+
+/** `Object#toString` result references. */
+var funcTag = '[object Function]',
+    genTag = '[object GeneratorFunction]';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/**
+ * Checks if `value` is classified as a `Function` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is correctly classified,
+ *  else `false`.
+ * @example
+ *
+ * _.isFunction(_);
+ * // => true
+ *
+ * _.isFunction(/abc/);
+ * // => false
+ */
+function isFunction(value) {
+  // The use of `Object#toString` avoids issues with the `typeof` operator
+  // in Safari 8 which returns 'object' for typed array and weak map constructors,
+  // and PhantomJS 1.9 which returns 'function' for `NodeList` instances.
+  var tag = isObject(value) ? objectToString.call(value) : '';
+  return tag == funcTag || tag == genTag;
+}
+
+module.exports = isFunction;
+
+},{"./isObject":136}],135:[function(require,module,exports){
+/** Used as references for various `Number` constants. */
+var MAX_SAFE_INTEGER = 9007199254740991;
+
+/**
+ * Checks if `value` is a valid array-like length.
+ *
+ * **Note:** This function is loosely based on
+ * [`ToLength`](http://ecma-international.org/ecma-262/6.0/#sec-tolength).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a valid length,
+ *  else `false`.
+ * @example
+ *
+ * _.isLength(3);
+ * // => true
+ *
+ * _.isLength(Number.MIN_VALUE);
+ * // => false
+ *
+ * _.isLength(Infinity);
+ * // => false
+ *
+ * _.isLength('3');
+ * // => false
+ */
+function isLength(value) {
+  return typeof value == 'number' &&
+    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+}
+
+module.exports = isLength;
+
+},{}],136:[function(require,module,exports){
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return !!value && (type == 'object' || type == 'function');
+}
+
+module.exports = isObject;
+
+},{}],137:[function(require,module,exports){
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return !!value && typeof value == 'object';
+}
+
+module.exports = isObjectLike;
+
+},{}],138:[function(require,module,exports){
+var getPrototype = require('./_getPrototype'),
+    isHostObject = require('./_isHostObject'),
+    isObjectLike = require('./isObjectLike');
+
+/** `Object#toString` result references. */
+var objectTag = '[object Object]';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to resolve the decompiled source of functions. */
+var funcToString = Function.prototype.toString;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/** Used to infer the `Object` constructor. */
+var objectCtorString = funcToString.call(Object);
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/**
+ * Checks if `value` is a plain object, that is, an object created by the
+ * `Object` constructor or one with a `[[Prototype]]` of `null`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.8.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a plain object,
+ *  else `false`.
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ * }
+ *
+ * _.isPlainObject(new Foo);
+ * // => false
+ *
+ * _.isPlainObject([1, 2, 3]);
+ * // => false
+ *
+ * _.isPlainObject({ 'x': 0, 'y': 0 });
+ * // => true
+ *
+ * _.isPlainObject(Object.create(null));
+ * // => true
+ */
+function isPlainObject(value) {
+  if (!isObjectLike(value) ||
+      objectToString.call(value) != objectTag || isHostObject(value)) {
+    return false;
+  }
+  var proto = getPrototype(value);
+  if (proto === null) {
+    return true;
+  }
+  var Ctor = hasOwnProperty.call(proto, 'constructor') && proto.constructor;
+  return (typeof Ctor == 'function' &&
+    Ctor instanceof Ctor && funcToString.call(Ctor) == objectCtorString);
+}
+
+module.exports = isPlainObject;
+
+},{"./_getPrototype":88,"./_isHostObject":101,"./isObjectLike":137}],139:[function(require,module,exports){
+var isArray = require('./isArray'),
+    isObjectLike = require('./isObjectLike');
+
+/** `Object#toString` result references. */
+var stringTag = '[object String]';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/**
+ * Checks if `value` is classified as a `String` primitive or object.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is correctly classified,
+ *  else `false`.
+ * @example
+ *
+ * _.isString('abc');
+ * // => true
+ *
+ * _.isString(1);
+ * // => false
+ */
+function isString(value) {
+  return typeof value == 'string' ||
+    (!isArray(value) && isObjectLike(value) && objectToString.call(value) == stringTag);
+}
+
+module.exports = isString;
+
+},{"./isArray":130,"./isObjectLike":137}],140:[function(require,module,exports){
+var isObjectLike = require('./isObjectLike');
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is correctly classified,
+ *  else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && objectToString.call(value) == symbolTag);
+}
+
+module.exports = isSymbol;
+
+},{"./isObjectLike":137}],141:[function(require,module,exports){
+var isLength = require('./isLength'),
+    isObjectLike = require('./isObjectLike');
+
+/** `Object#toString` result references. */
+var argsTag = '[object Arguments]',
+    arrayTag = '[object Array]',
+    boolTag = '[object Boolean]',
+    dateTag = '[object Date]',
+    errorTag = '[object Error]',
+    funcTag = '[object Function]',
+    mapTag = '[object Map]',
+    numberTag = '[object Number]',
+    objectTag = '[object Object]',
+    regexpTag = '[object RegExp]',
+    setTag = '[object Set]',
+    stringTag = '[object String]',
+    weakMapTag = '[object WeakMap]';
+
+var arrayBufferTag = '[object ArrayBuffer]',
+    dataViewTag = '[object DataView]',
+    float32Tag = '[object Float32Array]',
+    float64Tag = '[object Float64Array]',
+    int8Tag = '[object Int8Array]',
+    int16Tag = '[object Int16Array]',
+    int32Tag = '[object Int32Array]',
+    uint8Tag = '[object Uint8Array]',
+    uint8ClampedTag = '[object Uint8ClampedArray]',
+    uint16Tag = '[object Uint16Array]',
+    uint32Tag = '[object Uint32Array]';
+
+/** Used to identify `toStringTag` values of typed arrays. */
+var typedArrayTags = {};
+typedArrayTags[float32Tag] = typedArrayTags[float64Tag] =
+typedArrayTags[int8Tag] = typedArrayTags[int16Tag] =
+typedArrayTags[int32Tag] = typedArrayTags[uint8Tag] =
+typedArrayTags[uint8ClampedTag] = typedArrayTags[uint16Tag] =
+typedArrayTags[uint32Tag] = true;
+typedArrayTags[argsTag] = typedArrayTags[arrayTag] =
+typedArrayTags[arrayBufferTag] = typedArrayTags[boolTag] =
+typedArrayTags[dataViewTag] = typedArrayTags[dateTag] =
+typedArrayTags[errorTag] = typedArrayTags[funcTag] =
+typedArrayTags[mapTag] = typedArrayTags[numberTag] =
+typedArrayTags[objectTag] = typedArrayTags[regexpTag] =
+typedArrayTags[setTag] = typedArrayTags[stringTag] =
+typedArrayTags[weakMapTag] = false;
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/**
+ * Checks if `value` is classified as a typed array.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is correctly classified,
+ *  else `false`.
+ * @example
+ *
+ * _.isTypedArray(new Uint8Array);
+ * // => true
+ *
+ * _.isTypedArray([]);
+ * // => false
+ */
+function isTypedArray(value) {
+  return isObjectLike(value) &&
+    isLength(value.length) && !!typedArrayTags[objectToString.call(value)];
+}
+
+module.exports = isTypedArray;
+
+},{"./isLength":135,"./isObjectLike":137}],142:[function(require,module,exports){
+var baseHas = require('./_baseHas'),
+    baseKeys = require('./_baseKeys'),
+    indexKeys = require('./_indexKeys'),
+    isArrayLike = require('./isArrayLike'),
+    isIndex = require('./_isIndex'),
+    isPrototype = require('./_isPrototype');
+
+/**
+ * Creates an array of the own enumerable property names of `object`.
+ *
+ * **Note:** Non-object values are coerced to objects. See the
+ * [ES spec](http://ecma-international.org/ecma-262/6.0/#sec-object.keys)
+ * for more details.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Object
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ *   this.b = 2;
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.keys(new Foo);
+ * // => ['a', 'b'] (iteration order is not guaranteed)
+ *
+ * _.keys('hi');
+ * // => ['0', '1']
+ */
+function keys(object) {
+  var isProto = isPrototype(object);
+  if (!(isProto || isArrayLike(object))) {
+    return baseKeys(object);
+  }
+  var indexes = indexKeys(object),
+      skipIndexes = !!indexes,
+      result = indexes || [],
+      length = result.length;
+
+  for (var key in object) {
+    if (baseHas(object, key) &&
+        !(skipIndexes && (key == 'length' || isIndex(key, length))) &&
+        !(isProto && key == 'constructor')) {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+module.exports = keys;
+
+},{"./_baseHas":62,"./_baseKeys":64,"./_indexKeys":97,"./_isIndex":102,"./_isPrototype":106,"./isArrayLike":131}],143:[function(require,module,exports){
+var baseKeysIn = require('./_baseKeysIn'),
+    indexKeys = require('./_indexKeys'),
+    isIndex = require('./_isIndex'),
+    isPrototype = require('./_isPrototype');
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Creates an array of the own and inherited enumerable property names of `object`.
+ *
+ * **Note:** Non-object values are coerced to objects.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category Object
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ *   this.b = 2;
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.keysIn(new Foo);
+ * // => ['a', 'b', 'c'] (iteration order is not guaranteed)
+ */
+function keysIn(object) {
+  var index = -1,
+      isProto = isPrototype(object),
+      props = baseKeysIn(object),
+      propsLength = props.length,
+      indexes = indexKeys(object),
+      skipIndexes = !!indexes,
+      result = indexes || [],
+      length = result.length;
+
+  while (++index < propsLength) {
+    var key = props[index];
+    if (!(skipIndexes && (key == 'length' || isIndex(key, length))) &&
+        !(key == 'constructor' && (isProto || !hasOwnProperty.call(object, key)))) {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+module.exports = keysIn;
+
+},{"./_baseKeysIn":65,"./_indexKeys":97,"./_isIndex":102,"./_isPrototype":106}],144:[function(require,module,exports){
+var baseMerge = require('./_baseMerge'),
+    createAssigner = require('./_createAssigner');
+
+/**
+ * This method is like `_.assign` except that it recursively merges own and
+ * inherited enumerable string keyed properties of source objects into the
+ * destination object. Source properties that resolve to `undefined` are
+ * skipped if a destination value exists. Array and plain object properties
+ * are merged recursively. Other objects and value types are overridden by
+ * assignment. Source objects are applied from left to right. Subsequent
+ * sources overwrite property assignments of previous sources.
+ *
+ * **Note:** This method mutates `object`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.5.0
+ * @category Object
+ * @param {Object} object The destination object.
+ * @param {...Object} [sources] The source objects.
+ * @returns {Object} Returns `object`.
+ * @example
+ *
+ * var users = {
+ *   'data': [{ 'user': 'barney' }, { 'user': 'fred' }]
+ * };
+ *
+ * var ages = {
+ *   'data': [{ 'age': 36 }, { 'age': 40 }]
+ * };
+ *
+ * _.merge(users, ages);
+ * // => { 'data': [{ 'user': 'barney', 'age': 36 }, { 'user': 'fred', 'age': 40 }] }
+ */
+var merge = createAssigner(function(object, source, srcIndex) {
+  baseMerge(object, source, srcIndex);
+});
+
+module.exports = merge;
+
+},{"./_baseMerge":66,"./_createAssigner":83}],145:[function(require,module,exports){
+var apply = require('./_apply'),
+    toInteger = require('./toInteger');
+
+/** Used as the `TypeError` message for "Functions" methods. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeMax = Math.max;
+
+/**
+ * Creates a function that invokes `func` with the `this` binding of the
+ * created function and arguments from `start` and beyond provided as
+ * an array.
+ *
+ * **Note:** This method is based on the
+ * [rest parameter](https://mdn.io/rest_parameters).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Function
+ * @param {Function} func The function to apply a rest parameter to.
+ * @param {number} [start=func.length-1] The start position of the rest parameter.
+ * @returns {Function} Returns the new function.
+ * @example
+ *
+ * var say = _.rest(function(what, names) {
+ *   return what + ' ' + _.initial(names).join(', ') +
+ *     (_.size(names) > 1 ? ', & ' : '') + _.last(names);
+ * });
+ *
+ * say('hello', 'fred', 'barney', 'pebbles');
+ * // => 'hello fred, barney, & pebbles'
+ */
+function rest(func, start) {
+  if (typeof func != 'function') {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  start = nativeMax(start === undefined ? (func.length - 1) : toInteger(start), 0);
+  return function() {
+    var args = arguments,
+        index = -1,
+        length = nativeMax(args.length - start, 0),
+        array = Array(length);
+
+    while (++index < length) {
+      array[index] = args[start + index];
+    }
+    switch (start) {
+      case 0: return func.call(this, array);
+      case 1: return func.call(this, args[0], array);
+      case 2: return func.call(this, args[0], args[1], array);
+    }
+    var otherArgs = Array(start + 1);
+    index = -1;
+    while (++index < start) {
+      otherArgs[index] = args[index];
+    }
+    otherArgs[start] = array;
+    return apply(func, this, otherArgs);
+  };
+}
+
+module.exports = rest;
+
+},{"./_apply":51,"./toInteger":149}],146:[function(require,module,exports){
+/**
+ * A method that returns a new empty array.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.13.0
+ * @category Util
+ * @returns {Array} Returns the new empty array.
+ * @example
+ *
+ * var arrays = _.times(2, _.stubArray);
+ *
+ * console.log(arrays);
+ * // => [[], []]
+ *
+ * console.log(arrays[0] === arrays[1]);
+ * // => false
+ */
+function stubArray() {
+  return [];
+}
+
+module.exports = stubArray;
+
+},{}],147:[function(require,module,exports){
+/**
+ * A method that returns `false`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.13.0
+ * @category Util
+ * @returns {boolean} Returns `false`.
+ * @example
+ *
+ * _.times(2, _.stubFalse);
+ * // => [false, false]
+ */
+function stubFalse() {
+  return false;
+}
+
+module.exports = stubFalse;
+
+},{}],148:[function(require,module,exports){
+var toNumber = require('./toNumber');
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0,
+    MAX_INTEGER = 1.7976931348623157e+308;
+
+/**
+ * Converts `value` to a finite number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.12.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {number} Returns the converted number.
+ * @example
+ *
+ * _.toFinite(3.2);
+ * // => 3.2
+ *
+ * _.toFinite(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toFinite(Infinity);
+ * // => 1.7976931348623157e+308
+ *
+ * _.toFinite('3.2');
+ * // => 3.2
+ */
+function toFinite(value) {
+  if (!value) {
+    return value === 0 ? value : 0;
+  }
+  value = toNumber(value);
+  if (value === INFINITY || value === -INFINITY) {
+    var sign = (value < 0 ? -1 : 1);
+    return sign * MAX_INTEGER;
+  }
+  return value === value ? value : 0;
+}
+
+module.exports = toFinite;
+
+},{"./toNumber":150}],149:[function(require,module,exports){
+var toFinite = require('./toFinite');
+
+/**
+ * Converts `value` to an integer.
+ *
+ * **Note:** This method is loosely based on
+ * [`ToInteger`](http://www.ecma-international.org/ecma-262/6.0/#sec-tointeger).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {number} Returns the converted integer.
+ * @example
+ *
+ * _.toInteger(3.2);
+ * // => 3
+ *
+ * _.toInteger(Number.MIN_VALUE);
+ * // => 0
+ *
+ * _.toInteger(Infinity);
+ * // => 1.7976931348623157e+308
+ *
+ * _.toInteger('3.2');
+ * // => 3
+ */
+function toInteger(value) {
+  var result = toFinite(value),
+      remainder = result % 1;
+
+  return result === result ? (remainder ? result - remainder : result) : 0;
+}
+
+module.exports = toInteger;
+
+},{"./toFinite":148}],150:[function(require,module,exports){
+var isFunction = require('./isFunction'),
+    isObject = require('./isObject'),
+    isSymbol = require('./isSymbol');
+
+/** Used as references for various `Number` constants. */
+var NAN = 0 / 0;
+
+/** Used to match leading and trailing whitespace. */
+var reTrim = /^\s+|\s+$/g;
+
+/** Used to detect bad signed hexadecimal string values. */
+var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+
+/** Used to detect binary string values. */
+var reIsBinary = /^0b[01]+$/i;
+
+/** Used to detect octal string values. */
+var reIsOctal = /^0o[0-7]+$/i;
+
+/** Built-in method references without a dependency on `root`. */
+var freeParseInt = parseInt;
+
+/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // => 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // => Infinity
+ *
+ * _.toNumber('3.2');
+ * // => 3.2
+ */
+function toNumber(value) {
+  if (typeof value == 'number') {
+    return value;
+  }
+  if (isSymbol(value)) {
+    return NAN;
+  }
+  if (isObject(value)) {
+    var other = isFunction(value.valueOf) ? value.valueOf() : value;
+    value = isObject(other) ? (other + '') : other;
+  }
+  if (typeof value != 'string') {
+    return value === 0 ? value : +value;
+  }
+  value = value.replace(reTrim, '');
+  var isBinary = reIsBinary.test(value);
+  return (isBinary || reIsOctal.test(value))
+    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+    : (reIsBadHex.test(value) ? NAN : +value);
+}
+
+module.exports = toNumber;
+
+},{"./isFunction":134,"./isObject":136,"./isSymbol":140}],151:[function(require,module,exports){
+var copyObject = require('./_copyObject'),
+    keysIn = require('./keysIn');
+
+/**
+ * Converts `value` to a plain object flattening inherited enumerable string
+ * keyed properties of `value` to own properties of the plain object.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {Object} Returns the converted plain object.
+ * @example
+ *
+ * function Foo() {
+ *   this.b = 2;
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.assign({ 'a': 1 }, new Foo);
+ * // => { 'a': 1, 'b': 2 }
+ *
+ * _.assign({ 'a': 1 }, _.toPlainObject(new Foo));
+ * // => { 'a': 1, 'b': 2, 'c': 3 }
+ */
+function toPlainObject(value) {
+  return copyObject(value, keysIn(value));
+}
+
+module.exports = toPlainObject;
+
+},{"./_copyObject":80,"./keysIn":143}],152:[function(require,module,exports){
+(function (process){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+exports.getStyles = getStyles;
+
+var _simpleAssign = require('simple-assign');
+
+var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _IconButton = require('../IconButton');
+
+var _IconButton2 = _interopRequireDefault(_IconButton);
+
+var _menu = require('../svg-icons/navigation/menu');
+
+var _menu2 = _interopRequireDefault(_menu);
+
+var _Paper = require('../Paper');
+
+var _Paper2 = _interopRequireDefault(_Paper);
+
+var _propTypes = require('../utils/propTypes');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _warning = require('warning');
+
+var _warning2 = _interopRequireDefault(_warning);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function getStyles(props, context) {
+  var _context$muiTheme = context.muiTheme;
+  var appBar = _context$muiTheme.appBar;
+  var iconButtonSize = _context$muiTheme.button.iconButtonSize;
+  var zIndex = _context$muiTheme.zIndex;
+
+
+  var flatButtonSize = 36;
+
+  var styles = {
+    root: {
+      position: 'relative',
+      zIndex: zIndex.appBar,
+      width: '100%',
+      display: 'flex',
+      backgroundColor: appBar.color,
+      paddingLeft: appBar.padding,
+      paddingRight: appBar.padding
+    },
+    title: {
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      margin: 0,
+      paddingTop: 0,
+      letterSpacing: 0,
+      fontSize: 24,
+      fontWeight: appBar.titleFontWeight,
+      color: appBar.textColor,
+      height: appBar.height,
+      lineHeight: appBar.height + 'px'
+    },
+    mainElement: {
+      boxFlex: 1,
+      flex: '1'
+    },
+    iconButtonStyle: {
+      marginTop: (appBar.height - iconButtonSize) / 2,
+      marginRight: 8,
+      marginLeft: -16
+    },
+    iconButtonIconStyle: {
+      fill: appBar.textColor,
+      color: appBar.textColor
+    },
+    flatButton: {
+      color: appBar.textColor,
+      marginTop: (iconButtonSize - flatButtonSize) / 2 + 1
+    }
+  };
+
+  return styles;
+}
+
+var AppBar = function (_Component) {
+  _inherits(AppBar, _Component);
+
+  function AppBar() {
+    var _Object$getPrototypeO;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, AppBar);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(AppBar)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.handleTouchTapLeftIconButton = function (event) {
+      if (_this.props.onLeftIconButtonTouchTap) {
+        _this.props.onLeftIconButtonTouchTap(event);
+      }
+    }, _this.handleTouchTapRightIconButton = function (event) {
+      if (_this.props.onRightIconButtonTouchTap) {
+        _this.props.onRightIconButtonTouchTap(event);
+      }
+    }, _this.handleTitleTouchTap = function (event) {
+      if (_this.props.onTitleTouchTap) {
+        _this.props.onTitleTouchTap(event);
+      }
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(AppBar, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      process.env.NODE_ENV !== "production" ? (0, _warning2.default)(!this.props.iconElementLeft || !this.props.iconClassNameLeft, 'Properties iconElementLeft\n      and iconClassNameLeft cannot be simultaneously defined. Please use one or the other.') : void 0;
+
+      process.env.NODE_ENV !== "production" ? (0, _warning2.default)(!this.props.iconElementRight || !this.props.iconClassNameRight, 'Properties iconElementRight\n      and iconClassNameRight cannot be simultaneously defined. Please use one or the other.') : void 0;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props;
+      var title = _props.title;
+      var titleStyle = _props.titleStyle;
+      var iconStyleLeft = _props.iconStyleLeft;
+      var iconStyleRight = _props.iconStyleRight;
+      var showMenuIconButton = _props.showMenuIconButton;
+      var iconElementLeft = _props.iconElementLeft;
+      var iconElementRight = _props.iconElementRight;
+      var iconClassNameLeft = _props.iconClassNameLeft;
+      var iconClassNameRight = _props.iconClassNameRight;
+      var className = _props.className;
+      var style = _props.style;
+      var zDepth = _props.zDepth;
+      var children = _props.children;
+
+      var other = _objectWithoutProperties(_props, ['title', 'titleStyle', 'iconStyleLeft', 'iconStyleRight', 'showMenuIconButton', 'iconElementLeft', 'iconElementRight', 'iconClassNameLeft', 'iconClassNameRight', 'className', 'style', 'zDepth', 'children']);
+
+      var prepareStyles = this.context.muiTheme.prepareStyles;
+
+      var styles = getStyles(this.props, this.context);
+
+      var menuElementLeft = void 0;
+      var menuElementRight = void 0;
+
+      // If the title is a string, wrap in an h1 tag.
+      // If not, wrap in a div tag.
+      var titleComponent = typeof title === 'string' || title instanceof String ? 'h1' : 'div';
+
+      var titleElement = _react2.default.createElement(titleComponent, {
+        onTouchTap: this.handleTitleTouchTap,
+        style: prepareStyles((0, _simpleAssign2.default)(styles.title, styles.mainElement, titleStyle))
+      }, title);
+
+      var iconLeftStyle = (0, _simpleAssign2.default)({}, styles.iconButtonStyle, iconStyleLeft);
+
+      if (showMenuIconButton) {
+        var iconElementLeftNode = iconElementLeft;
+
+        if (iconElementLeft) {
+          if (iconElementLeft.type.muiName === 'IconButton') {
+            var iconButtonIconStyle = !(iconElementLeft.props.children && iconElementLeft.props.children.props.color) ? styles.iconButtonIconStyle : null;
+
+            iconElementLeftNode = _react2.default.cloneElement(iconElementLeft, {
+              iconStyle: (0, _simpleAssign2.default)({}, iconButtonIconStyle, iconElementLeft.props.iconStyle)
+            });
+          }
+
+          menuElementLeft = _react2.default.createElement(
+            'div',
+            { style: prepareStyles(iconLeftStyle) },
+            iconElementLeftNode
+          );
+        } else {
+          var child = iconClassNameLeft ? '' : _react2.default.createElement(_menu2.default, { style: (0, _simpleAssign2.default)({}, styles.iconButtonIconStyle) });
+          menuElementLeft = _react2.default.createElement(
+            _IconButton2.default,
+            {
+              style: iconLeftStyle,
+              iconStyle: styles.iconButtonIconStyle,
+              iconClassName: iconClassNameLeft,
+              onTouchTap: this.handleTouchTapLeftIconButton
+            },
+            child
+          );
+        }
+      }
+
+      var iconRightStyle = (0, _simpleAssign2.default)({}, styles.iconButtonStyle, {
+        marginRight: -16,
+        marginLeft: 'auto'
+      }, iconStyleRight);
+
+      if (iconElementRight) {
+        var iconElementRightNode = iconElementRight;
+
+        switch (iconElementRight.type.muiName) {
+          case 'IconMenu':
+          case 'IconButton':
+            var iconElemRightChildren = iconElementRight.props.children;
+            var _iconButtonIconStyle = !(iconElemRightChildren && iconElemRightChildren.props && iconElemRightChildren.props.color) ? styles.iconButtonIconStyle : null;
+
+            iconElementRightNode = _react2.default.cloneElement(iconElementRight, {
+              iconStyle: (0, _simpleAssign2.default)({}, _iconButtonIconStyle, iconElementRight.props.iconStyle)
+            });
+            break;
+
+          case 'FlatButton':
+            iconElementRightNode = _react2.default.cloneElement(iconElementRight, {
+              style: (0, _simpleAssign2.default)({}, styles.flatButton, iconElementRight.props.style)
+            });
+            break;
+
+          default:
+        }
+
+        menuElementRight = _react2.default.createElement(
+          'div',
+          { style: prepareStyles(iconRightStyle) },
+          iconElementRightNode
+        );
+      } else if (iconClassNameRight) {
+        menuElementRight = _react2.default.createElement(_IconButton2.default, {
+          style: iconRightStyle,
+          iconStyle: styles.iconButtonIconStyle,
+          iconClassName: iconClassNameRight,
+          onTouchTap: this.handleTouchTapRightIconButton
+        });
+      }
+
+      return _react2.default.createElement(
+        _Paper2.default,
+        _extends({}, other, {
+          rounded: false,
+          className: className,
+          style: (0, _simpleAssign2.default)({}, styles.root, style),
+          zDepth: zDepth
+        }),
+        menuElementLeft,
+        titleElement,
+        menuElementRight,
+        children
+      );
+    }
+  }]);
+
+  return AppBar;
+}(_react.Component);
+
+AppBar.muiName = 'AppBar';
+AppBar.propTypes = {
+  /**
+   * Can be used to render a tab inside an app bar for instance.
+   */
+  children: _react.PropTypes.node,
+  /**
+   * Applied to the app bar's root element.
+   */
+  className: _react.PropTypes.string,
+  /**
+   * The classname of the icon on the left of the app bar.
+   * If you are using a stylesheet for your icons, enter the class name for the icon to be used here.
+   */
+  iconClassNameLeft: _react.PropTypes.string,
+  /**
+   * Similiar to the iconClassNameLeft prop except that
+   * it applies to the icon displayed on the right of the app bar.
+   */
+  iconClassNameRight: _react.PropTypes.string,
+  /**
+   * The custom element to be displayed on the left side of the
+   * app bar such as an SvgIcon.
+   */
+  iconElementLeft: _react.PropTypes.element,
+  /**
+   * Similiar to the iconElementLeft prop except that this element is displayed on the right of the app bar.
+   */
+  iconElementRight: _react.PropTypes.element,
+  /**
+   * Override the inline-styles of the element displayed on the left side of the app bar.
+   */
+  iconStyleLeft: _react.PropTypes.object,
+  /**
+   * Override the inline-styles of the element displayed on the right side of the app bar.
+   */
+  iconStyleRight: _react.PropTypes.object,
+  /**
+   * Callback function for when the left icon is selected via a touch tap.
+   *
+   * @param {object} event TouchTap event targeting the left `IconButton`.
+   */
+  onLeftIconButtonTouchTap: _react.PropTypes.func,
+  /**
+   * Callback function for when the right icon is selected via a touch tap.
+   *
+   * @param {object} event TouchTap event targeting the right `IconButton`.
+   */
+  onRightIconButtonTouchTap: _react.PropTypes.func,
+  /**
+   * Callback function for when the title text is selected via a touch tap.
+   *
+   * @param {object} event TouchTap event targeting the `title` node.
+   */
+  onTitleTouchTap: _react.PropTypes.func,
+  /**
+   * Determines whether or not to display the Menu icon next to the title.
+   * Setting this prop to false will hide the icon.
+   */
+  showMenuIconButton: _react.PropTypes.bool,
+  /**
+   * Override the inline-styles of the root element.
+   */
+  style: _react.PropTypes.object,
+  /**
+   * The title to display on the app bar.
+   */
+  title: _react.PropTypes.node,
+  /**
+   * Override the inline-styles of the app bar's title element.
+   */
+  titleStyle: _react.PropTypes.object,
+  /**
+   * The zDepth of the component.
+   * The shadow of the app bar is also dependent on this property.
+   */
+  zDepth: _propTypes2.default.zDepth
+};
+AppBar.defaultProps = {
+  showMenuIconButton: true,
+  title: '',
+  zDepth: 1
+};
+AppBar.contextTypes = {
+  muiTheme: _react.PropTypes.object.isRequired
+};
+exports.default = AppBar;
+}).call(this,require('_process'))
+},{"../IconButton":157,"../Paper":159,"../svg-icons/navigation/menu":178,"../utils/propTypes":186,"_process":189,"react":367,"simple-assign":379,"warning":380}],153:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _AppBar = require('./AppBar');
+
+var _AppBar2 = _interopRequireDefault(_AppBar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _AppBar2.default;
+},{"./AppBar":152}],154:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _simpleAssign = require('simple-assign');
+
+var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _transitions = require('../styles/transitions');
+
+var _transitions2 = _interopRequireDefault(_transitions);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function getStyles(props, context, state) {
+  var color = props.color;
+  var hoverColor = props.hoverColor;
+  var baseTheme = context.muiTheme.baseTheme;
+
+  var offColor = color || baseTheme.palette.textColor;
+  var onColor = hoverColor || offColor;
+
+  return {
+    root: {
+      color: state.hovered ? onColor : offColor,
+      position: 'relative',
+      fontSize: baseTheme.spacing.iconSize,
+      display: 'inline-block',
+      userSelect: 'none',
+      transition: _transitions2.default.easeOut()
+    }
+  };
+}
+
+var FontIcon = function (_Component) {
+  _inherits(FontIcon, _Component);
+
+  function FontIcon() {
+    var _Object$getPrototypeO;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, FontIcon);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(FontIcon)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
+      hovered: false
+    }, _this.handleMouseLeave = function (event) {
+      // hover is needed only when a hoverColor is defined
+      if (_this.props.hoverColor !== undefined) _this.setState({ hovered: false });
+      if (_this.props.onMouseLeave) {
+        _this.props.onMouseLeave(event);
+      }
+    }, _this.handleMouseEnter = function (event) {
+      // hover is needed only when a hoverColor is defined
+      if (_this.props.hoverColor !== undefined) _this.setState({ hovered: true });
+      if (_this.props.onMouseEnter) {
+        _this.props.onMouseEnter(event);
+      }
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(FontIcon, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props;
+      var onMouseLeave = _props.onMouseLeave;
+      var // eslint-disable-line no-unused-vars
+      onMouseEnter = _props.onMouseEnter;
+      var // eslint-disable-line no-unused-vars
+      style = _props.style;
+
+      var other = _objectWithoutProperties(_props, ['onMouseLeave', 'onMouseEnter', 'style']);
+
+      var prepareStyles = this.context.muiTheme.prepareStyles;
+
+      var styles = getStyles(this.props, this.context, this.state);
+
+      return _react2.default.createElement('span', _extends({}, other, {
+        onMouseLeave: this.handleMouseLeave,
+        onMouseEnter: this.handleMouseEnter,
+        style: prepareStyles((0, _simpleAssign2.default)(styles.root, style))
+      }));
+    }
+  }]);
+
+  return FontIcon;
+}(_react.Component);
+
+FontIcon.muiName = 'FontIcon';
+FontIcon.propTypes = {
+  /**
+   * This is the font color of the font icon. If not specified,
+   * this component will default to muiTheme.palette.textColor.
+   */
+  color: _react.PropTypes.string,
+  /**
+   * This is the icon color when the mouse hovers over the icon.
+   */
+  hoverColor: _react.PropTypes.string,
+  /**
+   * Callback function fired when the mouse enters the element.
+   *
+   * @param {object} event `mouseenter` event targeting the element.
+   */
+  onMouseEnter: _react.PropTypes.func,
+  /**
+   * Callback function fired when the mouse leaves the element.
+   *
+   * @param {object} event `mouseleave` event targeting the element.
+   */
+  onMouseLeave: _react.PropTypes.func,
+  /**
+   * Override the inline-styles of the root element.
+   */
+  style: _react.PropTypes.object
+};
+FontIcon.defaultProps = {
+  onMouseEnter: function onMouseEnter() {},
+  onMouseLeave: function onMouseLeave() {}
+};
+FontIcon.contextTypes = {
+  muiTheme: _react.PropTypes.object.isRequired
+};
+exports.default = FontIcon;
+},{"../styles/transitions":175,"react":367,"simple-assign":379}],155:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _FontIcon = require('./FontIcon');
+
+var _FontIcon2 = _interopRequireDefault(_FontIcon);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _FontIcon2.default;
+},{"./FontIcon":154}],156:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _simpleAssign = require('simple-assign');
+
+var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _transitions = require('../styles/transitions');
+
+var _transitions2 = _interopRequireDefault(_transitions);
+
+var _propTypes = require('../utils/propTypes');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _EnhancedButton = require('../internal/EnhancedButton');
+
+var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
+
+var _FontIcon = require('../FontIcon');
+
+var _FontIcon2 = _interopRequireDefault(_FontIcon);
+
+var _Tooltip = require('../internal/Tooltip');
+
+var _Tooltip2 = _interopRequireDefault(_Tooltip);
+
+var _childUtils = require('../utils/childUtils');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function getStyles(props, context) {
+  var baseTheme = context.muiTheme.baseTheme;
+
+
+  return {
+    root: {
+      position: 'relative',
+      boxSizing: 'border-box',
+      overflow: 'visible',
+      transition: _transitions2.default.easeOut(),
+      padding: baseTheme.spacing.iconSize / 2,
+      width: baseTheme.spacing.iconSize * 2,
+      height: baseTheme.spacing.iconSize * 2,
+      fontSize: 0
+    },
+    tooltip: {
+      boxSizing: 'border-box'
+    },
+    overlay: {
+      position: 'relative',
+      top: 0,
+      width: '100%',
+      height: '100%',
+      background: baseTheme.palette.disabledColor
+    },
+    disabled: {
+      color: baseTheme.palette.disabledColor,
+      fill: baseTheme.palette.disabledColor
+    }
+  };
+}
+
+var IconButton = function (_Component) {
+  _inherits(IconButton, _Component);
+
+  function IconButton() {
+    var _Object$getPrototypeO;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, IconButton);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(IconButton)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
+      tooltipShown: false
+    }, _this.handleBlur = function (event) {
+      _this.hideTooltip();
+      if (_this.props.onBlur) _this.props.onBlur(event);
+    }, _this.handleFocus = function (event) {
+      _this.showTooltip();
+      if (_this.props.onFocus) _this.props.onFocus(event);
+    }, _this.handleMouseLeave = function (event) {
+      if (!_this.refs.button.isKeyboardFocused()) _this.hideTooltip();
+      if (_this.props.onMouseLeave) _this.props.onMouseLeave(event);
+    }, _this.handleMouseOut = function (event) {
+      if (_this.props.disabled) _this.hideTooltip();
+      if (_this.props.onMouseOut) _this.props.onMouseOut(event);
+    }, _this.handleMouseEnter = function (event) {
+      _this.showTooltip();
+      if (_this.props.onMouseEnter) _this.props.onMouseEnter(event);
+    }, _this.handleKeyboardFocus = function (event, keyboardFocused) {
+      if (keyboardFocused && !_this.props.disabled) {
+        _this.showTooltip();
+        if (_this.props.onFocus) _this.props.onFocus(event);
+      } else if (!_this.state.hovered) {
+        _this.hideTooltip();
+        if (_this.props.onBlur) _this.props.onBlur(event);
+      }
+
+      if (_this.props.onKeyboardFocus) _this.props.onKeyboardFocus(event, keyboardFocused);
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(IconButton, [{
+    key: 'setKeyboardFocus',
+    value: function setKeyboardFocus() {
+      this.refs.button.setKeyboardFocus();
+    }
+  }, {
+    key: 'showTooltip',
+    value: function showTooltip() {
+      if (this.props.tooltip) {
+        this.setState({ tooltipShown: true });
+      }
+    }
+  }, {
+    key: 'hideTooltip',
+    value: function hideTooltip() {
+      if (this.props.tooltip) this.setState({ tooltipShown: false });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props;
+      var disabled = _props.disabled;
+      var disableTouchRipple = _props.disableTouchRipple;
+      var children = _props.children;
+      var iconClassName = _props.iconClassName;
+      var tooltip = _props.tooltip;
+      var touch = _props.touch;
+      var iconStyle = _props.iconStyle;
+
+      var other = _objectWithoutProperties(_props, ['disabled', 'disableTouchRipple', 'children', 'iconClassName', 'tooltip', 'touch', 'iconStyle']);
+
+      var fonticon = void 0;
+
+      var styles = getStyles(this.props, this.context);
+      var tooltipPosition = this.props.tooltipPosition.split('-');
+
+      var tooltipElement = tooltip ? _react2.default.createElement(_Tooltip2.default, {
+        ref: 'tooltip',
+        label: tooltip,
+        show: this.state.tooltipShown,
+        touch: touch,
+        style: (0, _simpleAssign2.default)(styles.tooltip, this.props.tooltipStyles),
+        verticalPosition: tooltipPosition[0],
+        horizontalPosition: tooltipPosition[1]
+      }) : null;
+
+      if (iconClassName) {
+        var iconHoverColor = iconStyle.iconHoverColor;
+
+        var iconStyleFontIcon = _objectWithoutProperties(iconStyle, ['iconHoverColor']);
+
+        fonticon = _react2.default.createElement(
+          _FontIcon2.default,
+          {
+            className: iconClassName,
+            hoverColor: disabled ? null : iconHoverColor,
+            style: (0, _simpleAssign2.default)({}, disabled && styles.disabled, iconStyleFontIcon),
+            color: this.context.muiTheme.baseTheme.palette.textColor
+          },
+          children
+        );
+      }
+
+      var childrenStyle = disabled ? (0, _simpleAssign2.default)({}, iconStyle, styles.disabled) : iconStyle;
+
+      return _react2.default.createElement(
+        _EnhancedButton2.default,
+        _extends({}, other, {
+          ref: 'button',
+          centerRipple: true,
+          disabled: disabled,
+          style: (0, _simpleAssign2.default)(styles.root, this.props.style),
+          disableTouchRipple: disableTouchRipple,
+          onBlur: this.handleBlur,
+          onFocus: this.handleFocus,
+          onMouseLeave: this.handleMouseLeave,
+          onMouseEnter: this.handleMouseEnter,
+          onMouseOut: this.handleMouseOut,
+          onKeyboardFocus: this.handleKeyboardFocus
+        }),
+        tooltipElement,
+        fonticon,
+        (0, _childUtils.extendChildren)(children, {
+          style: childrenStyle
+        })
+      );
+    }
+  }]);
+
+  return IconButton;
+}(_react.Component);
+
+IconButton.muiName = 'IconButton';
+IconButton.propTypes = {
+  /**
+   * Can be used to pass a `FontIcon` element as the icon for the button.
+   */
+  children: _react.PropTypes.node,
+  /**
+   * The CSS class name of the root element.
+   */
+  className: _react.PropTypes.string,
+  /**
+   * If true, the element's ripple effect will be disabled.
+   */
+  disableTouchRipple: _react.PropTypes.bool,
+  /**
+   * If true, the element will be disabled.
+   */
+  disabled: _react.PropTypes.bool,
+  /**
+   * The CSS class name of the icon. Used for setting the icon with a stylesheet.
+   */
+  iconClassName: _react.PropTypes.string,
+  /**
+   * Override the inline-styles of the icon element.
+   */
+  iconStyle: _react.PropTypes.object,
+  /**
+   * Callback function fired when the element loses focus.
+   * @param {object} event `blur` event targeting the element.
+   */
+  onBlur: _react.PropTypes.func,
+  /**
+   * Callback function fired when the element gains focus.
+   * @param {object} event `focus` event targeting the element.
+   */
+  onFocus: _react.PropTypes.func,
+  /**
+   * Callback function fired when the element is focused or blurred by the keyboard.
+   *
+   * @param {object} event `focus` or `blur` event targeting the element.
+   * @param {boolean} keyboardFocused Indicates whether the element is focused.
+   */
+  onKeyboardFocus: _react.PropTypes.func,
+  /**
+   * Callback function fired when the mouse enters the element.
+   *
+   * @param {object} event `mouseenter` event targeting the element.
+   */
+  onMouseEnter: _react.PropTypes.func,
+  /**
+   * Callback function fired when the mouse leaves the element.
+   *
+   * @param {object} event `mouseleave` event targeting the element.
+   */
+  onMouseLeave: _react.PropTypes.func,
+  /**
+   * Callback function fired when the mouse leaves the element. Unlike `onMouseLeave`,
+   * this callback will fire on disabled icon buttons.
+   *
+   * @param {object} event `mouseout` event targeting the element.
+   */
+  onMouseOut: _react.PropTypes.func,
+  /**
+   * Override the inline-styles of the root element.
+   */
+  style: _react.PropTypes.object,
+  /**
+   * The text to supply to the element's tooltip.
+   */
+  tooltip: _react.PropTypes.node,
+  /**
+   * The vertical and horizontal positions, respectively, of the element's tooltip.
+   * Possible values are: "bottom-center", "top-center", "bottom-right", "top-right",
+   * "bottom-left", and "top-left".
+   */
+  tooltipPosition: _propTypes2.default.cornersAndCenter,
+  /**
+   * Override the inline-styles of the tooltip element.
+   */
+  tooltipStyles: _react.PropTypes.object,
+  /**
+   * If true, increase the tooltip element's size.  Useful for increasing tooltip
+   * readability on mobile devices.
+   */
+  touch: _react.PropTypes.bool
+};
+IconButton.defaultProps = {
+  disabled: false,
+  disableTouchRipple: false,
+  iconStyle: {},
+  tooltipPosition: 'bottom-center',
+  touch: false
+};
+IconButton.contextTypes = {
+  muiTheme: _react.PropTypes.object.isRequired
+};
+exports.default = IconButton;
+},{"../FontIcon":155,"../internal/EnhancedButton":163,"../internal/Tooltip":167,"../styles/transitions":175,"../utils/childUtils":182,"../utils/propTypes":186,"react":367,"simple-assign":379}],157:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _IconButton = require('./IconButton');
+
+var _IconButton2 = _interopRequireDefault(_IconButton);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _IconButton2.default;
+},{"./IconButton":156}],158:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _simpleAssign = require('simple-assign');
+
+var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('../utils/propTypes');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _transitions = require('../styles/transitions');
+
+var _transitions2 = _interopRequireDefault(_transitions);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function getStyles(props, context) {
+  var circle = props.circle;
+  var rounded = props.rounded;
+  var transitionEnabled = props.transitionEnabled;
+  var zDepth = props.zDepth;
+  var _context$muiTheme = context.muiTheme;
+  var baseTheme = _context$muiTheme.baseTheme;
+  var paper = _context$muiTheme.paper;
+
+
+  return {
+    root: {
+      color: paper.color,
+      backgroundColor: paper.backgroundColor,
+      transition: transitionEnabled && _transitions2.default.easeOut(),
+      boxSizing: 'border-box',
+      fontFamily: baseTheme.fontFamily,
+      WebkitTapHighlightColor: 'rgba(0,0,0,0)', // Remove mobile color flashing (deprecated)
+      boxShadow: paper.zDepthShadows[zDepth - 1], // No shadow for 0 depth papers
+      borderRadius: circle ? '50%' : rounded ? '2px' : '0px'
+    }
+  };
+}
+
+var Paper = function (_Component) {
+  _inherits(Paper, _Component);
+
+  function Paper() {
+    _classCallCheck(this, Paper);
+
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Paper).apply(this, arguments));
+  }
+
+  _createClass(Paper, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props;
+      var children = _props.children;
+      var style = _props.style;
+
+      var other = _objectWithoutProperties(_props, ['children', 'style']);
+
+      var prepareStyles = this.context.muiTheme.prepareStyles;
+
+      var styles = getStyles(this.props, this.context);
+
+      return _react2.default.createElement(
+        'div',
+        _extends({}, other, { style: prepareStyles((0, _simpleAssign2.default)(styles.root, style)) }),
+        children
+      );
+    }
+  }]);
+
+  return Paper;
+}(_react.Component);
+
+Paper.propTypes = {
+  /**
+   * Children passed into the paper element.
+   */
+  children: _react.PropTypes.node,
+  /**
+   * Set to true to generate a circlular paper container.
+   */
+  circle: _react.PropTypes.bool,
+  /**
+   * By default, the paper container will have a border radius.
+   * Set this to false to generate a container with sharp corners.
+   */
+  rounded: _react.PropTypes.bool,
+  /**
+   * Override the inline-styles of the root element.
+   */
+  style: _react.PropTypes.object,
+  /**
+   * Set to false to disable CSS transitions for the paper element.
+   */
+  transitionEnabled: _react.PropTypes.bool,
+  /**
+   * This number represents the zDepth of the paper shadow.
+   */
+  zDepth: _propTypes2.default.zDepth
+};
+Paper.defaultProps = {
+  circle: false,
+  rounded: true,
+  transitionEnabled: true,
+  zDepth: 1
+};
+Paper.contextTypes = {
+  muiTheme: _react.PropTypes.object.isRequired
+};
+exports.default = Paper;
+},{"../styles/transitions":175,"../utils/propTypes":186,"react":367,"simple-assign":379}],159:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _Paper = require('./Paper');
+
+var _Paper2 = _interopRequireDefault(_Paper);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Paper2.default;
+},{"./Paper":158}],160:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _simpleAssign = require('simple-assign');
+
+var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _transitions = require('../styles/transitions');
+
+var _transitions2 = _interopRequireDefault(_transitions);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SvgIcon = function (_Component) {
+  _inherits(SvgIcon, _Component);
+
+  function SvgIcon() {
+    var _Object$getPrototypeO;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, SvgIcon);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(SvgIcon)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
+      hovered: false
+    }, _this.handleMouseLeave = function (event) {
+      _this.setState({ hovered: false });
+      _this.props.onMouseLeave(event);
+    }, _this.handleMouseEnter = function (event) {
+      _this.setState({ hovered: true });
+      _this.props.onMouseEnter(event);
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(SvgIcon, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props;
+      var children = _props.children;
+      var color = _props.color;
+      var hoverColor = _props.hoverColor;
+      var onMouseEnter = _props.onMouseEnter;
+      var // eslint-disable-line no-unused-vars
+      onMouseLeave = _props.onMouseLeave;
+      var // eslint-disable-line no-unused-vars
+      style = _props.style;
+      var viewBox = _props.viewBox;
+
+      var other = _objectWithoutProperties(_props, ['children', 'color', 'hoverColor', 'onMouseEnter', 'onMouseLeave', 'style', 'viewBox']);
+
+      var _context$muiTheme = this.context.muiTheme;
+      var baseTheme = _context$muiTheme.baseTheme;
+      var prepareStyles = _context$muiTheme.prepareStyles;
+
+
+      var offColor = color ? color : style && style.fill ? style.fill : baseTheme.palette.textColor;
+      var onColor = hoverColor ? hoverColor : offColor;
+
+      var mergedStyles = (0, _simpleAssign2.default)({
+        display: 'inline-block',
+        fill: this.state.hovered ? onColor : offColor,
+        height: 24,
+        width: 24,
+        userSelect: 'none',
+        transition: _transitions2.default.easeOut()
+      }, style);
+
+      return _react2.default.createElement(
+        'svg',
+        _extends({}, other, {
+          onMouseEnter: this.handleMouseEnter,
+          onMouseLeave: this.handleMouseLeave,
+          style: prepareStyles(mergedStyles),
+          viewBox: viewBox
+        }),
+        children
+      );
+    }
+  }]);
+
+  return SvgIcon;
+}(_react.Component);
+
+SvgIcon.muiName = 'SvgIcon';
+SvgIcon.propTypes = {
+  /**
+   * Elements passed into the SVG Icon.
+   */
+  children: _react.PropTypes.node,
+  /**
+   * This is the fill color of the svg icon.
+   * If not specified, this component will default
+   * to muiTheme.palette.textColor.
+   */
+  color: _react.PropTypes.string,
+  /**
+   * This is the icon color when the mouse hovers over the icon.
+   */
+  hoverColor: _react.PropTypes.string,
+  /**
+   * Function called when mouse enters this element.
+   */
+  onMouseEnter: _react.PropTypes.func,
+  /**
+   * Function called when mouse leaves this element.
+   */
+  onMouseLeave: _react.PropTypes.func,
+  /**
+   * Override the inline-styles of the root element.
+   */
+  style: _react.PropTypes.object,
+  /**
+   * Allows you to redifine what the coordinates
+   * without units mean inside an svg element. For example,
+   * if the SVG element is 500 (width) by 200 (height), and you
+   * pass viewBox="0 0 50 20", this means that the coordinates inside
+   * the svg will go from the top left corner (0,0) to bottom right (50,20)
+   * and each unit will be worth 10px.
+   */
+  viewBox: _react.PropTypes.string
+};
+SvgIcon.defaultProps = {
+  onMouseEnter: function onMouseEnter() {},
+  onMouseLeave: function onMouseLeave() {},
+  viewBox: '0 0 24 24'
+};
+SvgIcon.contextTypes = {
+  muiTheme: _react.PropTypes.object.isRequired
+};
+exports.default = SvgIcon;
+},{"../styles/transitions":175,"react":367,"simple-assign":379}],161:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _SvgIcon = require('./SvgIcon');
+
+var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _SvgIcon2.default;
+},{"./SvgIcon":160}],162:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _simpleAssign = require('simple-assign');
+
+var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _shallowEqual = require('recompose/shallowEqual');
+
+var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
+
+var _autoPrefix = require('../utils/autoPrefix');
+
+var _autoPrefix2 = _interopRequireDefault(_autoPrefix);
+
+var _transitions = require('../styles/transitions');
+
+var _transitions2 = _interopRequireDefault(_transitions);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CircleRipple = function (_Component) {
+  _inherits(CircleRipple, _Component);
+
+  function CircleRipple() {
+    _classCallCheck(this, CircleRipple);
+
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(CircleRipple).apply(this, arguments));
+  }
+
+  _createClass(CircleRipple, [{
+    key: 'shouldComponentUpdate',
+    value: function shouldComponentUpdate(nextProps) {
+      return !(0, _shallowEqual2.default)(this.props, nextProps);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      clearTimeout(this.enterTimer);
+      clearTimeout(this.leaveTimer);
+    }
+  }, {
+    key: 'componentWillAppear',
+    value: function componentWillAppear(callback) {
+      this.initializeAnimation(callback);
+    }
+  }, {
+    key: 'componentWillEnter',
+    value: function componentWillEnter(callback) {
+      this.initializeAnimation(callback);
+    }
+  }, {
+    key: 'componentDidAppear',
+    value: function componentDidAppear() {
+      this.animate();
+    }
+  }, {
+    key: 'componentDidEnter',
+    value: function componentDidEnter() {
+      this.animate();
+    }
+  }, {
+    key: 'componentWillLeave',
+    value: function componentWillLeave(callback) {
+      var style = _reactDom2.default.findDOMNode(this).style;
+      style.opacity = 0;
+      // If the animation is aborted, remove from the DOM immediately
+      var removeAfter = this.props.aborted ? 0 : 2000;
+      this.enterTimer = setTimeout(callback, removeAfter);
+    }
+  }, {
+    key: 'animate',
+    value: function animate() {
+      var style = _reactDom2.default.findDOMNode(this).style;
+      var transitionValue = _transitions2.default.easeOut('2s', 'opacity') + ', ' + _transitions2.default.easeOut('1s', 'transform');
+      _autoPrefix2.default.set(style, 'transition', transitionValue);
+      _autoPrefix2.default.set(style, 'transform', 'scale(1)');
+    }
+  }, {
+    key: 'initializeAnimation',
+    value: function initializeAnimation(callback) {
+      var style = _reactDom2.default.findDOMNode(this).style;
+      style.opacity = this.props.opacity;
+      _autoPrefix2.default.set(style, 'transform', 'scale(0)');
+      this.leaveTimer = setTimeout(callback, 0);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props;
+      var color = _props.color;
+      var opacity = _props.opacity;
+      var // eslint-disable-line no-unused-vars
+      style = _props.style;
+
+      var other = _objectWithoutProperties(_props, ['color', 'opacity', 'style']);
+
+      var prepareStyles = this.context.muiTheme.prepareStyles;
+
+
+      var mergedStyles = (0, _simpleAssign2.default)({
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        height: '100%',
+        width: '100%',
+        borderRadius: '50%',
+        backgroundColor: color
+      }, style);
+
+      return _react2.default.createElement('div', _extends({}, other, { style: prepareStyles(mergedStyles) }));
+    }
+  }]);
+
+  return CircleRipple;
+}(_react.Component);
+
+CircleRipple.propTypes = {
+  aborted: _react.PropTypes.bool,
+  color: _react.PropTypes.string,
+  opacity: _react.PropTypes.number,
+  style: _react.PropTypes.object
+};
+CircleRipple.defaultProps = {
+  opacity: 0.1,
+  aborted: false
+};
+CircleRipple.contextTypes = {
+  muiTheme: _react.PropTypes.object.isRequired
+};
+exports.default = CircleRipple;
+},{"../styles/transitions":175,"../utils/autoPrefix":179,"react":367,"react-dom":192,"recompose/shallowEqual":376,"simple-assign":379}],163:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _simpleAssign = require('simple-assign');
+
+var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _childUtils = require('../utils/childUtils');
+
+var _events = require('../utils/events');
+
+var _events2 = _interopRequireDefault(_events);
+
+var _keycode = require('keycode');
+
+var _keycode2 = _interopRequireDefault(_keycode);
+
+var _FocusRipple = require('./FocusRipple');
+
+var _FocusRipple2 = _interopRequireDefault(_FocusRipple);
+
+var _TouchRipple = require('./TouchRipple');
+
+var _TouchRipple2 = _interopRequireDefault(_TouchRipple);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var styleInjected = false;
+var listening = false;
+var tabPressed = false;
+
+function injectStyle() {
+  if (!styleInjected) {
+    // Remove inner padding and border in Firefox 4+.
+    var style = document.createElement('style');
+    style.innerHTML = '\n      button::-moz-focus-inner,\n      input::-moz-focus-inner {\n        border: 0;\n        padding: 0;\n      }\n    ';
+
+    document.body.appendChild(style);
+    styleInjected = true;
+  }
+}
+
+function listenForTabPresses() {
+  if (!listening) {
+    _events2.default.on(window, 'keydown', function (event) {
+      tabPressed = (0, _keycode2.default)(event) === 'tab';
+    });
+    listening = true;
+  }
+}
+
+var EnhancedButton = function (_Component) {
+  _inherits(EnhancedButton, _Component);
+
+  function EnhancedButton() {
+    var _Object$getPrototypeO;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, EnhancedButton);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(EnhancedButton)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = { isKeyboardFocused: false }, _this.handleKeyDown = function (event) {
+      if (!_this.props.disabled && !_this.props.disableKeyboardFocus) {
+        if ((0, _keycode2.default)(event) === 'enter' && _this.state.isKeyboardFocused) {
+          _this.handleTouchTap(event);
+        }
+        if ((0, _keycode2.default)(event) === 'esc' && _this.state.isKeyboardFocused) {
+          _this.removeKeyboardFocus(event);
+        }
+      }
+      _this.props.onKeyDown(event);
+    }, _this.handleKeyUp = function (event) {
+      if (!_this.props.disabled && !_this.props.disableKeyboardFocus) {
+        if ((0, _keycode2.default)(event) === 'space' && _this.state.isKeyboardFocused) {
+          _this.handleTouchTap(event);
+        }
+      }
+      _this.props.onKeyUp(event);
+    }, _this.handleBlur = function (event) {
+      _this.cancelFocusTimeout();
+      _this.removeKeyboardFocus(event);
+      _this.props.onBlur(event);
+    }, _this.handleFocus = function (event) {
+      if (event) event.persist();
+      if (!_this.props.disabled && !_this.props.disableKeyboardFocus) {
+        // setTimeout is needed because the focus event fires first
+        // Wait so that we can capture if this was a keyboard focus
+        // or touch focus
+        _this.focusTimeout = setTimeout(function () {
+          if (tabPressed) {
+            _this.setKeyboardFocus(event);
+            tabPressed = false;
+          }
+        }, 150);
+
+        _this.props.onFocus(event);
+      }
+    }, _this.handleClick = function (event) {
+      if (!_this.props.disabled) {
+        tabPressed = false;
+        _this.props.onClick(event);
+      }
+    }, _this.handleTouchTap = function (event) {
+      _this.cancelFocusTimeout();
+      if (!_this.props.disabled) {
+        tabPressed = false;
+        _this.removeKeyboardFocus(event);
+        _this.props.onTouchTap(event);
+      }
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(EnhancedButton, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      var _props = this.props;
+      var disabled = _props.disabled;
+      var disableKeyboardFocus = _props.disableKeyboardFocus;
+      var keyboardFocused = _props.keyboardFocused;
+
+      if (!disabled && keyboardFocused && !disableKeyboardFocus) {
+        this.setState({ isKeyboardFocused: true });
+      }
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      injectStyle();
+      listenForTabPresses();
+      if (this.state.isKeyboardFocused) {
+        this.refs.enhancedButton.focus();
+        this.props.onKeyboardFocus(null, true);
+      }
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if ((nextProps.disabled || nextProps.disableKeyboardFocus) && this.state.isKeyboardFocused) {
+        this.setState({ isKeyboardFocused: false });
+        if (nextProps.onKeyboardFocus) {
+          nextProps.onKeyboardFocus(null, false);
+        }
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      clearTimeout(this.focusTimeout);
+    }
+  }, {
+    key: 'isKeyboardFocused',
+    value: function isKeyboardFocused() {
+      return this.state.isKeyboardFocused;
+    }
+  }, {
+    key: 'removeKeyboardFocus',
+    value: function removeKeyboardFocus(event) {
+      if (this.state.isKeyboardFocused) {
+        this.setState({ isKeyboardFocused: false });
+        this.props.onKeyboardFocus(event, false);
+      }
+    }
+  }, {
+    key: 'setKeyboardFocus',
+    value: function setKeyboardFocus(event) {
+      if (!this.state.isKeyboardFocused) {
+        this.setState({ isKeyboardFocused: true });
+        this.props.onKeyboardFocus(event, true);
+      }
+    }
+  }, {
+    key: 'cancelFocusTimeout',
+    value: function cancelFocusTimeout() {
+      if (this.focusTimeout) {
+        clearTimeout(this.focusTimeout);
+        this.focusTimeout = null;
+      }
+    }
+  }, {
+    key: 'createButtonChildren',
+    value: function createButtonChildren() {
+      var _props2 = this.props;
+      var centerRipple = _props2.centerRipple;
+      var children = _props2.children;
+      var disabled = _props2.disabled;
+      var disableFocusRipple = _props2.disableFocusRipple;
+      var disableKeyboardFocus = _props2.disableKeyboardFocus;
+      var disableTouchRipple = _props2.disableTouchRipple;
+      var focusRippleColor = _props2.focusRippleColor;
+      var focusRippleOpacity = _props2.focusRippleOpacity;
+      var touchRippleColor = _props2.touchRippleColor;
+      var touchRippleOpacity = _props2.touchRippleOpacity;
+      var isKeyboardFocused = this.state.isKeyboardFocused;
+
+      // Focus Ripple
+
+      var focusRipple = isKeyboardFocused && !disabled && !disableFocusRipple && !disableKeyboardFocus ? _react2.default.createElement(_FocusRipple2.default, {
+        color: focusRippleColor,
+        opacity: focusRippleOpacity,
+        show: isKeyboardFocused
+      }) : undefined;
+
+      // Touch Ripple
+      var touchRipple = !disabled && !disableTouchRipple ? _react2.default.createElement(
+        _TouchRipple2.default,
+        {
+          centerRipple: centerRipple,
+          color: touchRippleColor,
+          opacity: touchRippleOpacity
+        },
+        children
+      ) : undefined;
+
+      return (0, _childUtils.createChildFragment)({
+        focusRipple: focusRipple,
+        touchRipple: touchRipple,
+        children: touchRipple ? undefined : children
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props3 = this.props;
+      var centerRipple = _props3.centerRipple;
+      var // eslint-disable-line no-unused-vars
+      children = _props3.children;
+      var containerElement = _props3.containerElement;
+      var disabled = _props3.disabled;
+      var disableFocusRipple = _props3.disableFocusRipple;
+      var disableKeyboardFocus = _props3.disableKeyboardFocus;
+      var // eslint-disable-line no-unused-vars
+      disableTouchRipple = _props3.disableTouchRipple;
+      var // eslint-disable-line no-unused-vars
+      focusRippleColor = _props3.focusRippleColor;
+      var // eslint-disable-line no-unused-vars
+      focusRippleOpacity = _props3.focusRippleOpacity;
+      var // eslint-disable-line no-unused-vars
+      linkButton = _props3.linkButton;
+      var touchRippleColor = _props3.touchRippleColor;
+      var // eslint-disable-line no-unused-vars
+      touchRippleOpacity = _props3.touchRippleOpacity;
+      var // eslint-disable-line no-unused-vars
+      onBlur = _props3.onBlur;
+      var // eslint-disable-line no-unused-vars
+      onClick = _props3.onClick;
+      var // eslint-disable-line no-unused-vars
+      onFocus = _props3.onFocus;
+      var // eslint-disable-line no-unused-vars
+      onKeyUp = _props3.onKeyUp;
+      var // eslint-disable-line no-unused-vars
+      onKeyDown = _props3.onKeyDown;
+      var // eslint-disable-line no-unused-vars
+      onTouchTap = _props3.onTouchTap;
+      var // eslint-disable-line no-unused-vars
+      style = _props3.style;
+      var tabIndex = _props3.tabIndex;
+      var type = _props3.type;
+
+      var other = _objectWithoutProperties(_props3, ['centerRipple', 'children', 'containerElement', 'disabled', 'disableFocusRipple', 'disableKeyboardFocus', 'disableTouchRipple', 'focusRippleColor', 'focusRippleOpacity', 'linkButton', 'touchRippleColor', 'touchRippleOpacity', 'onBlur', 'onClick', 'onFocus', 'onKeyUp', 'onKeyDown', 'onTouchTap', 'style', 'tabIndex', 'type']);
+
+      var _context$muiTheme = this.context.muiTheme;
+      var prepareStyles = _context$muiTheme.prepareStyles;
+      var enhancedButton = _context$muiTheme.enhancedButton;
+
+
+      var mergedStyles = (0, _simpleAssign2.default)({
+        border: 10,
+        boxSizing: 'border-box',
+        display: 'inline-block',
+        fontFamily: this.context.muiTheme.baseTheme.fontFamily,
+        WebkitTapHighlightColor: enhancedButton.tapHighlightColor, // Remove mobile color flashing (deprecated)
+        cursor: disabled ? 'default' : 'pointer',
+        textDecoration: 'none',
+        margin: 0,
+        padding: 0,
+        outline: 'none',
+        fontSize: 'inherit',
+        fontWeight: 'inherit',
+        /**
+         * This is needed so that ripples do not bleed
+         * past border radius.
+         * See: http://stackoverflow.com/questions/17298739/
+         * css-overflow-hidden-not-working-in-chrome-when-parent-has-border-radius-and-chil
+         */
+        transform: disableTouchRipple && disableFocusRipple ? null : 'translate3d(0, 0, 0)',
+        verticalAlign: other.hasOwnProperty('href') ? 'middle' : null
+      }, style);
+
+      // Passing both background:none & backgroundColor can break due to object iteration order
+      if (!mergedStyles.backgroundColor && !mergedStyles.background) {
+        mergedStyles.background = 'none';
+      }
+
+      if (disabled && linkButton) {
+        return _react2.default.createElement(
+          'span',
+          _extends({}, other, {
+            style: mergedStyles
+          }),
+          children
+        );
+      }
+
+      var buttonProps = _extends({}, other, {
+        style: prepareStyles(mergedStyles),
+        ref: 'enhancedButton',
+        disabled: disabled,
+        onBlur: this.handleBlur,
+        onClick: this.handleClick,
+        onFocus: this.handleFocus,
+        onTouchTap: this.handleTouchTap,
+        onKeyUp: this.handleKeyUp,
+        onKeyDown: this.handleKeyDown,
+        tabIndex: tabIndex,
+        type: type
+      });
+      var buttonChildren = this.createButtonChildren();
+
+      // Provides backward compatibility. Added to support wrapping around <a> element.
+      var targetLinkElement = buttonProps.hasOwnProperty('href') ? 'a' : 'span';
+
+      return _react2.default.isValidElement(containerElement) ? _react2.default.cloneElement(containerElement, buttonProps, buttonChildren) : _react2.default.createElement(linkButton ? targetLinkElement : containerElement, buttonProps, buttonChildren);
+    }
+  }]);
+
+  return EnhancedButton;
+}(_react.Component);
+
+EnhancedButton.propTypes = {
+  centerRipple: _react.PropTypes.bool,
+  children: _react.PropTypes.node,
+  containerElement: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
+  disableFocusRipple: _react.PropTypes.bool,
+  disableKeyboardFocus: _react.PropTypes.bool,
+  disableTouchRipple: _react.PropTypes.bool,
+  disabled: _react.PropTypes.bool,
+  focusRippleColor: _react.PropTypes.string,
+  focusRippleOpacity: _react.PropTypes.number,
+  keyboardFocused: _react.PropTypes.bool,
+  linkButton: _react.PropTypes.bool,
+  onBlur: _react.PropTypes.func,
+  onClick: _react.PropTypes.func,
+  onFocus: _react.PropTypes.func,
+  onKeyDown: _react.PropTypes.func,
+  onKeyUp: _react.PropTypes.func,
+  onKeyboardFocus: _react.PropTypes.func,
+  onMouseDown: _react.PropTypes.func,
+  onMouseEnter: _react.PropTypes.func,
+  onMouseLeave: _react.PropTypes.func,
+  onMouseUp: _react.PropTypes.func,
+  onTouchEnd: _react.PropTypes.func,
+  onTouchStart: _react.PropTypes.func,
+  onTouchTap: _react.PropTypes.func,
+  style: _react.PropTypes.object,
+  tabIndex: _react.PropTypes.number,
+  touchRippleColor: _react.PropTypes.string,
+  touchRippleOpacity: _react.PropTypes.number,
+  type: _react.PropTypes.string
+};
+EnhancedButton.defaultProps = {
+  containerElement: 'button',
+  onBlur: function onBlur() {},
+  onClick: function onClick() {},
+  onFocus: function onFocus() {},
+  onKeyDown: function onKeyDown() {},
+  onKeyUp: function onKeyUp() {},
+  onKeyboardFocus: function onKeyboardFocus() {},
+  onMouseDown: function onMouseDown() {},
+  onMouseEnter: function onMouseEnter() {},
+  onMouseLeave: function onMouseLeave() {},
+  onMouseUp: function onMouseUp() {},
+  onTouchEnd: function onTouchEnd() {},
+  onTouchStart: function onTouchStart() {},
+  onTouchTap: function onTouchTap() {},
+  tabIndex: 0,
+  type: 'button'
+};
+EnhancedButton.contextTypes = {
+  muiTheme: _react.PropTypes.object.isRequired
+};
+exports.default = EnhancedButton;
+},{"../utils/childUtils":182,"../utils/events":185,"./FocusRipple":164,"./TouchRipple":168,"keycode":36,"react":367,"simple-assign":379}],164:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _simpleAssign = require('simple-assign');
+
+var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _shallowEqual = require('recompose/shallowEqual');
+
+var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
+
+var _autoPrefix = require('../utils/autoPrefix');
+
+var _autoPrefix2 = _interopRequireDefault(_autoPrefix);
+
+var _transitions = require('../styles/transitions');
+
+var _transitions2 = _interopRequireDefault(_transitions);
+
+var _ScaleIn = require('./ScaleIn');
+
+var _ScaleIn2 = _interopRequireDefault(_ScaleIn);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var pulsateDuration = 750;
+
+var FocusRipple = function (_Component) {
+  _inherits(FocusRipple, _Component);
+
+  function FocusRipple() {
+    var _Object$getPrototypeO;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, FocusRipple);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(FocusRipple)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.pulsate = function () {
+      var innerCircle = _reactDom2.default.findDOMNode(_this.refs.innerCircle);
+      if (!innerCircle) return;
+
+      var startScale = 'scale(1)';
+      var endScale = 'scale(0.85)';
+      var currentScale = innerCircle.style.transform || startScale;
+      var nextScale = currentScale === startScale ? endScale : startScale;
+
+      _autoPrefix2.default.set(innerCircle.style, 'transform', nextScale);
+      _this.timeout = setTimeout(_this.pulsate, pulsateDuration);
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(FocusRipple, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (this.props.show) {
+        this.setRippleSize();
+        this.pulsate();
+      }
+    }
+  }, {
+    key: 'shouldComponentUpdate',
+    value: function shouldComponentUpdate(nextProps, nextState) {
+      return !(0, _shallowEqual2.default)(this.props, nextProps) || !(0, _shallowEqual2.default)(this.state, nextState);
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      if (this.props.show) {
+        this.setRippleSize();
+        this.pulsate();
+      } else {
+        if (this.timeout) clearTimeout(this.timeout);
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      clearTimeout(this.timeout);
+    }
+  }, {
+    key: 'getRippleElement',
+    value: function getRippleElement(props) {
+      var color = props.color;
+      var innerStyle = props.innerStyle;
+      var opacity = props.opacity;
+      var _context$muiTheme = this.context.muiTheme;
+      var prepareStyles = _context$muiTheme.prepareStyles;
+      var ripple = _context$muiTheme.ripple;
+
+
+      var innerStyles = (0, _simpleAssign2.default)({
+        position: 'absolute',
+        height: '100%',
+        width: '100%',
+        borderRadius: '50%',
+        opacity: opacity ? opacity : 0.16,
+        backgroundColor: color || ripple.color,
+        transition: _transitions2.default.easeOut(pulsateDuration + 'ms', 'transform', null, _transitions2.default.easeInOutFunction)
+      }, innerStyle);
+
+      return _react2.default.createElement('div', { ref: 'innerCircle', style: prepareStyles((0, _simpleAssign2.default)({}, innerStyles)) });
+    }
+  }, {
+    key: 'setRippleSize',
+    value: function setRippleSize() {
+      var el = _reactDom2.default.findDOMNode(this.refs.innerCircle);
+      var height = el.offsetHeight;
+      var width = el.offsetWidth;
+      var size = Math.max(height, width);
+
+      var oldTop = 0;
+      // For browsers that don't support endsWith()
+      if (el.style.top.indexOf('px', el.style.top.length - 2) !== -1) {
+        oldTop = parseInt(el.style.top);
+      }
+      el.style.height = size + 'px';
+      el.style.top = height / 2 - size / 2 + oldTop + 'px';
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props;
+      var show = _props.show;
+      var style = _props.style;
+
+
+      var mergedRootStyles = (0, _simpleAssign2.default)({
+        height: '100%',
+        width: '100%',
+        position: 'absolute',
+        top: 0,
+        left: 0
+      }, style);
+
+      var ripple = show ? this.getRippleElement(this.props) : null;
+
+      return _react2.default.createElement(
+        _ScaleIn2.default,
+        {
+          maxScale: 0.85,
+          style: mergedRootStyles
+        },
+        ripple
+      );
+    }
+  }]);
+
+  return FocusRipple;
+}(_react.Component);
+
+FocusRipple.propTypes = {
+  color: _react.PropTypes.string,
+  innerStyle: _react.PropTypes.object,
+  opacity: _react.PropTypes.number,
+  show: _react.PropTypes.bool,
+  style: _react.PropTypes.object
+};
+FocusRipple.contextTypes = {
+  muiTheme: _react.PropTypes.object.isRequired
+};
+exports.default = FocusRipple;
+},{"../styles/transitions":175,"../utils/autoPrefix":179,"./ScaleIn":165,"react":367,"react-dom":192,"recompose/shallowEqual":376,"simple-assign":379}],165:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _simpleAssign = require('simple-assign');
+
+var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactAddonsTransitionGroup = require('react-addons-transition-group');
+
+var _reactAddonsTransitionGroup2 = _interopRequireDefault(_reactAddonsTransitionGroup);
+
+var _ScaleInChild = require('./ScaleInChild');
+
+var _ScaleInChild2 = _interopRequireDefault(_ScaleInChild);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ScaleIn = function (_Component) {
+  _inherits(ScaleIn, _Component);
+
+  function ScaleIn() {
+    _classCallCheck(this, ScaleIn);
+
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(ScaleIn).apply(this, arguments));
+  }
+
+  _createClass(ScaleIn, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props;
+      var children = _props.children;
+      var childStyle = _props.childStyle;
+      var enterDelay = _props.enterDelay;
+      var maxScale = _props.maxScale;
+      var minScale = _props.minScale;
+      var style = _props.style;
+
+      var other = _objectWithoutProperties(_props, ['children', 'childStyle', 'enterDelay', 'maxScale', 'minScale', 'style']);
+
+      var prepareStyles = this.context.muiTheme.prepareStyles;
+
+
+      var mergedRootStyles = (0, _simpleAssign2.default)({}, {
+        position: 'relative',
+        overflow: 'hidden',
+        height: '100%'
+      }, style);
+
+      var newChildren = _react2.default.Children.map(children, function (child) {
+        return _react2.default.createElement(
+          _ScaleInChild2.default,
+          {
+            key: child.key,
+            enterDelay: enterDelay,
+            maxScale: maxScale,
+            minScale: minScale,
+            style: childStyle
+          },
+          child
+        );
+      });
+
+      return _react2.default.createElement(
+        _reactAddonsTransitionGroup2.default,
+        _extends({}, other, {
+          style: prepareStyles(mergedRootStyles),
+          component: 'div'
+        }),
+        newChildren
+      );
+    }
+  }]);
+
+  return ScaleIn;
+}(_react.Component);
+
+ScaleIn.propTypes = {
+  childStyle: _react.PropTypes.object,
+  children: _react.PropTypes.node,
+  enterDelay: _react.PropTypes.number,
+  maxScale: _react.PropTypes.number,
+  minScale: _react.PropTypes.number,
+  /**
+   * Override the inline-styles of the root element.
+   */
+  style: _react.PropTypes.object
+};
+ScaleIn.defaultProps = {
+  enterDelay: 0
+};
+ScaleIn.contextTypes = {
+  muiTheme: _react.PropTypes.object.isRequired
+};
+exports.default = ScaleIn;
+},{"./ScaleInChild":166,"react":367,"react-addons-transition-group":191,"simple-assign":379}],166:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _simpleAssign = require('simple-assign');
+
+var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _autoPrefix = require('../utils/autoPrefix');
+
+var _autoPrefix2 = _interopRequireDefault(_autoPrefix);
+
+var _transitions = require('../styles/transitions');
+
+var _transitions2 = _interopRequireDefault(_transitions);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ScaleInChild = function (_Component) {
+  _inherits(ScaleInChild, _Component);
+
+  function ScaleInChild() {
+    _classCallCheck(this, ScaleInChild);
+
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(ScaleInChild).apply(this, arguments));
+  }
+
+  _createClass(ScaleInChild, [{
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      clearTimeout(this.enterTimer);
+      clearTimeout(this.leaveTimer);
+    }
+  }, {
+    key: 'componentWillAppear',
+    value: function componentWillAppear(callback) {
+      this.initializeAnimation(callback);
+    }
+  }, {
+    key: 'componentWillEnter',
+    value: function componentWillEnter(callback) {
+      this.initializeAnimation(callback);
+    }
+  }, {
+    key: 'componentDidAppear',
+    value: function componentDidAppear() {
+      this.animate();
+    }
+  }, {
+    key: 'componentDidEnter',
+    value: function componentDidEnter() {
+      this.animate();
+    }
+  }, {
+    key: 'componentWillLeave',
+    value: function componentWillLeave(callback) {
+      var style = _reactDom2.default.findDOMNode(this).style;
+
+      style.opacity = '0';
+      _autoPrefix2.default.set(style, 'transform', 'scale(' + this.props.minScale + ')');
+
+      this.leaveTimer = setTimeout(callback, 450);
+    }
+  }, {
+    key: 'animate',
+    value: function animate() {
+      var style = _reactDom2.default.findDOMNode(this).style;
+
+      style.opacity = '1';
+      _autoPrefix2.default.set(style, 'transform', 'scale(' + this.props.maxScale + ')');
+    }
+  }, {
+    key: 'initializeAnimation',
+    value: function initializeAnimation(callback) {
+      var style = _reactDom2.default.findDOMNode(this).style;
+
+      style.opacity = '0';
+      _autoPrefix2.default.set(style, 'transform', 'scale(0)');
+
+      this.enterTimer = setTimeout(callback, this.props.enterDelay);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props;
+      var children = _props.children;
+      var enterDelay = _props.enterDelay;
+      var // eslint-disable-line no-unused-vars
+      style = _props.style;
+
+      var other = _objectWithoutProperties(_props, ['children', 'enterDelay', 'style']);
+
+      var prepareStyles = this.context.muiTheme.prepareStyles;
+
+
+      var mergedRootStyles = (0, _simpleAssign2.default)({}, {
+        position: 'absolute',
+        height: '100%',
+        width: '100%',
+        top: 0,
+        left: 0,
+        transition: _transitions2.default.easeOut(null, ['transform', 'opacity'])
+      }, style);
+
+      return _react2.default.createElement(
+        'div',
+        _extends({}, other, { style: prepareStyles(mergedRootStyles) }),
+        children
+      );
+    }
+  }]);
+
+  return ScaleInChild;
+}(_react.Component);
+
+ScaleInChild.propTypes = {
+  children: _react.PropTypes.node,
+  enterDelay: _react.PropTypes.number,
+  maxScale: _react.PropTypes.number,
+  minScale: _react.PropTypes.number,
+  style: _react.PropTypes.object
+};
+ScaleInChild.defaultProps = {
+  enterDelay: 0,
+  maxScale: 1,
+  minScale: 0
+};
+ScaleInChild.contextTypes = {
+  muiTheme: _react.PropTypes.object.isRequired
+};
+exports.default = ScaleInChild;
+},{"../styles/transitions":175,"../utils/autoPrefix":179,"react":367,"react-dom":192,"simple-assign":379}],167:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _simpleAssign = require('simple-assign');
+
+var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _transitions = require('../styles/transitions');
+
+var _transitions2 = _interopRequireDefault(_transitions);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function getStyles(props, context, state) {
+  var verticalPosition = props.verticalPosition;
+  var horizontalPosition = props.horizontalPosition;
+  var touchMarginOffset = props.touch ? 10 : 0;
+  var touchOffsetTop = props.touch ? -20 : -10;
+  var offset = verticalPosition === 'bottom' ? 14 + touchMarginOffset : -14 - touchMarginOffset;
+
+  var _context$muiTheme = context.muiTheme;
+  var baseTheme = _context$muiTheme.baseTheme;
+  var zIndex = _context$muiTheme.zIndex;
+  var tooltip = _context$muiTheme.tooltip;
+
+
+  var styles = {
+    root: {
+      position: 'absolute',
+      fontFamily: baseTheme.fontFamily,
+      fontSize: '10px',
+      lineHeight: '22px',
+      padding: '0 8px',
+      zIndex: zIndex.tooltip,
+      color: tooltip.color,
+      overflow: 'hidden',
+      top: -10000,
+      borderRadius: 2,
+      userSelect: 'none',
+      opacity: 0,
+      right: horizontalPosition === 'left' ? 12 : null,
+      left: horizontalPosition === 'center' ? (state.offsetWidth - 48) / 2 * -1 : null,
+      transition: _transitions2.default.easeOut('0ms', 'top', '450ms') + ', ' + _transitions2.default.easeOut('450ms', 'transform', '0ms') + ', ' + _transitions2.default.easeOut('450ms', 'opacity', '0ms')
+    },
+    label: {
+      position: 'relative',
+      whiteSpace: 'nowrap'
+    },
+    ripple: {
+      position: 'absolute',
+      left: horizontalPosition === 'center' ? '50%' : horizontalPosition === 'left' ? '100%' : '0%',
+      top: verticalPosition === 'bottom' ? 0 : '100%',
+      transform: 'translate(-50%, -50%)',
+      borderRadius: '50%',
+      backgroundColor: 'transparent',
+      transition: _transitions2.default.easeOut('0ms', 'width', '450ms') + ', ' + _transitions2.default.easeOut('0ms', 'height', '450ms') + ', ' + _transitions2.default.easeOut('450ms', 'backgroundColor', '0ms')
+    },
+    rootWhenShown: {
+      top: verticalPosition === 'top' ? touchOffsetTop : 36,
+      opacity: 0.9,
+      transform: 'translate3d(0px, ' + offset + 'px, 0px)',
+      transition: _transitions2.default.easeOut('0ms', 'top', '0ms') + ', ' + _transitions2.default.easeOut('450ms', 'transform', '0ms') + ', ' + _transitions2.default.easeOut('450ms', 'opacity', '0ms')
+    },
+    rootWhenTouched: {
+      fontSize: '14px',
+      lineHeight: '32px',
+      padding: '0 16px'
+    },
+    rippleWhenShown: {
+      backgroundColor: tooltip.rippleBackgroundColor,
+      transition: _transitions2.default.easeOut('450ms', 'width', '0ms') + ', ' + _transitions2.default.easeOut('450ms', 'height', '0ms') + ', ' + _transitions2.default.easeOut('450ms', 'backgroundColor', '0ms')
+    }
+  };
+
+  return styles;
+}
+
+var Tooltip = function (_Component) {
+  _inherits(Tooltip, _Component);
+
+  function Tooltip() {
+    var _Object$getPrototypeO;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, Tooltip);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Tooltip)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
+      offsetWidth: null
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(Tooltip, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.setRippleSize();
+      this.setTooltipPosition();
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps() {
+      this.setTooltipPosition();
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      this.setRippleSize();
+    }
+  }, {
+    key: 'setRippleSize',
+    value: function setRippleSize() {
+      var ripple = this.refs.ripple;
+      var tooltip = this.refs.tooltip;
+      var tooltipWidth = parseInt(tooltip.offsetWidth, 10) / (this.props.horizontalPosition === 'center' ? 2 : 1);
+      var tooltipHeight = parseInt(tooltip.offsetHeight, 10);
+
+      var rippleDiameter = Math.ceil(Math.sqrt(Math.pow(tooltipHeight, 2) + Math.pow(tooltipWidth, 2)) * 2);
+      if (this.props.show) {
+        ripple.style.height = rippleDiameter + 'px';
+        ripple.style.width = rippleDiameter + 'px';
+      } else {
+        ripple.style.width = '0px';
+        ripple.style.height = '0px';
+      }
+    }
+  }, {
+    key: 'setTooltipPosition',
+    value: function setTooltipPosition() {
+      this.setState({ offsetWidth: this.refs.tooltip.offsetWidth });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var prepareStyles = this.context.muiTheme.prepareStyles;
+      var _props = this.props;
+      var label = _props.label;
+
+      var other = _objectWithoutProperties(_props, ['label']);
+
+      var styles = getStyles(this.props, this.context, this.state);
+
+      return _react2.default.createElement(
+        'div',
+        _extends({}, other, {
+          ref: 'tooltip',
+          style: prepareStyles((0, _simpleAssign2.default)(styles.root, this.props.show && styles.rootWhenShown, this.props.touch && styles.rootWhenTouched, this.props.style))
+        }),
+        _react2.default.createElement('div', {
+          ref: 'ripple',
+          style: prepareStyles((0, _simpleAssign2.default)(styles.ripple, this.props.show && styles.rippleWhenShown))
+        }),
+        _react2.default.createElement(
+          'span',
+          { style: prepareStyles(styles.label) },
+          label
+        )
+      );
+    }
+  }]);
+
+  return Tooltip;
+}(_react.Component);
+
+Tooltip.propTypes = {
+  /**
+   * The css class name of the root element.
+   */
+  className: _react.PropTypes.string,
+  horizontalPosition: _react.PropTypes.oneOf(['left', 'right', 'center']),
+  label: _react.PropTypes.node.isRequired,
+  show: _react.PropTypes.bool,
+  /**
+   * Override the inline-styles of the root element.
+   */
+  style: _react.PropTypes.object,
+  touch: _react.PropTypes.bool,
+  verticalPosition: _react.PropTypes.oneOf(['top', 'bottom'])
+};
+Tooltip.contextTypes = {
+  muiTheme: _react.PropTypes.object.isRequired
+};
+exports.default = Tooltip;
+},{"../styles/transitions":175,"react":367,"simple-assign":379}],168:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _simpleAssign = require('simple-assign');
+
+var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _reactAddonsTransitionGroup = require('react-addons-transition-group');
+
+var _reactAddonsTransitionGroup2 = _interopRequireDefault(_reactAddonsTransitionGroup);
+
+var _dom = require('../utils/dom');
+
+var _dom2 = _interopRequireDefault(_dom);
+
+var _CircleRipple = require('./CircleRipple');
+
+var _CircleRipple2 = _interopRequireDefault(_CircleRipple);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
+
+// Remove the first element of the array
+var shift = function shift(_ref) {
+  var _ref2 = _toArray(_ref);
+
+  var newArray = _ref2.slice(1);
+
+  return newArray;
+};
+
+var TouchRipple = function (_Component) {
+  _inherits(TouchRipple, _Component);
+
+  function TouchRipple(props, context) {
+    _classCallCheck(this, TouchRipple);
+
+    // Touch start produces a mouse down event for compat reasons. To avoid
+    // showing ripples twice we skip showing a ripple for the first mouse down
+    // after a touch start. Note we don't store ignoreNextMouseDown in this.state
+    // to avoid re-rendering when we change it.
+
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(TouchRipple).call(this, props, context));
+
+    _this.handleMouseDown = function (event) {
+      // only listen to left clicks
+      if (event.button === 0) {
+        _this.start(event, false);
+      }
+    };
+
+    _this.handleMouseUp = function () {
+      _this.end();
+    };
+
+    _this.handleMouseLeave = function () {
+      _this.end();
+    };
+
+    _this.handleTouchStart = function (event) {
+      event.stopPropagation();
+      // If the user is swiping (not just tapping), save the position so we can
+      // abort ripples if the user appears to be scrolling.
+      if (_this.props.abortOnScroll && event.touches) {
+        _this.startListeningForScrollAbort(event);
+        _this.startTime = Date.now();
+      }
+      _this.start(event, true);
+    };
+
+    _this.handleTouchEnd = function () {
+      _this.end();
+    };
+
+    _this.handleTouchMove = function (event) {
+      // Stop trying to abort if we're already 300ms into the animation
+      var timeSinceStart = Math.abs(Date.now() - _this.startTime);
+      if (timeSinceStart > 300) {
+        _this.stopListeningForScrollAbort();
+        return;
+      }
+
+      // If the user is scrolling...
+      var deltaY = Math.abs(event.touches[0].clientY - _this.firstTouchY);
+      var deltaX = Math.abs(event.touches[0].clientX - _this.firstTouchX);
+      // Call it a scroll after an arbitrary 6px (feels reasonable in testing)
+      if (deltaY > 6 || deltaX > 6) {
+        var currentRipples = _this.state.ripples;
+        var ripple = currentRipples[0];
+        // This clone will replace the ripple in ReactTransitionGroup with a
+        // version that will disappear immediately when removed from the DOM
+        var abortedRipple = _react2.default.cloneElement(ripple, { aborted: true });
+        // Remove the old ripple and replace it with the new updated one
+        currentRipples = shift(currentRipples);
+        currentRipples = [].concat(_toConsumableArray(currentRipples), [abortedRipple]);
+        _this.setState({ ripples: currentRipples }, function () {
+          // Call end after we've set the ripple to abort otherwise the setState
+          // in end() merges with this and the ripple abort fails
+          _this.end();
+        });
+      }
+    };
+
+    _this.ignoreNextMouseDown = false;
+
+    _this.state = {
+      // This prop allows us to only render the ReactTransitionGroup
+      // on the first click of the component, making the inital render faster.
+      hasRipples: false,
+      nextKey: 0,
+      ripples: []
+    };
+    return _this;
+  }
+
+  _createClass(TouchRipple, [{
+    key: 'start',
+    value: function start(event, isRippleTouchGenerated) {
+      var theme = this.context.muiTheme.ripple;
+
+      if (this.ignoreNextMouseDown && !isRippleTouchGenerated) {
+        this.ignoreNextMouseDown = false;
+        return;
+      }
+
+      var ripples = this.state.ripples;
+
+      // Add a ripple to the ripples array
+      ripples = [].concat(_toConsumableArray(ripples), [_react2.default.createElement(_CircleRipple2.default, {
+        key: this.state.nextKey,
+        style: !this.props.centerRipple ? this.getRippleStyle(event) : {},
+        color: this.props.color || theme.color,
+        opacity: this.props.opacity,
+        touchGenerated: isRippleTouchGenerated
+      })]);
+
+      this.ignoreNextMouseDown = isRippleTouchGenerated;
+      this.setState({
+        hasRipples: true,
+        nextKey: this.state.nextKey + 1,
+        ripples: ripples
+      });
+    }
+  }, {
+    key: 'end',
+    value: function end() {
+      var currentRipples = this.state.ripples;
+      this.setState({
+        ripples: shift(currentRipples)
+      });
+      if (this.props.abortOnScroll) {
+        this.stopListeningForScrollAbort();
+      }
+    }
+
+    // Check if the user seems to be scrolling and abort the animation if so
+
+  }, {
+    key: 'startListeningForScrollAbort',
+    value: function startListeningForScrollAbort(event) {
+      this.firstTouchY = event.touches[0].clientY;
+      this.firstTouchX = event.touches[0].clientX;
+      // Note that when scolling Chrome throttles this event to every 200ms
+      // Also note we don't listen for scroll events directly as there's no general
+      // way to cover cases like scrolling within containers on the page
+      document.body.addEventListener('touchmove', this.handleTouchMove);
+    }
+  }, {
+    key: 'stopListeningForScrollAbort',
+    value: function stopListeningForScrollAbort() {
+      document.body.removeEventListener('touchmove', this.handleTouchMove);
+    }
+  }, {
+    key: 'getRippleStyle',
+    value: function getRippleStyle(event) {
+      var style = {};
+      var el = _reactDom2.default.findDOMNode(this);
+      var elHeight = el.offsetHeight;
+      var elWidth = el.offsetWidth;
+      var offset = _dom2.default.offset(el);
+      var isTouchEvent = event.touches && event.touches.length;
+      var pageX = isTouchEvent ? event.touches[0].pageX : event.pageX;
+      var pageY = isTouchEvent ? event.touches[0].pageY : event.pageY;
+      var pointerX = pageX - offset.left;
+      var pointerY = pageY - offset.top;
+      var topLeftDiag = this.calcDiag(pointerX, pointerY);
+      var topRightDiag = this.calcDiag(elWidth - pointerX, pointerY);
+      var botRightDiag = this.calcDiag(elWidth - pointerX, elHeight - pointerY);
+      var botLeftDiag = this.calcDiag(pointerX, elHeight - pointerY);
+      var rippleRadius = Math.max(topLeftDiag, topRightDiag, botRightDiag, botLeftDiag);
+      var rippleSize = rippleRadius * 2;
+      var left = pointerX - rippleRadius;
+      var top = pointerY - rippleRadius;
+
+      style.height = rippleSize + 'px';
+      style.width = rippleSize + 'px';
+      style.top = top + 'px';
+      style.left = left + 'px';
+
+      return style;
+    }
+  }, {
+    key: 'calcDiag',
+    value: function calcDiag(a, b) {
+      return Math.sqrt(a * a + b * b);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props;
+      var children = _props.children;
+      var style = _props.style;
+      var _state = this.state;
+      var hasRipples = _state.hasRipples;
+      var ripples = _state.ripples;
+      var prepareStyles = this.context.muiTheme.prepareStyles;
+
+
+      var rippleGroup = void 0;
+
+      if (hasRipples) {
+        var mergedStyles = (0, _simpleAssign2.default)({
+          height: '100%',
+          width: '100%',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          overflow: 'hidden'
+        }, style);
+
+        rippleGroup = _react2.default.createElement(
+          _reactAddonsTransitionGroup2.default,
+          { style: prepareStyles(mergedStyles) },
+          ripples
+        );
+      }
+
+      return _react2.default.createElement(
+        'div',
+        {
+          onMouseUp: this.handleMouseUp,
+          onMouseDown: this.handleMouseDown,
+          onMouseLeave: this.handleMouseLeave,
+          onTouchStart: this.handleTouchStart,
+          onTouchEnd: this.handleTouchEnd
+        },
+        rippleGroup,
+        children
+      );
+    }
+  }]);
+
+  return TouchRipple;
+}(_react.Component);
+
+TouchRipple.propTypes = {
+  abortOnScroll: _react.PropTypes.bool,
+  centerRipple: _react.PropTypes.bool,
+  children: _react.PropTypes.node,
+  color: _react.PropTypes.string,
+  opacity: _react.PropTypes.number,
+  style: _react.PropTypes.object
+};
+TouchRipple.defaultProps = {
+  abortOnScroll: true
+};
+TouchRipple.contextTypes = {
+  muiTheme: _react.PropTypes.object.isRequired
+};
+exports.default = TouchRipple;
+},{"../utils/dom":184,"./CircleRipple":162,"react":367,"react-addons-transition-group":191,"react-dom":192,"simple-assign":379}],169:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _getMuiTheme = require('./getMuiTheme');
+
+var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MuiThemeProvider = function (_Component) {
+  _inherits(MuiThemeProvider, _Component);
+
+  function MuiThemeProvider() {
+    _classCallCheck(this, MuiThemeProvider);
+
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(MuiThemeProvider).apply(this, arguments));
+  }
+
+  _createClass(MuiThemeProvider, [{
+    key: 'getChildContext',
+    value: function getChildContext() {
+      return {
+        muiTheme: this.props.muiTheme || (0, _getMuiTheme2.default)()
+      };
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return this.props.children;
+    }
+  }]);
+
+  return MuiThemeProvider;
+}(_react.Component);
+
+MuiThemeProvider.propTypes = {
+  children: _react.PropTypes.element,
+  muiTheme: _react.PropTypes.object
+};
+MuiThemeProvider.childContextTypes = {
+  muiTheme: _react.PropTypes.object.isRequired
+};
+exports.default = MuiThemeProvider;
+},{"./getMuiTheme":173,"react":367}],170:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _colors = require('../colors');
+
+var _colorManipulator = require('../../utils/colorManipulator');
+
+var _spacing = require('../spacing');
+
+var _spacing2 = _interopRequireDefault(_spacing);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  spacing: _spacing2.default,
+  fontFamily: 'Roboto, sans-serif',
+  palette: {
+    primary1Color: _colors.cyan700,
+    primary2Color: _colors.cyan700,
+    primary3Color: _colors.grey600,
+    accent1Color: _colors.pinkA200,
+    accent2Color: _colors.pinkA400,
+    accent3Color: _colors.pinkA100,
+    textColor: _colors.fullWhite,
+    alternateTextColor: '#303030',
+    canvasColor: '#303030',
+    borderColor: (0, _colorManipulator.fade)(_colors.fullWhite, 0.3),
+    disabledColor: (0, _colorManipulator.fade)(_colors.fullWhite, 0.3),
+    pickerHeaderColor: (0, _colorManipulator.fade)(_colors.fullWhite, 0.12),
+    clockCircleColor: (0, _colorManipulator.fade)(_colors.fullWhite, 0.12)
+  }
+};
+},{"../../utils/colorManipulator":183,"../colors":172,"../spacing":174}],171:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _colors = require('../colors');
+
+var _colorManipulator = require('../../utils/colorManipulator');
+
+var _spacing = require('../spacing');
+
+var _spacing2 = _interopRequireDefault(_spacing);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ *  Light Theme is the default theme used in material-ui. It is guaranteed to
+ *  have all theme variables needed for every component. Variables not defined
+ *  in a custom theme will default to these values.
+ */
+exports.default = {
+  spacing: _spacing2.default,
+  fontFamily: 'Roboto, sans-serif',
+  palette: {
+    primary1Color: _colors.cyan500,
+    primary2Color: _colors.cyan700,
+    primary3Color: _colors.grey400,
+    accent1Color: _colors.pinkA200,
+    accent2Color: _colors.grey100,
+    accent3Color: _colors.grey500,
+    textColor: _colors.darkBlack,
+    alternateTextColor: _colors.white,
+    canvasColor: _colors.white,
+    borderColor: _colors.grey300,
+    disabledColor: (0, _colorManipulator.fade)(_colors.darkBlack, 0.3),
+    pickerHeaderColor: _colors.cyan500,
+    clockCircleColor: (0, _colorManipulator.fade)(_colors.darkBlack, 0.07),
+    shadowColor: _colors.fullBlack
+  }
+}; /**
+    * NB: If you update this file, please also update `docs/src/app/customization/Themes.js`
+    */
+},{"../../utils/colorManipulator":183,"../colors":172,"../spacing":174}],172:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var red50 = exports.red50 = '#ffebee';
+var red100 = exports.red100 = '#ffcdd2';
+var red200 = exports.red200 = '#ef9a9a';
+var red300 = exports.red300 = '#e57373';
+var red400 = exports.red400 = '#ef5350';
+var red500 = exports.red500 = '#f44336';
+var red600 = exports.red600 = '#e53935';
+var red700 = exports.red700 = '#d32f2f';
+var red800 = exports.red800 = '#c62828';
+var red900 = exports.red900 = '#b71c1c';
+var redA100 = exports.redA100 = '#ff8a80';
+var redA200 = exports.redA200 = '#ff5252';
+var redA400 = exports.redA400 = '#ff1744';
+var redA700 = exports.redA700 = '#d50000';
+
+var pink50 = exports.pink50 = '#fce4ec';
+var pink100 = exports.pink100 = '#f8bbd0';
+var pink200 = exports.pink200 = '#f48fb1';
+var pink300 = exports.pink300 = '#f06292';
+var pink400 = exports.pink400 = '#ec407a';
+var pink500 = exports.pink500 = '#e91e63';
+var pink600 = exports.pink600 = '#d81b60';
+var pink700 = exports.pink700 = '#c2185b';
+var pink800 = exports.pink800 = '#ad1457';
+var pink900 = exports.pink900 = '#880e4f';
+var pinkA100 = exports.pinkA100 = '#ff80ab';
+var pinkA200 = exports.pinkA200 = '#ff4081';
+var pinkA400 = exports.pinkA400 = '#f50057';
+var pinkA700 = exports.pinkA700 = '#c51162';
+
+var purple50 = exports.purple50 = '#f3e5f5';
+var purple100 = exports.purple100 = '#e1bee7';
+var purple200 = exports.purple200 = '#ce93d8';
+var purple300 = exports.purple300 = '#ba68c8';
+var purple400 = exports.purple400 = '#ab47bc';
+var purple500 = exports.purple500 = '#9c27b0';
+var purple600 = exports.purple600 = '#8e24aa';
+var purple700 = exports.purple700 = '#7b1fa2';
+var purple800 = exports.purple800 = '#6a1b9a';
+var purple900 = exports.purple900 = '#4a148c';
+var purpleA100 = exports.purpleA100 = '#ea80fc';
+var purpleA200 = exports.purpleA200 = '#e040fb';
+var purpleA400 = exports.purpleA400 = '#d500f9';
+var purpleA700 = exports.purpleA700 = '#aa00ff';
+
+var deepPurple50 = exports.deepPurple50 = '#ede7f6';
+var deepPurple100 = exports.deepPurple100 = '#d1c4e9';
+var deepPurple200 = exports.deepPurple200 = '#b39ddb';
+var deepPurple300 = exports.deepPurple300 = '#9575cd';
+var deepPurple400 = exports.deepPurple400 = '#7e57c2';
+var deepPurple500 = exports.deepPurple500 = '#673ab7';
+var deepPurple600 = exports.deepPurple600 = '#5e35b1';
+var deepPurple700 = exports.deepPurple700 = '#512da8';
+var deepPurple800 = exports.deepPurple800 = '#4527a0';
+var deepPurple900 = exports.deepPurple900 = '#311b92';
+var deepPurpleA100 = exports.deepPurpleA100 = '#b388ff';
+var deepPurpleA200 = exports.deepPurpleA200 = '#7c4dff';
+var deepPurpleA400 = exports.deepPurpleA400 = '#651fff';
+var deepPurpleA700 = exports.deepPurpleA700 = '#6200ea';
+
+var indigo50 = exports.indigo50 = '#e8eaf6';
+var indigo100 = exports.indigo100 = '#c5cae9';
+var indigo200 = exports.indigo200 = '#9fa8da';
+var indigo300 = exports.indigo300 = '#7986cb';
+var indigo400 = exports.indigo400 = '#5c6bc0';
+var indigo500 = exports.indigo500 = '#3f51b5';
+var indigo600 = exports.indigo600 = '#3949ab';
+var indigo700 = exports.indigo700 = '#303f9f';
+var indigo800 = exports.indigo800 = '#283593';
+var indigo900 = exports.indigo900 = '#1a237e';
+var indigoA100 = exports.indigoA100 = '#8c9eff';
+var indigoA200 = exports.indigoA200 = '#536dfe';
+var indigoA400 = exports.indigoA400 = '#3d5afe';
+var indigoA700 = exports.indigoA700 = '#304ffe';
+
+var blue50 = exports.blue50 = '#e3f2fd';
+var blue100 = exports.blue100 = '#bbdefb';
+var blue200 = exports.blue200 = '#90caf9';
+var blue300 = exports.blue300 = '#64b5f6';
+var blue400 = exports.blue400 = '#42a5f5';
+var blue500 = exports.blue500 = '#2196f3';
+var blue600 = exports.blue600 = '#1e88e5';
+var blue700 = exports.blue700 = '#1976d2';
+var blue800 = exports.blue800 = '#1565c0';
+var blue900 = exports.blue900 = '#0d47a1';
+var blueA100 = exports.blueA100 = '#82b1ff';
+var blueA200 = exports.blueA200 = '#448aff';
+var blueA400 = exports.blueA400 = '#2979ff';
+var blueA700 = exports.blueA700 = '#2962ff';
+
+var lightBlue50 = exports.lightBlue50 = '#e1f5fe';
+var lightBlue100 = exports.lightBlue100 = '#b3e5fc';
+var lightBlue200 = exports.lightBlue200 = '#81d4fa';
+var lightBlue300 = exports.lightBlue300 = '#4fc3f7';
+var lightBlue400 = exports.lightBlue400 = '#29b6f6';
+var lightBlue500 = exports.lightBlue500 = '#03a9f4';
+var lightBlue600 = exports.lightBlue600 = '#039be5';
+var lightBlue700 = exports.lightBlue700 = '#0288d1';
+var lightBlue800 = exports.lightBlue800 = '#0277bd';
+var lightBlue900 = exports.lightBlue900 = '#01579b';
+var lightBlueA100 = exports.lightBlueA100 = '#80d8ff';
+var lightBlueA200 = exports.lightBlueA200 = '#40c4ff';
+var lightBlueA400 = exports.lightBlueA400 = '#00b0ff';
+var lightBlueA700 = exports.lightBlueA700 = '#0091ea';
+
+var cyan50 = exports.cyan50 = '#e0f7fa';
+var cyan100 = exports.cyan100 = '#b2ebf2';
+var cyan200 = exports.cyan200 = '#80deea';
+var cyan300 = exports.cyan300 = '#4dd0e1';
+var cyan400 = exports.cyan400 = '#26c6da';
+var cyan500 = exports.cyan500 = '#00bcd4';
+var cyan600 = exports.cyan600 = '#00acc1';
+var cyan700 = exports.cyan700 = '#0097a7';
+var cyan800 = exports.cyan800 = '#00838f';
+var cyan900 = exports.cyan900 = '#006064';
+var cyanA100 = exports.cyanA100 = '#84ffff';
+var cyanA200 = exports.cyanA200 = '#18ffff';
+var cyanA400 = exports.cyanA400 = '#00e5ff';
+var cyanA700 = exports.cyanA700 = '#00b8d4';
+
+var teal50 = exports.teal50 = '#e0f2f1';
+var teal100 = exports.teal100 = '#b2dfdb';
+var teal200 = exports.teal200 = '#80cbc4';
+var teal300 = exports.teal300 = '#4db6ac';
+var teal400 = exports.teal400 = '#26a69a';
+var teal500 = exports.teal500 = '#009688';
+var teal600 = exports.teal600 = '#00897b';
+var teal700 = exports.teal700 = '#00796b';
+var teal800 = exports.teal800 = '#00695c';
+var teal900 = exports.teal900 = '#004d40';
+var tealA100 = exports.tealA100 = '#a7ffeb';
+var tealA200 = exports.tealA200 = '#64ffda';
+var tealA400 = exports.tealA400 = '#1de9b6';
+var tealA700 = exports.tealA700 = '#00bfa5';
+
+var green50 = exports.green50 = '#e8f5e9';
+var green100 = exports.green100 = '#c8e6c9';
+var green200 = exports.green200 = '#a5d6a7';
+var green300 = exports.green300 = '#81c784';
+var green400 = exports.green400 = '#66bb6a';
+var green500 = exports.green500 = '#4caf50';
+var green600 = exports.green600 = '#43a047';
+var green700 = exports.green700 = '#388e3c';
+var green800 = exports.green800 = '#2e7d32';
+var green900 = exports.green900 = '#1b5e20';
+var greenA100 = exports.greenA100 = '#b9f6ca';
+var greenA200 = exports.greenA200 = '#69f0ae';
+var greenA400 = exports.greenA400 = '#00e676';
+var greenA700 = exports.greenA700 = '#00c853';
+
+var lightGreen50 = exports.lightGreen50 = '#f1f8e9';
+var lightGreen100 = exports.lightGreen100 = '#dcedc8';
+var lightGreen200 = exports.lightGreen200 = '#c5e1a5';
+var lightGreen300 = exports.lightGreen300 = '#aed581';
+var lightGreen400 = exports.lightGreen400 = '#9ccc65';
+var lightGreen500 = exports.lightGreen500 = '#8bc34a';
+var lightGreen600 = exports.lightGreen600 = '#7cb342';
+var lightGreen700 = exports.lightGreen700 = '#689f38';
+var lightGreen800 = exports.lightGreen800 = '#558b2f';
+var lightGreen900 = exports.lightGreen900 = '#33691e';
+var lightGreenA100 = exports.lightGreenA100 = '#ccff90';
+var lightGreenA200 = exports.lightGreenA200 = '#b2ff59';
+var lightGreenA400 = exports.lightGreenA400 = '#76ff03';
+var lightGreenA700 = exports.lightGreenA700 = '#64dd17';
+
+var lime50 = exports.lime50 = '#f9fbe7';
+var lime100 = exports.lime100 = '#f0f4c3';
+var lime200 = exports.lime200 = '#e6ee9c';
+var lime300 = exports.lime300 = '#dce775';
+var lime400 = exports.lime400 = '#d4e157';
+var lime500 = exports.lime500 = '#cddc39';
+var lime600 = exports.lime600 = '#c0ca33';
+var lime700 = exports.lime700 = '#afb42b';
+var lime800 = exports.lime800 = '#9e9d24';
+var lime900 = exports.lime900 = '#827717';
+var limeA100 = exports.limeA100 = '#f4ff81';
+var limeA200 = exports.limeA200 = '#eeff41';
+var limeA400 = exports.limeA400 = '#c6ff00';
+var limeA700 = exports.limeA700 = '#aeea00';
+
+var yellow50 = exports.yellow50 = '#fffde7';
+var yellow100 = exports.yellow100 = '#fff9c4';
+var yellow200 = exports.yellow200 = '#fff59d';
+var yellow300 = exports.yellow300 = '#fff176';
+var yellow400 = exports.yellow400 = '#ffee58';
+var yellow500 = exports.yellow500 = '#ffeb3b';
+var yellow600 = exports.yellow600 = '#fdd835';
+var yellow700 = exports.yellow700 = '#fbc02d';
+var yellow800 = exports.yellow800 = '#f9a825';
+var yellow900 = exports.yellow900 = '#f57f17';
+var yellowA100 = exports.yellowA100 = '#ffff8d';
+var yellowA200 = exports.yellowA200 = '#ffff00';
+var yellowA400 = exports.yellowA400 = '#ffea00';
+var yellowA700 = exports.yellowA700 = '#ffd600';
+
+var amber50 = exports.amber50 = '#fff8e1';
+var amber100 = exports.amber100 = '#ffecb3';
+var amber200 = exports.amber200 = '#ffe082';
+var amber300 = exports.amber300 = '#ffd54f';
+var amber400 = exports.amber400 = '#ffca28';
+var amber500 = exports.amber500 = '#ffc107';
+var amber600 = exports.amber600 = '#ffb300';
+var amber700 = exports.amber700 = '#ffa000';
+var amber800 = exports.amber800 = '#ff8f00';
+var amber900 = exports.amber900 = '#ff6f00';
+var amberA100 = exports.amberA100 = '#ffe57f';
+var amberA200 = exports.amberA200 = '#ffd740';
+var amberA400 = exports.amberA400 = '#ffc400';
+var amberA700 = exports.amberA700 = '#ffab00';
+
+var orange50 = exports.orange50 = '#fff3e0';
+var orange100 = exports.orange100 = '#ffe0b2';
+var orange200 = exports.orange200 = '#ffcc80';
+var orange300 = exports.orange300 = '#ffb74d';
+var orange400 = exports.orange400 = '#ffa726';
+var orange500 = exports.orange500 = '#ff9800';
+var orange600 = exports.orange600 = '#fb8c00';
+var orange700 = exports.orange700 = '#f57c00';
+var orange800 = exports.orange800 = '#ef6c00';
+var orange900 = exports.orange900 = '#e65100';
+var orangeA100 = exports.orangeA100 = '#ffd180';
+var orangeA200 = exports.orangeA200 = '#ffab40';
+var orangeA400 = exports.orangeA400 = '#ff9100';
+var orangeA700 = exports.orangeA700 = '#ff6d00';
+
+var deepOrange50 = exports.deepOrange50 = '#fbe9e7';
+var deepOrange100 = exports.deepOrange100 = '#ffccbc';
+var deepOrange200 = exports.deepOrange200 = '#ffab91';
+var deepOrange300 = exports.deepOrange300 = '#ff8a65';
+var deepOrange400 = exports.deepOrange400 = '#ff7043';
+var deepOrange500 = exports.deepOrange500 = '#ff5722';
+var deepOrange600 = exports.deepOrange600 = '#f4511e';
+var deepOrange700 = exports.deepOrange700 = '#e64a19';
+var deepOrange800 = exports.deepOrange800 = '#d84315';
+var deepOrange900 = exports.deepOrange900 = '#bf360c';
+var deepOrangeA100 = exports.deepOrangeA100 = '#ff9e80';
+var deepOrangeA200 = exports.deepOrangeA200 = '#ff6e40';
+var deepOrangeA400 = exports.deepOrangeA400 = '#ff3d00';
+var deepOrangeA700 = exports.deepOrangeA700 = '#dd2c00';
+
+var brown50 = exports.brown50 = '#efebe9';
+var brown100 = exports.brown100 = '#d7ccc8';
+var brown200 = exports.brown200 = '#bcaaa4';
+var brown300 = exports.brown300 = '#a1887f';
+var brown400 = exports.brown400 = '#8d6e63';
+var brown500 = exports.brown500 = '#795548';
+var brown600 = exports.brown600 = '#6d4c41';
+var brown700 = exports.brown700 = '#5d4037';
+var brown800 = exports.brown800 = '#4e342e';
+var brown900 = exports.brown900 = '#3e2723';
+
+var blueGrey50 = exports.blueGrey50 = '#eceff1';
+var blueGrey100 = exports.blueGrey100 = '#cfd8dc';
+var blueGrey200 = exports.blueGrey200 = '#b0bec5';
+var blueGrey300 = exports.blueGrey300 = '#90a4ae';
+var blueGrey400 = exports.blueGrey400 = '#78909c';
+var blueGrey500 = exports.blueGrey500 = '#607d8b';
+var blueGrey600 = exports.blueGrey600 = '#546e7a';
+var blueGrey700 = exports.blueGrey700 = '#455a64';
+var blueGrey800 = exports.blueGrey800 = '#37474f';
+var blueGrey900 = exports.blueGrey900 = '#263238';
+
+var grey50 = exports.grey50 = '#fafafa';
+var grey100 = exports.grey100 = '#f5f5f5';
+var grey200 = exports.grey200 = '#eeeeee';
+var grey300 = exports.grey300 = '#e0e0e0';
+var grey400 = exports.grey400 = '#bdbdbd';
+var grey500 = exports.grey500 = '#9e9e9e';
+var grey600 = exports.grey600 = '#757575';
+var grey700 = exports.grey700 = '#616161';
+var grey800 = exports.grey800 = '#424242';
+var grey900 = exports.grey900 = '#212121';
+
+var black = exports.black = '#000000';
+var white = exports.white = '#ffffff';
+
+var transparent = exports.transparent = 'rgba(0, 0, 0, 0)';
+var fullBlack = exports.fullBlack = 'rgba(0, 0, 0, 1)';
+var darkBlack = exports.darkBlack = 'rgba(0, 0, 0, 0.87)';
+var lightBlack = exports.lightBlack = 'rgba(0, 0, 0, 0.54)';
+var minBlack = exports.minBlack = 'rgba(0, 0, 0, 0.26)';
+var faintBlack = exports.faintBlack = 'rgba(0, 0, 0, 0.12)';
+var fullWhite = exports.fullWhite = 'rgba(255, 255, 255, 1)';
+var darkWhite = exports.darkWhite = 'rgba(255, 255, 255, 0.87)';
+var lightWhite = exports.lightWhite = 'rgba(255, 255, 255, 0.54)';
+},{}],173:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = getMuiTheme;
+
+var _merge = require('lodash/merge');
+
+var _merge2 = _interopRequireDefault(_merge);
+
+var _colorManipulator = require('../utils/colorManipulator');
+
+var _lightBaseTheme = require('./baseThemes/lightBaseTheme');
+
+var _lightBaseTheme2 = _interopRequireDefault(_lightBaseTheme);
+
+var _zIndex = require('./zIndex');
+
+var _zIndex2 = _interopRequireDefault(_zIndex);
+
+var _autoprefixer = require('../utils/autoprefixer');
+
+var _autoprefixer2 = _interopRequireDefault(_autoprefixer);
+
+var _callOnce = require('../utils/callOnce');
+
+var _callOnce2 = _interopRequireDefault(_callOnce);
+
+var _rtl = require('../utils/rtl');
+
+var _rtl2 = _interopRequireDefault(_rtl);
+
+var _compose = require('recompose/compose');
+
+var _compose2 = _interopRequireDefault(_compose);
+
+var _typography = require('./typography');
+
+var _typography2 = _interopRequireDefault(_typography);
+
+var _colors = require('./colors');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+/**
+ * Get the MUI theme corresponding to a base theme.
+ * It's possible to override the computed theme values
+ * by providing a second argument. The calculated
+ * theme will be deeply merged with the second argument.
+ */
+function getMuiTheme(muiTheme) {
+  for (var _len = arguments.length, more = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    more[_key - 1] = arguments[_key];
+  }
+
+  muiTheme = _merge2.default.apply(undefined, [{
+    zIndex: _zIndex2.default,
+    isRtl: false,
+    userAgent: undefined
+  }, _lightBaseTheme2.default, muiTheme].concat(more));
+
+  var _muiTheme = muiTheme;
+  var spacing = _muiTheme.spacing;
+  var fontFamily = _muiTheme.fontFamily;
+  var palette = _muiTheme.palette;
+
+  var baseTheme = { spacing: spacing, fontFamily: fontFamily, palette: palette };
+
+  muiTheme = (0, _merge2.default)({
+    appBar: {
+      color: palette.primary1Color,
+      textColor: palette.alternateTextColor,
+      height: spacing.desktopKeylineIncrement,
+      titleFontWeight: _typography2.default.fontWeightNormal,
+      padding: spacing.desktopGutter
+    },
+    avatar: {
+      color: palette.canvasColor,
+      backgroundColor: (0, _colorManipulator.emphasize)(palette.canvasColor, 0.26)
+    },
+    badge: {
+      color: palette.alternateTextColor,
+      textColor: palette.textColor,
+      primaryColor: palette.accent1Color,
+      primaryTextColor: palette.alternateTextColor,
+      secondaryColor: palette.primary1Color,
+      secondaryTextColor: palette.alternateTextColor,
+      fontWeight: _typography2.default.fontWeightMedium
+    },
+    button: {
+      height: 36,
+      minWidth: 88,
+      iconButtonSize: spacing.iconSize * 2
+    },
+    card: {
+      titleColor: (0, _colorManipulator.fade)(palette.textColor, 0.87),
+      subtitleColor: (0, _colorManipulator.fade)(palette.textColor, 0.54),
+      fontWeight: _typography2.default.fontWeightMedium
+    },
+    cardMedia: {
+      color: _colors.darkWhite,
+      overlayContentBackground: _colors.lightBlack,
+      titleColor: _colors.darkWhite,
+      subtitleColor: _colors.lightWhite
+    },
+    cardText: {
+      textColor: palette.textColor
+    },
+    checkbox: {
+      boxColor: palette.textColor,
+      checkedColor: palette.primary1Color,
+      requiredColor: palette.primary1Color,
+      disabledColor: palette.disabledColor,
+      labelColor: palette.textColor,
+      labelDisabledColor: palette.disabledColor
+    },
+    chip: {
+      backgroundColor: (0, _colorManipulator.emphasize)(palette.canvasColor, 0.12),
+      deleteIconColor: (0, _colorManipulator.fade)(palette.textColor, 0.26),
+      textColor: (0, _colorManipulator.fade)(palette.textColor, 0.87),
+      fontSize: 14,
+      fontWeight: _typography2.default.fontWeightNormal,
+      shadow: '0 1px 6px ' + (0, _colorManipulator.fade)(palette.shadowColor, 0.12) + ',\n        0 1px 4px ' + (0, _colorManipulator.fade)(palette.shadowColor, 0.12)
+    },
+    datePicker: {
+      color: palette.primary1Color,
+      textColor: palette.alternateTextColor,
+      calendarTextColor: palette.textColor,
+      selectColor: palette.primary2Color,
+      selectTextColor: palette.alternateTextColor,
+      calendarYearBackgroundColor: _colors.white
+    },
+    dialog: {
+      titleFontSize: 22,
+      bodyFontSize: 16,
+      bodyColor: (0, _colorManipulator.fade)(palette.textColor, 0.6)
+    },
+    dropDownMenu: {
+      accentColor: palette.borderColor
+    },
+    enhancedButton: {
+      tapHighlightColor: _colors.transparent
+    },
+    flatButton: {
+      color: _colors.transparent,
+      buttonFilterColor: '#999999',
+      disabledTextColor: (0, _colorManipulator.fade)(palette.textColor, 0.3),
+      textColor: palette.textColor,
+      primaryTextColor: palette.primary1Color,
+      secondaryTextColor: palette.accent1Color,
+      fontSize: _typography2.default.fontStyleButtonFontSize,
+      fontWeight: _typography2.default.fontWeightMedium
+    },
+    floatingActionButton: {
+      buttonSize: 56,
+      miniSize: 40,
+      color: palette.primary1Color,
+      iconColor: palette.alternateTextColor,
+      secondaryColor: palette.accent1Color,
+      secondaryIconColor: palette.alternateTextColor,
+      disabledTextColor: palette.disabledColor,
+      disabledColor: (0, _colorManipulator.emphasize)(palette.canvasColor, 0.12)
+    },
+    gridTile: {
+      textColor: _colors.white
+    },
+    icon: {
+      color: palette.canvasColor,
+      backgroundColor: palette.primary1Color
+    },
+    inkBar: {
+      backgroundColor: palette.accent1Color
+    },
+    drawer: {
+      width: spacing.desktopKeylineIncrement * 4,
+      color: palette.canvasColor
+    },
+    listItem: {
+      nestedLevelDepth: 18,
+      secondaryTextColor: _colors.lightBlack,
+      leftIconColor: _colors.grey600,
+      rightIconColor: _colors.grey600
+    },
+    menu: {
+      backgroundColor: palette.canvasColor,
+      containerBackgroundColor: palette.canvasColor
+    },
+    menuItem: {
+      dataHeight: 32,
+      height: 48,
+      hoverColor: (0, _colorManipulator.fade)(palette.textColor, 0.035),
+      padding: spacing.desktopGutter,
+      selectedTextColor: palette.accent1Color,
+      rightIconDesktopFill: _colors.grey600
+    },
+    menuSubheader: {
+      padding: spacing.desktopGutter,
+      borderColor: palette.borderColor,
+      textColor: palette.primary1Color
+    },
+    overlay: {
+      backgroundColor: _colors.lightBlack
+    },
+    paper: {
+      color: palette.textColor,
+      backgroundColor: palette.canvasColor,
+      zDepthShadows: [[1, 6, 0.12, 1, 4, 0.12], [3, 10, 0.16, 3, 10, 0.23], [10, 30, 0.19, 6, 10, 0.23], [14, 45, 0.25, 10, 18, 0.22], [19, 60, 0.30, 15, 20, 0.22]].map(function (d) {
+        return '0 ' + d[0] + 'px ' + d[1] + 'px ' + (0, _colorManipulator.fade)(palette.shadowColor, d[2]) + ',\n         0 ' + d[3] + 'px ' + d[4] + 'px ' + (0, _colorManipulator.fade)(palette.shadowColor, d[5]);
+      })
+    },
+    radioButton: {
+      borderColor: palette.textColor,
+      backgroundColor: palette.alternateTextColor,
+      checkedColor: palette.primary1Color,
+      requiredColor: palette.primary1Color,
+      disabledColor: palette.disabledColor,
+      size: 24,
+      labelColor: palette.textColor,
+      labelDisabledColor: palette.disabledColor
+    },
+    raisedButton: {
+      color: palette.alternateTextColor,
+      textColor: palette.textColor,
+      primaryColor: palette.primary1Color,
+      primaryTextColor: palette.alternateTextColor,
+      secondaryColor: palette.accent1Color,
+      secondaryTextColor: palette.alternateTextColor,
+      disabledColor: (0, _colorManipulator.darken)(palette.alternateTextColor, 0.1),
+      disabledTextColor: (0, _colorManipulator.fade)(palette.textColor, 0.3),
+      fontSize: _typography2.default.fontStyleButtonFontSize,
+      fontWeight: _typography2.default.fontWeightMedium
+    },
+    refreshIndicator: {
+      strokeColor: palette.borderColor,
+      loadingStrokeColor: palette.primary1Color
+    },
+    ripple: {
+      color: (0, _colorManipulator.fade)(palette.textColor, 0.87)
+    },
+    slider: {
+      trackSize: 2,
+      trackColor: palette.primary3Color,
+      trackColorSelected: palette.accent3Color,
+      handleSize: 12,
+      handleSizeDisabled: 8,
+      handleSizeActive: 18,
+      handleColorZero: palette.primary3Color,
+      handleFillColor: palette.alternateTextColor,
+      selectionColor: palette.primary1Color,
+      rippleColor: palette.primary1Color
+    },
+    snackbar: {
+      textColor: palette.alternateTextColor,
+      backgroundColor: palette.textColor,
+      actionColor: palette.accent1Color
+    },
+    subheader: {
+      color: (0, _colorManipulator.fade)(palette.textColor, 0.54),
+      fontWeight: _typography2.default.fontWeightMedium
+    },
+    stepper: {
+      backgroundColor: 'transparent',
+      hoverBackgroundColor: (0, _colorManipulator.fade)(_colors.black, 0.06),
+      iconColor: palette.primary1Color,
+      hoveredIconColor: _colors.grey700,
+      inactiveIconColor: _colors.grey500,
+      textColor: (0, _colorManipulator.fade)(_colors.black, 0.87),
+      disabledTextColor: (0, _colorManipulator.fade)(_colors.black, 0.26),
+      connectorLineColor: _colors.grey400
+    },
+    table: {
+      backgroundColor: palette.canvasColor
+    },
+    tableFooter: {
+      borderColor: palette.borderColor,
+      textColor: palette.accent3Color
+    },
+    tableHeader: {
+      borderColor: palette.borderColor
+    },
+    tableHeaderColumn: {
+      textColor: palette.accent3Color,
+      height: 56,
+      spacing: 24
+    },
+    tableRow: {
+      hoverColor: palette.accent2Color,
+      stripeColor: (0, _colorManipulator.fade)((0, _colorManipulator.lighten)(palette.primary1Color, 0.5), 0.4),
+      selectedColor: palette.borderColor,
+      textColor: palette.textColor,
+      borderColor: palette.borderColor,
+      height: 48
+    },
+    tableRowColumn: {
+      height: 48,
+      spacing: 24
+    },
+    tabs: {
+      backgroundColor: palette.primary1Color,
+      textColor: (0, _colorManipulator.fade)(palette.alternateTextColor, 0.7),
+      selectedTextColor: palette.alternateTextColor
+    },
+    textField: {
+      textColor: palette.textColor,
+      hintColor: palette.disabledColor,
+      floatingLabelColor: palette.textColor,
+      disabledTextColor: palette.disabledColor,
+      errorColor: _colors.red500,
+      focusColor: palette.primary1Color,
+      backgroundColor: 'transparent',
+      borderColor: palette.borderColor
+    },
+    timePicker: {
+      color: palette.alternateTextColor,
+      textColor: palette.accent3Color,
+      accentColor: palette.primary1Color,
+      clockColor: palette.textColor,
+      clockCircleColor: palette.clockCircleColor,
+      headerColor: palette.pickerHeaderColor || palette.primary1Color,
+      selectColor: palette.primary2Color,
+      selectTextColor: palette.alternateTextColor
+    },
+    toggle: {
+      thumbOnColor: palette.primary1Color,
+      thumbOffColor: palette.accent2Color,
+      thumbDisabledColor: palette.borderColor,
+      thumbRequiredColor: palette.primary1Color,
+      trackOnColor: (0, _colorManipulator.fade)(palette.primary1Color, 0.5),
+      trackOffColor: palette.primary3Color,
+      trackDisabledColor: palette.primary3Color,
+      labelColor: palette.textColor,
+      labelDisabledColor: palette.disabledColor,
+      trackRequiredColor: (0, _colorManipulator.fade)(palette.primary1Color, 0.5)
+    },
+    toolbar: {
+      color: (0, _colorManipulator.fade)(palette.textColor, 0.54),
+      hoverColor: (0, _colorManipulator.fade)(palette.textColor, 0.87),
+      backgroundColor: (0, _colorManipulator.darken)(palette.accent2Color, 0.05),
+      height: 56,
+      titleFontSize: 20,
+      iconColor: (0, _colorManipulator.fade)(palette.textColor, 0.4),
+      separatorColor: (0, _colorManipulator.fade)(palette.textColor, 0.175),
+      menuHoverColor: (0, _colorManipulator.fade)(palette.textColor, 0.1)
+    },
+    tooltip: {
+      color: _colors.white,
+      rippleBackgroundColor: _colors.grey700
+    }
+  }, muiTheme, {
+    baseTheme: baseTheme, // To provide backward compatibility.
+    rawTheme: baseTheme });
+
+  // To provide backward compatibility.
+  var transformers = [_autoprefixer2.default, _rtl2.default, _callOnce2.default].map(function (t) {
+    return t(muiTheme);
+  }).filter(function (t) {
+    return t;
+  });
+  muiTheme.prepareStyles = _compose2.default.apply(undefined, _toConsumableArray(transformers));
+
+  return muiTheme;
+}
+},{"../utils/autoprefixer":180,"../utils/callOnce":181,"../utils/colorManipulator":183,"../utils/rtl":187,"./baseThemes/lightBaseTheme":171,"./colors":172,"./typography":176,"./zIndex":177,"lodash/merge":144,"recompose/compose":368}],174:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  iconSize: 24,
+
+  desktopGutter: 24,
+  desktopGutterMore: 32,
+  desktopGutterLess: 16,
+  desktopGutterMini: 8,
+  desktopKeylineIncrement: 64,
+  desktopDropDownMenuItemHeight: 32,
+  desktopDropDownMenuFontSize: 15,
+  desktopDrawerMenuItemHeight: 48,
+  desktopSubheaderHeight: 48,
+  desktopToolbarHeight: 56
+};
+},{}],175:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+
+  easeOutFunction: 'cubic-bezier(0.23, 1, 0.32, 1)',
+  easeInOutFunction: 'cubic-bezier(0.445, 0.05, 0.55, 0.95)',
+
+  easeOut: function easeOut(duration, property, delay, easeFunction) {
+    easeFunction = easeFunction || this.easeOutFunction;
+
+    if (property && Object.prototype.toString.call(property) === '[object Array]') {
+      var transitions = '';
+      for (var i = 0; i < property.length; i++) {
+        if (transitions) transitions += ',';
+        transitions += this.create(duration, property[i], delay, easeFunction);
+      }
+
+      return transitions;
+    } else {
+      return this.create(duration, property, delay, easeFunction);
+    }
+  },
+  create: function create(duration, property, delay, easeFunction) {
+    duration = duration || '450ms';
+    property = property || 'all';
+    delay = delay || '0ms';
+    easeFunction = easeFunction || 'linear';
+
+    return property + ' ' + duration + ' ' + easeFunction + ' ' + delay;
+  }
+};
+},{}],176:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _colors = require('./colors');
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Typography = function Typography() {
+  _classCallCheck(this, Typography);
+
+  // text colors
+  this.textFullBlack = _colors.fullBlack;
+  this.textDarkBlack = _colors.darkBlack;
+  this.textLightBlack = _colors.lightBlack;
+  this.textMinBlack = _colors.minBlack;
+  this.textFullWhite = _colors.fullWhite;
+  this.textDarkWhite = _colors.darkWhite;
+  this.textLightWhite = _colors.lightWhite;
+
+  // font weight
+  this.fontWeightLight = 300;
+  this.fontWeightNormal = 400;
+  this.fontWeightMedium = 500;
+
+  this.fontStyleButtonFontSize = 14;
+};
+
+exports.default = new Typography();
+},{"./colors":172}],177:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  menu: 1000,
+  appBar: 1100,
+  drawerOverlay: 1200,
+  drawer: 1300,
+  dialogOverlay: 1400,
+  dialog: 1500,
+  layer: 2000,
+  popover: 2100,
+  snackbar: 2900,
+  tooltip: 3000
+};
+},{}],178:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _pure = require('recompose/pure');
+
+var _pure2 = _interopRequireDefault(_pure);
+
+var _SvgIcon = require('../../SvgIcon');
+
+var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var NavigationMenu = function NavigationMenu(props) {
+  return _react2.default.createElement(
+    _SvgIcon2.default,
+    props,
+    _react2.default.createElement('path', { d: 'M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z' })
+  );
+};
+NavigationMenu = (0, _pure2.default)(NavigationMenu);
+NavigationMenu.displayName = 'NavigationMenu';
+NavigationMenu.muiName = 'SvgIcon';
+
+exports.default = NavigationMenu;
+},{"../../SvgIcon":161,"react":367,"recompose/pure":375}],179:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  set: function set(style, key, value) {
+    style[key] = value;
+  }
+};
+},{}],180:[function(require,module,exports){
+(function (process){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+exports.default = function (muiTheme) {
+  var userAgent = muiTheme.userAgent;
+
+  if (userAgent === undefined && typeof navigator !== 'undefined') {
+    userAgent = navigator.userAgent;
+  }
+
+  if (userAgent === undefined && !hasWarnedAboutUserAgent) {
+    process.env.NODE_ENV !== "production" ? (0, _warning2.default)(false, 'Material-UI: userAgent should be supplied in the muiTheme context\n      for server-side rendering.') : void 0;
+
+    hasWarnedAboutUserAgent = true;
+  }
+
+  if (userAgent === false) {
+    // Disabled autoprefixer
+    return null;
+  } else if (userAgent === 'all' || userAgent === undefined) {
+    // Prefix for all user agent
+    return function (style) {
+      return _inlineStylePrefixer2.default.prefixAll(style);
+    };
+  } else {
+    var _ret = function () {
+      var prefixer = new _inlineStylePrefixer2.default({
+        userAgent: userAgent
+      });
+
+      return {
+        v: function v(style) {
+          return prefixer.prefix(style);
+        }
+      };
+    }();
+
+    if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
+  }
+};
+
+var _inlineStylePrefixer = require('inline-style-prefixer');
+
+var _inlineStylePrefixer2 = _interopRequireDefault(_inlineStylePrefixer);
+
+var _warning = require('warning');
+
+var _warning2 = _interopRequireDefault(_warning);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var hasWarnedAboutUserAgent = false;
+}).call(this,require('_process'))
+},{"_process":189,"inline-style-prefixer":20,"warning":380}],181:[function(require,module,exports){
+(function (process){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = callOnce;
+
+var _warning = require('warning');
+
+var _warning2 = _interopRequireDefault(_warning);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var CALLED_ONCE = 'muiPrepared';
+
+function callOnce() {
+  if (process.env.NODE_ENV !== 'production') {
+    return function (style) {
+      if (style[CALLED_ONCE]) {
+        process.env.NODE_ENV !== "production" ? (0, _warning2.default)(false, 'You cannot call prepareStyles() on the same style object more than once.') : void 0;
+      }
+      style[CALLED_ONCE] = true;
+      return style;
+    };
+  }
+}
+}).call(this,require('_process'))
+},{"_process":189,"warning":380}],182:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.createChildFragment = createChildFragment;
+exports.extendChildren = extendChildren;
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactAddonsCreateFragment = require('react-addons-create-fragment');
+
+var _reactAddonsCreateFragment2 = _interopRequireDefault(_reactAddonsCreateFragment);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function createChildFragment(fragments) {
+  var newFragments = {};
+  var validChildrenCount = 0;
+  var firstKey = void 0;
+
+  // Only create non-empty key fragments
+  for (var key in fragments) {
+    var currentChild = fragments[key];
+
+    if (currentChild) {
+      if (validChildrenCount === 0) firstKey = key;
+      newFragments[key] = currentChild;
+      validChildrenCount++;
+    }
+  }
+
+  if (validChildrenCount === 0) return undefined;
+  if (validChildrenCount === 1) return newFragments[firstKey];
+  return (0, _reactAddonsCreateFragment2.default)(newFragments);
+}
+
+function extendChildren(children, extendedProps, extendedChildren) {
+  return _react2.default.isValidElement(children) ? _react2.default.Children.map(children, function (child) {
+    var newProps = typeof extendedProps === 'function' ? extendedProps(child) : extendedProps;
+
+    var newChildren = typeof extendedChildren === 'function' ? extendedChildren(child) : extendedChildren ? extendedChildren : child.props.children;
+
+    return _react2.default.cloneElement(child, newProps, newChildren);
+  }) : children;
+}
+},{"react":367,"react-addons-create-fragment":190}],183:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.convertColorToString = convertColorToString;
+exports.convertHexToRGB = convertHexToRGB;
+exports.decomposeColor = decomposeColor;
+exports.getContrastRatio = getContrastRatio;
+exports.getLuminance = getLuminance;
+exports.emphasize = emphasize;
+exports.fade = fade;
+exports.darken = darken;
+exports.lighten = lighten;
+/**
+ * Returns a number whose value is limited to the given range.
+ *
+ * @param {number} value The value to be clamped
+ * @param {number} min The lower boundary of the output range
+ * @param {number} max The upper boundary of the output range
+ * @returns {number} A number in the range [min, max]
+ */
+function clamp(value, min, max) {
+  if (value < min) {
+    return min;
+  }
+  if (value > max) {
+    return max;
+  }
+  return value;
+}
+
+/**
+ * Converts a color object with type and values to a string.
+ *
+ * @param {object} color - Decomposed color
+ * @param {string} color.type - One of, 'rgb', 'rgba', 'hsl', 'hsla'
+ * @param {array} color.values - [n,n,n] or [n,n,n,n]
+ * @returns {string} A CSS color string
+ */
+function convertColorToString(color) {
+  var type = color.type;
+  var values = color.values;
+
+
+  if (type.indexOf('rgb') > -1) {
+    // Only convert the first 3 values to int (i.e. not alpha)
+    for (var i = 0; i < 3; i++) {
+      values[i] = parseInt(values[i]);
+    }
+  }
+
+  var colorString = void 0;
+
+  if (type.indexOf('hsl') > -1) {
+    colorString = color.type + '(' + values[0] + ', ' + values[1] + '%, ' + values[2] + '%';
+  } else {
+    colorString = color.type + '(' + values[0] + ', ' + values[1] + ', ' + values[2];
+  }
+
+  if (values.length === 4) {
+    colorString += ', ' + color.values[3] + ')';
+  } else {
+    colorString += ')';
+  }
+
+  return colorString;
+}
+
+/**
+ * Converts a color from CSS hex format to CSS rgb format.
+ *
+ *  @param {string} color - Hex color, i.e. #nnn or #nnnnnn
+ *  @returns {string} A CSS rgb color string
+ */
+function convertHexToRGB(color) {
+  if (color.length === 4) {
+    var extendedColor = '#';
+    for (var i = 1; i < color.length; i++) {
+      extendedColor += color.charAt(i) + color.charAt(i);
+    }
+    color = extendedColor;
+  }
+
+  var values = {
+    r: parseInt(color.substr(1, 2), 16),
+    g: parseInt(color.substr(3, 2), 16),
+    b: parseInt(color.substr(5, 2), 16)
+  };
+
+  return 'rgb(' + values.r + ', ' + values.g + ', ' + values.b + ')';
+}
+
+/**
+ * Returns an object with the type and values of a color.
+ *
+ * Note: Does not support rgb % values.
+ *
+ * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla()
+ * @returns {{type: string, values: number[]}} A MUI color object
+ */
+function decomposeColor(color) {
+  if (color.charAt(0) === '#') {
+    return decomposeColor(convertHexToRGB(color));
+  }
+
+  var marker = color.indexOf('(');
+  var type = color.substring(0, marker);
+  var values = color.substring(marker + 1, color.length - 1).split(',');
+  values = values.map(function (value) {
+    return parseFloat(value);
+  });
+
+  return { type: type, values: values };
+}
+
+/**
+ * Calculates the contrast ratio between two colors.
+ *
+ * Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef
+ *
+ * @param {string} foreground - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla()
+ * @param {string} background - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla()
+ * @returns {number} A contrast ratio value in the range 0 - 21 with 2 digit precision.
+ */
+function getContrastRatio(foreground, background) {
+  var lumA = getLuminance(foreground);
+  var lumB = getLuminance(background);
+  var contrastRatio = (Math.max(lumA, lumB) + 0.05) / (Math.min(lumA, lumB) + 0.05);
+
+  return Number(contrastRatio.toFixed(2)); // Truncate at two digits
+}
+
+/**
+ * The relative brightness of any point in a color space,
+ * normalized to 0 for darkest black and 1 for lightest white.
+ *
+ * Formula: https://www.w3.org/WAI/GL/wiki/Relative_luminance
+ *
+ * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla()
+ * @returns {number} The relative brightness of the color in the range 0 - 1
+ */
+function getLuminance(color) {
+  color = decomposeColor(color);
+
+  if (color.type.indexOf('rgb') > -1) {
+    var rgb = color.values.map(function (val) {
+      val /= 255; // normalized
+      return val <= 0.03928 ? val / 12.92 : Math.pow((val + 0.055) / 1.055, 2.4);
+    });
+    return Number((0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2]).toFixed(3)); // Truncate at 3 digits
+  } else if (color.type.indexOf('hsl') > -1) {
+      return color.values[2] / 100;
+    }
+}
+
+/**
+ * Darken or lighten a colour, depending on its luminance.
+ * Light colors are darkened, dark colors are lightened.
+ *
+ * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla()
+ * @param {number} coefficient=0.15 - multiplier in the range 0 - 1
+ * @returns {string} A CSS color string. Hex input values are returned as rgb
+ */
+function emphasize(color) {
+  var coefficient = arguments.length <= 1 || arguments[1] === undefined ? 0.15 : arguments[1];
+
+  return getLuminance(color) > 0.5 ? darken(color, coefficient) : lighten(color, coefficient);
+}
+
+/**
+ * Set the absolute transparency of a color.
+ * Any existing alpha values are overwritten.
+ *
+ * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla()
+ * @param {number} value - value to set the alpha channel to in the range 0 -1
+ * @returns {string} A CSS color string. Hex input values are returned as rgb
+ */
+function fade(color, value) {
+  color = decomposeColor(color);
+  value = clamp(value, 0, 1);
+
+  if (color.type === 'rgb' || color.type === 'hsl') {
+    color.type += 'a';
+  }
+  color.values[3] = value;
+
+  return convertColorToString(color);
+}
+
+/**
+ * Darkens a color.
+ *
+ * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla()
+ * @param {number} coefficient - multiplier in the range 0 - 1
+ * @returns {string} A CSS color string. Hex input values are returned as rgb
+ */
+function darken(color, coefficient) {
+  color = decomposeColor(color);
+  coefficient = clamp(coefficient, 0, 1);
+
+  if (color.type.indexOf('hsl') > -1) {
+    color.values[2] *= 1 - coefficient;
+  } else if (color.type.indexOf('rgb') > -1) {
+    for (var i = 0; i < 3; i++) {
+      color.values[i] *= 1 - coefficient;
+    }
+  }
+  return convertColorToString(color);
+}
+
+/**
+ * Lightens a color.
+ *
+ * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla()
+ * @param {number} coefficient - multiplier in the range 0 - 1
+ * @returns {string} A CSS color string. Hex input values are returned as rgb
+ */
+function lighten(color, coefficient) {
+  color = decomposeColor(color);
+  coefficient = clamp(coefficient, 0, 1);
+
+  if (color.type.indexOf('hsl') > -1) {
+    color.values[2] += (100 - color.values[2]) * coefficient;
+  } else if (color.type.indexOf('rgb') > -1) {
+    for (var i = 0; i < 3; i++) {
+      color.values[i] += (255 - color.values[i]) * coefficient;
+    }
+  }
+
+  return convertColorToString(color);
+}
+},{}],184:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  isDescendant: function isDescendant(parent, child) {
+    var node = child.parentNode;
+
+    while (node !== null) {
+      if (node === parent) return true;
+      node = node.parentNode;
+    }
+
+    return false;
+  },
+  offset: function offset(el) {
+    var rect = el.getBoundingClientRect();
+    return {
+      top: rect.top + document.body.scrollTop,
+      left: rect.left + document.body.scrollLeft
+    };
+  }
+};
+},{}],185:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  once: function once(el, type, callback) {
+    var typeArray = type ? type.split(' ') : [];
+    var recursiveFunction = function recursiveFunction(event) {
+      event.target.removeEventListener(event.type, recursiveFunction);
+      return callback(event);
+    };
+
+    for (var i = typeArray.length - 1; i >= 0; i--) {
+      this.on(el, typeArray[i], recursiveFunction);
+    }
+  },
+  on: function on(el, type, callback) {
+    if (el.addEventListener) {
+      el.addEventListener(type, callback);
+    } else {
+      // IE8+ Support
+      el.attachEvent('on' + type, function () {
+        callback.call(el);
+      });
+    }
+  },
+  off: function off(el, type, callback) {
+    if (el.removeEventListener) {
+      el.removeEventListener(type, callback);
+    } else {
+      // IE8+ Support
+      el.detachEvent('on' + type, callback);
+    }
+  },
+  isKeyboard: function isKeyboard(event) {
+    return ['keydown', 'keypress', 'keyup'].indexOf(event.type) !== -1;
+  }
+};
+},{}],186:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = require('react');
+
+var horizontal = _react.PropTypes.oneOf(['left', 'middle', 'right']);
+var vertical = _react.PropTypes.oneOf(['top', 'center', 'bottom']);
+
+exports.default = {
+
+  corners: _react.PropTypes.oneOf(['bottom-left', 'bottom-right', 'top-left', 'top-right']),
+
+  horizontal: horizontal,
+
+  vertical: vertical,
+
+  origin: _react.PropTypes.shape({
+    horizontal: horizontal,
+    vertical: vertical
+  }),
+
+  cornersAndCenter: _react.PropTypes.oneOf(['bottom-center', 'bottom-left', 'bottom-right', 'top-center', 'top-left', 'top-right']),
+
+  stringOrNumber: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number]),
+
+  zDepth: _react.PropTypes.oneOf([0, 1, 2, 3, 4, 5])
+
+};
+},{"react":367}],187:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = rtl;
+var reTranslate = /((^|\s)translate(3d|X)?\()(\-?[\d]+)/;
+var reSkew = /((^|\s)skew(x|y)?\()\s*(\-?[\d]+)(deg|rad|grad)(,\s*(\-?[\d]+)(deg|rad|grad))?/;
+
+/**
+ * This function ensures that `style` supports both ltr and rtl directions by
+ * checking `styleConstants` in `muiTheme` and replacing attribute keys if
+ * necessary.
+ */
+function rtl(muiTheme) {
+  if (muiTheme.isRtl) {
+    return function (style) {
+      var flippedAttributes = {
+        // Keys and their replacements.
+        right: 'left',
+        left: 'right',
+        marginRight: 'marginLeft',
+        marginLeft: 'marginRight',
+        paddingRight: 'paddingLeft',
+        paddingLeft: 'paddingRight',
+        borderRight: 'borderLeft',
+        borderLeft: 'borderRight'
+      };
+
+      var newStyle = {};
+
+      Object.keys(style).forEach(function (attribute) {
+        var value = style[attribute];
+        var key = attribute;
+
+        if (flippedAttributes.hasOwnProperty(attribute)) {
+          key = flippedAttributes[attribute];
+        }
+
+        switch (attribute) {
+          case 'float':
+          case 'textAlign':
+            if (value === 'right') {
+              value = 'left';
+            } else if (value === 'left') {
+              value = 'right';
+            }
+            break;
+
+          case 'direction':
+            if (value === 'ltr') {
+              value = 'rtl';
+            } else if (value === 'rtl') {
+              value = 'ltr';
+            }
+            break;
+
+          case 'transform':
+            var matches = void 0;
+            if (matches = value.match(reTranslate)) {
+              value = value.replace(matches[0], matches[1] + -parseFloat(matches[4]));
+            }
+            if (matches = value.match(reSkew)) {
+              value = value.replace(matches[0], matches[1] + -parseFloat(matches[4]) + matches[5] + matches[6] ? ', ' + (-parseFloat(matches[7]) + matches[8]) : '');
+            }
+            break;
+
+          case 'transformOrigin':
+            if (value.indexOf('right') > -1) {
+              value = value.replace('right', 'left');
+            } else if (value.indexOf('left') > -1) {
+              value = value.replace('left', 'right');
+            }
+            break;
+        }
+
+        newStyle[key] = value;
+      });
+
+      return newStyle;
+    };
+  }
+}
+},{}],188:[function(require,module,exports){
 'use strict';
 /* eslint-disable no-unused-vars */
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -174,7 +9620,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],4:[function(require,module,exports){
+},{}],189:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -295,12 +9741,357 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],5:[function(require,module,exports){
+},{}],190:[function(require,module,exports){
+module.exports = require('react/lib/ReactFragment').create;
+},{"react/lib/ReactFragment":265}],191:[function(require,module,exports){
+module.exports = require('react/lib/ReactTransitionGroup');
+},{"react/lib/ReactTransitionGroup":288}],192:[function(require,module,exports){
 'use strict';
 
 module.exports = require('react/lib/ReactDOM');
 
-},{"react/lib/ReactDOM":42}],6:[function(require,module,exports){
+},{"react/lib/ReactDOM":235}],193:[function(require,module,exports){
+(function (process){
+/**
+ * Copyright 2013-2015, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule invariant
+ */
+
+"use strict";
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var invariant = function (condition, format, a, b, c, d, e, f) {
+  if (process.env.NODE_ENV !== 'production') {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  }
+
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error('Invariant Violation: ' + format.replace(/%s/g, function () {
+        return args[argIndex++];
+      }));
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+};
+
+module.exports = invariant;
+}).call(this,require('_process'))
+},{"_process":189}],194:[function(require,module,exports){
+/**
+ * Copyright 2013-2015, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule keyOf
+ */
+
+/**
+ * Allows extraction of a minified key. Let's the build system minify keys
+ * without losing the ability to dynamically use key strings as values
+ * themselves. Pass in an object with a single key/val pair and it will return
+ * you the string key of that single record. Suppose you want to grab the
+ * value for a key 'className' inside of an object. Key/val minification may
+ * have aliased that key to be 'xa12'. keyOf({className: null}) will return
+ * 'xa12' in that case. Resolve keys you want to use once at startup time, then
+ * reuse those resolutions.
+ */
+"use strict";
+
+var keyOf = function (oneKeyObj) {
+  var key;
+  for (key in oneKeyObj) {
+    if (!oneKeyObj.hasOwnProperty(key)) {
+      continue;
+    }
+    return key;
+  }
+  return null;
+};
+
+module.exports = keyOf;
+},{}],195:[function(require,module,exports){
+/**
+ * Copyright 2013-2014 Facebook, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * @providesModule TapEventPlugin
+ * @typechecks static-only
+ */
+
+"use strict";
+
+var EventConstants = require('react/lib/EventConstants');
+var EventPluginUtils = require('react/lib/EventPluginUtils');
+var EventPropagators = require('react/lib/EventPropagators');
+var SyntheticUIEvent = require('react/lib/SyntheticUIEvent');
+var TouchEventUtils = require('./TouchEventUtils');
+var ViewportMetrics = require('react/lib/ViewportMetrics');
+
+var keyOf = require('fbjs/lib/keyOf');
+var topLevelTypes = EventConstants.topLevelTypes;
+
+var isStartish = EventPluginUtils.isStartish;
+var isEndish = EventPluginUtils.isEndish;
+
+var isTouch = function(topLevelType) {
+  var touchTypes = [
+    topLevelTypes.topTouchCancel,
+    topLevelTypes.topTouchEnd,
+    topLevelTypes.topTouchStart,
+    topLevelTypes.topTouchMove
+  ];
+  return touchTypes.indexOf(topLevelType) >= 0;
+}
+
+/**
+ * Number of pixels that are tolerated in between a `touchStart` and `touchEnd`
+ * in order to still be considered a 'tap' event.
+ */
+var tapMoveThreshold = 10;
+var ignoreMouseThreshold = 750;
+var startCoords = {x: null, y: null};
+var lastTouchEvent = null;
+
+var Axis = {
+  x: {page: 'pageX', client: 'clientX', envScroll: 'currentPageScrollLeft'},
+  y: {page: 'pageY', client: 'clientY', envScroll: 'currentPageScrollTop'}
+};
+
+function getAxisCoordOfEvent(axis, nativeEvent) {
+  var singleTouch = TouchEventUtils.extractSingleTouch(nativeEvent);
+  if (singleTouch) {
+    return singleTouch[axis.page];
+  }
+  return axis.page in nativeEvent ?
+    nativeEvent[axis.page] :
+    nativeEvent[axis.client] + ViewportMetrics[axis.envScroll];
+}
+
+function getDistance(coords, nativeEvent) {
+  var pageX = getAxisCoordOfEvent(Axis.x, nativeEvent);
+  var pageY = getAxisCoordOfEvent(Axis.y, nativeEvent);
+  return Math.pow(
+    Math.pow(pageX - coords.x, 2) + Math.pow(pageY - coords.y, 2),
+    0.5
+  );
+}
+
+var touchEvents = [
+  topLevelTypes.topTouchStart,
+  topLevelTypes.topTouchCancel,
+  topLevelTypes.topTouchEnd,
+  topLevelTypes.topTouchMove,
+];
+
+var dependencies = [
+  topLevelTypes.topMouseDown,
+  topLevelTypes.topMouseMove,
+  topLevelTypes.topMouseUp,
+].concat(touchEvents);
+
+var eventTypes = {
+  touchTap: {
+    phasedRegistrationNames: {
+      bubbled: keyOf({onTouchTap: null}),
+      captured: keyOf({onTouchTapCapture: null})
+    },
+    dependencies: dependencies
+  }
+};
+
+var now = (function() {
+  if (Date.now) {
+    return Date.now;
+  } else {
+    // IE8 support: http://stackoverflow.com/questions/9430357/please-explain-why-and-how-new-date-works-as-workaround-for-date-now-in
+    return function () {
+      return +new Date;
+    }
+  }
+})();
+
+function createTapEventPlugin(shouldRejectClick) {
+  return {
+
+    tapMoveThreshold: tapMoveThreshold,
+
+    ignoreMouseThreshold: ignoreMouseThreshold,
+
+    eventTypes: eventTypes,
+
+    /**
+     * @param {string} topLevelType Record from `EventConstants`.
+     * @param {DOMEventTarget} targetInst The listening component root node.
+     * @param {object} nativeEvent Native browser event.
+     * @return {*} An accumulation of synthetic events.
+     * @see {EventPluginHub.extractEvents}
+     */
+    extractEvents: function(
+      topLevelType,
+      targetInst,
+      nativeEvent,
+      nativeEventTarget
+    ) {
+
+      if (isTouch(topLevelType)) {
+        lastTouchEvent = now();
+      } else {
+        if (shouldRejectClick(lastTouchEvent, now())) {
+          return null;
+        }
+      }
+
+      if (!isStartish(topLevelType) && !isEndish(topLevelType)) {
+        return null;
+      }
+      var event = null;
+      var distance = getDistance(startCoords, nativeEvent);
+      if (isEndish(topLevelType) && distance < tapMoveThreshold) {
+        event = SyntheticUIEvent.getPooled(
+          eventTypes.touchTap,
+          targetInst,
+          nativeEvent,
+          nativeEventTarget
+        );
+      }
+      if (isStartish(topLevelType)) {
+        startCoords.x = getAxisCoordOfEvent(Axis.x, nativeEvent);
+        startCoords.y = getAxisCoordOfEvent(Axis.y, nativeEvent);
+      } else if (isEndish(topLevelType)) {
+        startCoords.x = 0;
+        startCoords.y = 0;
+      }
+      EventPropagators.accumulateTwoPhaseDispatches(event);
+      return event;
+    }
+
+  };
+}
+
+module.exports = createTapEventPlugin;
+
+},{"./TouchEventUtils":196,"fbjs/lib/keyOf":194,"react/lib/EventConstants":214,"react/lib/EventPluginUtils":217,"react/lib/EventPropagators":218,"react/lib/SyntheticUIEvent":306,"react/lib/ViewportMetrics":309}],196:[function(require,module,exports){
+/**
+ * Copyright 2013-2014 Facebook, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * @providesModule TouchEventUtils
+ */
+
+var TouchEventUtils = {
+  /**
+   * Utility function for common case of extracting out the primary touch from a
+   * touch event.
+   * - `touchEnd` events usually do not have the `touches` property.
+   *   http://stackoverflow.com/questions/3666929/
+   *   mobile-sarai-touchend-event-not-firing-when-last-touch-is-removed
+   *
+   * @param {Event} nativeEvent Native event that may or may not be a touch.
+   * @return {TouchesObject?} an object with pageX and pageY or null.
+   */
+  extractSingleTouch: function(nativeEvent) {
+    var touches = nativeEvent.touches;
+    var changedTouches = nativeEvent.changedTouches;
+    var hasTouches = touches && touches.length > 0;
+    var hasChangedTouches = changedTouches && changedTouches.length > 0;
+
+    return !hasTouches && hasChangedTouches ? changedTouches[0] :
+           hasTouches ? touches[0] :
+           nativeEvent;
+  }
+};
+
+module.exports = TouchEventUtils;
+
+},{}],197:[function(require,module,exports){
+module.exports = function(lastTouchEvent, clickTimestamp) {
+  if (lastTouchEvent && (clickTimestamp - lastTouchEvent) < 750) {
+    return true;
+  }
+};
+
+},{}],198:[function(require,module,exports){
+(function (process){
+var invariant = require('fbjs/lib/invariant');
+var defaultClickRejectionStrategy = require('./defaultClickRejectionStrategy');
+
+var alreadyInjected = false;
+
+module.exports = function injectTapEventPlugin (strategyOverrides) {
+  strategyOverrides = strategyOverrides || {}
+  var shouldRejectClick = strategyOverrides.shouldRejectClick || defaultClickRejectionStrategy;
+
+  if (process.env.NODE_ENV !== 'production') {
+    invariant(
+      !alreadyInjected,
+      'injectTapEventPlugin(): Can only be called once per application lifecycle.\n\n\
+It is recommended to call injectTapEventPlugin() just before you call \
+ReactDOM.render(). If you are using an external library which calls injectTapEventPlugin() \
+itself, please contact the maintainer as it shouldn\'t be called in library code and \
+should be injected by the application.'
+    )
+  }
+
+  alreadyInjected = true;
+
+  require('react/lib/EventPluginHub').injection.injectEventPluginsByName({
+    'TapEventPlugin':       require('./TapEventPlugin.js')(shouldRejectClick)
+  });
+};
+
+}).call(this,require('_process'))
+},{"./TapEventPlugin.js":195,"./defaultClickRejectionStrategy":197,"_process":189,"fbjs/lib/invariant":193,"react/lib/EventPluginHub":215}],199:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -325,7 +10116,7 @@ var AutoFocusUtils = {
 };
 
 module.exports = AutoFocusUtils;
-},{"./ReactDOMComponentTree":46,"fbjs/lib/focusNode":154}],7:[function(require,module,exports){
+},{"./ReactDOMComponentTree":239,"fbjs/lib/focusNode":350}],200:[function(require,module,exports){
 /**
  * Copyright 2013-present Facebook, Inc.
  * All rights reserved.
@@ -714,7 +10505,7 @@ var BeforeInputEventPlugin = {
 };
 
 module.exports = BeforeInputEventPlugin;
-},{"./EventConstants":21,"./EventPropagators":25,"./FallbackCompositionState":26,"./SyntheticCompositionEvent":101,"./SyntheticInputEvent":105,"fbjs/lib/ExecutionEnvironment":146,"fbjs/lib/keyOf":164}],8:[function(require,module,exports){
+},{"./EventConstants":214,"./EventPropagators":218,"./FallbackCompositionState":219,"./SyntheticCompositionEvent":297,"./SyntheticInputEvent":301,"fbjs/lib/ExecutionEnvironment":342,"fbjs/lib/keyOf":360}],201:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -863,7 +10654,7 @@ var CSSProperty = {
 };
 
 module.exports = CSSProperty;
-},{}],9:[function(require,module,exports){
+},{}],202:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -1071,7 +10862,7 @@ var CSSPropertyOperations = {
 
 module.exports = CSSPropertyOperations;
 }).call(this,require('_process'))
-},{"./CSSProperty":8,"./ReactInstrumentation":77,"./dangerousStyleValue":119,"_process":4,"fbjs/lib/ExecutionEnvironment":146,"fbjs/lib/camelizeStyleName":148,"fbjs/lib/hyphenateStyleName":159,"fbjs/lib/memoizeStringOnly":166,"fbjs/lib/warning":170}],10:[function(require,module,exports){
+},{"./CSSProperty":201,"./ReactInstrumentation":271,"./dangerousStyleValue":315,"_process":189,"fbjs/lib/ExecutionEnvironment":342,"fbjs/lib/camelizeStyleName":344,"fbjs/lib/hyphenateStyleName":355,"fbjs/lib/memoizeStringOnly":362,"fbjs/lib/warning":366}],203:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -1180,7 +10971,7 @@ PooledClass.addPoolingTo(CallbackQueue);
 
 module.exports = CallbackQueue;
 }).call(this,require('_process'))
-},{"./PooledClass":30,"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160,"object-assign":3}],11:[function(require,module,exports){
+},{"./PooledClass":223,"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356,"object-assign":188}],204:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1506,7 +11297,7 @@ var ChangeEventPlugin = {
 };
 
 module.exports = ChangeEventPlugin;
-},{"./EventConstants":21,"./EventPluginHub":22,"./EventPropagators":25,"./ReactDOMComponentTree":46,"./ReactUpdates":94,"./SyntheticEvent":103,"./getEventTarget":127,"./isEventSupported":134,"./isTextInputElement":135,"fbjs/lib/ExecutionEnvironment":146,"fbjs/lib/keyOf":164}],12:[function(require,module,exports){
+},{"./EventConstants":214,"./EventPluginHub":215,"./EventPropagators":218,"./ReactDOMComponentTree":239,"./ReactUpdates":290,"./SyntheticEvent":299,"./getEventTarget":323,"./isEventSupported":330,"./isTextInputElement":331,"fbjs/lib/ExecutionEnvironment":342,"fbjs/lib/keyOf":360}],205:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -1703,7 +11494,7 @@ var DOMChildrenOperations = {
 
 module.exports = DOMChildrenOperations;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":13,"./Danger":17,"./ReactDOMComponentTree":46,"./ReactInstrumentation":77,"./ReactMultiChildUpdateTypes":82,"./createMicrosoftUnsafeLocalFunction":118,"./setInnerHTML":140,"./setTextContent":141,"_process":4}],13:[function(require,module,exports){
+},{"./DOMLazyTree":206,"./Danger":210,"./ReactDOMComponentTree":239,"./ReactInstrumentation":271,"./ReactMultiChildUpdateTypes":276,"./createMicrosoftUnsafeLocalFunction":314,"./setInnerHTML":336,"./setTextContent":337,"_process":189}],206:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -1822,7 +11613,7 @@ DOMLazyTree.queueHTML = queueHTML;
 DOMLazyTree.queueText = queueText;
 
 module.exports = DOMLazyTree;
-},{"./DOMNamespaces":14,"./createMicrosoftUnsafeLocalFunction":118,"./setInnerHTML":140,"./setTextContent":141}],14:[function(require,module,exports){
+},{"./DOMNamespaces":207,"./createMicrosoftUnsafeLocalFunction":314,"./setInnerHTML":336,"./setTextContent":337}],207:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -1843,7 +11634,7 @@ var DOMNamespaces = {
 };
 
 module.exports = DOMNamespaces;
-},{}],15:[function(require,module,exports){
+},{}],208:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -2061,7 +11852,7 @@ var DOMProperty = {
 
 module.exports = DOMProperty;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160}],16:[function(require,module,exports){
+},{"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356}],209:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -2300,7 +12091,7 @@ var DOMPropertyOperations = {
 
 module.exports = DOMPropertyOperations;
 }).call(this,require('_process'))
-},{"./DOMProperty":15,"./ReactDOMComponentTree":46,"./ReactDOMInstrumentation":54,"./ReactInstrumentation":77,"./quoteAttributeValueForBrowser":137,"_process":4,"fbjs/lib/warning":170}],17:[function(require,module,exports){
+},{"./DOMProperty":208,"./ReactDOMComponentTree":239,"./ReactDOMInstrumentation":247,"./ReactInstrumentation":271,"./quoteAttributeValueForBrowser":333,"_process":189,"fbjs/lib/warning":366}],210:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -2449,7 +12240,7 @@ var Danger = {
 
 module.exports = Danger;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":13,"./reactProdInvariant":138,"_process":4,"fbjs/lib/ExecutionEnvironment":146,"fbjs/lib/createNodesFromMarkup":151,"fbjs/lib/emptyFunction":152,"fbjs/lib/getMarkupWrap":156,"fbjs/lib/invariant":160}],18:[function(require,module,exports){
+},{"./DOMLazyTree":206,"./reactProdInvariant":334,"_process":189,"fbjs/lib/ExecutionEnvironment":342,"fbjs/lib/createNodesFromMarkup":347,"fbjs/lib/emptyFunction":348,"fbjs/lib/getMarkupWrap":352,"fbjs/lib/invariant":356}],211:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2477,7 +12268,7 @@ var keyOf = require('fbjs/lib/keyOf');
 var DefaultEventPluginOrder = [keyOf({ ResponderEventPlugin: null }), keyOf({ SimpleEventPlugin: null }), keyOf({ TapEventPlugin: null }), keyOf({ EnterLeaveEventPlugin: null }), keyOf({ ChangeEventPlugin: null }), keyOf({ SelectEventPlugin: null }), keyOf({ BeforeInputEventPlugin: null })];
 
 module.exports = DefaultEventPluginOrder;
-},{"fbjs/lib/keyOf":164}],19:[function(require,module,exports){
+},{"fbjs/lib/keyOf":360}],212:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2528,7 +12319,7 @@ var DisabledInputUtils = {
 };
 
 module.exports = DisabledInputUtils;
-},{}],20:[function(require,module,exports){
+},{}],213:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2634,7 +12425,7 @@ var EnterLeaveEventPlugin = {
 };
 
 module.exports = EnterLeaveEventPlugin;
-},{"./EventConstants":21,"./EventPropagators":25,"./ReactDOMComponentTree":46,"./SyntheticMouseEvent":107,"fbjs/lib/keyOf":164}],21:[function(require,module,exports){
+},{"./EventConstants":214,"./EventPropagators":218,"./ReactDOMComponentTree":239,"./SyntheticMouseEvent":303,"fbjs/lib/keyOf":360}],214:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2732,7 +12523,7 @@ var EventConstants = {
 };
 
 module.exports = EventConstants;
-},{"fbjs/lib/keyMirror":163}],22:[function(require,module,exports){
+},{"fbjs/lib/keyMirror":359}],215:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -2976,7 +12767,7 @@ var EventPluginHub = {
 
 module.exports = EventPluginHub;
 }).call(this,require('_process'))
-},{"./EventPluginRegistry":23,"./EventPluginUtils":24,"./ReactErrorUtils":68,"./accumulateInto":114,"./forEachAccumulated":123,"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160}],23:[function(require,module,exports){
+},{"./EventPluginRegistry":216,"./EventPluginUtils":217,"./ReactErrorUtils":261,"./accumulateInto":310,"./forEachAccumulated":319,"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356}],216:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -3226,7 +13017,7 @@ var EventPluginRegistry = {
 
 module.exports = EventPluginRegistry;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160}],24:[function(require,module,exports){
+},{"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356}],217:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -3458,7 +13249,7 @@ var EventPluginUtils = {
 
 module.exports = EventPluginUtils;
 }).call(this,require('_process'))
-},{"./EventConstants":21,"./ReactErrorUtils":68,"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160,"fbjs/lib/warning":170}],25:[function(require,module,exports){
+},{"./EventConstants":214,"./ReactErrorUtils":261,"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356,"fbjs/lib/warning":366}],218:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -3598,7 +13389,7 @@ var EventPropagators = {
 
 module.exports = EventPropagators;
 }).call(this,require('_process'))
-},{"./EventConstants":21,"./EventPluginHub":22,"./EventPluginUtils":24,"./accumulateInto":114,"./forEachAccumulated":123,"_process":4,"fbjs/lib/warning":170}],26:[function(require,module,exports){
+},{"./EventConstants":214,"./EventPluginHub":215,"./EventPluginUtils":217,"./accumulateInto":310,"./forEachAccumulated":319,"_process":189,"fbjs/lib/warning":366}],219:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3694,7 +13485,7 @@ _assign(FallbackCompositionState.prototype, {
 PooledClass.addPoolingTo(FallbackCompositionState);
 
 module.exports = FallbackCompositionState;
-},{"./PooledClass":30,"./getTextContentAccessor":131,"object-assign":3}],27:[function(require,module,exports){
+},{"./PooledClass":223,"./getTextContentAccessor":327,"object-assign":188}],220:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3903,7 +13694,7 @@ var HTMLDOMPropertyConfig = {
 };
 
 module.exports = HTMLDOMPropertyConfig;
-},{"./DOMProperty":15}],28:[function(require,module,exports){
+},{"./DOMProperty":208}],221:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -3962,7 +13753,7 @@ var KeyEscapeUtils = {
 };
 
 module.exports = KeyEscapeUtils;
-},{}],29:[function(require,module,exports){
+},{}],222:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -4100,7 +13891,7 @@ var LinkedValueUtils = {
 
 module.exports = LinkedValueUtils;
 }).call(this,require('_process'))
-},{"./ReactPropTypeLocations":87,"./ReactPropTypes":88,"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160,"fbjs/lib/warning":170}],30:[function(require,module,exports){
+},{"./ReactPropTypeLocations":281,"./ReactPropTypes":282,"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356,"fbjs/lib/warning":366}],223:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -4224,7 +14015,7 @@ var PooledClass = {
 
 module.exports = PooledClass;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160}],31:[function(require,module,exports){
+},{"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356}],224:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -4314,7 +14105,7 @@ var React = {
 
 module.exports = React;
 }).call(this,require('_process'))
-},{"./ReactChildren":34,"./ReactClass":35,"./ReactComponent":36,"./ReactDOMFactories":50,"./ReactElement":65,"./ReactElementValidator":66,"./ReactPropTypes":88,"./ReactVersion":95,"./onlyChild":136,"_process":4,"fbjs/lib/warning":170,"object-assign":3}],32:[function(require,module,exports){
+},{"./ReactChildren":227,"./ReactClass":228,"./ReactComponent":229,"./ReactDOMFactories":243,"./ReactElement":258,"./ReactElementValidator":259,"./ReactPropTypes":282,"./ReactVersion":291,"./onlyChild":332,"_process":189,"fbjs/lib/warning":366,"object-assign":188}],225:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -4632,7 +14423,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
 });
 
 module.exports = ReactBrowserEventEmitter;
-},{"./EventConstants":21,"./EventPluginRegistry":23,"./ReactEventEmitterMixin":69,"./ViewportMetrics":113,"./getVendorPrefixedEventName":132,"./isEventSupported":134,"object-assign":3}],33:[function(require,module,exports){
+},{"./EventConstants":214,"./EventPluginRegistry":216,"./ReactEventEmitterMixin":262,"./ViewportMetrics":309,"./getVendorPrefixedEventName":328,"./isEventSupported":330,"object-assign":188}],226:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -4769,7 +14560,7 @@ var ReactChildReconciler = {
 
 module.exports = ReactChildReconciler;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":28,"./ReactComponentTreeDevtool":39,"./ReactReconciler":90,"./instantiateReactComponent":133,"./shouldUpdateReactComponent":142,"./traverseAllChildren":143,"_process":4,"fbjs/lib/warning":170}],34:[function(require,module,exports){
+},{"./KeyEscapeUtils":221,"./ReactComponentTreeDevtool":232,"./ReactReconciler":284,"./instantiateReactComponent":329,"./shouldUpdateReactComponent":338,"./traverseAllChildren":339,"_process":189,"fbjs/lib/warning":366}],227:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -4961,7 +14752,7 @@ var ReactChildren = {
 };
 
 module.exports = ReactChildren;
-},{"./PooledClass":30,"./ReactElement":65,"./traverseAllChildren":143,"fbjs/lib/emptyFunction":152}],35:[function(require,module,exports){
+},{"./PooledClass":223,"./ReactElement":258,"./traverseAllChildren":339,"fbjs/lib/emptyFunction":348}],228:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -5689,7 +15480,7 @@ var ReactClass = {
 
 module.exports = ReactClass;
 }).call(this,require('_process'))
-},{"./ReactComponent":36,"./ReactElement":65,"./ReactNoopUpdateQueue":84,"./ReactPropTypeLocationNames":86,"./ReactPropTypeLocations":87,"./reactProdInvariant":138,"_process":4,"fbjs/lib/emptyObject":153,"fbjs/lib/invariant":160,"fbjs/lib/keyMirror":163,"fbjs/lib/keyOf":164,"fbjs/lib/warning":170,"object-assign":3}],36:[function(require,module,exports){
+},{"./ReactComponent":229,"./ReactElement":258,"./ReactNoopUpdateQueue":278,"./ReactPropTypeLocationNames":280,"./ReactPropTypeLocations":281,"./reactProdInvariant":334,"_process":189,"fbjs/lib/emptyObject":349,"fbjs/lib/invariant":356,"fbjs/lib/keyMirror":359,"fbjs/lib/keyOf":360,"fbjs/lib/warning":366,"object-assign":188}],229:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -5810,7 +15601,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactComponent;
 }).call(this,require('_process'))
-},{"./ReactNoopUpdateQueue":84,"./canDefineProperty":116,"./reactProdInvariant":138,"_process":4,"fbjs/lib/emptyObject":153,"fbjs/lib/invariant":160,"fbjs/lib/warning":170}],37:[function(require,module,exports){
+},{"./ReactNoopUpdateQueue":278,"./canDefineProperty":312,"./reactProdInvariant":334,"_process":189,"fbjs/lib/emptyObject":349,"fbjs/lib/invariant":356,"fbjs/lib/warning":366}],230:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -5850,7 +15641,7 @@ var ReactComponentBrowserEnvironment = {
 };
 
 module.exports = ReactComponentBrowserEnvironment;
-},{"./DOMChildrenOperations":12,"./ReactDOMIDOperations":52}],38:[function(require,module,exports){
+},{"./DOMChildrenOperations":205,"./ReactDOMIDOperations":245}],231:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -5906,7 +15697,7 @@ var ReactComponentEnvironment = {
 
 module.exports = ReactComponentEnvironment;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160}],39:[function(require,module,exports){
+},{"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356}],232:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -6132,7 +15923,7 @@ var ReactComponentTreeDevtool = {
 
 module.exports = ReactComponentTreeDevtool;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":41,"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160,"fbjs/lib/warning":170}],40:[function(require,module,exports){
+},{"./ReactCurrentOwner":234,"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356,"fbjs/lib/warning":366}],233:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -7018,7 +16809,7 @@ var ReactCompositeComponent = {
 
 module.exports = ReactCompositeComponent;
 }).call(this,require('_process'))
-},{"./ReactComponentEnvironment":38,"./ReactCurrentOwner":41,"./ReactElement":65,"./ReactErrorUtils":68,"./ReactInstanceMap":76,"./ReactInstrumentation":77,"./ReactNodeTypes":83,"./ReactPropTypeLocations":87,"./ReactReconciler":90,"./ReactUpdateQueue":93,"./checkReactTypeSpec":117,"./reactProdInvariant":138,"./shouldUpdateReactComponent":142,"_process":4,"fbjs/lib/emptyObject":153,"fbjs/lib/invariant":160,"fbjs/lib/warning":170,"object-assign":3}],41:[function(require,module,exports){
+},{"./ReactComponentEnvironment":231,"./ReactCurrentOwner":234,"./ReactElement":258,"./ReactErrorUtils":261,"./ReactInstanceMap":270,"./ReactInstrumentation":271,"./ReactNodeTypes":277,"./ReactPropTypeLocations":281,"./ReactReconciler":284,"./ReactUpdateQueue":289,"./checkReactTypeSpec":313,"./reactProdInvariant":334,"./shouldUpdateReactComponent":338,"_process":189,"fbjs/lib/emptyObject":349,"fbjs/lib/invariant":356,"fbjs/lib/warning":366,"object-assign":188}],234:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -7050,7 +16841,7 @@ var ReactCurrentOwner = {
 };
 
 module.exports = ReactCurrentOwner;
-},{}],42:[function(require,module,exports){
+},{}],235:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -7154,7 +16945,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = React;
 }).call(this,require('_process'))
-},{"./ReactDOMComponentTree":46,"./ReactDefaultInjection":64,"./ReactMount":80,"./ReactReconciler":90,"./ReactUpdates":94,"./ReactVersion":95,"./findDOMNode":121,"./getHostComponentFromComposite":128,"./renderSubtreeIntoContainer":139,"_process":4,"fbjs/lib/ExecutionEnvironment":146,"fbjs/lib/warning":170}],43:[function(require,module,exports){
+},{"./ReactDOMComponentTree":239,"./ReactDefaultInjection":257,"./ReactMount":274,"./ReactReconciler":284,"./ReactUpdates":290,"./ReactVersion":291,"./findDOMNode":317,"./getHostComponentFromComposite":324,"./renderSubtreeIntoContainer":335,"_process":189,"fbjs/lib/ExecutionEnvironment":342,"fbjs/lib/warning":366}],236:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -7179,7 +16970,7 @@ var ReactDOMButton = {
 };
 
 module.exports = ReactDOMButton;
-},{"./DisabledInputUtils":19}],44:[function(require,module,exports){
+},{"./DisabledInputUtils":212}],237:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -8185,7 +17976,7 @@ _assign(ReactDOMComponent.prototype, ReactDOMComponent.Mixin, ReactMultiChild.Mi
 
 module.exports = ReactDOMComponent;
 }).call(this,require('_process'))
-},{"./AutoFocusUtils":6,"./CSSPropertyOperations":9,"./DOMLazyTree":13,"./DOMNamespaces":14,"./DOMProperty":15,"./DOMPropertyOperations":16,"./EventConstants":21,"./EventPluginHub":22,"./EventPluginRegistry":23,"./ReactBrowserEventEmitter":32,"./ReactComponentBrowserEnvironment":37,"./ReactDOMButton":43,"./ReactDOMComponentFlags":45,"./ReactDOMComponentTree":46,"./ReactDOMInput":53,"./ReactDOMOption":55,"./ReactDOMSelect":56,"./ReactDOMTextarea":59,"./ReactInstrumentation":77,"./ReactMultiChild":81,"./ReactServerRenderingTransaction":92,"./escapeTextContentForBrowser":120,"./isEventSupported":134,"./reactProdInvariant":138,"./validateDOMNesting":144,"_process":4,"fbjs/lib/emptyFunction":152,"fbjs/lib/invariant":160,"fbjs/lib/keyOf":164,"fbjs/lib/shallowEqual":169,"fbjs/lib/warning":170,"object-assign":3}],45:[function(require,module,exports){
+},{"./AutoFocusUtils":199,"./CSSPropertyOperations":202,"./DOMLazyTree":206,"./DOMNamespaces":207,"./DOMProperty":208,"./DOMPropertyOperations":209,"./EventConstants":214,"./EventPluginHub":215,"./EventPluginRegistry":216,"./ReactBrowserEventEmitter":225,"./ReactComponentBrowserEnvironment":230,"./ReactDOMButton":236,"./ReactDOMComponentFlags":238,"./ReactDOMComponentTree":239,"./ReactDOMInput":246,"./ReactDOMOption":248,"./ReactDOMSelect":249,"./ReactDOMTextarea":252,"./ReactInstrumentation":271,"./ReactMultiChild":275,"./ReactServerRenderingTransaction":286,"./escapeTextContentForBrowser":316,"./isEventSupported":330,"./reactProdInvariant":334,"./validateDOMNesting":340,"_process":189,"fbjs/lib/emptyFunction":348,"fbjs/lib/invariant":356,"fbjs/lib/keyOf":360,"fbjs/lib/shallowEqual":365,"fbjs/lib/warning":366,"object-assign":188}],238:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -8204,7 +17995,7 @@ var ReactDOMComponentFlags = {
 };
 
 module.exports = ReactDOMComponentFlags;
-},{}],46:[function(require,module,exports){
+},{}],239:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -8395,7 +18186,7 @@ var ReactDOMComponentTree = {
 
 module.exports = ReactDOMComponentTree;
 }).call(this,require('_process'))
-},{"./DOMProperty":15,"./ReactDOMComponentFlags":45,"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160}],47:[function(require,module,exports){
+},{"./DOMProperty":208,"./ReactDOMComponentFlags":238,"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356}],240:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -8431,7 +18222,7 @@ function ReactDOMContainerInfo(topLevelWrapper, node) {
 
 module.exports = ReactDOMContainerInfo;
 }).call(this,require('_process'))
-},{"./validateDOMNesting":144,"_process":4}],48:[function(require,module,exports){
+},{"./validateDOMNesting":340,"_process":189}],241:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -8501,7 +18292,7 @@ ReactDOMDebugTool.addDevtool(ReactDOMUnknownPropertyDevtool);
 
 module.exports = ReactDOMDebugTool;
 }).call(this,require('_process'))
-},{"./ReactDOMUnknownPropertyDevtool":61,"./ReactDebugTool":62,"_process":4,"fbjs/lib/warning":170}],49:[function(require,module,exports){
+},{"./ReactDOMUnknownPropertyDevtool":254,"./ReactDebugTool":255,"_process":189,"fbjs/lib/warning":366}],242:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -8562,7 +18353,7 @@ _assign(ReactDOMEmptyComponent.prototype, {
 });
 
 module.exports = ReactDOMEmptyComponent;
-},{"./DOMLazyTree":13,"./ReactDOMComponentTree":46,"object-assign":3}],50:[function(require,module,exports){
+},{"./DOMLazyTree":206,"./ReactDOMComponentTree":239,"object-assign":188}],243:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -8741,7 +18532,7 @@ var ReactDOMFactories = mapObject({
 
 module.exports = ReactDOMFactories;
 }).call(this,require('_process'))
-},{"./ReactElement":65,"./ReactElementValidator":66,"_process":4,"fbjs/lib/mapObject":165}],51:[function(require,module,exports){
+},{"./ReactElement":258,"./ReactElementValidator":259,"_process":189,"fbjs/lib/mapObject":361}],244:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -8760,7 +18551,7 @@ var ReactDOMFeatureFlags = {
 };
 
 module.exports = ReactDOMFeatureFlags;
-},{}],52:[function(require,module,exports){
+},{}],245:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -8795,7 +18586,7 @@ var ReactDOMIDOperations = {
 };
 
 module.exports = ReactDOMIDOperations;
-},{"./DOMChildrenOperations":12,"./ReactDOMComponentTree":46}],53:[function(require,module,exports){
+},{"./DOMChildrenOperations":205,"./ReactDOMComponentTree":239}],246:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -9040,7 +18831,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMInput;
 }).call(this,require('_process'))
-},{"./DOMPropertyOperations":16,"./DisabledInputUtils":19,"./LinkedValueUtils":29,"./ReactDOMComponentTree":46,"./ReactUpdates":94,"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160,"fbjs/lib/warning":170,"object-assign":3}],54:[function(require,module,exports){
+},{"./DOMPropertyOperations":209,"./DisabledInputUtils":212,"./LinkedValueUtils":222,"./ReactDOMComponentTree":239,"./ReactUpdates":290,"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356,"fbjs/lib/warning":366,"object-assign":188}],247:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -9057,7 +18848,7 @@ module.exports = ReactDOMInput;
 var ReactDOMDebugTool = require('./ReactDOMDebugTool');
 
 module.exports = { debugTool: ReactDOMDebugTool };
-},{"./ReactDOMDebugTool":48}],55:[function(require,module,exports){
+},{"./ReactDOMDebugTool":241}],248:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -9183,7 +18974,7 @@ var ReactDOMOption = {
 
 module.exports = ReactDOMOption;
 }).call(this,require('_process'))
-},{"./ReactChildren":34,"./ReactDOMComponentTree":46,"./ReactDOMSelect":56,"_process":4,"fbjs/lib/warning":170,"object-assign":3}],56:[function(require,module,exports){
+},{"./ReactChildren":227,"./ReactDOMComponentTree":239,"./ReactDOMSelect":249,"_process":189,"fbjs/lib/warning":366,"object-assign":188}],249:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -9399,7 +19190,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMSelect;
 }).call(this,require('_process'))
-},{"./DisabledInputUtils":19,"./LinkedValueUtils":29,"./ReactDOMComponentTree":46,"./ReactUpdates":94,"_process":4,"fbjs/lib/warning":170,"object-assign":3}],57:[function(require,module,exports){
+},{"./DisabledInputUtils":212,"./LinkedValueUtils":222,"./ReactDOMComponentTree":239,"./ReactUpdates":290,"_process":189,"fbjs/lib/warning":366,"object-assign":188}],250:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -9612,7 +19403,7 @@ var ReactDOMSelection = {
 };
 
 module.exports = ReactDOMSelection;
-},{"./getNodeForCharacterOffset":130,"./getTextContentAccessor":131,"fbjs/lib/ExecutionEnvironment":146}],58:[function(require,module,exports){
+},{"./getNodeForCharacterOffset":326,"./getTextContentAccessor":327,"fbjs/lib/ExecutionEnvironment":342}],251:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -9786,7 +19577,7 @@ _assign(ReactDOMTextComponent.prototype, {
 
 module.exports = ReactDOMTextComponent;
 }).call(this,require('_process'))
-},{"./DOMChildrenOperations":12,"./DOMLazyTree":13,"./ReactDOMComponentTree":46,"./ReactInstrumentation":77,"./escapeTextContentForBrowser":120,"./reactProdInvariant":138,"./validateDOMNesting":144,"_process":4,"fbjs/lib/invariant":160,"object-assign":3}],59:[function(require,module,exports){
+},{"./DOMChildrenOperations":205,"./DOMLazyTree":206,"./ReactDOMComponentTree":239,"./ReactInstrumentation":271,"./escapeTextContentForBrowser":316,"./reactProdInvariant":334,"./validateDOMNesting":340,"_process":189,"fbjs/lib/invariant":356,"object-assign":188}],252:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -9958,7 +19749,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMTextarea;
 }).call(this,require('_process'))
-},{"./DisabledInputUtils":19,"./LinkedValueUtils":29,"./ReactDOMComponentTree":46,"./ReactUpdates":94,"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160,"fbjs/lib/warning":170,"object-assign":3}],60:[function(require,module,exports){
+},{"./DisabledInputUtils":212,"./LinkedValueUtils":222,"./ReactDOMComponentTree":239,"./ReactUpdates":290,"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356,"fbjs/lib/warning":366,"object-assign":188}],253:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -10097,7 +19888,7 @@ module.exports = {
   traverseEnterLeave: traverseEnterLeave
 };
 }).call(this,require('_process'))
-},{"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160}],61:[function(require,module,exports){
+},{"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356}],254:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -10212,7 +20003,7 @@ var ReactDOMUnknownPropertyDevtool = {
 
 module.exports = ReactDOMUnknownPropertyDevtool;
 }).call(this,require('_process'))
-},{"./DOMProperty":15,"./EventPluginRegistry":23,"./ReactComponentTreeDevtool":39,"_process":4,"fbjs/lib/warning":170}],62:[function(require,module,exports){
+},{"./DOMProperty":208,"./EventPluginRegistry":216,"./ReactComponentTreeDevtool":232,"_process":189,"fbjs/lib/warning":366}],255:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -10526,7 +20317,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactDebugTool;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeDevtool":39,"./ReactHostOperationHistoryDevtool":73,"./ReactInvalidSetStateWarningDevTool":78,"_process":4,"fbjs/lib/ExecutionEnvironment":146,"fbjs/lib/performanceNow":168,"fbjs/lib/warning":170}],63:[function(require,module,exports){
+},{"./ReactComponentTreeDevtool":232,"./ReactHostOperationHistoryDevtool":267,"./ReactInvalidSetStateWarningDevTool":272,"_process":189,"fbjs/lib/ExecutionEnvironment":342,"fbjs/lib/performanceNow":364,"fbjs/lib/warning":366}],256:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -10595,7 +20386,7 @@ var ReactDefaultBatchingStrategy = {
 };
 
 module.exports = ReactDefaultBatchingStrategy;
-},{"./ReactUpdates":94,"./Transaction":112,"fbjs/lib/emptyFunction":152,"object-assign":3}],64:[function(require,module,exports){
+},{"./ReactUpdates":290,"./Transaction":308,"fbjs/lib/emptyFunction":348,"object-assign":188}],257:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -10680,7 +20471,7 @@ function inject() {
 module.exports = {
   inject: inject
 };
-},{"./BeforeInputEventPlugin":7,"./ChangeEventPlugin":11,"./DefaultEventPluginOrder":18,"./EnterLeaveEventPlugin":20,"./HTMLDOMPropertyConfig":27,"./ReactComponentBrowserEnvironment":37,"./ReactDOMComponent":44,"./ReactDOMComponentTree":46,"./ReactDOMEmptyComponent":49,"./ReactDOMTextComponent":58,"./ReactDOMTreeTraversal":60,"./ReactDefaultBatchingStrategy":63,"./ReactEventListener":70,"./ReactInjection":74,"./ReactReconcileTransaction":89,"./SVGDOMPropertyConfig":96,"./SelectEventPlugin":97,"./SimpleEventPlugin":98}],65:[function(require,module,exports){
+},{"./BeforeInputEventPlugin":200,"./ChangeEventPlugin":204,"./DefaultEventPluginOrder":211,"./EnterLeaveEventPlugin":213,"./HTMLDOMPropertyConfig":220,"./ReactComponentBrowserEnvironment":230,"./ReactDOMComponent":237,"./ReactDOMComponentTree":239,"./ReactDOMEmptyComponent":242,"./ReactDOMTextComponent":251,"./ReactDOMTreeTraversal":253,"./ReactDefaultBatchingStrategy":256,"./ReactEventListener":263,"./ReactInjection":268,"./ReactReconcileTransaction":283,"./SVGDOMPropertyConfig":292,"./SelectEventPlugin":293,"./SimpleEventPlugin":294}],258:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -11035,7 +20826,7 @@ ReactElement.REACT_ELEMENT_TYPE = REACT_ELEMENT_TYPE;
 
 module.exports = ReactElement;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":41,"./canDefineProperty":116,"_process":4,"fbjs/lib/warning":170,"object-assign":3}],66:[function(require,module,exports){
+},{"./ReactCurrentOwner":234,"./canDefineProperty":312,"_process":189,"fbjs/lib/warning":366,"object-assign":188}],259:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -11264,7 +21055,7 @@ var ReactElementValidator = {
 
 module.exports = ReactElementValidator;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeDevtool":39,"./ReactCurrentOwner":41,"./ReactElement":65,"./ReactPropTypeLocations":87,"./canDefineProperty":116,"./checkReactTypeSpec":117,"./getIteratorFn":129,"_process":4,"fbjs/lib/warning":170}],67:[function(require,module,exports){
+},{"./ReactComponentTreeDevtool":232,"./ReactCurrentOwner":234,"./ReactElement":258,"./ReactPropTypeLocations":281,"./canDefineProperty":312,"./checkReactTypeSpec":313,"./getIteratorFn":325,"_process":189,"fbjs/lib/warning":366}],260:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -11295,7 +21086,7 @@ var ReactEmptyComponent = {
 ReactEmptyComponent.injection = ReactEmptyComponentInjection;
 
 module.exports = ReactEmptyComponent;
-},{}],68:[function(require,module,exports){
+},{}],261:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -11374,7 +21165,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactErrorUtils;
 }).call(this,require('_process'))
-},{"_process":4}],69:[function(require,module,exports){
+},{"_process":189}],262:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -11408,7 +21199,7 @@ var ReactEventEmitterMixin = {
 };
 
 module.exports = ReactEventEmitterMixin;
-},{"./EventPluginHub":22}],70:[function(require,module,exports){
+},{"./EventPluginHub":215}],263:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -11566,7 +21357,7 @@ var ReactEventListener = {
 };
 
 module.exports = ReactEventListener;
-},{"./PooledClass":30,"./ReactDOMComponentTree":46,"./ReactUpdates":94,"./getEventTarget":127,"fbjs/lib/EventListener":145,"fbjs/lib/ExecutionEnvironment":146,"fbjs/lib/getUnboundedScrollPosition":157,"object-assign":3}],71:[function(require,module,exports){
+},{"./PooledClass":223,"./ReactDOMComponentTree":239,"./ReactUpdates":290,"./getEventTarget":323,"fbjs/lib/EventListener":341,"fbjs/lib/ExecutionEnvironment":342,"fbjs/lib/getUnboundedScrollPosition":353,"object-assign":188}],264:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -11588,7 +21379,79 @@ var ReactFeatureFlags = {
 };
 
 module.exports = ReactFeatureFlags;
-},{}],72:[function(require,module,exports){
+},{}],265:[function(require,module,exports){
+(function (process){
+/**
+ * Copyright 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule ReactFragment
+ */
+
+'use strict';
+
+var _prodInvariant = require('./reactProdInvariant');
+
+var ReactChildren = require('./ReactChildren');
+var ReactElement = require('./ReactElement');
+
+var emptyFunction = require('fbjs/lib/emptyFunction');
+var invariant = require('fbjs/lib/invariant');
+var warning = require('fbjs/lib/warning');
+
+/**
+ * We used to allow keyed objects to serve as a collection of ReactElements,
+ * or nested sets. This allowed us a way to explicitly key a set or fragment of
+ * components. This is now being replaced with an opaque data structure.
+ * The upgrade path is to call React.addons.createFragment({ key: value }) to
+ * create a keyed fragment. The resulting data structure is an array.
+ */
+
+var numericPropertyRegex = /^\d+$/;
+
+var warnedAboutNumeric = false;
+
+var ReactFragment = {
+  /**
+   * Wrap a keyed object in an opaque proxy that warns you if you access any
+   * of its properties.
+   * See https://facebook.github.io/react/docs/create-fragment.html
+   */
+  create: function (object) {
+    if (typeof object !== 'object' || !object || Array.isArray(object)) {
+      process.env.NODE_ENV !== 'production' ? warning(false, 'React.addons.createFragment only accepts a single object. Got: %s', object) : void 0;
+      return object;
+    }
+    if (ReactElement.isValidElement(object)) {
+      process.env.NODE_ENV !== 'production' ? warning(false, 'React.addons.createFragment does not accept a ReactElement ' + 'without a wrapper object.') : void 0;
+      return object;
+    }
+
+    !(object.nodeType !== 1) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'React.addons.createFragment(...): Encountered an invalid child; DOM elements are not valid children of React components.') : _prodInvariant('0') : void 0;
+
+    var result = [];
+
+    for (var key in object) {
+      if (process.env.NODE_ENV !== 'production') {
+        if (!warnedAboutNumeric && numericPropertyRegex.test(key)) {
+          process.env.NODE_ENV !== 'production' ? warning(false, 'React.addons.createFragment(...): Child objects should have ' + 'non-numeric keys so ordering is preserved.') : void 0;
+          warnedAboutNumeric = true;
+        }
+      }
+      ReactChildren.mapIntoWithKeyPrefixInternal(object[key], result, key, emptyFunction.thatReturnsArgument);
+    }
+
+    return result;
+  }
+};
+
+module.exports = ReactFragment;
+}).call(this,require('_process'))
+},{"./ReactChildren":227,"./ReactElement":258,"./reactProdInvariant":334,"_process":189,"fbjs/lib/emptyFunction":348,"fbjs/lib/invariant":356,"fbjs/lib/warning":366}],266:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -11667,7 +21530,7 @@ var ReactHostComponent = {
 
 module.exports = ReactHostComponent;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160,"object-assign":3}],73:[function(require,module,exports){
+},{"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356,"object-assign":188}],267:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -11705,7 +21568,7 @@ var ReactHostOperationHistoryDevtool = {
 };
 
 module.exports = ReactHostOperationHistoryDevtool;
-},{}],74:[function(require,module,exports){
+},{}],268:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -11742,7 +21605,7 @@ var ReactInjection = {
 };
 
 module.exports = ReactInjection;
-},{"./DOMProperty":15,"./EventPluginHub":22,"./EventPluginUtils":24,"./ReactBrowserEventEmitter":32,"./ReactClass":35,"./ReactComponentEnvironment":38,"./ReactEmptyComponent":67,"./ReactHostComponent":72,"./ReactUpdates":94}],75:[function(require,module,exports){
+},{"./DOMProperty":208,"./EventPluginHub":215,"./EventPluginUtils":217,"./ReactBrowserEventEmitter":225,"./ReactClass":228,"./ReactComponentEnvironment":231,"./ReactEmptyComponent":260,"./ReactHostComponent":266,"./ReactUpdates":290}],269:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -11867,7 +21730,7 @@ var ReactInputSelection = {
 };
 
 module.exports = ReactInputSelection;
-},{"./ReactDOMSelection":57,"fbjs/lib/containsNode":149,"fbjs/lib/focusNode":154,"fbjs/lib/getActiveElement":155}],76:[function(require,module,exports){
+},{"./ReactDOMSelection":250,"fbjs/lib/containsNode":345,"fbjs/lib/focusNode":350,"fbjs/lib/getActiveElement":351}],270:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -11916,7 +21779,7 @@ var ReactInstanceMap = {
 };
 
 module.exports = ReactInstanceMap;
-},{}],77:[function(require,module,exports){
+},{}],271:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -11933,7 +21796,7 @@ module.exports = ReactInstanceMap;
 var ReactDebugTool = require('./ReactDebugTool');
 
 module.exports = { debugTool: ReactDebugTool };
-},{"./ReactDebugTool":62}],78:[function(require,module,exports){
+},{"./ReactDebugTool":255}],272:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -11972,7 +21835,7 @@ var ReactInvalidSetStateWarningDevTool = {
 
 module.exports = ReactInvalidSetStateWarningDevTool;
 }).call(this,require('_process'))
-},{"_process":4,"fbjs/lib/warning":170}],79:[function(require,module,exports){
+},{"_process":189,"fbjs/lib/warning":366}],273:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12023,7 +21886,7 @@ var ReactMarkupChecksum = {
 };
 
 module.exports = ReactMarkupChecksum;
-},{"./adler32":115}],80:[function(require,module,exports){
+},{"./adler32":311}],274:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -12527,7 +22390,7 @@ var ReactMount = {
 
 module.exports = ReactMount;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":13,"./DOMProperty":15,"./ReactBrowserEventEmitter":32,"./ReactCurrentOwner":41,"./ReactDOMComponentTree":46,"./ReactDOMContainerInfo":47,"./ReactDOMFeatureFlags":51,"./ReactElement":65,"./ReactFeatureFlags":71,"./ReactInstrumentation":77,"./ReactMarkupChecksum":79,"./ReactReconciler":90,"./ReactUpdateQueue":93,"./ReactUpdates":94,"./instantiateReactComponent":133,"./reactProdInvariant":138,"./setInnerHTML":140,"./shouldUpdateReactComponent":142,"_process":4,"fbjs/lib/emptyObject":153,"fbjs/lib/invariant":160,"fbjs/lib/warning":170}],81:[function(require,module,exports){
+},{"./DOMLazyTree":206,"./DOMProperty":208,"./ReactBrowserEventEmitter":225,"./ReactCurrentOwner":234,"./ReactDOMComponentTree":239,"./ReactDOMContainerInfo":240,"./ReactDOMFeatureFlags":244,"./ReactElement":258,"./ReactFeatureFlags":264,"./ReactInstrumentation":271,"./ReactMarkupChecksum":273,"./ReactReconciler":284,"./ReactUpdateQueue":289,"./ReactUpdates":290,"./instantiateReactComponent":329,"./reactProdInvariant":334,"./setInnerHTML":336,"./shouldUpdateReactComponent":338,"_process":189,"fbjs/lib/emptyObject":349,"fbjs/lib/invariant":356,"fbjs/lib/warning":366}],275:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -12975,7 +22838,7 @@ var ReactMultiChild = {
 
 module.exports = ReactMultiChild;
 }).call(this,require('_process'))
-},{"./ReactChildReconciler":33,"./ReactComponentEnvironment":38,"./ReactCurrentOwner":41,"./ReactInstanceMap":76,"./ReactInstrumentation":77,"./ReactMultiChildUpdateTypes":82,"./ReactReconciler":90,"./flattenChildren":122,"./reactProdInvariant":138,"_process":4,"fbjs/lib/emptyFunction":152,"fbjs/lib/invariant":160}],82:[function(require,module,exports){
+},{"./ReactChildReconciler":226,"./ReactComponentEnvironment":231,"./ReactCurrentOwner":234,"./ReactInstanceMap":270,"./ReactInstrumentation":271,"./ReactMultiChildUpdateTypes":276,"./ReactReconciler":284,"./flattenChildren":318,"./reactProdInvariant":334,"_process":189,"fbjs/lib/emptyFunction":348,"fbjs/lib/invariant":356}],276:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13008,7 +22871,7 @@ var ReactMultiChildUpdateTypes = keyMirror({
 });
 
 module.exports = ReactMultiChildUpdateTypes;
-},{"fbjs/lib/keyMirror":163}],83:[function(require,module,exports){
+},{"fbjs/lib/keyMirror":359}],277:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -13050,7 +22913,7 @@ var ReactNodeTypes = {
 
 module.exports = ReactNodeTypes;
 }).call(this,require('_process'))
-},{"./ReactElement":65,"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160}],84:[function(require,module,exports){
+},{"./ReactElement":258,"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356}],278:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -13148,7 +23011,7 @@ var ReactNoopUpdateQueue = {
 
 module.exports = ReactNoopUpdateQueue;
 }).call(this,require('_process'))
-},{"_process":4,"fbjs/lib/warning":170}],85:[function(require,module,exports){
+},{"_process":189,"fbjs/lib/warning":366}],279:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -13245,7 +23108,7 @@ var ReactOwner = {
 
 module.exports = ReactOwner;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160}],86:[function(require,module,exports){
+},{"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356}],280:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -13272,7 +23135,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactPropTypeLocationNames;
 }).call(this,require('_process'))
-},{"_process":4}],87:[function(require,module,exports){
+},{"_process":189}],281:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13295,7 +23158,7 @@ var ReactPropTypeLocations = keyMirror({
 });
 
 module.exports = ReactPropTypeLocations;
-},{"fbjs/lib/keyMirror":163}],88:[function(require,module,exports){
+},{"fbjs/lib/keyMirror":359}],282:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13699,7 +23562,7 @@ function getClassName(propValue) {
 }
 
 module.exports = ReactPropTypes;
-},{"./ReactElement":65,"./ReactPropTypeLocationNames":86,"./getIteratorFn":129,"fbjs/lib/emptyFunction":152}],89:[function(require,module,exports){
+},{"./ReactElement":258,"./ReactPropTypeLocationNames":280,"./getIteratorFn":325,"fbjs/lib/emptyFunction":348}],283:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13862,7 +23725,7 @@ _assign(ReactReconcileTransaction.prototype, Transaction.Mixin, Mixin);
 PooledClass.addPoolingTo(ReactReconcileTransaction);
 
 module.exports = ReactReconcileTransaction;
-},{"./CallbackQueue":10,"./PooledClass":30,"./ReactBrowserEventEmitter":32,"./ReactInputSelection":75,"./Transaction":112,"object-assign":3}],90:[function(require,module,exports){
+},{"./CallbackQueue":203,"./PooledClass":223,"./ReactBrowserEventEmitter":225,"./ReactInputSelection":269,"./Transaction":308,"object-assign":188}],284:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -14041,7 +23904,7 @@ var ReactReconciler = {
 
 module.exports = ReactReconciler;
 }).call(this,require('_process'))
-},{"./ReactInstrumentation":77,"./ReactRef":91,"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160}],91:[function(require,module,exports){
+},{"./ReactInstrumentation":271,"./ReactRef":285,"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356}],285:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14120,7 +23983,7 @@ ReactRef.detachRefs = function (instance, element) {
 };
 
 module.exports = ReactRef;
-},{"./ReactOwner":85}],92:[function(require,module,exports){
+},{"./ReactOwner":279}],286:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -14194,7 +24057,361 @@ _assign(ReactServerRenderingTransaction.prototype, Transaction.Mixin, Mixin);
 PooledClass.addPoolingTo(ReactServerRenderingTransaction);
 
 module.exports = ReactServerRenderingTransaction;
-},{"./PooledClass":30,"./Transaction":112,"object-assign":3}],93:[function(require,module,exports){
+},{"./PooledClass":223,"./Transaction":308,"object-assign":188}],287:[function(require,module,exports){
+(function (process){
+/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule ReactTransitionChildMapping
+ */
+
+'use strict';
+
+var flattenChildren = require('./flattenChildren');
+
+var ReactTransitionChildMapping = {
+  /**
+   * Given `this.props.children`, return an object mapping key to child. Just
+   * simple syntactic sugar around flattenChildren().
+   *
+   * @param {*} children `this.props.children`
+   * @param {number=} selfDebugID Optional debugID of the current internal instance.
+   * @return {object} Mapping of key to child
+   */
+  getChildMapping: function (children, selfDebugID) {
+    if (!children) {
+      return children;
+    }
+
+    if (process.env.NODE_ENV !== 'production') {
+      return flattenChildren(children, selfDebugID);
+    }
+
+    return flattenChildren(children);
+  },
+
+  /**
+   * When you're adding or removing children some may be added or removed in the
+   * same render pass. We want to show *both* since we want to simultaneously
+   * animate elements in and out. This function takes a previous set of keys
+   * and a new set of keys and merges them with its best guess of the correct
+   * ordering. In the future we may expose some of the utilities in
+   * ReactMultiChild to make this easy, but for now React itself does not
+   * directly have this concept of the union of prevChildren and nextChildren
+   * so we implement it here.
+   *
+   * @param {object} prev prev children as returned from
+   * `ReactTransitionChildMapping.getChildMapping()`.
+   * @param {object} next next children as returned from
+   * `ReactTransitionChildMapping.getChildMapping()`.
+   * @return {object} a key set that contains all keys in `prev` and all keys
+   * in `next` in a reasonable order.
+   */
+  mergeChildMappings: function (prev, next) {
+    prev = prev || {};
+    next = next || {};
+
+    function getValueForKey(key) {
+      if (next.hasOwnProperty(key)) {
+        return next[key];
+      } else {
+        return prev[key];
+      }
+    }
+
+    // For each key of `next`, the list of keys to insert before that key in
+    // the combined list
+    var nextKeysPending = {};
+
+    var pendingKeys = [];
+    for (var prevKey in prev) {
+      if (next.hasOwnProperty(prevKey)) {
+        if (pendingKeys.length) {
+          nextKeysPending[prevKey] = pendingKeys;
+          pendingKeys = [];
+        }
+      } else {
+        pendingKeys.push(prevKey);
+      }
+    }
+
+    var i;
+    var childMapping = {};
+    for (var nextKey in next) {
+      if (nextKeysPending.hasOwnProperty(nextKey)) {
+        for (i = 0; i < nextKeysPending[nextKey].length; i++) {
+          var pendingNextKey = nextKeysPending[nextKey][i];
+          childMapping[nextKeysPending[nextKey][i]] = getValueForKey(pendingNextKey);
+        }
+      }
+      childMapping[nextKey] = getValueForKey(nextKey);
+    }
+
+    // Finally, add the keys which didn't appear before any key in `next`
+    for (i = 0; i < pendingKeys.length; i++) {
+      childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);
+    }
+
+    return childMapping;
+  }
+};
+
+module.exports = ReactTransitionChildMapping;
+}).call(this,require('_process'))
+},{"./flattenChildren":318,"_process":189}],288:[function(require,module,exports){
+(function (process){
+/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule ReactTransitionGroup
+ */
+
+'use strict';
+
+var _assign = require('object-assign');
+
+var React = require('./React');
+var ReactInstanceMap = require('./ReactInstanceMap');
+var ReactTransitionChildMapping = require('./ReactTransitionChildMapping');
+
+var emptyFunction = require('fbjs/lib/emptyFunction');
+
+/**
+ * A basis for animations. When children are declaratively added or removed,
+ * special lifecycle hooks are called.
+ * See https://facebook.github.io/react/docs/animation.html#low-level-api-reacttransitiongroup
+ */
+var ReactTransitionGroup = React.createClass({
+  displayName: 'ReactTransitionGroup',
+
+  propTypes: {
+    component: React.PropTypes.any,
+    childFactory: React.PropTypes.func
+  },
+
+  getDefaultProps: function () {
+    return {
+      component: 'span',
+      childFactory: emptyFunction.thatReturnsArgument
+    };
+  },
+
+  getInitialState: function () {
+    return {
+      // TODO: can we get useful debug information to show at this point?
+      children: ReactTransitionChildMapping.getChildMapping(this.props.children)
+    };
+  },
+
+  componentWillMount: function () {
+    this.currentlyTransitioningKeys = {};
+    this.keysToEnter = [];
+    this.keysToLeave = [];
+  },
+
+  componentDidMount: function () {
+    var initialChildMapping = this.state.children;
+    for (var key in initialChildMapping) {
+      if (initialChildMapping[key]) {
+        this.performAppear(key);
+      }
+    }
+  },
+
+  componentWillReceiveProps: function (nextProps) {
+    var nextChildMapping;
+    if (process.env.NODE_ENV !== 'production') {
+      nextChildMapping = ReactTransitionChildMapping.getChildMapping(nextProps.children, ReactInstanceMap.get(this)._debugID);
+    } else {
+      nextChildMapping = ReactTransitionChildMapping.getChildMapping(nextProps.children);
+    }
+    var prevChildMapping = this.state.children;
+
+    this.setState({
+      children: ReactTransitionChildMapping.mergeChildMappings(prevChildMapping, nextChildMapping)
+    });
+
+    var key;
+
+    for (key in nextChildMapping) {
+      var hasPrev = prevChildMapping && prevChildMapping.hasOwnProperty(key);
+      if (nextChildMapping[key] && !hasPrev && !this.currentlyTransitioningKeys[key]) {
+        this.keysToEnter.push(key);
+      }
+    }
+
+    for (key in prevChildMapping) {
+      var hasNext = nextChildMapping && nextChildMapping.hasOwnProperty(key);
+      if (prevChildMapping[key] && !hasNext && !this.currentlyTransitioningKeys[key]) {
+        this.keysToLeave.push(key);
+      }
+    }
+
+    // If we want to someday check for reordering, we could do it here.
+  },
+
+  componentDidUpdate: function () {
+    var keysToEnter = this.keysToEnter;
+    this.keysToEnter = [];
+    keysToEnter.forEach(this.performEnter);
+
+    var keysToLeave = this.keysToLeave;
+    this.keysToLeave = [];
+    keysToLeave.forEach(this.performLeave);
+  },
+
+  performAppear: function (key) {
+    this.currentlyTransitioningKeys[key] = true;
+
+    var component = this.refs[key];
+
+    if (component.componentWillAppear) {
+      component.componentWillAppear(this._handleDoneAppearing.bind(this, key));
+    } else {
+      this._handleDoneAppearing(key);
+    }
+  },
+
+  _handleDoneAppearing: function (key) {
+    var component = this.refs[key];
+    if (component.componentDidAppear) {
+      component.componentDidAppear();
+    }
+
+    delete this.currentlyTransitioningKeys[key];
+
+    var currentChildMapping;
+    if (process.env.NODE_ENV !== 'production') {
+      currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children, ReactInstanceMap.get(this)._debugID);
+    } else {
+      currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children);
+    }
+
+    if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {
+      // This was removed before it had fully appeared. Remove it.
+      this.performLeave(key);
+    }
+  },
+
+  performEnter: function (key) {
+    this.currentlyTransitioningKeys[key] = true;
+
+    var component = this.refs[key];
+
+    if (component.componentWillEnter) {
+      component.componentWillEnter(this._handleDoneEntering.bind(this, key));
+    } else {
+      this._handleDoneEntering(key);
+    }
+  },
+
+  _handleDoneEntering: function (key) {
+    var component = this.refs[key];
+    if (component.componentDidEnter) {
+      component.componentDidEnter();
+    }
+
+    delete this.currentlyTransitioningKeys[key];
+
+    var currentChildMapping;
+    if (process.env.NODE_ENV !== 'production') {
+      currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children, ReactInstanceMap.get(this)._debugID);
+    } else {
+      currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children);
+    }
+
+    if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {
+      // This was removed before it had fully entered. Remove it.
+      this.performLeave(key);
+    }
+  },
+
+  performLeave: function (key) {
+    this.currentlyTransitioningKeys[key] = true;
+
+    var component = this.refs[key];
+    if (component.componentWillLeave) {
+      component.componentWillLeave(this._handleDoneLeaving.bind(this, key));
+    } else {
+      // Note that this is somewhat dangerous b/c it calls setState()
+      // again, effectively mutating the component before all the work
+      // is done.
+      this._handleDoneLeaving(key);
+    }
+  },
+
+  _handleDoneLeaving: function (key) {
+    var component = this.refs[key];
+
+    if (component.componentDidLeave) {
+      component.componentDidLeave();
+    }
+
+    delete this.currentlyTransitioningKeys[key];
+
+    var currentChildMapping;
+    if (process.env.NODE_ENV !== 'production') {
+      currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children, ReactInstanceMap.get(this)._debugID);
+    } else {
+      currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children);
+    }
+
+    if (currentChildMapping && currentChildMapping.hasOwnProperty(key)) {
+      // This entered again before it fully left. Add it again.
+      this.performEnter(key);
+    } else {
+      this.setState(function (state) {
+        var newChildren = _assign({}, state.children);
+        delete newChildren[key];
+        return { children: newChildren };
+      });
+    }
+  },
+
+  render: function () {
+    // TODO: we could get rid of the need for the wrapper node
+    // by cloning a single child
+    var childrenToRender = [];
+    for (var key in this.state.children) {
+      var child = this.state.children[key];
+      if (child) {
+        // You may need to apply reactive updates to a child as it is leaving.
+        // The normal React way to do it won't work since the child will have
+        // already been removed. In case you need this behavior you can provide
+        // a childFactory function to wrap every child, even the ones that are
+        // leaving.
+        childrenToRender.push(React.cloneElement(this.props.childFactory(child), { ref: key, key: key }));
+      }
+    }
+
+    // Do not forward ReactTransitionGroup props to primitive DOM nodes
+    var props = _assign({}, this.props);
+    delete props.transitionLeave;
+    delete props.transitionName;
+    delete props.transitionAppear;
+    delete props.transitionEnter;
+    delete props.childFactory;
+    delete props.transitionLeaveTimeout;
+    delete props.transitionEnterTimeout;
+    delete props.component;
+
+    return React.createElement(this.props.component, props, childrenToRender);
+  }
+});
+
+module.exports = ReactTransitionGroup;
+}).call(this,require('_process'))
+},{"./React":224,"./ReactInstanceMap":270,"./ReactTransitionChildMapping":287,"_process":189,"fbjs/lib/emptyFunction":348,"object-assign":188}],289:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -14420,7 +24637,7 @@ var ReactUpdateQueue = {
 
 module.exports = ReactUpdateQueue;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":41,"./ReactInstanceMap":76,"./ReactInstrumentation":77,"./ReactUpdates":94,"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160,"fbjs/lib/warning":170}],94:[function(require,module,exports){
+},{"./ReactCurrentOwner":234,"./ReactInstanceMap":270,"./ReactInstrumentation":271,"./ReactUpdates":290,"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356,"fbjs/lib/warning":366}],290:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -14683,7 +24900,7 @@ var ReactUpdates = {
 
 module.exports = ReactUpdates;
 }).call(this,require('_process'))
-},{"./CallbackQueue":10,"./PooledClass":30,"./ReactFeatureFlags":71,"./ReactInstrumentation":77,"./ReactReconciler":90,"./Transaction":112,"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160,"object-assign":3}],95:[function(require,module,exports){
+},{"./CallbackQueue":203,"./PooledClass":223,"./ReactFeatureFlags":264,"./ReactInstrumentation":271,"./ReactReconciler":284,"./Transaction":308,"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356,"object-assign":188}],291:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14698,7 +24915,7 @@ module.exports = ReactUpdates;
 'use strict';
 
 module.exports = '15.2.0';
-},{}],96:[function(require,module,exports){
+},{}],292:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14999,7 +25216,7 @@ Object.keys(ATTRS).forEach(function (key) {
 });
 
 module.exports = SVGDOMPropertyConfig;
-},{}],97:[function(require,module,exports){
+},{}],293:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15196,7 +25413,7 @@ var SelectEventPlugin = {
 };
 
 module.exports = SelectEventPlugin;
-},{"./EventConstants":21,"./EventPropagators":25,"./ReactDOMComponentTree":46,"./ReactInputSelection":75,"./SyntheticEvent":103,"./isTextInputElement":135,"fbjs/lib/ExecutionEnvironment":146,"fbjs/lib/getActiveElement":155,"fbjs/lib/keyOf":164,"fbjs/lib/shallowEqual":169}],98:[function(require,module,exports){
+},{"./EventConstants":214,"./EventPropagators":218,"./ReactDOMComponentTree":239,"./ReactInputSelection":269,"./SyntheticEvent":299,"./isTextInputElement":331,"fbjs/lib/ExecutionEnvironment":342,"fbjs/lib/getActiveElement":351,"fbjs/lib/keyOf":360,"fbjs/lib/shallowEqual":365}],294:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -15828,7 +26045,7 @@ var SimpleEventPlugin = {
 
 module.exports = SimpleEventPlugin;
 }).call(this,require('_process'))
-},{"./EventConstants":21,"./EventPropagators":25,"./ReactDOMComponentTree":46,"./SyntheticAnimationEvent":99,"./SyntheticClipboardEvent":100,"./SyntheticDragEvent":102,"./SyntheticEvent":103,"./SyntheticFocusEvent":104,"./SyntheticKeyboardEvent":106,"./SyntheticMouseEvent":107,"./SyntheticTouchEvent":108,"./SyntheticTransitionEvent":109,"./SyntheticUIEvent":110,"./SyntheticWheelEvent":111,"./getEventCharCode":124,"./reactProdInvariant":138,"_process":4,"fbjs/lib/EventListener":145,"fbjs/lib/emptyFunction":152,"fbjs/lib/invariant":160,"fbjs/lib/keyOf":164}],99:[function(require,module,exports){
+},{"./EventConstants":214,"./EventPropagators":218,"./ReactDOMComponentTree":239,"./SyntheticAnimationEvent":295,"./SyntheticClipboardEvent":296,"./SyntheticDragEvent":298,"./SyntheticEvent":299,"./SyntheticFocusEvent":300,"./SyntheticKeyboardEvent":302,"./SyntheticMouseEvent":303,"./SyntheticTouchEvent":304,"./SyntheticTransitionEvent":305,"./SyntheticUIEvent":306,"./SyntheticWheelEvent":307,"./getEventCharCode":320,"./reactProdInvariant":334,"_process":189,"fbjs/lib/EventListener":341,"fbjs/lib/emptyFunction":348,"fbjs/lib/invariant":356,"fbjs/lib/keyOf":360}],295:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15868,7 +26085,7 @@ function SyntheticAnimationEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticAnimationEvent, AnimationEventInterface);
 
 module.exports = SyntheticAnimationEvent;
-},{"./SyntheticEvent":103}],100:[function(require,module,exports){
+},{"./SyntheticEvent":299}],296:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15907,7 +26124,7 @@ function SyntheticClipboardEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 
 module.exports = SyntheticClipboardEvent;
-},{"./SyntheticEvent":103}],101:[function(require,module,exports){
+},{"./SyntheticEvent":299}],297:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15944,7 +26161,7 @@ function SyntheticCompositionEvent(dispatchConfig, dispatchMarker, nativeEvent, 
 SyntheticEvent.augmentClass(SyntheticCompositionEvent, CompositionEventInterface);
 
 module.exports = SyntheticCompositionEvent;
-},{"./SyntheticEvent":103}],102:[function(require,module,exports){
+},{"./SyntheticEvent":299}],298:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15981,7 +26198,7 @@ function SyntheticDragEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeE
 SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 
 module.exports = SyntheticDragEvent;
-},{"./SyntheticMouseEvent":107}],103:[function(require,module,exports){
+},{"./SyntheticMouseEvent":303}],299:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -16244,7 +26461,7 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
   }
 }
 }).call(this,require('_process'))
-},{"./PooledClass":30,"_process":4,"fbjs/lib/emptyFunction":152,"fbjs/lib/warning":170,"object-assign":3}],104:[function(require,module,exports){
+},{"./PooledClass":223,"_process":189,"fbjs/lib/emptyFunction":348,"fbjs/lib/warning":366,"object-assign":188}],300:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16281,7 +26498,7 @@ function SyntheticFocusEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 
 module.exports = SyntheticFocusEvent;
-},{"./SyntheticUIEvent":110}],105:[function(require,module,exports){
+},{"./SyntheticUIEvent":306}],301:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16319,7 +26536,7 @@ function SyntheticInputEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticEvent.augmentClass(SyntheticInputEvent, InputEventInterface);
 
 module.exports = SyntheticInputEvent;
-},{"./SyntheticEvent":103}],106:[function(require,module,exports){
+},{"./SyntheticEvent":299}],302:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16404,7 +26621,7 @@ function SyntheticKeyboardEvent(dispatchConfig, dispatchMarker, nativeEvent, nat
 SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 
 module.exports = SyntheticKeyboardEvent;
-},{"./SyntheticUIEvent":110,"./getEventCharCode":124,"./getEventKey":125,"./getEventModifierState":126}],107:[function(require,module,exports){
+},{"./SyntheticUIEvent":306,"./getEventCharCode":320,"./getEventKey":321,"./getEventModifierState":322}],303:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16477,7 +26694,7 @@ function SyntheticMouseEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 
 module.exports = SyntheticMouseEvent;
-},{"./SyntheticUIEvent":110,"./ViewportMetrics":113,"./getEventModifierState":126}],108:[function(require,module,exports){
+},{"./SyntheticUIEvent":306,"./ViewportMetrics":309,"./getEventModifierState":322}],304:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16523,7 +26740,7 @@ function SyntheticTouchEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 
 module.exports = SyntheticTouchEvent;
-},{"./SyntheticUIEvent":110,"./getEventModifierState":126}],109:[function(require,module,exports){
+},{"./SyntheticUIEvent":306,"./getEventModifierState":322}],305:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16563,7 +26780,7 @@ function SyntheticTransitionEvent(dispatchConfig, dispatchMarker, nativeEvent, n
 SyntheticEvent.augmentClass(SyntheticTransitionEvent, TransitionEventInterface);
 
 module.exports = SyntheticTransitionEvent;
-},{"./SyntheticEvent":103}],110:[function(require,module,exports){
+},{"./SyntheticEvent":299}],306:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16623,7 +26840,7 @@ function SyntheticUIEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEve
 SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 
 module.exports = SyntheticUIEvent;
-},{"./SyntheticEvent":103,"./getEventTarget":127}],111:[function(require,module,exports){
+},{"./SyntheticEvent":299,"./getEventTarget":323}],307:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16678,7 +26895,7 @@ function SyntheticWheelEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 
 module.exports = SyntheticWheelEvent;
-},{"./SyntheticMouseEvent":107}],112:[function(require,module,exports){
+},{"./SyntheticMouseEvent":303}],308:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -16914,7 +27131,7 @@ var Transaction = {
 
 module.exports = Transaction;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160}],113:[function(require,module,exports){
+},{"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356}],309:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16942,7 +27159,7 @@ var ViewportMetrics = {
 };
 
 module.exports = ViewportMetrics;
-},{}],114:[function(require,module,exports){
+},{}],310:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -17006,7 +27223,7 @@ function accumulateInto(current, next) {
 
 module.exports = accumulateInto;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160}],115:[function(require,module,exports){
+},{"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356}],311:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17050,7 +27267,7 @@ function adler32(data) {
 }
 
 module.exports = adler32;
-},{}],116:[function(require,module,exports){
+},{}],312:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17077,7 +27294,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = canDefineProperty;
 }).call(this,require('_process'))
-},{"_process":4}],117:[function(require,module,exports){
+},{"_process":189}],313:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17151,7 +27368,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeDevtool":39,"./ReactPropTypeLocationNames":86,"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160,"fbjs/lib/warning":170}],118:[function(require,module,exports){
+},{"./ReactComponentTreeDevtool":232,"./ReactPropTypeLocationNames":280,"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356,"fbjs/lib/warning":366}],314:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17184,7 +27401,7 @@ var createMicrosoftUnsafeLocalFunction = function (func) {
 };
 
 module.exports = createMicrosoftUnsafeLocalFunction;
-},{}],119:[function(require,module,exports){
+},{}],315:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17266,7 +27483,7 @@ function dangerousStyleValue(name, value, component) {
 
 module.exports = dangerousStyleValue;
 }).call(this,require('_process'))
-},{"./CSSProperty":8,"_process":4,"fbjs/lib/warning":170}],120:[function(require,module,exports){
+},{"./CSSProperty":201,"_process":189,"fbjs/lib/warning":366}],316:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -17389,7 +27606,7 @@ function escapeTextContentForBrowser(text) {
 }
 
 module.exports = escapeTextContentForBrowser;
-},{}],121:[function(require,module,exports){
+},{}],317:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17452,7 +27669,7 @@ function findDOMNode(componentOrElement) {
 
 module.exports = findDOMNode;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":41,"./ReactDOMComponentTree":46,"./ReactInstanceMap":76,"./getHostComponentFromComposite":128,"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160,"fbjs/lib/warning":170}],122:[function(require,module,exports){
+},{"./ReactCurrentOwner":234,"./ReactDOMComponentTree":239,"./ReactInstanceMap":270,"./getHostComponentFromComposite":324,"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356,"fbjs/lib/warning":366}],318:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17513,7 +27730,7 @@ function flattenChildren(children, selfDebugID) {
 
 module.exports = flattenChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":28,"./ReactComponentTreeDevtool":39,"./traverseAllChildren":143,"_process":4,"fbjs/lib/warning":170}],123:[function(require,module,exports){
+},{"./KeyEscapeUtils":221,"./ReactComponentTreeDevtool":232,"./traverseAllChildren":339,"_process":189,"fbjs/lib/warning":366}],319:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17544,7 +27761,7 @@ var forEachAccumulated = function (arr, cb, scope) {
 };
 
 module.exports = forEachAccumulated;
-},{}],124:[function(require,module,exports){
+},{}],320:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17595,7 +27812,7 @@ function getEventCharCode(nativeEvent) {
 }
 
 module.exports = getEventCharCode;
-},{}],125:[function(require,module,exports){
+},{}],321:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17698,7 +27915,7 @@ function getEventKey(nativeEvent) {
 }
 
 module.exports = getEventKey;
-},{"./getEventCharCode":124}],126:[function(require,module,exports){
+},{"./getEventCharCode":320}],322:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17742,7 +27959,7 @@ function getEventModifierState(nativeEvent) {
 }
 
 module.exports = getEventModifierState;
-},{}],127:[function(require,module,exports){
+},{}],323:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17778,7 +27995,7 @@ function getEventTarget(nativeEvent) {
 }
 
 module.exports = getEventTarget;
-},{}],128:[function(require,module,exports){
+},{}],324:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17809,7 +28026,7 @@ function getHostComponentFromComposite(inst) {
 }
 
 module.exports = getHostComponentFromComposite;
-},{"./ReactNodeTypes":83}],129:[function(require,module,exports){
+},{"./ReactNodeTypes":277}],325:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17850,7 +28067,7 @@ function getIteratorFn(maybeIterable) {
 }
 
 module.exports = getIteratorFn;
-},{}],130:[function(require,module,exports){
+},{}],326:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17925,7 +28142,7 @@ function getNodeForCharacterOffset(root, offset) {
 }
 
 module.exports = getNodeForCharacterOffset;
-},{}],131:[function(require,module,exports){
+},{}],327:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17959,7 +28176,7 @@ function getTextContentAccessor() {
 }
 
 module.exports = getTextContentAccessor;
-},{"fbjs/lib/ExecutionEnvironment":146}],132:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":342}],328:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18061,7 +28278,7 @@ function getVendorPrefixedEventName(eventName) {
 }
 
 module.exports = getVendorPrefixedEventName;
-},{"fbjs/lib/ExecutionEnvironment":146}],133:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":342}],329:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -18209,7 +28426,7 @@ function instantiateReactComponent(node) {
 
 module.exports = instantiateReactComponent;
 }).call(this,require('_process'))
-},{"./ReactCompositeComponent":40,"./ReactEmptyComponent":67,"./ReactHostComponent":72,"./ReactInstrumentation":77,"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160,"fbjs/lib/warning":170,"object-assign":3}],134:[function(require,module,exports){
+},{"./ReactCompositeComponent":233,"./ReactEmptyComponent":260,"./ReactHostComponent":266,"./ReactInstrumentation":271,"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356,"fbjs/lib/warning":366,"object-assign":188}],330:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18270,7 +28487,7 @@ function isEventSupported(eventNameSuffix, capture) {
 }
 
 module.exports = isEventSupported;
-},{"fbjs/lib/ExecutionEnvironment":146}],135:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":342}],331:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18312,7 +28529,7 @@ function isTextInputElement(elem) {
 }
 
 module.exports = isTextInputElement;
-},{}],136:[function(require,module,exports){
+},{}],332:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -18353,7 +28570,7 @@ function onlyChild(children) {
 
 module.exports = onlyChild;
 }).call(this,require('_process'))
-},{"./ReactElement":65,"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160}],137:[function(require,module,exports){
+},{"./ReactElement":258,"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356}],333:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18380,7 +28597,7 @@ function quoteAttributeValueForBrowser(value) {
 }
 
 module.exports = quoteAttributeValueForBrowser;
-},{"./escapeTextContentForBrowser":120}],138:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":316}],334:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18419,7 +28636,7 @@ function reactProdInvariant(code) {
 }
 
 module.exports = reactProdInvariant;
-},{}],139:[function(require,module,exports){
+},{}],335:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18436,7 +28653,7 @@ module.exports = reactProdInvariant;
 var ReactMount = require('./ReactMount');
 
 module.exports = ReactMount.renderSubtreeIntoContainer;
-},{"./ReactMount":80}],140:[function(require,module,exports){
+},{"./ReactMount":274}],336:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18535,7 +28752,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setInnerHTML;
-},{"./DOMNamespaces":14,"./createMicrosoftUnsafeLocalFunction":118,"fbjs/lib/ExecutionEnvironment":146}],141:[function(require,module,exports){
+},{"./DOMNamespaces":207,"./createMicrosoftUnsafeLocalFunction":314,"fbjs/lib/ExecutionEnvironment":342}],337:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18584,7 +28801,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setTextContent;
-},{"./escapeTextContentForBrowser":120,"./setInnerHTML":140,"fbjs/lib/ExecutionEnvironment":146}],142:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":316,"./setInnerHTML":336,"fbjs/lib/ExecutionEnvironment":342}],338:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18627,7 +28844,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 }
 
 module.exports = shouldUpdateReactComponent;
-},{}],143:[function(require,module,exports){
+},{}],339:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -18790,7 +29007,7 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":28,"./ReactCurrentOwner":41,"./ReactElement":65,"./getIteratorFn":129,"./reactProdInvariant":138,"_process":4,"fbjs/lib/invariant":160,"fbjs/lib/warning":170}],144:[function(require,module,exports){
+},{"./KeyEscapeUtils":221,"./ReactCurrentOwner":234,"./ReactElement":258,"./getIteratorFn":325,"./reactProdInvariant":334,"_process":189,"fbjs/lib/invariant":356,"fbjs/lib/warning":366}],340:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -19162,7 +29379,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = validateDOMNesting;
 }).call(this,require('_process'))
-},{"_process":4,"fbjs/lib/emptyFunction":152,"fbjs/lib/warning":170,"object-assign":3}],145:[function(require,module,exports){
+},{"_process":189,"fbjs/lib/emptyFunction":348,"fbjs/lib/warning":366,"object-assign":188}],341:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -19248,7 +29465,7 @@ var EventListener = {
 
 module.exports = EventListener;
 }).call(this,require('_process'))
-},{"./emptyFunction":152,"_process":4}],146:[function(require,module,exports){
+},{"./emptyFunction":348,"_process":189}],342:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19284,7 +29501,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],147:[function(require,module,exports){
+},{}],343:[function(require,module,exports){
 "use strict";
 
 /**
@@ -19316,7 +29533,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],148:[function(require,module,exports){
+},{}],344:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19356,7 +29573,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":147}],149:[function(require,module,exports){
+},{"./camelize":343}],345:[function(require,module,exports){
 'use strict';
 
 /**
@@ -19396,7 +29613,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":162}],150:[function(require,module,exports){
+},{"./isTextNode":358}],346:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -19525,7 +29742,7 @@ function createArrayFromMixed(obj) {
 
 module.exports = createArrayFromMixed;
 }).call(this,require('_process'))
-},{"./invariant":160,"_process":4}],151:[function(require,module,exports){
+},{"./invariant":356,"_process":189}],347:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -19611,7 +29828,7 @@ function createNodesFromMarkup(markup, handleScript) {
 
 module.exports = createNodesFromMarkup;
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":146,"./createArrayFromMixed":150,"./getMarkupWrap":156,"./invariant":160,"_process":4}],152:[function(require,module,exports){
+},{"./ExecutionEnvironment":342,"./createArrayFromMixed":346,"./getMarkupWrap":352,"./invariant":356,"_process":189}],348:[function(require,module,exports){
 "use strict";
 
 /**
@@ -19650,7 +29867,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],153:[function(require,module,exports){
+},{}],349:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -19672,7 +29889,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = emptyObject;
 }).call(this,require('_process'))
-},{"_process":4}],154:[function(require,module,exports){
+},{"_process":189}],350:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19699,7 +29916,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-},{}],155:[function(require,module,exports){
+},{}],351:[function(require,module,exports){
 'use strict';
 
 /**
@@ -19734,7 +29951,7 @@ function getActiveElement() /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],156:[function(require,module,exports){
+},{}],352:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -19831,7 +30048,7 @@ function getMarkupWrap(nodeName) {
 
 module.exports = getMarkupWrap;
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":146,"./invariant":160,"_process":4}],157:[function(require,module,exports){
+},{"./ExecutionEnvironment":342,"./invariant":356,"_process":189}],353:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19870,7 +30087,7 @@ function getUnboundedScrollPosition(scrollable) {
 }
 
 module.exports = getUnboundedScrollPosition;
-},{}],158:[function(require,module,exports){
+},{}],354:[function(require,module,exports){
 'use strict';
 
 /**
@@ -19903,7 +30120,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],159:[function(require,module,exports){
+},{}],355:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19942,7 +30159,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":158}],160:[function(require,module,exports){
+},{"./hyphenate":354}],356:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -19994,7 +30211,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-},{"_process":4}],161:[function(require,module,exports){
+},{"_process":189}],357:[function(require,module,exports){
 'use strict';
 
 /**
@@ -20017,7 +30234,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],162:[function(require,module,exports){
+},{}],358:[function(require,module,exports){
 'use strict';
 
 /**
@@ -20042,7 +30259,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":161}],163:[function(require,module,exports){
+},{"./isNode":357}],359:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -20092,7 +30309,7 @@ var keyMirror = function keyMirror(obj) {
 
 module.exports = keyMirror;
 }).call(this,require('_process'))
-},{"./invariant":160,"_process":4}],164:[function(require,module,exports){
+},{"./invariant":356,"_process":189}],360:[function(require,module,exports){
 "use strict";
 
 /**
@@ -20127,7 +30344,7 @@ var keyOf = function keyOf(oneKeyObj) {
 };
 
 module.exports = keyOf;
-},{}],165:[function(require,module,exports){
+},{}],361:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20178,7 +30395,7 @@ function mapObject(object, callback, context) {
 }
 
 module.exports = mapObject;
-},{}],166:[function(require,module,exports){
+},{}],362:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20208,7 +30425,7 @@ function memoizeStringOnly(callback) {
 }
 
 module.exports = memoizeStringOnly;
-},{}],167:[function(require,module,exports){
+},{}],363:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20231,7 +30448,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = performance || {};
-},{"./ExecutionEnvironment":146}],168:[function(require,module,exports){
+},{"./ExecutionEnvironment":342}],364:[function(require,module,exports){
 'use strict';
 
 /**
@@ -20265,7 +30482,7 @@ if (performance.now) {
 }
 
 module.exports = performanceNow;
-},{"./performance":167}],169:[function(require,module,exports){
+},{"./performance":363}],365:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20332,7 +30549,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],170:[function(require,module,exports){
+},{}],366:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -20391,9 +30608,366 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = warning;
 }).call(this,require('_process'))
-},{"./emptyFunction":152,"_process":4}],171:[function(require,module,exports){
+},{"./emptyFunction":348,"_process":189}],367:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/React');
 
-},{"./lib/React":31}]},{},[1]);
+},{"./lib/React":224}],368:[function(require,module,exports){
+"use strict";
+
+exports.__esModule = true;
+exports.default = compose;
+function compose() {
+  for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {
+    funcs[_key] = arguments[_key];
+  }
+
+  if (funcs.length === 0) {
+    return function (arg) {
+      return arg;
+    };
+  }
+
+  if (funcs.length === 1) {
+    return funcs[0];
+  }
+
+  var last = funcs[funcs.length - 1];
+  return function () {
+    var result = last.apply(undefined, arguments);
+    for (var i = funcs.length - 2; i >= 0; i--) {
+      var f = funcs[i];
+      result = f(result);
+    }
+    return result;
+  };
+}
+},{}],369:[function(require,module,exports){
+'use strict';
+
+exports.__esModule = true;
+exports.internalCreateElement = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _isReferentiallyTransparentFunctionComponent = require('./isReferentiallyTransparentFunctionComponent');
+
+var _isReferentiallyTransparentFunctionComponent2 = _interopRequireDefault(_isReferentiallyTransparentFunctionComponent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _createElement = function _createElement(hasKey, isReferentiallyTransparent, Component, props, children) {
+  if (!hasKey && isReferentiallyTransparent) {
+    var component = Component;
+    if (children) {
+      return component(_extends({}, props, { children: children }));
+    }
+    return component(props);
+  }
+
+  if (children) {
+    return _react2.default.createElement(
+      Component,
+      props,
+      children
+    );
+  }
+
+  return _react2.default.createElement(Component, props);
+};
+
+var internalCreateElement = exports.internalCreateElement = function internalCreateElement(Component) {
+  var isReferentiallyTransparent = (0, _isReferentiallyTransparentFunctionComponent2.default)(Component);
+  return function (p, c) {
+    return _createElement(false, isReferentiallyTransparent, Component, p, c);
+  };
+};
+
+var createElement = function createElement(Component, props, children) {
+  var isReferentiallyTransparent = (0, _isReferentiallyTransparentFunctionComponent2.default)(Component);
+  /* eslint-disable */
+  var hasKey = props && props.hasOwnProperty('key');
+  /* eslint-enable */
+  return _createElement(hasKey, isReferentiallyTransparent, Component, props, children);
+};
+
+exports.default = createElement;
+},{"./isReferentiallyTransparentFunctionComponent":373,"react":367}],370:[function(require,module,exports){
+(function (process){
+'use strict';
+
+exports.__esModule = true;
+var createHelper = function createHelper(func, helperName) {
+  var setDisplayName = arguments.length <= 2 || arguments[2] === undefined ? true : arguments[2];
+  var noArgs = arguments.length <= 3 || arguments[3] === undefined ? false : arguments[3];
+
+  if (process.env.NODE_ENV !== 'production' && setDisplayName) {
+    var _ret = function () {
+      var wrapDisplayName = require('./wrapDisplayName').default;
+
+      if (noArgs) {
+        return {
+          v: function v(BaseComponent) {
+            var Component = func(BaseComponent);
+            Component.displayName = wrapDisplayName(BaseComponent, helperName);
+            return Component;
+          }
+        };
+      }
+
+      return {
+        v: function v() {
+          for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          if (args.length > func.length) {
+            /* eslint-disable */
+            console.error(
+            /* eslint-enable */
+            'Too many arguments passed to ' + helperName + '(). It should called ' + ('like so: ' + helperName + '(...args)(BaseComponent).'));
+          }
+
+          return function (BaseComponent) {
+            var Component = func.apply(undefined, args)(BaseComponent);
+            Component.displayName = wrapDisplayName(BaseComponent, helperName);
+            return Component;
+          };
+        }
+      };
+    }();
+
+    if (typeof _ret === "object") return _ret.v;
+  }
+
+  return func;
+};
+
+exports.default = createHelper;
+}).call(this,require('_process'))
+},{"./wrapDisplayName":378,"_process":189}],371:[function(require,module,exports){
+'use strict';
+
+exports.__esModule = true;
+var getDisplayName = function getDisplayName(Component) {
+  if (typeof Component === 'string') {
+    return Component;
+  }
+
+  if (!Component) {
+    return undefined;
+  }
+
+  return Component.displayName || Component.name || 'Component';
+};
+
+exports.default = getDisplayName;
+},{}],372:[function(require,module,exports){
+'use strict';
+
+exports.__esModule = true;
+var isClassComponent = function isClassComponent(Component) {
+  return Boolean(Component && Component.prototype && typeof Component.prototype.isReactComponent === 'object');
+};
+
+exports.default = isClassComponent;
+},{}],373:[function(require,module,exports){
+'use strict';
+
+exports.__esModule = true;
+
+var _isClassComponent = require('./isClassComponent.js');
+
+var _isClassComponent2 = _interopRequireDefault(_isClassComponent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var isReferentiallyTransparentFunctionComponent = function isReferentiallyTransparentFunctionComponent(Component) {
+  return Boolean(typeof Component === 'function' && !(0, _isClassComponent2.default)(Component) && !Component.defaultProps && !Component.contextTypes && !Component.propTypes);
+};
+
+exports.default = isReferentiallyTransparentFunctionComponent;
+},{"./isClassComponent.js":372}],374:[function(require,module,exports){
+arguments[4][365][0].apply(exports,arguments)
+},{"dup":365}],375:[function(require,module,exports){
+'use strict';
+
+exports.__esModule = true;
+
+var _shouldUpdate = require('./shouldUpdate');
+
+var _shouldUpdate2 = _interopRequireDefault(_shouldUpdate);
+
+var _shallowEqual = require('./shallowEqual');
+
+var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
+
+var _createHelper = require('./createHelper');
+
+var _createHelper2 = _interopRequireDefault(_createHelper);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var pure = (0, _shouldUpdate2.default)(function (props, nextProps) {
+  return !(0, _shallowEqual2.default)(props, nextProps);
+});
+
+exports.default = (0, _createHelper2.default)(pure, 'pure', true, true);
+},{"./createHelper":370,"./shallowEqual":376,"./shouldUpdate":377}],376:[function(require,module,exports){
+'use strict';
+
+exports.__esModule = true;
+
+var _shallowEqual = require('fbjs/lib/shallowEqual');
+
+var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _shallowEqual2.default;
+},{"fbjs/lib/shallowEqual":374}],377:[function(require,module,exports){
+'use strict';
+
+exports.__esModule = true;
+
+var _react = require('react');
+
+var _createHelper = require('./createHelper');
+
+var _createHelper2 = _interopRequireDefault(_createHelper);
+
+var _createElement = require('./createElement');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var shouldUpdate = function shouldUpdate(test) {
+  return function (BaseComponent) {
+    var createElement = (0, _createElement.internalCreateElement)(BaseComponent);
+    return function (_Component) {
+      _inherits(_class, _Component);
+
+      function _class() {
+        _classCallCheck(this, _class);
+
+        return _possibleConstructorReturn(this, _Component.apply(this, arguments));
+      }
+
+      _class.prototype.shouldComponentUpdate = function shouldComponentUpdate(nextProps) {
+        return test(this.props, nextProps);
+      };
+
+      _class.prototype.render = function render() {
+        return createElement(this.props);
+      };
+
+      return _class;
+    }(_react.Component);
+  };
+};
+
+exports.default = (0, _createHelper2.default)(shouldUpdate, 'shouldUpdate');
+},{"./createElement":369,"./createHelper":370,"react":367}],378:[function(require,module,exports){
+'use strict';
+
+exports.__esModule = true;
+
+var _getDisplayName = require('./getDisplayName');
+
+var _getDisplayName2 = _interopRequireDefault(_getDisplayName);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var wrapDisplayName = function wrapDisplayName(BaseComponent, hocName) {
+  return hocName + '(' + (0, _getDisplayName2.default)(BaseComponent) + ')';
+};
+
+exports.default = wrapDisplayName;
+},{"./getDisplayName":371}],379:[function(require,module,exports){
+module.exports = function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+  return target;
+};
+
+},{}],380:[function(require,module,exports){
+(function (process){
+/**
+ * Copyright 2014-2015, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+'use strict';
+
+/**
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */
+
+var warning = function() {};
+
+if (process.env.NODE_ENV !== 'production') {
+  warning = function(condition, format, args) {
+    var len = arguments.length;
+    args = new Array(len > 2 ? len - 2 : 0);
+    for (var key = 2; key < len; key++) {
+      args[key - 2] = arguments[key];
+    }
+    if (format === undefined) {
+      throw new Error(
+        '`warning(condition, format, ...args)` requires a warning ' +
+        'message argument'
+      );
+    }
+
+    if (format.length < 10 || (/^[s\W]*$/).test(format)) {
+      throw new Error(
+        'The warning format should be able to uniquely identify this ' +
+        'warning. Please, use a more descriptive format than: ' + format
+      );
+    }
+
+    if (!condition) {
+      var argIndex = 0;
+      var message = 'Warning: ' +
+        format.replace(/%s/g, function() {
+          return args[argIndex++];
+        });
+      if (typeof console !== 'undefined') {
+        console.error(message);
+      }
+      try {
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+      } catch(x) {}
+    }
+  };
+}
+
+module.exports = warning;
+
+}).call(this,require('_process'))
+},{"_process":189}]},{},[1]);
