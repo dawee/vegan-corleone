@@ -28,10 +28,26 @@ var injectTapEventPlugin = require('react-tap-event-plugin');
  */
 
 var actions = {};
+var unselectId = null;
+var lastSelection = null;
+
+actions.requestUnselectRestaurant = function () {
+  if (!!lastSelection !== null && Date.now() - lastSelection < 50) return;
+
+  unselectId = setTimeout(function () {
+    actions.selectRestaurant();
+  }, 50);
+};
 
 actions.selectRestaurant = Dispersive.createAction(function (restaurant) {
+  lastSelection = Date.now();
+  clearTimeout(unselectId);
+  unselectId = null;
+
   return restaurant;
 });
+
+actions.unselectRestaurant = Dispersive.createAction();
 
 actions.feedRestaurantsStore = Dispersive.createAction();
 
@@ -66,7 +82,12 @@ RestaurantStore.bindAction(actions.fetchCurrentPosition, function (location) {
 });
 
 RestaurantStore.bindAction(actions.selectRestaurant, function (restaurant) {
-  RestaurantStore.selected = restaurant.name;
+  RestaurantStore.selected = restaurant;
+  RestaurantStore.trigger('change');
+});
+
+RestaurantStore.bindAction(actions.unselectRestaurant, function () {
+  RestaurantStore.selected = null;
   RestaurantStore.trigger('change');
 });
 
@@ -159,7 +180,7 @@ var RestaurantMap = function (_Corleone$Component) {
 
       return React.createElement(
         'section',
-        { style: { position: 'absolute', width: '100%', height: "100%" } },
+        { style: { position: 'absolute', width: '100%', height: "100%" }, onClick: actions.requestUnselectRestaurant },
         React.createElement(GoogleMapLoader, {
           containerElement: React.createElement('div', { style: { height: "100%" } }),
           googleMapElement: React.createElement(
@@ -185,8 +206,76 @@ var RestaurantMap = function (_Corleone$Component) {
   return RestaurantMap;
 }(Corleone.Component);
 
-var App = function (_Corleone$Component2) {
-  _inherits(App, _Corleone$Component2);
+var SelectionSlider = function (_Corleone$Component2) {
+  _inherits(SelectionSlider, _Corleone$Component2);
+
+  function SelectionSlider() {
+    _classCallCheck(this, SelectionSlider);
+
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(SelectionSlider).apply(this, arguments));
+  }
+
+  _createClass(SelectionSlider, [{
+    key: 'onRestaurantChange',
+    value: function onRestaurantChange() {
+      this.setState(this.getState());
+    }
+  }, {
+    key: 'initState',
+    value: function initState() {
+      this.state = this.getState();
+    }
+  }, {
+    key: 'getState',
+    value: function getState() {
+      var lastSelection = !!this.state && this.state.selected;
+      var newSelection = RestaurantStore.getSelected();
+
+      return {
+        hasSelection: !!newSelection && !!newSelection.name,
+        selected: {
+          name: !!newSelection && newSelection.name || !!lastSelection && lastSelection.name,
+          address: !!newSelection && newSelection.address || !!lastSelection && lastSelection.address,
+          icon: !!newSelection && newSelection.icon || !!lastSelection && lastSelection.icon
+        }
+      };
+    }
+  }, {
+    key: 'bindListeners',
+    value: function bindListeners() {
+      this.onRestaurantChange = this.onRestaurantChange.bind(this);
+    }
+  }, {
+    key: 'listenStores',
+    value: function listenStores() {
+      RestaurantStore.on('change', this.onRestaurantChange);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        { className: 'selection-slider', style: { transform: this.state.hasSelection ? 'translate(0,0)' : 'translate(110%,0)' } },
+        React.createElement(
+          'h2',
+          null,
+          this.state.selected.name
+        ),
+        React.createElement('div', { className: 'icon', style: { backgroundImage: 'url(' + this.state.selected.icon + ')' } }),
+        React.createElement(
+          'div',
+          { className: 'address' },
+          this.state.selected.address
+        )
+      );
+    }
+  }]);
+
+  return SelectionSlider;
+}(Corleone.Component);
+
+var App = function (_Corleone$Component3) {
+  _inherits(App, _Corleone$Component3);
 
   function App() {
     _classCallCheck(this, App);
@@ -208,9 +297,7 @@ var App = function (_Corleone$Component2) {
     key: 'getState',
     value: function getState() {
       return {
-        location: RestaurantStore.location,
-        selected: RestaurantStore.getSelected(),
-        showSelection: !!RestaurantStore.getSelected()
+        location: RestaurantStore.location
       };
     }
   }, {
@@ -238,14 +325,7 @@ var App = function (_Corleone$Component2) {
         { className: 'corleone' },
         React.createElement(RestaurantMap, null),
         ';',
-        React.createElement(
-          MuiThemeProvider,
-          { muiTheme: getMuiTheme(darkBaseTheme) },
-          React.createElement(Snackbar, {
-            open: true,
-            message: this.state.selected,
-            autoHideDuration: 3000 })
-        )
+        React.createElement(SelectionSlider, null)
       );
     }
   }]);

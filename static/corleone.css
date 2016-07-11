@@ -7,6 +7,57 @@
 }
 
 
+.selection-slider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80%;
+  background-color: white;
+  -moz-box-shadow: -5px 0px 5px 0px #656565;
+  -webkit-box-shadow: -5px 0px 5px 0px #656565;
+  -o-box-shadow: -5px 0px 5px 0px #656565;
+  box-shadow: -5px 0px 5px 0px #656565;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=180, Strength=5);
+  transition: transform 0.4s ease-in;
+}
+
+.selection-slider .icon {
+  position: absolute;
+  top: 5vh;
+  left: 50%;
+  width: 12vh;
+  height: 12vh;
+  transform: translate(-50%, 0);
+  transform-origin: center center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 6vh;
+  border: 3px solid #333;
+}
+
+.selection-slider h2 {
+  position: absolute;
+  font-size: 4vh;
+  top: 20vh;
+  width: 100%;
+  text-align: center;
+  color: #333;
+  font-family: 'Roboto';
+}
+
+.selection-slider .address {
+  position: absolute;
+  font-size: 2vh;
+  top: 38vh;
+  left: 10%;
+  width: 80%;
+  text-align: center;
+  color: #888;
+  font-family: 'Roboto';
+}
+
 .results {
   position: absolute;
   top: 10em;
