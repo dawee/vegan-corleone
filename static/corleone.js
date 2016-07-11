@@ -105,8 +105,8 @@ RestaurantStore.getSuggested = function () {
     for (var _iterator = RestaurantStore.all()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
       var restaurant = _step.value;
 
-      var latOk = Math.abs(required.lat - restaurant.location.lat) <= 0.01;
-      var longOk = Math.abs(required.lng - restaurant.location.lng) <= 0.01;
+      var latOk = Math.abs(required.lat - restaurant.location.lat) <= 0.05;
+      var longOk = Math.abs(required.lng - restaurant.location.lng) <= 0.05;
 
       if (latOk && longOk) restaurants.push(restaurant);
     }
