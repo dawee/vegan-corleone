@@ -58,6 +58,23 @@
   font-family: 'Roboto';
 }
 
+.selection-slider .description {
+  position: absolute;
+  font-size: 2vh;
+  top: 50vh;
+  left: 10%;
+  width: 80%;
+  text-align: justify;
+  color: black;
+  font-family: 'Roboto';
+}
+
+.selection-slider .description pre {
+  white-space: normal;
+  font-weight: bold;
+  text-align: center;
+}
+
 .results {
   position: absolute;
   top: 10em;

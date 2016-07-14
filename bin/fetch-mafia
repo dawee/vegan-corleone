@@ -1,0 +1,62 @@
+#!/usr/bin/env node
+
+const express = require('express');
+const request = require('superagent');
+const through = require('through2');
+const fs = require('fs');
+const async = require('async');
+const bodyParser = require('body-parser');
+const jsdom = require('jsdom');
+
+const fetcher = fs.readFileSync(__dirname + '/resources/fetcher.js');
+const proxy = express();
+const restaurants = [];
+
+function fetchRestaurant(base, done) {
+  if (!base.url) done();
+
+  jsdom.env(
+    base.url,
+    ["http://code.jquery.com/jquery.js"],
+    function (err, window) {
+      if (!!err || !window) done();
+
+      console.log(base.url);
+
+      try {
+        var restaurant = Object.assign({
+          description: window.$('.entry-content').text()
+        }, base);
+
+        restaurants.push(restaurant);
+      } catch (err) {
+        console.log('failed with', base.url);
+      }
+      done();
+    }
+  );
+}
+
+proxy.get('/', (req, res) => {
+  request
+    .get('www.vegan-mafia.com')
+    .pipe(through(function (chunk, enc, callback) {
+      chunk = new Buffer(chunk.toString().replace(
+        /mapDiv.height\([0-9]+\).gmap3/,
+        `${fetcher} sendToCorleone`
+      ))
+      this.push(chunk)
+
+      callback();
+    }))
+    .pipe(res);
+});
+
+proxy.post('/feed', bodyParser.json({limit: '50mb'}), (req, res) => {
+  async.eachLimit(req.body, 10, fetchRestaurant, () => {
+    fs.writeFileSync('./mafia.js', JSON.stringify(restaurants), 'utf8');
+  });
+});
+
+proxy.listen(8666);
+
