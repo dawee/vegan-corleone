@@ -154,7 +154,7 @@ var GoogleMapElement = function (_GoogleMap) {
     value: function componentDidMount() {
       setTimeout(function () {
         return actions.setRestaurantsStoreReady();
-      }, 2000);
+      }, 0);
     }
   }]);
 
