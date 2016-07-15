@@ -9,12 +9,13 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
+  overflow: hidden;
 }
 
 #loader {
   z-index: 2;
   background-color: white;
-  transition: opacity 1s ease-out 0.8s;
+  transition: opacity 1s ease-out 1s;
 }
 
 #loader.hidden {

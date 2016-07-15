@@ -32,6 +32,9 @@
       loader.classList.add('ready');
       content.addEventListener('ready', function () {
         loader.classList.add('hidden');
+        setTimeout(function () {
+          document.body.removeChild(loader);
+        }, 1000);
       });
 
       document.body.appendChild(appScript);
