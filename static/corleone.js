@@ -60,6 +60,10 @@ actions.fetchCurrentPosition = Dispersive.createAction(function () {
   });
 });
 
+actions.setNewPosition = Dispersive.createAction(function (lat, lng) {
+  return { lat: lat, lng: lng };
+});
+
 /*
  * Store
  */
@@ -76,6 +80,11 @@ RestaurantStore.bindAction(actions.feedRestaurantsStore, function () {
 });
 
 RestaurantStore.bindAction(actions.fetchCurrentPosition, function (location) {
+  RestaurantStore.location = location;
+  RestaurantStore.trigger('change');
+});
+
+RestaurantStore.bindAction(actions.setNewPosition, function (location) {
   RestaurantStore.location = location;
   RestaurantStore.trigger('change');
 });
@@ -109,8 +118,8 @@ RestaurantStore.getSuggested = function () {
     for (var _iterator = RestaurantStore.all()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
       var restaurant = _step.value;
 
-      var latOk = Math.abs(required.lat - restaurant.location.lat) <= 0.05;
-      var longOk = Math.abs(required.lng - restaurant.location.lng) <= 0.05;
+      var latOk = Math.abs(required.lat - restaurant.location.lat) <= 0.01;
+      var longOk = Math.abs(required.lng - restaurant.location.lng) <= 0.01;
 
       if (latOk && longOk) restaurants.push(restaurant);
     }
@@ -173,6 +182,8 @@ var RestaurantMap = function (_Corleone$Component) {
   _createClass(RestaurantMap, [{
     key: 'onRestaurantChange',
     value: function onRestaurantChange() {
+
+      console.log('restaurant change');
       this.setState(this.getState());
     }
   }, {
@@ -192,6 +203,16 @@ var RestaurantMap = function (_Corleone$Component) {
     key: 'bindListeners',
     value: function bindListeners() {
       this.onRestaurantChange = this.onRestaurantChange.bind(this);
+    }
+  }, {
+    key: 'listenStores',
+    value: function listenStores() {
+      RestaurantStore.on('change', this.onRestaurantChange);
+    }
+  }, {
+    key: 'onCenterChanged',
+    value: function onCenterChanged() {
+      actions.setNewPosition(this.refs.map.getCenter().lat(), this.refs.map.getCenter().lng());
     }
   }, {
     key: 'onSelect',
@@ -217,12 +238,14 @@ var RestaurantMap = function (_Corleone$Component) {
             GoogleMapElement,
             {
               defaultZoom: 15,
-              defaultCenter: { lat: this.state.location.lat, lng: this.state.location.lng } },
+              defaultCenter: { lat: this.state.location.lat, lng: this.state.location.lng },
+              onCenterChanged: this.onCenterChanged.bind(this),
+              ref: 'map' },
             this.state.restaurants.map(function (restaurant, index) {
               return React.createElement(Marker, {
                 position: restaurant.location,
                 key: index,
-                defaultAnimation: 4,
+                defaultAnimation: 2,
                 onTouchStart: _this3.onSelect.bind(_this3, restaurant),
                 onClick: _this3.onSelect.bind(_this3, restaurant) });
             })
