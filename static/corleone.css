@@ -1,4 +1,9 @@
-.container {
+body {
+  color: #594F4F;
+}
+
+
+#content, #loader, .corleone {
   position: absolute;
   top: 0;
   right: 0;
@@ -6,6 +11,35 @@
   left: 0;
 }
 
+#loader {
+  z-index: 2;
+  background-color: white;
+  transition: opacity 1s ease-out 0.8s;
+}
+
+#loader.hidden {
+  opacity: 0;
+}
+
+#loader.hidden .spinner {
+  opacity: 0;
+  transform: scale(0, 0);
+}
+
+#loader h1 {
+  display: block;
+  position: absolute;
+  top: 50%;
+  font-family: 'Special Elite', cursive;
+  width: 100%;
+  text-align: center;
+  font-size: 10vh;
+  transition: transform 1s ease-out;
+}
+
+#loader.ready h1 {
+  transform: translate(0, -40vh);
+}
 
 .selection-slider {
   position: absolute;
@@ -82,4 +116,71 @@
   right: 0;
   bottom: 0;
   overflow-y: scroll;
+}
+
+/*
+ * Spinner
+ */
+
+.spinner {
+  opacity: 0;
+  display: block;
+  position: absolute;
+  top: 50vh;
+  left: 50%;
+  margin-left: -25vw;
+  transform-origin: center center;
+  width: 20vw;
+  height: 20vw;
+  position: relative;
+  transform-origin: 25vw 25vw;
+  transition: opacity 0.5s ease-out 0.5s, transform 0.5s; 
+  opacity: 0;
+}
+
+#loader.ready .spinner {
+  opacity: 1;
+}
+
+.cube1, .cube2 {
+  background-color: #9DE0AD;
+  width: 15vw;
+  height: 15vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+  animation: sk-cubemove 1.8s infinite ease-in-out;
+}
+
+.cube2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+@-webkit-keyframes sk-cubemove {
+  25% { -webkit-transform: translateX(42vw) rotate(-90deg) scale(0.5) }
+  50% { -webkit-transform: translateX(42vw) translateY(42vw) rotate(-180deg) }
+  75% { -webkit-transform: translateX(0vw) translateY(42vw) rotate(-270deg) scale(0.5) }
+  100% { -webkit-transform: rotate(-360deg) }
+}
+
+@keyframes sk-cubemove {
+  25% { 
+    transform: translateX(42vw) rotate(-90deg) scale(0.5);
+    -webkit-transform: translateX(42vw) rotate(-90deg) scale(0.5);
+  } 50% { 
+    transform: translateX(42vw) translateY(42vw) rotate(-179deg);
+    -webkit-transform: translateX(42vw) translateY(42vw) rotate(-179deg);
+  } 50.1% { 
+    transform: translateX(42vw) translateY(42vw) rotate(-180deg);
+    -webkit-transform: translateX(42vw) translateY(42vw) rotate(-180deg);
+  } 75% { 
+    transform: translateX(0vw) translateY(42vw) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0vw) translateY(42vw) rotate(-270deg) scale(0.5);
+  } 100% { 
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+  }
 }

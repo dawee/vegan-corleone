@@ -5,11 +5,38 @@
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />
+  <link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="./static/corleone.css" />
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFuIPO6Cp-i2sn7Wwz3T1pNaWLCImleBs&libraries=places"></script>
 </head>
 <body>
-  <div id="content" />
-  <script type="text/javascript" src="./static/corleone.js"></script>
+  <div id="content"></div>
+  <div id="loader">
+    <h1>Vegan Corleone</h1>
+
+    <div class="spinner">
+      <div class="cube1"></div>
+      <div class="cube2"></div>
+    </div>
+  </div>
+  <script type="text/javascript">
+  (function () {
+    setTimeout(function () {
+      var appScript = document.createElement('script');
+      var loader = document.getElementById('loader');
+      var content = document.getElementById('content');
+
+      appScript.setAttribute('type', 'text/javascript');
+      appScript.setAttribute('src', '/static/corleone.js');
+
+      loader.classList.add('ready');
+      content.addEventListener('ready', function () {
+        loader.classList.add('hidden');
+      });
+
+      document.body.appendChild(appScript);
+    }, 100);
+  })();
+  </script>
 </body>
 </html>
